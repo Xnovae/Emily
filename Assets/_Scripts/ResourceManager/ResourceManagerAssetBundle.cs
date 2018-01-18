@@ -13,28 +13,8 @@ public partial class ResourceManager
 {
     public IPromise<UnityEngine.Object> GetAssetBundleAsset(UnityEngine.Object target, string path, string assetName)
     {
-        var promise = GetAssetBundle(target, path, assetName)
+        return GetAssetBundle(target, path, assetName == "AssetBundleManifest")
             .Then(assetBundle => LoadBundleAsset(assetBundle, path, assetName));
-
-        if (!string.IsNullOrEmpty(assetName))
-        {
-            promise.Done(_ =>
-            {
-                var wrapper = _assetBundleWrappers[path];
-                Assert.IsNotNull(wrapper);
-
-                wrapper.RemoveLoadingAssets(assetName);
-            });
-            promise.Catch(ex => 
-            {
-                var wrapper = _assetBundleWrappers[path];
-                Assert.IsNotNull(wrapper);
-
-                wrapper.RemoveLoadingAssets(assetName);
-            });
-        }
-
-        return promise;
     }
 
     private IPromise<Object> LoadBundleAsset(AssetBundle assetBundle, string path, string assetName)
@@ -48,9 +28,18 @@ public partial class ResourceManager
 
     private IEnumerator LoadBundleAssetInternal(Promise<Object> promise, AssetBundle assetBundle, string path, string assetName)
     {
+        if (!_assetBundleWrappers.ContainsKey(path))
+        {
+            promise.Reject(new Exception(
+                string.Format("cannot load AssetBundle Asset when assetBundle destroyed path:{0} assetName: {1}", path, assetName)));
+            yield break;
+        }
+
         var wrapper = _assetBundleWrappers[path];
         Assert.IsNotNull(wrapper);
         Assert.AreEqual(wrapper.assetBundle, assetBundle);
+
+        wrapper.AddLoadingAssets(assetName);
 
         var request = assetBundle.LoadAssetAsync<Object>(assetName);
         while (!request.isDone)
@@ -58,6 +47,7 @@ public partial class ResourceManager
             yield return null;
         }
 
+        wrapper.RemoveLoadingAssets(assetName);
         if (wrapper.IsAllDestroyed())
         {
             if (wrapper.GetLoadingAssetsCount() == 0)
@@ -270,14 +260,12 @@ public partial class ResourceManager
 
     public IPromise<AssetBundle> GetAssetBundle(UnityEngine.Object target, string path)
     {
-        return GetAssetBundle(target, path, null);
+        return GetAssetBundle(target, path, false);
     }
 
-    private IPromise<AssetBundle> GetAssetBundle(UnityEngine.Object target, string path, string assetName)
+    private IPromise<AssetBundle> GetAssetBundle(UnityEngine.Object target, string path, bool isManifestBundle)
     {
-        bool isManifestBundle = assetName == "AssetBundleManifest";
-
-        if (!isManifestBundle && !_assetBundleManifest)
+        if (!isManifestBundle && !_assetBundleManifest )
             throw new Exception("Please load assetBundle manifest first");
 
         AssetBundleWrapper assetBundleWrapper = null;
@@ -286,10 +274,6 @@ public partial class ResourceManager
         if (_assetBundleWrappers.TryGetValue(path, out assetBundleWrapper))
         {
             assetBundleWrapper.AddReference(target, refCount);
-            if(!string.IsNullOrEmpty(assetName))
-            {
-                assetBundleWrapper.AddLoadingAssets(assetName);
-            }
 
             if (assetBundleWrapper.loadDone)
             {
@@ -302,11 +286,11 @@ public partial class ResourceManager
         }
         else
         {
-            return BrandNewLoadAssetBundle(target, path, assetName, isManifestBundle, refCount);
+            return BrandNewLoadAssetBundle(target, path, isManifestBundle, refCount);
         }
     }
 
-    private IPromise<AssetBundle> BrandNewLoadAssetBundle(UnityEngine.Object target, string path, string assetName, bool isManifestBundle, int refCount)
+    private IPromise<AssetBundle> BrandNewLoadAssetBundle(UnityEngine.Object target, string path, bool isManifestBundle, int refCount)
     {
         var promise = new Promise<AssetBundle>();
 
@@ -318,11 +302,6 @@ public partial class ResourceManager
             loadDoneAction = new List<Action>(DEFAULT_LIST_SIZE),
         };
         assetBundleWrapper.AddReference(target, refCount);
-        if(!string.IsNullOrEmpty(assetName))
-        {
-            assetBundleWrapper.AddLoadingAssets(assetName);
-        }
-
         AddLoadDoneAction(promise, assetBundleWrapper, target, path, refCount);
 
         _assetBundleWrappers.Add(path, assetBundleWrapper);

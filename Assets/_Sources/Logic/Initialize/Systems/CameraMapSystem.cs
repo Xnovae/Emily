@@ -167,8 +167,6 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
 
     private void UnLoadMap()
     {
-        ResourceManager.Instance.GetAssetBundleWrappersCount("");
-
         _removalList.Clear();
 
         var enumerator = _mapItemDictionary.GetEnumerator();
