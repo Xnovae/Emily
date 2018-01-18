@@ -1,0 +1,12 @@
+{
+  "1": {
+    "id": 1,
+    "assetsPath": "Assets/3rd_party/TK2DROOT/tk2d/Shaders/resources/BlendMap.shader",
+    "assetBundlePath": "dependency/shaders.assetbundle"
+  },
+  "2": {
+    "id": 2,
+    "assetsPath": "Assets/3rd_party/TK2DROOT/tk2d/Shaders/resources/BlendSprite.shader",
+    "assetBundlePath": "dependency/shaders.assetbundle"
+  }
+}

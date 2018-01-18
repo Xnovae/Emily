@@ -1,0 +1,5015 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1820358599721832}
+  m_IsPrefabParent: 1
+--- !u!1 &1820358599721832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4358263228198228}
+  - component: {fileID: 114318181262642802}
+  m_Layer: 0
+  m_Name: heroes_archer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4358263228198228
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820358599721832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114318181262642802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820358599721832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d546f34a90531a14eaba82a43b05b86b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  materialIdsValid: 1
+  needMaterialInstance: 0
+  spriteDefinitions:
+  - name: hero_archer_0002
+    boundsData:
+    - {x: 0.000000014901161, y: 0.24, z: 0}
+    - {x: 0.44, y: 0.35999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.42, z: 0}
+    - {x: 0.22000001, y: 0.42, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.73437697, y: 0.44336134}
+    - {x: 0.73437697, y: 0.5292949}
+    - {x: 0.80468553, y: 0.44336134}
+    - {x: 0.80468553, y: 0.5292949}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 50ec0d8ef0c7d7740bc8541bed9f77d3
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0003
+    boundsData:
+    - {x: 0.00500001, y: 0.26, z: 0}
+    - {x: 0.43, y: 0.4, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21, y: 0.46, z: 0}
+    - {x: 0.22000001, y: 0.46, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.66211134, y: 0.09375195}
+    - {x: 0.7460918, y: 0.09375195}
+    - {x: 0.66211134, y: 0.17187305}
+    - {x: 0.7460918, y: 0.17187305}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 1dfd561f50f2d5c4ca94caf89b10f496
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0004
+    boundsData:
+    - {x: 0.00500001, y: 0.265, z: 0}
+    - {x: 0.43, y: 0.41, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21, y: 0.47, z: 0}
+    - {x: 0.22000001, y: 0.47, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.47656447, y: 0.09570508}
+    - {x: 0.47656447, y: 0.17968555}
+    - {x: 0.55663866, y: 0.09570508}
+    - {x: 0.55663866, y: 0.17968555}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: cde4e8782bb90ba42ae112d95a1f3d7d
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0006
+    boundsData:
+    - {x: 0.00500001, y: 0.24499999, z: 0}
+    - {x: 0.43, y: 0.36999997, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21, y: 0.42999998, z: 0}
+    - {x: 0.22000001, y: 0.42999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.7539082, y: 0.26172072}
+    - {x: 0.7539082, y: 0.34570116}
+    - {x: 0.8261699, y: 0.26172072}
+    - {x: 0.8261699, y: 0.34570116}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: f21ac9d3c50dd5c419b094f802a7756a
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0007
+    boundsData:
+    - {x: 0.015000008, y: 0.26, z: 0}
+    - {x: 0.41000003, y: 0.4, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.46, z: 0}
+    - {x: 0.22000001, y: 0.46, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.7539082, y: 0.0898457}
+    - {x: 0.7539082, y: 0.16991992}
+    - {x: 0.8320293, y: 0.0898457}
+    - {x: 0.8320293, y: 0.16991992}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 7bc2f7362f83790408d7111465523bac
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0009
+    boundsData:
+    - {x: 0.015000008, y: 0.27, z: 0}
+    - {x: 0.41000003, y: 0.42000002, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.48000002, z: 0}
+    - {x: 0.22000001, y: 0.48000002, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.64843947, y: 0.003908203}
+    - {x: 0.72851366, y: 0.003908203}
+    - {x: 0.64843947, y: 0.08593555}
+    - {x: 0.72851366, y: 0.08593555}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: deb265fb18bea5740b37e1fcc876b69c
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0010
+    boundsData:
+    - {x: 0.015000008, y: 0.285, z: 0}
+    - {x: 0.41000003, y: 0.45, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.51, z: 0}
+    - {x: 0.22000001, y: 0.51, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.66406447, y: 0.66406447}
+    - {x: 0.74413866, y: 0.66406447}
+    - {x: 0.66406447, y: 0.75195116}
+    - {x: 0.74413866, y: 0.75195116}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: c29021f9869d0ad48bb318be2bc38a5e
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0012
+    boundsData:
+    - {x: 0.015000008, y: 0.29, z: 0}
+    - {x: 0.41000003, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.52, z: 0}
+    - {x: 0.22000001, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.21875195, y: 0.9160176}
+    - {x: 0.21875195, y: 0.9960918}
+    - {x: 0.30859178, y: 0.9160176}
+    - {x: 0.30859178, y: 0.9960918}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 234db24e09a895043909d596ef96880e
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0013
+    boundsData:
+    - {x: 0.015000008, y: 0.255, z: 0}
+    - {x: 0.41000003, y: 0.39, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.45, z: 0}
+    - {x: 0.22000001, y: 0.45, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.7285176, y: 0.35547072}
+    - {x: 0.7285176, y: 0.4355449}
+    - {x: 0.80468553, y: 0.35547072}
+    - {x: 0.80468553, y: 0.4355449}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: ceac15a0413110a45a8e35af85dd7f3a
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0021
+    boundsData:
+    - {x: -0.004999988, y: 0.25, z: 0}
+    - {x: 0.45, y: 0.38, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.22999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.22999999, y: 0.44, z: 0}
+    - {x: 0.22000001, y: 0.44, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.7441426, y: 0.17968945}
+    - {x: 0.8320293, y: 0.17968945}
+    - {x: 0.7441426, y: 0.25390428}
+    - {x: 0.8320293, y: 0.25390428}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: a5b82869f0572a94a8a47b41a3d48ba8
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0023
+    boundsData:
+    - {x: -0.009999983, y: 0.25, z: 0}
+    - {x: 0.45999998, y: 0.38, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.23999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.23999998, y: 0.44, z: 0}
+    - {x: 0.22000001, y: 0.44, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.5644551, y: 0.09961133}
+    - {x: 0.6542949, y: 0.09961133}
+    - {x: 0.5644551, y: 0.17382617}
+    - {x: 0.6542949, y: 0.17382617}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 7d59695ac8366f740b719bb50bbc2ffb
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0025
+    boundsData:
+    - {x: -0.014999986, y: 0.25, z: 0}
+    - {x: 0.47, y: 0.38, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.24999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.24999999, y: 0.44, z: 0}
+    - {x: 0.22000001, y: 0.44, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.6757832, y: 0.85156447}
+    - {x: 0.6757832, y: 0.9433574}
+    - {x: 0.74999803, y: 0.85156447}
+    - {x: 0.74999803, y: 0.9433574}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 1d30f5aa93138474b8f2ad7ba256f24d
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0028
+    boundsData:
+    - {x: 0.015000008, y: 0.30499998, z: 0}
+    - {x: 0.41000003, y: 0.48999995, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.54999995, z: 0}
+    - {x: 0.22000001, y: 0.54999995, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.11523633, y: 0.9160176}
+    - {x: 0.11523633, y: 0.9960918}
+    - {x: 0.21093555, y: 0.9160176}
+    - {x: 0.21093555, y: 0.9960918}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: f96514acf6a8d804a89ff4fa22d546b3
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0036
+    boundsData:
+    - {x: 0.00500001, y: 0.235, z: 0}
+    - {x: 0.43, y: 0.35, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21, y: 0.41, z: 0}
+    - {x: 0.22000001, y: 0.41, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.76367384, y: 0.72461134}
+    - {x: 0.76367384, y: 0.8085918}
+    - {x: 0.8320293, y: 0.72461134}
+    - {x: 0.8320293, y: 0.8085918}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 972642f7b0b43124fb46ca63f0d77636
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0038
+    boundsData:
+    - {x: 0.00500001, y: 0.43, z: 0}
+    - {x: 0.43, y: 0.74, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21, y: 0.8, z: 0}
+    - {x: 0.22000001, y: 0.8, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.0976582, y: 0.46093947}
+    - {x: 0.18163867, y: 0.46093947}
+    - {x: 0.0976582, y: 0.6054668}
+    - {x: 0.18163867, y: 0.6054668}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: b7bfa0d8ded65214280736c1e6a465d7
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0039
+    boundsData:
+    - {x: -0.004999988, y: 0.43, z: 0}
+    - {x: 0.45, y: 0.74, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.22999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.22999999, y: 0.8, z: 0}
+    - {x: 0.22000001, y: 0.8, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.003908203, y: 0.003908203}
+    - {x: 0.09179492, y: 0.003908203}
+    - {x: 0.003908203, y: 0.14843555}
+    - {x: 0.09179492, y: 0.14843555}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: a0ecb5a1fd2d543419c0ae0ccee0a599
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0040
+    boundsData:
+    - {x: -0.004999988, y: 0.43, z: 0}
+    - {x: 0.45, y: 0.74, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.22999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.22999999, y: 0.8, z: 0}
+    - {x: 0.22000001, y: 0.8, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.003908203, y: 0.15625195}
+    - {x: 0.09179492, y: 0.15625195}
+    - {x: 0.003908203, y: 0.30077928}
+    - {x: 0.09179492, y: 0.30077928}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: f6425bb588e4fc840b06e3fbc908bc20
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0041
+    boundsData:
+    - {x: 0.000000014901161, y: 0.43, z: 0}
+    - {x: 0.44, y: 0.74, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.8, z: 0}
+    - {x: 0.22000001, y: 0.8, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.003908203, y: 0.30859572}
+    - {x: 0.0898418, y: 0.30859572}
+    - {x: 0.003908203, y: 0.45312303}
+    - {x: 0.0898418, y: 0.45312303}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 7024e134306c2b543951ef2acac0d09d
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0042
+    boundsData:
+    - {x: 0.000000014901161, y: 0.43, z: 0}
+    - {x: 0.44, y: 0.74, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.8, z: 0}
+    - {x: 0.22000001, y: 0.8, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.003908203, y: 0.46093947}
+    - {x: 0.0898418, y: 0.46093947}
+    - {x: 0.003908203, y: 0.6054668}
+    - {x: 0.0898418, y: 0.6054668}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 4de298ae413166747b054ee22d1e8e15
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0043
+    boundsData:
+    - {x: 0.000000014901161, y: 0.43, z: 0}
+    - {x: 0.44, y: 0.74, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.8, z: 0}
+    - {x: 0.22000001, y: 0.8, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.003908203, y: 0.6132832}
+    - {x: 0.0898418, y: 0.6132832}
+    - {x: 0.003908203, y: 0.75781053}
+    - {x: 0.0898418, y: 0.75781053}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 4603783a009f2af4eab0575c98fa0506
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0044
+    boundsData:
+    - {x: 0.000000014901161, y: 0.43, z: 0}
+    - {x: 0.44, y: 0.74, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.8, z: 0}
+    - {x: 0.22000001, y: 0.8, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.003908203, y: 0.76562697}
+    - {x: 0.0898418, y: 0.76562697}
+    - {x: 0.003908203, y: 0.9101543}
+    - {x: 0.0898418, y: 0.9101543}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: f4171c3152978244f88838c0cc7c3552
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0045
+    boundsData:
+    - {x: 0.000000014901161, y: 0.43, z: 0}
+    - {x: 0.44, y: 0.74, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.8, z: 0}
+    - {x: 0.22000001, y: 0.8, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.0976582, y: 0.30859572}
+    - {x: 0.1835918, y: 0.30859572}
+    - {x: 0.0976582, y: 0.45312303}
+    - {x: 0.1835918, y: 0.45312303}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: b34dc9288c8c1c7498b22da2b406ecea
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0046
+    boundsData:
+    - {x: 0.000000014901161, y: 0.43, z: 0}
+    - {x: 0.44, y: 0.74, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.8, z: 0}
+    - {x: 0.22000001, y: 0.8, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.09961133, y: 0.003908203}
+    - {x: 0.18554492, y: 0.003908203}
+    - {x: 0.09961133, y: 0.14843555}
+    - {x: 0.18554492, y: 0.14843555}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: ba4b18aaeb3dd034f9016b2c564e65ca
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0047
+    boundsData:
+    - {x: 0.000000014901161, y: 0.42499998, z: 0}
+    - {x: 0.44, y: 0.72999996, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.78999996, z: 0}
+    - {x: 0.22000001, y: 0.78999996, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.09961133, y: 0.15625195}
+    - {x: 0.18554492, y: 0.15625195}
+    - {x: 0.09961133, y: 0.29882616}
+    - {x: 0.18554492, y: 0.29882616}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 6c9b6d0a637d9d842ab2df5121d382cd
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0048
+    boundsData:
+    - {x: 0.000000014901161, y: 0.42, z: 0}
+    - {x: 0.44, y: 0.71999997, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.78, z: 0}
+    - {x: 0.22000001, y: 0.78, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.0976582, y: 0.6132832}
+    - {x: 0.1835918, y: 0.6132832}
+    - {x: 0.0976582, y: 0.7539043}
+    - {x: 0.1835918, y: 0.7539043}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: cf8e0e83dbe54b24d98c65c76dbda453
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0049
+    boundsData:
+    - {x: 0.000000014901161, y: 0.39499998, z: 0}
+    - {x: 0.44, y: 0.66999996, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.72999996, z: 0}
+    - {x: 0.22000001, y: 0.72999996, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.18945508, y: 0.46093947}
+    - {x: 0.27538866, y: 0.46093947}
+    - {x: 0.18945508, y: 0.5917949}
+    - {x: 0.27538866, y: 0.5917949}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: c8f83e2df64e20c41ab7ee6b06125323
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0050
+    boundsData:
+    - {x: 0.004999995, y: 0.315, z: 0}
+    - {x: 0.44999996, y: 0.51, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22999997, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.57, z: 0}
+    - {x: 0.22999997, y: 0.57, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.31640822, y: 0.8847676}
+    - {x: 0.4042949, y: 0.8847676}
+    - {x: 0.31640822, y: 0.98437303}
+    - {x: 0.4042949, y: 0.98437303}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: c7e36b63f67829545abbbc352406c5ac
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0051
+    boundsData:
+    - {x: 0.000000014901161, y: 0.255, z: 0}
+    - {x: 0.44, y: 0.39, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.45, z: 0}
+    - {x: 0.22000001, y: 0.45, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.6445332, y: 0.3613301}
+    - {x: 0.6445332, y: 0.44726366}
+    - {x: 0.72070116, y: 0.3613301}
+    - {x: 0.72070116, y: 0.44726366}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: c83a9d7cdbd0ced468a8f729a3bdd44d
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0054
+    boundsData:
+    - {x: 0.015000008, y: 0.26, z: 0}
+    - {x: 0.41000003, y: 0.4, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.46, z: 0}
+    - {x: 0.22000001, y: 0.46, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.82812697, y: 0.003908203}
+    - {x: 0.90820116, y: 0.003908203}
+    - {x: 0.82812697, y: 0.0820293}
+    - {x: 0.90820116, y: 0.0820293}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: fec28a4d7752f2f498a7d0b92d7e006a
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0056
+    boundsData:
+    - {x: 0.015000008, y: 0.27, z: 0}
+    - {x: 0.41000003, y: 0.42000002, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.48000002, z: 0}
+    - {x: 0.22000001, y: 0.48000002, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.56836134, y: 0.18164258}
+    - {x: 0.64843553, y: 0.18164258}
+    - {x: 0.56836134, y: 0.2636699}
+    - {x: 0.64843553, y: 0.2636699}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 471e78a0e0efbf44ea06609fa00b2a10
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0057
+    boundsData:
+    - {x: 0.015000008, y: 0.285, z: 0}
+    - {x: 0.41000003, y: 0.45, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.51, z: 0}
+    - {x: 0.22000001, y: 0.51, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.5878926, y: 0.8613301}
+    - {x: 0.6679668, y: 0.8613301}
+    - {x: 0.5878926, y: 0.9492168}
+    - {x: 0.6679668, y: 0.9492168}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: d1b1bd31352e4714f86f8eaa099404c6
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0059
+    boundsData:
+    - {x: 0.015000008, y: 0.29, z: 0}
+    - {x: 0.41000003, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.52, z: 0}
+    - {x: 0.22000001, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.47265822, y: 0.5097676}
+    - {x: 0.5527324, y: 0.5097676}
+    - {x: 0.47265822, y: 0.5996074}
+    - {x: 0.5527324, y: 0.5996074}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 76db4be554a5fd149a731e7066cfcf50
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0060
+    boundsData:
+    - {x: 0.015000008, y: 0.29, z: 0}
+    - {x: 0.41000003, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.52, z: 0}
+    - {x: 0.22000001, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.5566426, y: 0.39843947}
+    - {x: 0.6367168, y: 0.39843947}
+    - {x: 0.5566426, y: 0.48827928}
+    - {x: 0.6367168, y: 0.48827928}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 09e099a63525a5042bde65568333bd32
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0061
+    boundsData:
+    - {x: 0.015000008, y: 0.29, z: 0}
+    - {x: 0.41000003, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.52, z: 0}
+    - {x: 0.22000001, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.41015822, y: 0.76562697}
+    - {x: 0.4902324, y: 0.76562697}
+    - {x: 0.41015822, y: 0.8554668}
+    - {x: 0.4902324, y: 0.8554668}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 4780e2165413ca9408b8d48bcbe0f94d
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0063
+    boundsData:
+    - {x: 0.015000008, y: 0.29, z: 0}
+    - {x: 0.41000003, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.52, z: 0}
+    - {x: 0.22000001, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.48828322, y: 0.6679707}
+    - {x: 0.5683574, y: 0.6679707}
+    - {x: 0.48828322, y: 0.75781053}
+    - {x: 0.5683574, y: 0.75781053}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: fefdc92907093ad4e81dca33f8513ef4
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0064
+    boundsData:
+    - {x: 0.015000008, y: 0.29, z: 0}
+    - {x: 0.41000003, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.52, z: 0}
+    - {x: 0.22000001, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.56054884, y: 0.49609572}
+    - {x: 0.64062303, y: 0.49609572}
+    - {x: 0.56054884, y: 0.58593553}
+    - {x: 0.64062303, y: 0.58593553}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 092cfcbd54bece7408ee240c26f16ed5
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0065
+    boundsData:
+    - {x: 0.015000008, y: 0.29, z: 0}
+    - {x: 0.41000003, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.52, z: 0}
+    - {x: 0.22000001, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.41211134, y: 0.8632832}
+    - {x: 0.49218553, y: 0.8632832}
+    - {x: 0.41211134, y: 0.95312303}
+    - {x: 0.49218553, y: 0.95312303}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 69ff2d482782a0c4caa420ba460776ad
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0066
+    boundsData:
+    - {x: 0.015000008, y: 0.29, z: 0}
+    - {x: 0.41000003, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.52, z: 0}
+    - {x: 0.22000001, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.49804884, y: 0.76562697}
+    - {x: 0.57812303, y: 0.76562697}
+    - {x: 0.49804884, y: 0.8554668}
+    - {x: 0.57812303, y: 0.8554668}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: e326aabe11f69454a9c89b4c26d113ff
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0067
+    boundsData:
+    - {x: 0.015000008, y: 0.29, z: 0}
+    - {x: 0.41000003, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.52, z: 0}
+    - {x: 0.22000001, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.57617384, y: 0.6660176}
+    - {x: 0.65624803, y: 0.6660176}
+    - {x: 0.57617384, y: 0.7558574}
+    - {x: 0.65624803, y: 0.7558574}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: ea3eeb8165df43549bfb4fc94d7babf9
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0069
+    boundsData:
+    - {x: 0.019999988, y: 0.285, z: 0}
+    - {x: 0.41999996, y: 0.45, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22999997, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.51, z: 0}
+    - {x: 0.22999997, y: 0.51, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.48242384, y: 0.30273634}
+    - {x: 0.56445116, y: 0.30273634}
+    - {x: 0.48242384, y: 0.39062303}
+    - {x: 0.56445116, y: 0.39062303}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 35022598ae9f9c44e9923b3895c86d92
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0070
+    boundsData:
+    - {x: 0.014999993, y: 0.29, z: 0}
+    - {x: 0.42999995, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19999999, y: 0.060000002, z: 0}
+    - {x: 0.22999997, y: 0.060000002, z: 0}
+    - {x: -0.19999999, y: 0.52, z: 0}
+    - {x: 0.22999997, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3925801, y: 0.20508008}
+    - {x: 0.47656053, y: 0.20508008}
+    - {x: 0.3925801, y: 0.2949199}
+    - {x: 0.47656053, y: 0.2949199}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 1d13585fe9eaca74db28fc43c45babf4
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0081
+    boundsData:
+    - {x: 0.00500001, y: 0.24499999, z: 0}
+    - {x: 0.43, y: 0.36999997, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21, y: 0.42999998, z: 0}
+    - {x: 0.22000001, y: 0.42999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.71679884, y: 0.5429707}
+    - {x: 0.71679884, y: 0.62695116}
+    - {x: 0.78906053, y: 0.5429707}
+    - {x: 0.78906053, y: 0.62695116}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 9aec9a8dbc673fc459ab3dd81d98059b
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0092
+    boundsData:
+    - {x: 0.010000013, y: 0.23, z: 0}
+    - {x: 0.42000002, y: 0.34, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19999999, y: 0.4, z: 0}
+    - {x: 0.22000001, y: 0.4, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.8320332, y: 0.6289082}
+    - {x: 0.8320332, y: 0.71093553}
+    - {x: 0.89843553, y: 0.6289082}
+    - {x: 0.89843553, y: 0.71093553}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 3f6326c158e778d47bba1f46a7455fac
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0093
+    boundsData:
+    - {x: 0.010000013, y: 0.22, z: 0}
+    - {x: 0.42000002, y: 0.32, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19999999, y: 0.38, z: 0}
+    - {x: 0.22000001, y: 0.38, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.6269551, y: 0.59375197}
+    - {x: 0.7089824, y: 0.59375197}
+    - {x: 0.6269551, y: 0.65624803}
+    - {x: 0.7089824, y: 0.65624803}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 682017017fdbfcd49953ecf3a2a44d2c
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0094
+    boundsData:
+    - {x: 0.010000013, y: 0.22, z: 0}
+    - {x: 0.42000002, y: 0.32, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19999999, y: 0.38, z: 0}
+    - {x: 0.22000001, y: 0.38, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.8398457, y: 0.71875197}
+    - {x: 0.8398457, y: 0.8007793}
+    - {x: 0.9023418, y: 0.71875197}
+    - {x: 0.9023418, y: 0.8007793}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: d0a7d4729a6d0314bbf19f2600509669
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0095
+    boundsData:
+    - {x: 0.00500001, y: 0.24, z: 0}
+    - {x: 0.43, y: 0.35999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21, y: 0.42, z: 0}
+    - {x: 0.22000001, y: 0.42, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.79687697, y: 0.53711134}
+    - {x: 0.79687697, y: 0.6210918}
+    - {x: 0.86718553, y: 0.53711134}
+    - {x: 0.86718553, y: 0.6210918}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 1190dbf70bb2e1943986800671873349
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0096
+    boundsData:
+    - {x: 0.00500001, y: 0.26, z: 0}
+    - {x: 0.43, y: 0.4, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21, y: 0.46, z: 0}
+    - {x: 0.22000001, y: 0.46, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.7363301, y: 0.003908203}
+    - {x: 0.82031053, y: 0.003908203}
+    - {x: 0.7363301, y: 0.0820293}
+    - {x: 0.82031053, y: 0.0820293}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: c8eb719a8e4ea1a42a7f0e4eb0fc065f
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0097
+    boundsData:
+    - {x: 0.000000014901161, y: 0.27499998, z: 0}
+    - {x: 0.44, y: 0.42999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.21999998, y: 0.48999998, z: 0}
+    - {x: 0.22000001, y: 0.48999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.46484572, y: 0.4160176}
+    - {x: 0.46484572, y: 0.50195116}
+    - {x: 0.54882616, y: 0.4160176}
+    - {x: 0.54882616, y: 0.50195116}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 16ed5b0b7753d844b855cfb0fa629766
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0098
+    boundsData:
+    - {x: -0.004999988, y: 0.295, z: 0}
+    - {x: 0.45, y: 0.46999997, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.22999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.22999999, y: 0.53, z: 0}
+    - {x: 0.22000001, y: 0.53, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.38086134, y: 0.003908203}
+    - {x: 0.46874803, y: 0.003908203}
+    - {x: 0.38086134, y: 0.09570117}
+    - {x: 0.46874803, y: 0.09570117}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: f4df281470729a0489f7e30d1018ab68
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0099
+    boundsData:
+    - {x: -0.009999983, y: 0.30499998, z: 0}
+    - {x: 0.45999998, y: 0.48999995, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.23999998, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.23999998, y: 0.54999995, z: 0}
+    - {x: 0.22000001, y: 0.54999995, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.19336133, y: 0.1132832}
+    - {x: 0.28320116, y: 0.1132832}
+    - {x: 0.19336133, y: 0.20898242}
+    - {x: 0.28320116, y: 0.20898242}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 24d3c509417deb842a40ddc40c3a973b
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0100
+    boundsData:
+    - {x: -0.0050000027, y: 0.315, z: 0}
+    - {x: 0.46999997, y: 0.51, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.23999998, y: 0.060000002, z: 0}
+    - {x: 0.22999997, y: 0.060000002, z: 0}
+    - {x: -0.23999998, y: 0.57, z: 0}
+    - {x: 0.22999997, y: 0.57, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.20117383, y: 0.7148457}
+    - {x: 0.29296678, y: 0.7148457}
+    - {x: 0.20117383, y: 0.81445116}
+    - {x: 0.29296678, y: 0.81445116}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: cdef62f92cdb63e4b941453acbe6bb77
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0101
+    boundsData:
+    - {x: -0.0050000027, y: 0.325, z: 0}
+    - {x: 0.48999995, y: 0.53, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.24999999, y: 0.060000002, z: 0}
+    - {x: 0.23999998, y: 0.060000002, z: 0}
+    - {x: -0.24999999, y: 0.59, z: 0}
+    - {x: 0.23999998, y: 0.59, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.0976582, y: 0.7617207}
+    - {x: 0.19335742, y: 0.7617207}
+    - {x: 0.0976582, y: 0.8652324}
+    - {x: 0.19335742, y: 0.8652324}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 208d848ac7a8fc24ab32b65af48310aa
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0102
+    boundsData:
+    - {x: -0.0050000027, y: 0.33499998, z: 0}
+    - {x: 0.51, y: 0.54999995, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.26, y: 0.060000002, z: 0}
+    - {x: 0.24999999, y: 0.060000002, z: 0}
+    - {x: -0.26, y: 0.60999995, z: 0}
+    - {x: 0.24999999, y: 0.60999995, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.1914082, y: 0.3066426}
+    - {x: 0.29101366, y: 0.3066426}
+    - {x: 0.1914082, y: 0.41406053}
+    - {x: 0.29101366, y: 0.41406053}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 97e1941d75c8e224cbee12c1b553b1d4
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0103
+    boundsData:
+    - {x: -0.004999995, y: 0.255, z: 0}
+    - {x: 0.53, y: 0.39, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.26999998, y: 0.060000002, z: 0}
+    - {x: 0.26, y: 0.060000002, z: 0}
+    - {x: -0.26999998, y: 0.45, z: 0}
+    - {x: 0.26, y: 0.45, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.003908203, y: 0.9179707}
+    - {x: 0.10741992, y: 0.9179707}
+    - {x: 0.003908203, y: 0.99413866}
+    - {x: 0.10741992, y: 0.99413866}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: ef167606206cf8d43a6bcb3f79dc9b7a
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0104
+    boundsData:
+    - {x: 0.015000008, y: 0.27, z: 0}
+    - {x: 0.41000003, y: 0.42000002, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.48000002, z: 0}
+    - {x: 0.22000001, y: 0.48000002, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.5722676, y: 0.27148634}
+    - {x: 0.6523418, y: 0.27148634}
+    - {x: 0.5722676, y: 0.35351366}
+    - {x: 0.6523418, y: 0.35351366}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 0d3d92b2c94832446899d8bb31cecf0b
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0105
+    boundsData:
+    - {x: 0.010000013, y: 0.285, z: 0}
+    - {x: 0.42000002, y: 0.45, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19999999, y: 0.51, z: 0}
+    - {x: 0.22000001, y: 0.51, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.39843947, y: 0.66992384}
+    - {x: 0.48046678, y: 0.66992384}
+    - {x: 0.39843947, y: 0.75781053}
+    - {x: 0.48046678, y: 0.75781053}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: b8cd3ad0cbf0aaa43a372f3606791ff7
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0106
+    boundsData:
+    - {x: 0.010000013, y: 0.29, z: 0}
+    - {x: 0.42000002, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19999999, y: 0.52, z: 0}
+    - {x: 0.22000001, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.38281447, y: 0.52148634}
+    - {x: 0.46484178, y: 0.52148634}
+    - {x: 0.38281447, y: 0.61132616}
+    - {x: 0.46484178, y: 0.61132616}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 206c350b7d2da2d4e9f3a18b8f337b7b
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0107
+    boundsData:
+    - {x: 0.010000013, y: 0.30499998, z: 0}
+    - {x: 0.42000002, y: 0.48999995, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19999999, y: 0.54999995, z: 0}
+    - {x: 0.22000001, y: 0.54999995, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.37500197, y: 0.41797072}
+    - {x: 0.45702928, y: 0.41797072}
+    - {x: 0.37500197, y: 0.5136699}
+    - {x: 0.45702928, y: 0.5136699}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: b2e443dbc3b9eaa42b19c466c0aa9830
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0108
+    boundsData:
+    - {x: 0.010000013, y: 0.31, z: 0}
+    - {x: 0.42000002, y: 0.5, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19999999, y: 0.56, z: 0}
+    - {x: 0.22000001, y: 0.56, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.19336133, y: 0.21679883}
+    - {x: 0.19336133, y: 0.29882616}
+    - {x: 0.29101366, y: 0.21679883}
+    - {x: 0.29101366, y: 0.29882616}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 3e1056ed51a46eb4992074882075e437
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0109
+    boundsData:
+    - {x: 0.010000013, y: 0.24499999, z: 0}
+    - {x: 0.42000002, y: 0.36999997, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19999999, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19999999, y: 0.42999998, z: 0}
+    - {x: 0.22000001, y: 0.42999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.7519551, y: 0.6347676}
+    - {x: 0.7519551, y: 0.7167949}
+    - {x: 0.8242168, y: 0.6347676}
+    - {x: 0.8242168, y: 0.7167949}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: d6a2868029f237c46830e3f95d1c540d
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0110
+    boundsData:
+    - {x: 0.015000008, y: 0.26, z: 0}
+    - {x: 0.41000003, y: 0.4, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.46, z: 0}
+    - {x: 0.22000001, y: 0.46, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.64843947, y: 0.4550801}
+    - {x: 0.64843947, y: 0.5351543}
+    - {x: 0.72656053, y: 0.4550801}
+    - {x: 0.72656053, y: 0.5351543}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 853f058821bebc847b13935f105ae190
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0111
+    boundsData:
+    - {x: 0.015000008, y: 0.27, z: 0}
+    - {x: 0.41000003, y: 0.42000002, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.48000002, z: 0}
+    - {x: 0.22000001, y: 0.48000002, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.65625197, y: 0.18164258}
+    - {x: 0.73632616, y: 0.18164258}
+    - {x: 0.65625197, y: 0.2636699}
+    - {x: 0.73632616, y: 0.2636699}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 0b5dc4afead26684cb77c0ffafb6cac6
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0112
+    boundsData:
+    - {x: 0.015000008, y: 0.27499998, z: 0}
+    - {x: 0.41000003, y: 0.42999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.48999998, z: 0}
+    - {x: 0.22000001, y: 0.48999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.75781447, y: 0.85156447}
+    - {x: 0.83788866, y: 0.85156447}
+    - {x: 0.75781447, y: 0.9355449}
+    - {x: 0.83788866, y: 0.9355449}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 98d4ee267f0fe194390bdaa04e1654d0
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0113
+    boundsData:
+    - {x: 0.015000008, y: 0.29, z: 0}
+    - {x: 0.41000003, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.52, z: 0}
+    - {x: 0.22000001, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.50000197, y: 0.8632832}
+    - {x: 0.58007616, y: 0.8632832}
+    - {x: 0.50000197, y: 0.95312303}
+    - {x: 0.58007616, y: 0.95312303}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: aa51ce2b16320604cb327512396e2292
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0114
+    boundsData:
+    - {x: 0.015000008, y: 0.29, z: 0}
+    - {x: 0.41000003, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.060000002, z: 0}
+    - {x: 0.22000001, y: 0.060000002, z: 0}
+    - {x: -0.19, y: 0.52, z: 0}
+    - {x: 0.22000001, y: 0.52, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.58593947, y: 0.76367384}
+    - {x: 0.66601366, y: 0.76367384}
+    - {x: 0.58593947, y: 0.85351366}
+    - {x: 0.66601366, y: 0.85351366}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 4ff57622512cf8d4b9e1ffe74a965a5b
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0123
+    boundsData:
+    - {x: -0.155, y: 0.125, z: 0}
+    - {x: 0.32999998, y: 0.21000001, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.32, y: 0.02, z: 0}
+    - {x: 0.010000004, y: 0.02, z: 0}
+    - {x: -0.32, y: 0.23, z: 0}
+    - {x: 0.010000004, y: 0.23, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.4550801, y: 0.6191426}
+    - {x: 0.5195293, y: 0.6191426}
+    - {x: 0.4550801, y: 0.6601543}
+    - {x: 0.5195293, y: 0.6601543}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: c05a337b1bc959b44b50c2bf8479a69c
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_0125
+    boundsData:
+    - {x: -0.16499999, y: 0.13, z: 0}
+    - {x: 0.34999996, y: 0.26, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.45, z: 0}
+    - {x: 0.71999997, y: 0.9, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.33999997, y: 0, z: 0}
+    - {x: 0.010000004, y: 0, z: 0}
+    - {x: -0.33999997, y: 0.26, z: 0}
+    - {x: 0.010000004, y: 0.26, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.9160176, y: 0.8320332}
+    - {x: 0.98437303, y: 0.8320332}
+    - {x: 0.9160176, y: 0.88281053}
+    - {x: 0.98437303, y: 0.88281053}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: d34b62f2251994e41b461d7845290d37
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_arrow
+    boundsData:
+    - {x: 0.105, y: -0.005000001, z: 0}
+    - {x: 0.21, y: 0.08999999, z: 0}
+    untrimmedBoundsData:
+    - {x: 0.12, y: 0, z: 0}
+    - {x: 0.24, y: 0.099999994, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: 0, y: -0.049999997, z: 0}
+    - {x: 0.21, y: -0.049999997, z: 0}
+    - {x: 0, y: 0.039999995, z: 0}
+    - {x: 0.21, y: 0.039999995, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.1914082, y: 0.42187697}
+    - {x: 0.23241992, y: 0.42187697}
+    - {x: 0.1914082, y: 0.43945116}
+    - {x: 0.23241992, y: 0.43945116}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: ee2f74ae116084a4185b8aeec1c72229
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_arrow_particle
+    boundsData:
+    - {x: 0.12, y: -0.0000000018626451, z: 0}
+    - {x: 0.2, y: 0.08, z: 0}
+    untrimmedBoundsData:
+    - {x: 0.12, y: 0, z: 0}
+    - {x: 0.24, y: 0.099999994, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: 0.02, y: -0.04, z: 0}
+    - {x: 0.22, y: -0.04, z: 0}
+    - {x: 0.02, y: 0.039999995, z: 0}
+    - {x: 0.22, y: 0.039999995, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.24023633, y: 0.42187697}
+    - {x: 0.2792949, y: 0.42187697}
+    - {x: 0.24023633, y: 0.43749803}
+    - {x: 0.2792949, y: 0.43749803}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: a9c42003040e6414481957b589f2d0a1
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0001
+    boundsData:
+    - {x: 0.0050000027, y: 0.22999999, z: 0}
+    - {x: 0.35000002, y: 0.24, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.17, y: 0.11, z: 0}
+    - {x: 0.18, y: 0.11, z: 0}
+    - {x: -0.17, y: 0.35, z: 0}
+    - {x: 0.18, y: 0.35, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.9238301, y: 0.89062697}
+    - {x: 0.99218553, y: 0.89062697}
+    - {x: 0.9238301, y: 0.93749803}
+    - {x: 0.99218553, y: 0.93749803}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: ea922bd79e5ae254fad937fb17606eb6
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0006
+    boundsData:
+    - {x: -0.004999988, y: 0.26, z: 0}
+    - {x: 0.39000005, y: 0.3, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.2, y: 0.11, z: 0}
+    - {x: 0.19000003, y: 0.11, z: 0}
+    - {x: -0.2, y: 0.41, z: 0}
+    - {x: 0.19000003, y: 0.41, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.85742384, y: 0.89843947}
+    - {x: 0.85742384, y: 0.9746074}
+    - {x: 0.91601366, y: 0.89843947}
+    - {x: 0.91601366, y: 0.9746074}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: f10de58597566f744a0a05c35ea5053d
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0007
+    boundsData:
+    - {x: 0.004999995, y: 0.26, z: 0}
+    - {x: 0.39, y: 0.3, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.11, z: 0}
+    - {x: 0.19999999, y: 0.11, z: 0}
+    - {x: -0.19, y: 0.41, z: 0}
+    - {x: 0.19999999, y: 0.41, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.81250197, y: 0.3535176}
+    - {x: 0.81250197, y: 0.42968553}
+    - {x: 0.8710918, y: 0.3535176}
+    - {x: 0.8710918, y: 0.42968553}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: fe5ead8017687ad44a5a1ee73ce4e3f8
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0009
+    boundsData:
+    - {x: 0.015000001, y: 0.22999999, z: 0}
+    - {x: 0.33, y: 0.24, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.15, y: 0.11, z: 0}
+    - {x: 0.18, y: 0.11, z: 0}
+    - {x: -0.15, y: 0.35, z: 0}
+    - {x: 0.18, y: 0.35, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.9238301, y: 0.39453322}
+    - {x: 0.9882793, y: 0.39453322}
+    - {x: 0.9238301, y: 0.44140428}
+    - {x: 0.9882793, y: 0.44140428}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 2e27178caa0d18749ad3fd0bfbaf92e1
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0018
+    boundsData:
+    - {x: -0.024999991, y: 0.22, z: 0}
+    - {x: 0.33, y: 0.21999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.11, z: 0}
+    - {x: 0.14000002, y: 0.11, z: 0}
+    - {x: -0.19, y: 0.32999998, z: 0}
+    - {x: 0.14000002, y: 0.32999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.38281447, y: 0.6191426}
+    - {x: 0.44726366, y: 0.6191426}
+    - {x: 0.38281447, y: 0.6621074}
+    - {x: 0.44726366, y: 0.6621074}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 3ebaf661ec8313c4c88c30ca68b0e74c
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0020
+    boundsData:
+    - {x: 0.049999982, y: 0.22999999, z: 0}
+    - {x: 0.45999998, y: 0.24, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.18, y: 0.11, z: 0}
+    - {x: 0.27999997, y: 0.11, z: 0}
+    - {x: -0.18, y: 0.35, z: 0}
+    - {x: 0.27999997, y: 0.35, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.8691426, y: 0.43750197}
+    - {x: 0.8691426, y: 0.5273418}
+    - {x: 0.91601366, y: 0.43750197}
+    - {x: 0.91601366, y: 0.5273418}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: af968734fabdca641ac886a647a17dee
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0022
+    boundsData:
+    - {x: 0.049999982, y: 0.23499998, z: 0}
+    - {x: 0.45999998, y: 0.24999999, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.18, y: 0.11, z: 0}
+    - {x: 0.27999997, y: 0.11, z: 0}
+    - {x: -0.18, y: 0.35999998, z: 0}
+    - {x: 0.27999997, y: 0.35999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.83398634, y: 0.26172072}
+    - {x: 0.92382616, y: 0.26172072}
+    - {x: 0.83398634, y: 0.3105449}
+    - {x: 0.92382616, y: 0.3105449}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 232d2bc8039a12941babb6b38ec152a4
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0023
+    boundsData:
+    - {x: 0.049999982, y: 0.23499998, z: 0}
+    - {x: 0.45999998, y: 0.24999999, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.18, y: 0.11, z: 0}
+    - {x: 0.27999997, y: 0.11, z: 0}
+    - {x: -0.18, y: 0.35999998, z: 0}
+    - {x: 0.27999997, y: 0.35999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.81250197, y: 0.43750197}
+    - {x: 0.81250197, y: 0.5273418}
+    - {x: 0.86132616, y: 0.43750197}
+    - {x: 0.86132616, y: 0.5273418}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: a6aa8ebef4526ca4caf5476516cdaae7
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0024
+    boundsData:
+    - {x: 0.044999987, y: 0.23499998, z: 0}
+    - {x: 0.46999997, y: 0.24999999, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.11, z: 0}
+    - {x: 0.27999997, y: 0.11, z: 0}
+    - {x: -0.19, y: 0.35999998, z: 0}
+    - {x: 0.27999997, y: 0.35999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.75781447, y: 0.94336134}
+    - {x: 0.8496074, y: 0.94336134}
+    - {x: 0.75781447, y: 0.99218553}
+    - {x: 0.8496074, y: 0.99218553}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: b625897da0207e148ae96bc01e742076
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0025
+    boundsData:
+    - {x: 0.044999987, y: 0.23999998, z: 0}
+    - {x: 0.46999997, y: 0.26, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.11, z: 0}
+    - {x: 0.27999997, y: 0.11, z: 0}
+    - {x: -0.19, y: 0.36999997, z: 0}
+    - {x: 0.27999997, y: 0.36999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.5273457, y: 0.60742384}
+    - {x: 0.61913866, y: 0.60742384}
+    - {x: 0.5273457, y: 0.65820116}
+    - {x: 0.61913866, y: 0.65820116}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: a7d4b3abe87fd9c41b6ec0eea87bf61b
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0026
+    boundsData:
+    - {x: 0.004999995, y: 0.22999999, z: 0}
+    - {x: 0.39, y: 0.24, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.19, y: 0.11, z: 0}
+    - {x: 0.19999999, y: 0.11, z: 0}
+    - {x: -0.19, y: 0.35, z: 0}
+    - {x: 0.19999999, y: 0.35, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.9160176, y: 0.7773457}
+    - {x: 0.99218553, y: 0.7773457}
+    - {x: 0.9160176, y: 0.8242168}
+    - {x: 0.99218553, y: 0.8242168}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 2a45b2dff828a204bae92edce4ad8e6d
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0027
+    boundsData:
+    - {x: 0.0050000027, y: 0.22999999, z: 0}
+    - {x: 0.35000002, y: 0.24, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.17, y: 0.11, z: 0}
+    - {x: 0.18, y: 0.11, z: 0}
+    - {x: -0.17, y: 0.35, z: 0}
+    - {x: 0.18, y: 0.35, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.9238301, y: 0.94531447}
+    - {x: 0.99218553, y: 0.94531447}
+    - {x: 0.9238301, y: 0.99218553}
+    - {x: 0.99218553, y: 0.99218553}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: a0e13b81778f64f4498c3b295fe76905
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0028
+    boundsData:
+    - {x: 0, y: 0.20499998, z: 0}
+    - {x: 0.42, y: 0.24999999, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.08, z: 0}
+    - {x: 0.21, y: 0.08, z: 0}
+    - {x: -0.21, y: 0.32999998, z: 0}
+    - {x: 0.21, y: 0.32999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.87500197, y: 0.5351582}
+    - {x: 0.87500197, y: 0.61718553}
+    - {x: 0.92382616, y: 0.5351582}
+    - {x: 0.92382616, y: 0.61718553}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: e22cb7adc8c2ab64cb141d6827d82abe
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0029
+    boundsData:
+    - {x: 0, y: 0.20499998, z: 0}
+    - {x: 0.42, y: 0.24999999, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.08, z: 0}
+    - {x: 0.21, y: 0.08, z: 0}
+    - {x: -0.21, y: 0.32999998, z: 0}
+    - {x: 0.21, y: 0.32999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.90625197, y: 0.62500197}
+    - {x: 0.90625197, y: 0.7070293}
+    - {x: 0.95507616, y: 0.62500197}
+    - {x: 0.95507616, y: 0.7070293}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: f503cf45d2870094f8912211137e05a5
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0031
+    boundsData:
+    - {x: 0, y: 0.24000001, z: 0}
+    - {x: 0.42, y: 0.32, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.08, z: 0}
+    - {x: 0.21, y: 0.08, z: 0}
+    - {x: -0.21, y: 0.4, z: 0}
+    - {x: 0.21, y: 0.4, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.8457051, y: 0.8085957}
+    - {x: 0.8457051, y: 0.89062303}
+    - {x: 0.90820116, y: 0.8085957}
+    - {x: 0.90820116, y: 0.89062303}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 7050f3d0739dc334fa599d3bafe2ec62
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0032
+    boundsData:
+    - {x: 0.010000013, y: 0.245, z: 0}
+    - {x: 0.44, y: 0.39, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.05, z: 0}
+    - {x: 0.23000002, y: 0.05, z: 0}
+    - {x: -0.21, y: 0.44, z: 0}
+    - {x: 0.23000002, y: 0.44, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.6601582, y: 0.27148634}
+    - {x: 0.7460918, y: 0.27148634}
+    - {x: 0.6601582, y: 0.34765428}
+    - {x: 0.7460918, y: 0.34765428}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: d3d0accd42bde804cacca924624eeb31
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0033
+    boundsData:
+    - {x: 0.00500001, y: 0.245, z: 0}
+    - {x: 0.45000002, y: 0.39, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.22, y: 0.05, z: 0}
+    - {x: 0.23000002, y: 0.05, z: 0}
+    - {x: -0.22, y: 0.44, z: 0}
+    - {x: 0.23000002, y: 0.44, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.48437697, y: 0.18750195}
+    - {x: 0.48437697, y: 0.27538866}
+    - {x: 0.5605449, y: 0.18750195}
+    - {x: 0.5605449, y: 0.27538866}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: d861ae63a4fd1b54185855981e7e9bb3
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0034
+    boundsData:
+    - {x: 0.009999998, y: 0.24499999, z: 0}
+    - {x: 0.48000002, y: 0.42999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.23, y: 0.03, z: 0}
+    - {x: 0.25, y: 0.03, z: 0}
+    - {x: -0.23, y: 0.45999998, z: 0}
+    - {x: 0.25, y: 0.45999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3847676, y: 0.10351758}
+    - {x: 0.3847676, y: 0.19726367}
+    - {x: 0.46874803, y: 0.10351758}
+    - {x: 0.46874803, y: 0.19726367}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: c5801a16627ef5247b565a8b120e3b1c
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0035
+    boundsData:
+    - {x: 0.009999998, y: 0.24499999, z: 0}
+    - {x: 0.48000002, y: 0.42999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.23, y: 0.03, z: 0}
+    - {x: 0.25, y: 0.03, z: 0}
+    - {x: -0.23, y: 0.45999998, z: 0}
+    - {x: 0.25, y: 0.45999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.2988301, y: 0.31640822}
+    - {x: 0.2988301, y: 0.41015428}
+    - {x: 0.38281053, y: 0.31640822}
+    - {x: 0.38281053, y: 0.41015428}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: b18ae3eb80b39054a9b873d4dec1e8eb
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0036
+    boundsData:
+    - {x: 0.015000008, y: 0.23999998, z: 0}
+    - {x: 0.51, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.24, y: 0.01, z: 0}
+    - {x: 0.27, y: 0.01, z: 0}
+    - {x: -0.24, y: 0.46999997, z: 0}
+    - {x: 0.27, y: 0.46999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.30078322, y: 0.67187697}
+    - {x: 0.30078322, y: 0.7714824}
+    - {x: 0.39062303, y: 0.67187697}
+    - {x: 0.39062303, y: 0.7714824}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 15679130d2facb04385bc2bc59267492
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0037
+    boundsData:
+    - {x: 0.010000005, y: 0.23999998, z: 0}
+    - {x: 0.52, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.25, y: 0.01, z: 0}
+    - {x: 0.27, y: 0.01, z: 0}
+    - {x: -0.25, y: 0.46999997, z: 0}
+    - {x: 0.27, y: 0.46999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.28515822, y: 0.56250197}
+    - {x: 0.28515822, y: 0.66406053}
+    - {x: 0.37499803, y: 0.56250197}
+    - {x: 0.37499803, y: 0.66406053}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 8d6eece29940a064aabbccdec0ff0e41
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0038
+    boundsData:
+    - {x: 0.00500001, y: 0.24999999, z: 0}
+    - {x: 0.51, y: 0.43999997, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.25, y: 0.03, z: 0}
+    - {x: 0.26000002, y: 0.03, z: 0}
+    - {x: -0.25, y: 0.46999997, z: 0}
+    - {x: 0.26000002, y: 0.46999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.28711134, y: 0.003908203}
+    - {x: 0.28711134, y: 0.10351367}
+    - {x: 0.3730449, y: 0.003908203}
+    - {x: 0.3730449, y: 0.10351367}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 13e8578f3376fab44a9dc83c01cad4ad
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0039
+    boundsData:
+    - {x: 0.000000014901161, y: 0.24999999, z: 0}
+    - {x: 0.52, y: 0.43999997, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.26, y: 0.03, z: 0}
+    - {x: 0.26000002, y: 0.03, z: 0}
+    - {x: -0.26, y: 0.46999997, z: 0}
+    - {x: 0.26000002, y: 0.46999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.19336133, y: 0.003908203}
+    - {x: 0.19336133, y: 0.1054668}
+    - {x: 0.2792949, y: 0.003908203}
+    - {x: 0.2792949, y: 0.1054668}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: acb12b942c8005b47855a1e35e75604f
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0040
+    boundsData:
+    - {x: -0.004999995, y: 0.24999999, z: 0}
+    - {x: 0.53000003, y: 0.43999997, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.27, y: 0.03, z: 0}
+    - {x: 0.26000002, y: 0.03, z: 0}
+    - {x: -0.27, y: 0.46999997, z: 0}
+    - {x: 0.26000002, y: 0.46999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.20117383, y: 0.8222676}
+    - {x: 0.30468553, y: 0.8222676}
+    - {x: 0.20117383, y: 0.90820116}
+    - {x: 0.30468553, y: 0.90820116}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: c1e4f50e274774e4da4463855f8ea826
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0041
+    boundsData:
+    - {x: -0.004999995, y: 0.24999999, z: 0}
+    - {x: 0.55, y: 0.43999997, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.28, y: 0.03, z: 0}
+    - {x: 0.27, y: 0.03, z: 0}
+    - {x: -0.28, y: 0.46999997, z: 0}
+    - {x: 0.27, y: 0.46999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.1914082, y: 0.59961134}
+    - {x: 0.1914082, y: 0.7070293}
+    - {x: 0.27734178, y: 0.59961134}
+    - {x: 0.27734178, y: 0.7070293}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: f162516bfd48cfb48b18d588eb0cd60d
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0042
+    boundsData:
+    - {x: -0.000000014901161, y: 0.255, z: 0}
+    - {x: 0.55999994, y: 0.42999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.28, y: 0.04, z: 0}
+    - {x: 0.27999997, y: 0.04, z: 0}
+    - {x: -0.28, y: 0.46999997, z: 0}
+    - {x: 0.27999997, y: 0.46999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.2832051, y: 0.44531447}
+    - {x: 0.2832051, y: 0.55468553}
+    - {x: 0.36718553, y: 0.44531447}
+    - {x: 0.36718553, y: 0.55468553}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: e11697cec485b364f9a8ee7f29165f46
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0043
+    boundsData:
+    - {x: 0.04, y: 0.255, z: 0}
+    - {x: 0.42000002, y: 0.42999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.17, y: 0.04, z: 0}
+    - {x: 0.25, y: 0.04, z: 0}
+    - {x: -0.17, y: 0.46999997, z: 0}
+    - {x: 0.25, y: 0.46999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.6738301, y: 0.7597676}
+    - {x: 0.7558574, y: 0.7597676}
+    - {x: 0.6738301, y: 0.84374803}
+    - {x: 0.7558574, y: 0.84374803}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: a08e8fb4d7fe17443aead3bc73770287
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0044
+    boundsData:
+    - {x: 0.0050000027, y: 0.25, z: 0}
+    - {x: 0.35000002, y: 0.27999997, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.17, y: 0.11, z: 0}
+    - {x: 0.18, y: 0.11, z: 0}
+    - {x: -0.17, y: 0.39, z: 0}
+    - {x: 0.18, y: 0.39, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.9101582, y: 0.7148457}
+    - {x: 0.97851366, y: 0.7148457}
+    - {x: 0.9101582, y: 0.7695293}
+    - {x: 0.97851366, y: 0.7695293}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: ccc36ba65b04a034b811638157fd0491
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0046
+    boundsData:
+    - {x: 0.0050000027, y: 0.22999999, z: 0}
+    - {x: 0.35000002, y: 0.24, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.17, y: 0.11, z: 0}
+    - {x: 0.18, y: 0.11, z: 0}
+    - {x: -0.17, y: 0.35, z: 0}
+    - {x: 0.18, y: 0.35, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.8789082, y: 0.31836134}
+    - {x: 0.8789082, y: 0.38671678}
+    - {x: 0.9257793, y: 0.31836134}
+    - {x: 0.9257793, y: 0.38671678}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 36945056c3dce674da658e6c3a97a6d8
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0047
+    boundsData:
+    - {x: -0.0050000027, y: 0.23999998, z: 0}
+    - {x: 0.17, y: 0.17999999, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.09, y: 0.14999999, z: 0}
+    - {x: 0.08, y: 0.14999999, z: 0}
+    - {x: -0.09, y: 0.32999998, z: 0}
+    - {x: 0.08, y: 0.32999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.0976582, y: 0.87304884}
+    - {x: 0.13085742, y: 0.87304884}
+    - {x: 0.0976582, y: 0.90820116}
+    - {x: 0.13085742, y: 0.90820116}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: bbaeb73eac8ac7c46b42d441a11015e9
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0051
+    boundsData:
+    - {x: 0.015000001, y: 0.245, z: 0}
+    - {x: 0.45, y: 0.39, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.21, y: 0.05, z: 0}
+    - {x: 0.24, y: 0.05, z: 0}
+    - {x: -0.21, y: 0.44, z: 0}
+    - {x: 0.24, y: 0.44, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.5644551, y: 0.003908203}
+    - {x: 0.5644551, y: 0.09179492}
+    - {x: 0.64062303, y: 0.003908203}
+    - {x: 0.64062303, y: 0.09179492}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 6c116f1bb6b839e409ce4a0505eaa024
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0053
+    boundsData:
+    - {x: 0.015000001, y: 0.24499999, z: 0}
+    - {x: 0.47, y: 0.42999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.22, y: 0.03, z: 0}
+    - {x: 0.25, y: 0.03, z: 0}
+    - {x: -0.22, y: 0.45999998, z: 0}
+    - {x: 0.25, y: 0.45999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.39062697, y: 0.31640822}
+    - {x: 0.39062697, y: 0.40820116}
+    - {x: 0.4746074, y: 0.31640822}
+    - {x: 0.4746074, y: 0.40820116}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: c54351b343e8f7441b173b6c43b18674
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0055
+    boundsData:
+    - {x: 0.020000003, y: 0.23999998, z: 0}
+    - {x: 0.5, y: 0.45999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.23, y: 0.01, z: 0}
+    - {x: 0.27, y: 0.01, z: 0}
+    - {x: -0.23, y: 0.46999997, z: 0}
+    - {x: 0.27, y: 0.46999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.31250197, y: 0.77929884}
+    - {x: 0.31250197, y: 0.87695116}
+    - {x: 0.40234178, y: 0.77929884}
+    - {x: 0.40234178, y: 0.87695116}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: bdf70a6e8d219934fb00e17caaaa4339
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0057
+    boundsData:
+    - {x: 0.015000008, y: 0.24999999, z: 0}
+    - {x: 0.49, y: 0.43999997, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.23, y: 0.03, z: 0}
+    - {x: 0.26000002, y: 0.03, z: 0}
+    - {x: -0.23, y: 0.46999997, z: 0}
+    - {x: 0.26000002, y: 0.46999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.2910176, y: 0.11133008}
+    - {x: 0.2910176, y: 0.2070293}
+    - {x: 0.37695116, y: 0.11133008}
+    - {x: 0.37695116, y: 0.2070293}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: f3e44ff5f2f370848b92bef330b47dfa
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0059
+    boundsData:
+    - {x: 0.02000001, y: 0.24999999, z: 0}
+    - {x: 0.48000002, y: 0.43999997, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.22, y: 0.03, z: 0}
+    - {x: 0.26000002, y: 0.03, z: 0}
+    - {x: -0.22, y: 0.46999997, z: 0}
+    - {x: 0.26000002, y: 0.46999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.2988301, y: 0.2148457}
+    - {x: 0.2988301, y: 0.30859178}
+    - {x: 0.38476366, y: 0.2148457}
+    - {x: 0.38476366, y: 0.30859178}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: d9db2e9be2ce8324fa3f52acdede789c
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: hero_archer_wildcat_0061
+    boundsData:
+    - {x: 0.045, y: 0.255, z: 0}
+    - {x: 0.41, y: 0.42999998, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.26, z: 0}
+    - {x: 0.68, y: 0.52, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.16, y: 0.04, z: 0}
+    - {x: 0.25, y: 0.04, z: 0}
+    - {x: -0.16, y: 0.46999997, z: 0}
+    - {x: 0.25, y: 0.46999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.47656447, y: 0.003908203}
+    - {x: 0.55663866, y: 0.003908203}
+    - {x: 0.47656447, y: 0.08788867}
+    - {x: 0.55663866, y: 0.08788867}
+    normalizedUvs:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+    materialId: 0
+    sourceTextureGUID: 68f3e353f57fc424699620507743bfd3
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  premultipliedAlpha: 0
+  material: {fileID: 0}
+  materials:
+  - {fileID: 2100000, guid: cc6667d47185cf64197a635647bfc439, type: 2}
+  textures:
+  - {fileID: 2800000, guid: 0b924f8fe8e0ae545a7d33ce8a54c5e5, type: 3}
+  pngTextures: []
+  materialPngTextureId: 00000000
+  textureFilterMode: 1
+  textureMipMaps: 0
+  allowMultipleAtlases: 0
+  spriteCollectionGUID: d67d138381dc8464780f3337db1fdd74
+  spriteCollectionName: heroes_archer
+  assetName: 
+  loadable: 0
+  invOrthoSize: 2
+  halfTargetHeight: 50
+  buildKey: 1112062069
+  dataGuid: 3e9a87456f079344d8419ca7db3cd545
+  managedSpriteCollection: 0
+  hasPlatformData: 0
+  spriteCollectionPlatforms: []
+  spriteCollectionPlatformGUIDs: []

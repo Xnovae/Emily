@@ -1,0 +1,9 @@
+{
+  "1": {
+    "id": 1,
+    "name": "Town",
+    "width": 3600,
+    "height": 4500,
+    "pathFormat": "map/town/{0}_{1}.assetbundle"
+  }
+}
