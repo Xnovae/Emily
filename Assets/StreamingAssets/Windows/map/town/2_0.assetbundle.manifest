@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2998117532
+CRC: 2899811451
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 40d7338fb417050a01e691e579ca8ddb
+    Hash: 7c9ffcc85fa8eeaba033c9e9889dffe1
   TypeTreeHash:
     serializedVersion: 2
     Hash: 77c7b93fea82c3652931aec724263bca
@@ -26,4 +26,4 @@ ClassTypes:
 Assets:
 - Assets/Temp/Map_Collection/town/2_0 Data/2_0.prefab
 Dependencies:
-- E:/Projects/Unity/Emily/Assets/StreamingAssets/Windows/dependency/shaders.assetbundle
+- E:/Projects/3rd_party/Emily/Assets/StreamingAssets/Windows/dependency/shaders.assetbundle

@@ -51,7 +51,7 @@ public class EditorMapPacker : EditorWindow
         window.Show();
     }
 
-    private string _mapPath = "Assets/Temp/Map/map.tga";
+    private string _mapPath = "Assets/Temp/Map/town.tga";
     private string _slicePath = "Assets/Temp/Map_Slicer/town/";
     private string _collectionPath = "Assets/Temp/Map_Collection/town/";
 

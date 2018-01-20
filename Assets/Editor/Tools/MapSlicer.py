@@ -31,47 +31,45 @@ def main(mapPath, mapWidth, mapHeight, outputPath):
 			)
 			temp.save(fileName)
 
-	if widthRemainOne and heightRemainOne:
-		x = width + 1
-		y = height + 1
-
-		fileName = "{}/{}_{}.{}".format(outputPath, x, y, extensionStr)
-		temp = img.crop(
-			(
-				x * CONST_WIDTH_SIZE,
-				heightPixel - (y + 1) * CONST_HEIGHT_SIZE,
-				x * CONST_WIDTH_SIZE + widthPixel - width * CONST_WIDTH_SIZE,
-				heightPixel - (y + 1) * CONST_HEIGHT_SIZE + heightPixel - height * CONST_HEIGHT_SIZE
-			)
-		)
-		temp.save(fileName)
-
 	if widthRemainOne:
-		x = width + 1
-		y = height
-
-		fileName = "{}/{}_{}.{}".format(outputPath, x, y, extensionStr)
-		temp = img.crop(
-			(
-				x * CONST_WIDTH_SIZE,
-				heightPixel - (y + 1) * CONST_HEIGHT_SIZE,
-				x * CONST_WIDTH_SIZE + widthPixel - width * CONST_WIDTH_SIZE,
-				heightPixel - (y + 1) * CONST_HEIGHT_SIZE + heightPixel - height * CONST_HEIGHT_SIZE
+		x = width
+		for y in range(0, height):
+			fileName = "{}{}_{}.{}".format(outputPath, x, y, extensionStr)
+			temp = img.crop(
+				(
+					x * CONST_WIDTH_SIZE,
+					heightPixel - (y + 1) * CONST_HEIGHT_SIZE,
+					x * CONST_WIDTH_SIZE + CONST_WIDTH_SIZE,
+					heightPixel - (y + 1) * CONST_HEIGHT_SIZE + CONST_HEIGHT_SIZE
+				)
 			)
-		)
-		temp.save(fileName)
+			temp.save(fileName)
 
 	if heightRemainOne:
-		x = width
-		y = height + 1
+		y = height
+		for x in range(0, width):
+			fileName = "{}{}_{}.{}".format(outputPath, x, y, extensionStr)
+			temp = img.crop(
+				(
+					x * CONST_WIDTH_SIZE,
+					heightPixel - (y + 1) * CONST_HEIGHT_SIZE,
+					x * CONST_WIDTH_SIZE + CONST_WIDTH_SIZE,
+					heightPixel - (y + 1) * CONST_HEIGHT_SIZE + CONST_HEIGHT_SIZE
+				)
+			)
+			temp.save(fileName)
 
-		fileName = "{}/{}_{}.{}".format(outputPath, x, y, extensionStr)
+	if widthRemainOne and heightRemainOne:
+		x = width
+		y = height
+
+		fileName = "{}{}_{}.{}".format(outputPath, x, y, extensionStr)
 		temp = img.crop(
 			(
 				x * CONST_WIDTH_SIZE,
 				heightPixel - (y + 1) * CONST_HEIGHT_SIZE,
-				x * CONST_WIDTH_SIZE + widthPixel - width * CONST_WIDTH_SIZE,
-				heightPixel - (y + 1) * CONST_HEIGHT_SIZE + heightPixel - height * CONST_HEIGHT_SIZE
+				x * CONST_WIDTH_SIZE + CONST_WIDTH_SIZE,
+				heightPixel - (y + 1) * CONST_HEIGHT_SIZE + CONST_HEIGHT_SIZE
 			)
 		)
 		temp.save(fileName)

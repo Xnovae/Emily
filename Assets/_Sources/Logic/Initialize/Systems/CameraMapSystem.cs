@@ -73,6 +73,7 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
             var current = enumerator.Current;
 
             GameEntity e = current.Value;
+            e.Release(this);
 
             e.isDestroy = true;
         }
@@ -87,8 +88,8 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
         _gameContext.isMapLoad = false;
         _mapItemDictionary.Clear();
 
-        _mapWidthCount = Mathf.FloorToInt((float)_gameContext.runningData.RuntimeData.mapWidth / MAP_ITEM_WIDTH);
-        _mapHeightCount = Mathf.FloorToInt((float)_gameContext.runningData.RuntimeData.mapHeight / MAP_ITEM_HEIGHT);
+        _mapWidthCount = Mathf.CeilToInt((float)_gameContext.runningData.RuntimeData.mapWidth / MAP_ITEM_WIDTH);
+        _mapHeightCount = Mathf.CeilToInt((float)_gameContext.runningData.RuntimeData.mapHeight / MAP_ITEM_HEIGHT);
 
         Vector4 viewBounds = GetViewBounds(_cameraTransform);
 
@@ -124,6 +125,7 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
         Vector2i key = new Vector2i(x, y);
 
         GameEntity e = _gameContext.CreateEntity();
+        e.Retain(this);
         _mapItemDictionary.Add(key, e);
 
         string path = string.Format(_gameContext.runningData.RuntimeData.mapPathFormat, x.ToString(), y.ToString());
@@ -186,6 +188,7 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
             Vector2i key = _removalList[i];
             GameEntity e = _mapItemDictionary[key];
             _mapItemDictionary.Remove(key);
+            e.Release(this);
 
             e.isDestroy = true;
 
@@ -279,6 +282,7 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
         else
         {
             e = _gameContext.CreateEntity();
+            e.Retain(this);
             _mapItemDictionary.Add(key, e);
 
             string path = string.Format(_gameContext.runningData.RuntimeData.mapPathFormat, x.ToString(), y.ToString());
