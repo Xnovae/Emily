@@ -18,14 +18,14 @@ public class DestroyAssetSystem : ReactiveSystem<GameEntity>
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasAsset;
+        return entity.hasView;
     }
 
     protected override void Execute(List<GameEntity> entities)
     {
         foreach (var e in entities)
         {
-            e.asset.viewController.Destroy();
+            e.view.viewController.Destroy();
         }
     }
 }

@@ -7,8 +7,11 @@ public class ViewSystems : Feature
     public ViewSystems(Contexts contexts)
         : base("View Systems")
     {
-        Add(new AddAssetSystem(contexts));
         Add(new AddViewSystem(contexts));
+        Add(new AddViewAssetSystem(contexts));
         Add(new RenderPositionSystem(contexts));
+        Add(new DirectionViewSystem(contexts));
+        Add(new StateViewSystem(contexts));
+        Add(new SpriteAnimateSystem(contexts));
     }
 }

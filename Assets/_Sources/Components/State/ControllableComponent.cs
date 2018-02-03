@@ -4,9 +4,7 @@ using Entitas;
 using UnityEngine;
 
 [Game]
-public class AssetComponent : IComponent
+public class ControllableComponent : IComponent
 {
-    public IViewController viewController;
 
-    public string name;
 }

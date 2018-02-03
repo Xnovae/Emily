@@ -1,11 +1,12 @@
 using ZeroFormatter;
+using System.Collections.Generic;
 
 namespace ClientConfig
 {
     [ZeroFormattable]
     public class MapItem
     {
-    
+        
     [Index(0)]
     public virtual int id { get; set; }
 

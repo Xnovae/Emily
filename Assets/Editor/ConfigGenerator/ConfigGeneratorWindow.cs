@@ -124,6 +124,8 @@ public class ConfigGeneratorWindow : EditorWindow
 
         AssetDatabase.Refresh();
         ClearStage();
+
+        Debug.Log("!!! Config Generate Finished");
     }
 
     void OnGUI()
@@ -205,6 +207,50 @@ public class ConfigGeneratorWindow : EditorWindow
             return "string";
         }
 
+        // Array
+        else if (type == typeof(bool[]))
+        {
+            return "bool[]";
+        }
+        else if (type == typeof(float[]))
+        {
+            return "float[]";
+        }
+        else if (type == typeof(int[]))
+        {
+            return "int[]";
+        }
+        else if (type == typeof(long[]))
+        {
+            return "long[]";
+        }
+        else if (type == typeof(string[]))
+        {
+            return "string[]";
+        }
+
+        // Dictionary
+        else if (type == typeof(Dictionary<string, bool>))
+        {
+            return "Dictionary<string, bool>";
+        }
+        else if (type == typeof(Dictionary<string, float>))
+        {
+            return "Dictionary<string, float>";
+        }
+        else if (type == typeof(Dictionary<string, int>))
+        {
+            return "Dictionary<string, int>";
+        }
+        else if (type == typeof(Dictionary<string, long>))
+        {
+            return "Dictionary<string, long>";
+        }
+        else if (type == typeof(Dictionary<string, string>))
+        {
+            return "Dictionary<string, string>";
+        }
+
         return null;
     }
 
@@ -212,10 +258,111 @@ public class ConfigGeneratorWindow : EditorWindow
     {
         if (data == null)
         {
-            // ���dataΪnull��Ĭ��Ϊstring
             return typeof(string);
         }
-        else if (data.IsBoolean)
+        else if (data.IsArray)
+        {
+            int length = data.Count;
+            if (length == 0)
+            {
+                // [] -> string[]
+                return typeof(string[]);
+            }
+
+            Type firstType = GetSimpleJsonDataType(data[0]);
+            bool isFloat = false;
+
+            for (int i = 1; i < length; ++i)
+            {
+                Type type = GetSimpleJsonDataType(data[i]);
+                if (type != firstType)
+                {
+                    if ((firstType == typeof(int) || firstType == typeof(long)) && type == typeof(float))
+                    {
+                        isFloat = true;
+                        continue;
+                    }
+
+                    throw new Exception("!!! error Array type not the same");
+                }
+            }
+
+            return isFloat ? typeof(float[]) : firstType.MakeArrayType();
+        }
+        else if (data.IsObject)
+        {
+            int length = data.Count;
+            if (length == 0)
+            {
+                // {} -> Dictionary<string, string>
+                return typeof(Dictionary<string, string>);
+            }
+
+            var valueList = new List<JsonData>(length);
+
+            foreach (var item in data)
+            {
+                var entry =  (KeyValuePair<string, JsonData>)item;
+                valueList.Add(entry.Value);
+            }
+
+            Type firstType = GetSimpleJsonDataType(valueList[0]);
+            bool isFloat = false;
+
+            for (int i = 1; i < length; ++i)
+            {
+                Type type = GetSimpleJsonDataType(valueList[i]);
+                if (type != firstType)
+                {
+                    if ((firstType == typeof(int) || firstType == typeof(long)) && type == typeof(float))
+                    {
+                        isFloat = true;
+                        continue;
+                    }
+
+                    throw new Exception("!!! error Dictionary type not the same");
+                }
+            }
+
+            return isFloat ? typeof(Dictionary<string, float>) : GetDictionaryType(firstType);
+        }
+        else
+        {
+            return GetSimpleJsonDataType(data);
+        }
+    }
+
+    private static Type GetDictionaryType(Type type)
+    {
+        if (type == typeof(bool))
+        {
+            return typeof(Dictionary<string, bool>);
+        }
+        else if (type == typeof(int))
+        {
+            return typeof(Dictionary<string, int>);
+        }
+        else if (type == typeof(long))
+        {
+            return typeof(Dictionary<string, long>);
+        }
+        else if (type == typeof(float))
+        {
+            return typeof(Dictionary<string, float>);
+        }
+        else if (type == typeof(string))
+        {
+            return typeof(Dictionary<string, string>);
+        }
+        else
+        {
+            throw new Exception("!!! wtf dictionary value type: " + type);
+        }
+    }
+
+    private static Type GetSimpleJsonDataType(JsonData data)
+    {
+        if (data.IsBoolean)
         {
             return typeof(bool);
         }
@@ -271,13 +418,14 @@ namespace ClientConfig
 }}";
 
     public static string ITEM_FORMAT_FILE = @"using ZeroFormatter;
+using System.Collections.Generic;
 
 namespace ClientConfig
 {{
     [ZeroFormattable]
     public class {0}
     {{
-    {1}
+        {1}
     }}
 }}
 ";
@@ -416,7 +564,6 @@ namespace ClientConfig
         {
             if (firstType == typeof(bool) || firstType == typeof(string) || firstType == typeof(float))
             {
-                // ���֮�����е��Ƿ��Ӧ
                 for (int i = 1, length = jsons.Count; i<length; ++i)
                 {
                     var jsonData = jsons[i];
@@ -431,8 +578,6 @@ namespace ClientConfig
             }
             else if(firstType == typeof(int) || firstType == typeof(long))
             {
-                //int long��Ҫ���Ƿ���ת���� float
-
                 bool isFloat = false;
 
                 for (int i = 1, length = jsons.Count; i < length; ++i)
@@ -447,6 +592,16 @@ namespace ClientConfig
                 }
 
                 return isFloat ? typeof(float) : firstType;
+            }
+            else if (firstType == typeof(int[]) || firstType == typeof(long[]) || firstType == typeof(string[]) ||
+                     firstType == typeof(bool[]) || firstType == typeof(float[]))
+            {
+                return firstType;
+            }
+            else if (firstType == typeof(Dictionary<string, int>) || firstType == typeof(Dictionary<string, long>) || firstType == typeof(Dictionary<string, string>) ||
+                     firstType == typeof(Dictionary<string, bool>) || firstType == typeof(Dictionary<string, float>))
+            {
+                return firstType;
             }
             else
             {
@@ -545,7 +700,7 @@ namespace ClientConfig
 
         object obj = Activator.CreateInstance(classType);
         var methodInfo = classType.GetMethod("SerializeObject");
-        if(methodInfo != null)
+        if (methodInfo != null)
             methodInfo.Invoke(obj, new object[] { jsonStr, outputPath });
     }
 

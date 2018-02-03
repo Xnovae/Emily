@@ -17,14 +17,14 @@ public class RenderPositionSystem : ReactiveSystem<GameEntity>
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasPosition && entity.hasAsset;
+        return entity.hasPosition && entity.hasView;
     }
 
     protected override void Execute(List<GameEntity> entities)
     {
         foreach (var e in entities)
         {
-            e.asset.viewController.position = e.position.value;
+            e.view.viewController.position = e.position.value;
         }
     }
 }

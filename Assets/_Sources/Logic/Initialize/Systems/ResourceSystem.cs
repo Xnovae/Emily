@@ -48,7 +48,7 @@ public class ResourceSystem : IInitializeSystem
     {
         var promise = new Promise<GameObject>();
 
-        ResourceManager.Instance.GetResourceAsset<GameObject>(null, "tk2dSprite_template")
+        ResourceManager.Instance.GetResourceAsset<GameObject>(null, Consts.Tk2dSprite_Template)
             .Then(spriteTemplate =>
             {
                 PoolManager.WarmPool(spriteTemplate, 50);

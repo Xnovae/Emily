@@ -22,6 +22,16 @@ namespace ZeroFormatter
             if(registered) return;
             registered = true;
             // Enums
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::CharacterDirection>.Register(new ZeroFormatter.DynamicObjectSegments.CharacterDirectionFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::CharacterDirection>.Register(new ZeroFormatter.DynamicObjectSegments.CharacterDirectionEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::CharacterDirection?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableCharacterDirectionFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::CharacterDirection?>.Register(new NullableEqualityComparer<global::CharacterDirection>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::CharacterState>.Register(new ZeroFormatter.DynamicObjectSegments.CharacterStateFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::CharacterState>.Register(new ZeroFormatter.DynamicObjectSegments.CharacterStateEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::CharacterState?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableCharacterStateFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::CharacterState?>.Register(new NullableEqualityComparer<global::CharacterState>());
+            
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Seeker.ModifierPass>.Register(new ZeroFormatter.DynamicObjectSegments.Seeker_ModifierPassFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Seeker.ModifierPass>.Register(new ZeroFormatter.DynamicObjectSegments.Seeker_ModifierPassEqualityComparer());
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Seeker.ModifierPass?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableSeeker_ModifierPassFormatter<ZeroFormatter.Formatters.DefaultResolver>());
@@ -668,12 +678,15 @@ namespace ZeroFormatter
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::UniRx.MainThreadDispatchType?>.Register(new NullableEqualityComparer<global::UniRx.MainThreadDispatchType>());
             
             // Objects
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::ClientConfig.Character>.Register(new ZeroFormatter.DynamicObjectSegments.ClientConfig.CharacterFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::ClientConfig.CharacterItem>.Register(new ZeroFormatter.DynamicObjectSegments.ClientConfig.CharacterItemFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::ClientConfig.Map>.Register(new ZeroFormatter.DynamicObjectSegments.ClientConfig.MapFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::ClientConfig.MapItem>.Register(new ZeroFormatter.DynamicObjectSegments.ClientConfig.MapItemFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             // Structs
             // Unions
             // Generics
             ZeroFormatter.Formatters.Formatter.RegisterLazyDictionary<ZeroFormatter.Formatters.DefaultResolver, string, byte[]>();
+            ZeroFormatter.Formatters.Formatter.RegisterArray<ZeroFormatter.Formatters.DefaultResolver, string>();
         }
     }
 }
@@ -691,6 +704,414 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
     using global::ZeroFormatter.Formatters;
     using global::ZeroFormatter.Internal;
     using global::ZeroFormatter.Segments;
+
+    public class CharacterFormatter<TTypeResolver> : Formatter<TTypeResolver, global::ClientConfig.Character>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return null;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::ClientConfig.Character value)
+        {
+            var segment = value as IZeroFormatterSegment;
+            if (segment != null)
+            {
+                return segment.Serialize(ref bytes, offset);
+            }
+            else if (value == null)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset, -1);
+                return 4;
+            }
+            else
+            {
+                var startOffset = offset;
+
+                offset += (8 + 4 * (0 + 1));
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, global::ZeroFormatter.ILazyDictionary<string, byte[]>>(ref bytes, startOffset, offset, 0, value._internalDictionary);
+
+                return ObjectSegmentHelper.WriteSize(ref bytes, startOffset, offset, 0);
+            }
+        }
+
+        public override global::ClientConfig.Character Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = BinaryUtil.ReadInt32(ref bytes, offset);
+            if (byteSize == -1)
+            {
+                byteSize = 4;
+                return null;
+            }
+            return new CharacterObjectSegment<TTypeResolver>(tracker, new ArraySegment<byte>(bytes, offset, byteSize));
+        }
+    }
+
+    public class CharacterObjectSegment<TTypeResolver> : global::ClientConfig.Character, IZeroFormatterSegment
+        where TTypeResolver : ITypeResolver, new()
+    {
+        static readonly int[] __elementSizes = new int[]{ 0 };
+
+        readonly ArraySegment<byte> __originalBytes;
+        readonly global::ZeroFormatter.DirtyTracker __tracker;
+        readonly int __binaryLastIndex;
+        readonly byte[] __extraFixedBytes;
+
+        global::ZeroFormatter.ILazyDictionary<string, byte[]> __internalDictionary;
+
+        // 0
+        public override global::ZeroFormatter.ILazyDictionary<string, byte[]> _internalDictionary
+        {
+            get
+            {
+                return __internalDictionary;
+            }
+            set
+            {
+                __tracker.Dirty();
+                __internalDictionary = value;
+            }
+        }
+
+
+        public CharacterObjectSegment(global::ZeroFormatter.DirtyTracker dirtyTracker, ArraySegment<byte> originalBytes)
+        {
+            var __array = originalBytes.Array;
+
+            this.__originalBytes = originalBytes;
+            this.__tracker = dirtyTracker = dirtyTracker.CreateChild();
+            this.__binaryLastIndex = BinaryUtil.ReadInt32(ref __array, originalBytes.Offset + 4);
+
+            this.__extraFixedBytes = ObjectSegmentHelper.CreateExtraFixedBytes(this.__binaryLastIndex, 0, __elementSizes);
+
+            __internalDictionary = ObjectSegmentHelper.DeserializeSegment<TTypeResolver, global::ZeroFormatter.ILazyDictionary<string, byte[]>>(originalBytes, 0, __binaryLastIndex, __tracker);
+        }
+
+        public bool CanDirectCopy()
+        {
+            return !__tracker.IsDirty;
+        }
+
+        public ArraySegment<byte> GetBufferReference()
+        {
+            return __originalBytes;
+        }
+
+        public int Serialize(ref byte[] targetBytes, int offset)
+        {
+            if (__extraFixedBytes != null || __tracker.IsDirty)
+            {
+                var startOffset = offset;
+                offset += (8 + 4 * (0 + 1));
+
+                offset += ObjectSegmentHelper.SerializeSegment<TTypeResolver, global::ZeroFormatter.ILazyDictionary<string, byte[]>>(ref targetBytes, startOffset, offset, 0, __internalDictionary);
+
+                return ObjectSegmentHelper.WriteSize(ref targetBytes, startOffset, offset, 0);
+            }
+            else
+            {
+                return ObjectSegmentHelper.DirectCopyAll(__originalBytes, ref targetBytes, offset);
+            }
+        }
+    }
+
+    public class CharacterItemFormatter<TTypeResolver> : Formatter<TTypeResolver, global::ClientConfig.CharacterItem>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return null;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::ClientConfig.CharacterItem value)
+        {
+            var segment = value as IZeroFormatterSegment;
+            if (segment != null)
+            {
+                return segment.Serialize(ref bytes, offset);
+            }
+            else if (value == null)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset, -1);
+                return 4;
+            }
+            else
+            {
+                var startOffset = offset;
+
+                offset += (8 + 4 * (11 + 1));
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string>(ref bytes, startOffset, offset, 0, value.id);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string>(ref bytes, startOffset, offset, 1, value.name);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string>(ref bytes, startOffset, offset, 2, value.initSpriteName);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string>(ref bytes, startOffset, offset, 3, value.path);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 4, value.actionIdle);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 5, value.actionRun);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 6, value.actionLightAttack1);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 7, value.actionLightAttack2);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 8, value.actionHeavyAttack1);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 9, value.actionHeavyAttack2);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 10, value.actionLevelUp);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 11, value.actionDie);
+
+                return ObjectSegmentHelper.WriteSize(ref bytes, startOffset, offset, 11);
+            }
+        }
+
+        public override global::ClientConfig.CharacterItem Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = BinaryUtil.ReadInt32(ref bytes, offset);
+            if (byteSize == -1)
+            {
+                byteSize = 4;
+                return null;
+            }
+            return new CharacterItemObjectSegment<TTypeResolver>(tracker, new ArraySegment<byte>(bytes, offset, byteSize));
+        }
+    }
+
+    public class CharacterItemObjectSegment<TTypeResolver> : global::ClientConfig.CharacterItem, IZeroFormatterSegment
+        where TTypeResolver : ITypeResolver, new()
+    {
+        static readonly int[] __elementSizes = new int[]{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        readonly ArraySegment<byte> __originalBytes;
+        readonly global::ZeroFormatter.DirtyTracker __tracker;
+        readonly int __binaryLastIndex;
+        readonly byte[] __extraFixedBytes;
+
+        CacheSegment<TTypeResolver, string> _id;
+        CacheSegment<TTypeResolver, string> _name;
+        CacheSegment<TTypeResolver, string> _initSpriteName;
+        CacheSegment<TTypeResolver, string> _path;
+        CacheSegment<TTypeResolver, string[]> _actionIdle;
+        CacheSegment<TTypeResolver, string[]> _actionRun;
+        CacheSegment<TTypeResolver, string[]> _actionLightAttack1;
+        CacheSegment<TTypeResolver, string[]> _actionLightAttack2;
+        CacheSegment<TTypeResolver, string[]> _actionHeavyAttack1;
+        CacheSegment<TTypeResolver, string[]> _actionHeavyAttack2;
+        CacheSegment<TTypeResolver, string[]> _actionLevelUp;
+        CacheSegment<TTypeResolver, string[]> _actionDie;
+
+        // 0
+        public override string id
+        {
+            get
+            {
+                return _id.Value;
+            }
+            set
+            {
+                _id.Value = value;
+            }
+        }
+
+        // 1
+        public override string name
+        {
+            get
+            {
+                return _name.Value;
+            }
+            set
+            {
+                _name.Value = value;
+            }
+        }
+
+        // 2
+        public override string initSpriteName
+        {
+            get
+            {
+                return _initSpriteName.Value;
+            }
+            set
+            {
+                _initSpriteName.Value = value;
+            }
+        }
+
+        // 3
+        public override string path
+        {
+            get
+            {
+                return _path.Value;
+            }
+            set
+            {
+                _path.Value = value;
+            }
+        }
+
+        // 4
+        public override string[] actionIdle
+        {
+            get
+            {
+                return _actionIdle.Value;
+            }
+            set
+            {
+                _actionIdle.Value = value;
+            }
+        }
+
+        // 5
+        public override string[] actionRun
+        {
+            get
+            {
+                return _actionRun.Value;
+            }
+            set
+            {
+                _actionRun.Value = value;
+            }
+        }
+
+        // 6
+        public override string[] actionLightAttack1
+        {
+            get
+            {
+                return _actionLightAttack1.Value;
+            }
+            set
+            {
+                _actionLightAttack1.Value = value;
+            }
+        }
+
+        // 7
+        public override string[] actionLightAttack2
+        {
+            get
+            {
+                return _actionLightAttack2.Value;
+            }
+            set
+            {
+                _actionLightAttack2.Value = value;
+            }
+        }
+
+        // 8
+        public override string[] actionHeavyAttack1
+        {
+            get
+            {
+                return _actionHeavyAttack1.Value;
+            }
+            set
+            {
+                _actionHeavyAttack1.Value = value;
+            }
+        }
+
+        // 9
+        public override string[] actionHeavyAttack2
+        {
+            get
+            {
+                return _actionHeavyAttack2.Value;
+            }
+            set
+            {
+                _actionHeavyAttack2.Value = value;
+            }
+        }
+
+        // 10
+        public override string[] actionLevelUp
+        {
+            get
+            {
+                return _actionLevelUp.Value;
+            }
+            set
+            {
+                _actionLevelUp.Value = value;
+            }
+        }
+
+        // 11
+        public override string[] actionDie
+        {
+            get
+            {
+                return _actionDie.Value;
+            }
+            set
+            {
+                _actionDie.Value = value;
+            }
+        }
+
+
+        public CharacterItemObjectSegment(global::ZeroFormatter.DirtyTracker dirtyTracker, ArraySegment<byte> originalBytes)
+        {
+            var __array = originalBytes.Array;
+
+            this.__originalBytes = originalBytes;
+            this.__tracker = dirtyTracker = dirtyTracker.CreateChild();
+            this.__binaryLastIndex = BinaryUtil.ReadInt32(ref __array, originalBytes.Offset + 4);
+
+            this.__extraFixedBytes = ObjectSegmentHelper.CreateExtraFixedBytes(this.__binaryLastIndex, 11, __elementSizes);
+
+            _id = new CacheSegment<TTypeResolver, string>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 0, __binaryLastIndex, __tracker));
+            _name = new CacheSegment<TTypeResolver, string>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 1, __binaryLastIndex, __tracker));
+            _initSpriteName = new CacheSegment<TTypeResolver, string>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 2, __binaryLastIndex, __tracker));
+            _path = new CacheSegment<TTypeResolver, string>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 3, __binaryLastIndex, __tracker));
+            _actionIdle = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 4, __binaryLastIndex, __tracker));
+            _actionRun = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 5, __binaryLastIndex, __tracker));
+            _actionLightAttack1 = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 6, __binaryLastIndex, __tracker));
+            _actionLightAttack2 = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 7, __binaryLastIndex, __tracker));
+            _actionHeavyAttack1 = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 8, __binaryLastIndex, __tracker));
+            _actionHeavyAttack2 = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 9, __binaryLastIndex, __tracker));
+            _actionLevelUp = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 10, __binaryLastIndex, __tracker));
+            _actionDie = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 11, __binaryLastIndex, __tracker));
+        }
+
+        public bool CanDirectCopy()
+        {
+            return !__tracker.IsDirty;
+        }
+
+        public ArraySegment<byte> GetBufferReference()
+        {
+            return __originalBytes;
+        }
+
+        public int Serialize(ref byte[] targetBytes, int offset)
+        {
+            if (__extraFixedBytes != null || __tracker.IsDirty)
+            {
+                var startOffset = offset;
+                offset += (8 + 4 * (11 + 1));
+
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string>(ref targetBytes, startOffset, offset, 0, ref _id);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string>(ref targetBytes, startOffset, offset, 1, ref _name);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string>(ref targetBytes, startOffset, offset, 2, ref _initSpriteName);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string>(ref targetBytes, startOffset, offset, 3, ref _path);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 4, ref _actionIdle);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 5, ref _actionRun);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 6, ref _actionLightAttack1);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 7, ref _actionLightAttack2);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 8, ref _actionHeavyAttack1);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 9, ref _actionHeavyAttack2);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 10, ref _actionLevelUp);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 11, ref _actionDie);
+
+                return ObjectSegmentHelper.WriteSize(ref targetBytes, startOffset, offset, 11);
+            }
+            else
+            {
+                return ObjectSegmentHelper.DirectCopyAll(__originalBytes, ref targetBytes, offset);
+            }
+        }
+    }
 
     public class MapFormatter<TTypeResolver> : Formatter<TTypeResolver, global::ClientConfig.Map>
         where TTypeResolver : ITypeResolver, new()
@@ -993,6 +1414,148 @@ namespace ZeroFormatter.DynamicObjectSegments
     using global::ZeroFormatter.Formatters;
     using global::ZeroFormatter.Internal;
     using global::ZeroFormatter.Segments;
+
+
+    public class CharacterDirectionFormatter<TTypeResolver> : Formatter<TTypeResolver, global::CharacterDirection>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::CharacterDirection value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::CharacterDirection Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::CharacterDirection)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableCharacterDirectionFormatter<TTypeResolver> : Formatter<TTypeResolver, global::CharacterDirection?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::CharacterDirection? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::CharacterDirection? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::CharacterDirection)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class CharacterDirectionEqualityComparer : IEqualityComparer<global::CharacterDirection>
+    {
+        public bool Equals(global::CharacterDirection x, global::CharacterDirection y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::CharacterDirection x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class CharacterStateFormatter<TTypeResolver> : Formatter<TTypeResolver, global::CharacterState>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::CharacterState value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::CharacterState Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::CharacterState)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableCharacterStateFormatter<TTypeResolver> : Formatter<TTypeResolver, global::CharacterState?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::CharacterState? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::CharacterState? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::CharacterState)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class CharacterStateEqualityComparer : IEqualityComparer<global::CharacterState>
+    {
+        public bool Equals(global::CharacterState x, global::CharacterState y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::CharacterState x)
+        {
+            return (int)x;
+        }
+    }
+
 
 
     public class Seeker_ModifierPassFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Seeker.ModifierPass>

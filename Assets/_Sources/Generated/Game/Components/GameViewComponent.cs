@@ -11,19 +11,19 @@ public partial class GameEntity {
     public ViewComponent view { get { return (ViewComponent)GetComponent(GameComponentsLookup.View); } }
     public bool hasView { get { return HasComponent(GameComponentsLookup.View); } }
 
-    public void AddView(tk2dSpriteCollectionData newCollectionData, string newSpriteName) {
+    public void AddView(IViewController newViewController, string newName) {
         var index = GameComponentsLookup.View;
         var component = CreateComponent<ViewComponent>(index);
-        component.collectionData = newCollectionData;
-        component.spriteName = newSpriteName;
+        component.viewController = newViewController;
+        component.name = newName;
         AddComponent(index, component);
     }
 
-    public void ReplaceView(tk2dSpriteCollectionData newCollectionData, string newSpriteName) {
+    public void ReplaceView(IViewController newViewController, string newName) {
         var index = GameComponentsLookup.View;
         var component = CreateComponent<ViewComponent>(index);
-        component.collectionData = newCollectionData;
-        component.spriteName = newSpriteName;
+        component.viewController = newViewController;
+        component.name = newName;
         ReplaceComponent(index, component);
     }
 

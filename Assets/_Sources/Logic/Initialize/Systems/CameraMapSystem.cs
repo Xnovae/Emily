@@ -131,7 +131,7 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
         string path = string.Format(_gameContext.runningData.RuntimeData.mapPathFormat, x.ToString(), y.ToString());
         string assetName = x.ToString() + "_" + y.ToString();
 
-        e.AddAsset(null, assetName);
+        e.AddView(null, assetName);
         e.AddPosition(new Vector2((float)x * MAP_ITEM_WIDTH / TexturePixelsPerUnit, (float)y * MAP_ITEM_HEIGHT / TexturePixelsPerUnit));
         e.AddResourceAssetBundle(null, path);
 
@@ -142,8 +142,8 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
                 Assert.IsNotNull(gameObject);
                 var collectionData = gameObject.GetComponent<tk2dSpriteCollectionData>();
 
-                // e.AddView(collectionData, assetName);
-                _mapItemDictionary[key].AddView(collectionData, assetName);
+                // e.AddViewAsset(collectionData, assetName);
+                _mapItemDictionary[key].AddViewAsset(collectionData, assetName);
 
                 int count = ResourceManager.Instance.GetAssetBundleWrappersCount(path);
                 Assert.AreEqual(1, count, "load map path: " + path);
@@ -288,7 +288,7 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
             string path = string.Format(_gameContext.runningData.RuntimeData.mapPathFormat, x.ToString(), y.ToString());
             string assetName = x.ToString() + "_" + y.ToString();
 
-            e.AddAsset(null, assetName);
+            e.AddView(null, assetName);
             e.AddPosition(new Vector2((float)x * MAP_ITEM_WIDTH / TexturePixelsPerUnit, (float)y * MAP_ITEM_HEIGHT / TexturePixelsPerUnit));
             e.AddResourceAssetBundle(null, path);
 
@@ -299,8 +299,8 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
                     Assert.IsNotNull(gameObject);
                     var collectionData = gameObject.GetComponent<tk2dSpriteCollectionData>();
 
-                    // e.AddView(collectionData, assetName);    // CAUTION: DON'T use e, cause view and Asset not same
-                    _mapItemDictionary[key].AddView(collectionData, assetName);
+                    // e.AddViewAsset(collectionData, assetName);    // CAUTION: DON'T use e, cause view and Asset not same
+                    _mapItemDictionary[key].AddViewAsset(collectionData, assetName);
 
                     int count = ResourceManager.Instance.GetAssetBundleWrappersCount(path);
                     Assert.AreEqual(1, count, "load map path: " + path + ", count: " + count);

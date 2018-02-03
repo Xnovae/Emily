@@ -1,0 +1,91 @@
+{
+  "heroes_archer": {
+    "id": "heroes_archer",
+    "name": "heroes_archer",
+    "initSpriteName": "hero_archer_0002",
+    "path": "character/heroes_archer.assetbundle",
+    "actionIdle": [
+      "hero_archer_0036"
+    ],
+    "actionRun": [
+      "hero_archer_0002",
+      "hero_archer_0003",
+      "hero_archer_0004",
+      "hero_archer_0006"
+    ],
+    "actionLightAttack1": [
+      "hero_archer_0007",
+      "hero_archer_0009",
+      "hero_archer_0010",
+      "hero_archer_0012",
+      "hero_archer_0013"
+    ],
+    "actionLightAttack2": [
+      "hero_archer_0021",
+      "hero_archer_0023",
+      "hero_archer_0025",
+      "hero_archer_0028"
+    ],
+    "actionHeavyAttack1": [
+      "hero_archer_0054",
+      "hero_archer_0056",
+      "hero_archer_0057",
+      "hero_archer_0059",
+      "hero_archer_0060",
+      "hero_archer_0061",
+      "hero_archer_0063",
+      "hero_archer_0064",
+      "hero_archer_0065",
+      "hero_archer_0066",
+      "hero_archer_0067",
+      "hero_archer_0069",
+      "hero_archer_0070"
+    ],
+    "actionHeavyAttack2": [
+      "hero_archer_0081",
+      "hero_archer_0092",
+      "hero_archer_0093",
+      "hero_archer_0094",
+      "hero_archer_0095",
+      "hero_archer_0096",
+      "hero_archer_0097",
+      "hero_archer_0098",
+      "hero_archer_0099",
+      "hero_archer_0100",
+      "hero_archer_0101",
+      "hero_archer_0102",
+      "hero_archer_0103",
+      "hero_archer_0104",
+      "hero_archer_0105",
+      "hero_archer_0106",
+      "hero_archer_0107",
+      "hero_archer_0108",
+      "hero_archer_0109",
+      "hero_archer_0110",
+      "hero_archer_0111",
+      "hero_archer_0112",
+      "hero_archer_0113",
+      "hero_archer_0114"
+    ],
+    "actionLevelUp": [
+      "hero_archer_0038",
+      "hero_archer_0039",
+      "hero_archer_0040",
+      "hero_archer_0041",
+      "hero_archer_0042",
+      "hero_archer_0043",
+      "hero_archer_0044",
+      "hero_archer_0045",
+      "hero_archer_0046",
+      "hero_archer_0047",
+      "hero_archer_0048",
+      "hero_archer_0049",
+      "hero_archer_0050",
+      "hero_archer_0051"
+    ],
+    "actionDie": [
+      "hero_archer_0123",
+      "hero_archer_0125"
+    ]
+  }
+}

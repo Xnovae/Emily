@@ -22,6 +22,12 @@ public class GameController : MonoBehaviour
             // Create
             .Add(new InitializeSystems(contexts))
 
+            // Control
+            .Add(new ControlSystems(contexts))
+
+            // Tween
+            .Add(new TweenSystems(contexts))
+
             // View
             .Add(new ViewSystems(contexts))
 

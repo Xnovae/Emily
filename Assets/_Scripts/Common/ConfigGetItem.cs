@@ -43,27 +43,156 @@ public abstract class ConfigGetItem<T1, T2>
         }
     }
 
-    public object GetJsonDataValue(JsonData data)
+    public object GetJsonDataValue(JsonData data, Type type)
     {
-        if (data.IsLong)
+        if (type == typeof(long))
         {
             return (long) data;
         }
-        else if (data.IsBoolean)
+        else if (type == typeof(bool))
         {
             return (bool)data;
         }
-        else if (data.IsDouble)
+        else if (type == typeof(float))
         {
             return Convert.ToSingle((double) data);
         }
-        else if (data.IsInt)
+        else if (type == typeof(int))
         {
             return (int) data;
         }
-        else if (data.IsString)
+        else if (type == typeof(string))
         {
             return (string) data;
+        }
+
+        // Array
+        if (type == typeof(long[]))
+        {
+            int length = data.Count;
+            var value = new long[length];
+            for (int i = 0; i < length; ++i)
+            {
+                value[i] = (long) data[i];
+            }
+            return value;
+        }
+        else if (type == typeof(bool[]))
+        {
+            int length = data.Count;
+            var value = new bool[length];
+            for (int i = 0; i < length; ++i)
+            {
+                value[i] = (bool)data[i];
+            }
+            return value;
+        }
+        else if (type == typeof(float[]))
+        {
+            int length = data.Count;
+            var value = new float[length];
+            for (int i = 0; i < length; ++i)
+            {
+                value[i] = Convert.ToSingle((double)data[i]); 
+            }
+            return value;
+        }
+        else if (type == typeof(int[]))
+        {
+            int length = data.Count;
+            var value = new int[length];
+            for (int i = 0; i < length; ++i)
+            {
+                value[i] = (int)data[i];
+            }
+            return value;
+        }
+        else if (type == typeof(string[]))
+        {
+            int length = data.Count;
+            var value = new string[length];
+            for (int i = 0; i < length; ++i)
+            {
+                value[i] = (string)data[i];
+            }
+            return value;
+        }
+
+        // Dictionary
+        if (type == typeof(Dictionary<string, long>))
+        {
+            int length = data.Count;
+
+            var value = new Dictionary<string, long>(length);
+
+            foreach (var item in data)
+            {
+                var entry = (KeyValuePair<string, JsonData>)item;
+
+                value.Add(entry.Key, (long)entry.Value);
+            }
+
+            return value;
+        }
+        else if (type == typeof(Dictionary<string, bool>))
+        {
+            int length = data.Count;
+
+            var value = new Dictionary<string, bool>(length);
+
+            foreach (var item in data)
+            {
+                var entry = (KeyValuePair<string, JsonData>)item;
+
+                value.Add(entry.Key, (bool)entry.Value);
+            }
+
+            return value;
+        }
+        else if (type == typeof(Dictionary<string, float>))
+        {
+            int length = data.Count;
+
+            var value = new Dictionary<string, float>(length);
+
+            foreach (var item in data)
+            {
+                var entry = (KeyValuePair<string, JsonData>)item;
+
+                value.Add(entry.Key, Convert.ToSingle((double)entry.Value));
+            }
+
+            return value;
+        }
+        else if (type == typeof(Dictionary<string, int>))
+        {
+            int length = data.Count;
+
+            var value = new Dictionary<string, int>(length);
+
+            foreach (var item in data)
+            {
+                var entry = (KeyValuePair<string, JsonData>) item;
+
+                value.Add(entry.Key, (int)entry.Value);
+            }
+
+            return value;
+        }
+        else if (type == typeof(Dictionary<string, string>))
+        {
+            int length = data.Count;
+
+            var value = new Dictionary<string, string>(length);
+
+            foreach (var item in data)
+            {
+                var entry = (KeyValuePair<string, JsonData>) item;
+
+                value.Add(entry.Key, (string)entry.Value);
+            }
+
+            return value;
         }
         else
         {
@@ -86,9 +215,7 @@ public abstract class ConfigGetItem<T1, T2>
             T2 item = new T2();
             foreach (var jsonsKey in json.Keys)
             {
-                typeof(T2).InvokeMember(jsonsKey,
-                    BindingFlags.Instance | BindingFlags.Public | BindingFlags.SetProperty,
-                    Type.DefaultBinder, item, new object[]{GetJsonDataValue(json[jsonsKey])});
+                SetValue(jsonsKey, item, json);
             }
 
             byte[] itemBytes = ZeroFormatterSerializer.Serialize<T2>(item);
@@ -100,6 +227,20 @@ public abstract class ConfigGetItem<T1, T2>
 
         byte[] containerBytes = ZeroFormatterSerializer.Serialize<T1>(container);
         System.IO.File.WriteAllBytes(outputPath, containerBytes);
+    }
+
+    private void SetValue(string jsonsKey, T2 item, JsonData json)
+    {
+        Type type = GetMemberType<T2>(jsonsKey);
+
+        typeof(T2).InvokeMember(jsonsKey,
+            BindingFlags.Instance | BindingFlags.Public | BindingFlags.SetProperty,
+            Type.DefaultBinder, item, new object[] { GetJsonDataValue(json[jsonsKey], type) });
+    }
+
+    private Type GetMemberType<T>(string jsonsKey)
+    {
+        return typeof(T2).GetProperty(jsonsKey).PropertyType;
     }
 #endif
 

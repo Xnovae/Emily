@@ -10,12 +10,19 @@ public class MapBlockGenerator
 {
     public const float Mesh_Unit = 0.01f;
 
+    private static string _mapBlockPath = "Assets/Temp/Map_Block";
+
     [MenuItem("EditorTools/Map/Generate Map Block")]
     private static void MenuItem_GenerateMapBlock()
     {
-        string xmlPath = "Assets/Experiment/MapBlockGenerator/map_block.xml";
+        foreach (var file in new DirectoryInfo(_mapBlockPath).GetFiles("*.xml", SearchOption.TopDirectoryOnly))
+        {
+            string fullPath = file.FullName.Replace("\\", "/");
+            int index = fullPath.IndexOf("Assets/");
 
-        GenerateMapBlock(xmlPath);
+            string xmlPath = fullPath.Substring(index);
+            GenerateMapBlock(xmlPath);
+        }
     }
 
     private static void GenerateMapBlock(string xmlPath)
@@ -34,10 +41,10 @@ public class MapBlockGenerator
         {
             TexturePackerAtlas atlas = new TexturePackerAtlas(xmlPath);
 
-            GenerateMesh(mesh, atlas, "map_block");
+            string xmlName = Path.GetFileNameWithoutExtension(xmlPath);
+            GenerateMesh(mesh, atlas, xmlName);
 
             string directoryPath = Path.GetDirectoryName(xmlPath);
-            string xmlName = Path.GetFileNameWithoutExtension(xmlPath);
 
             string assetPath = directoryPath + "/" + xmlName + ".asset";
             SaveMesh(mesh, false, true, assetPath);

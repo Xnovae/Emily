@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
@@ -6,6 +6,7 @@ using UnityEngine;
 [Game]
 public class ViewComponent : IComponent
 {
-    public tk2dSpriteCollectionData collectionData;
-    public string spriteName;
+    public IViewController viewController;
+
+    public string name;                     // GameObject name
 }

@@ -8,39 +8,63 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Asset = 0;
+    public const int Controllable = 0;
     public const int Destroy = 1;
-    public const int Map = 2;
-    public const int MapLoad = 3;
-    public const int Position = 4;
-    public const int ResourceAssetBundle = 5;
-    public const int ResourceInitialize = 6;
-    public const int RunningData = 7;
-    public const int View = 8;
+    public const int Direction = 2;
+    public const int Identifier = 3;
+    public const int Map = 4;
+    public const int MapLoad = 5;
+    public const int Position = 6;
+    public const int ResourceAssetBundle = 7;
+    public const int ResourceInitialize = 8;
+    public const int RunningData = 9;
+    public const int SpriteAnimate = 10;
+    public const int State = 11;
+    public const int Tween = 12;
+    public const int TweenResult = 13;
+    public const int TweenResultPreserved = 14;
+    public const int ViewAsset = 15;
+    public const int View = 16;
 
-    public const int TotalComponents = 9;
+    public const int TotalComponents = 17;
 
     public static readonly string[] componentNames = {
-        "Asset",
+        "Controllable",
         "Destroy",
+        "Direction",
+        "Identifier",
         "Map",
         "MapLoad",
         "Position",
         "ResourceAssetBundle",
         "ResourceInitialize",
         "RunningData",
+        "SpriteAnimate",
+        "State",
+        "Tween",
+        "TweenResult",
+        "TweenResultPreserved",
+        "ViewAsset",
         "View"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(AssetComponent),
+        typeof(ControllableComponent),
         typeof(DestroyComponent),
+        typeof(DirectionComponent),
+        typeof(IdentifierComponent),
         typeof(MapComponent),
         typeof(MapLoadComponent),
         typeof(PositionComponent),
         typeof(ResourceAssetBundleComponent),
         typeof(ResourceInitializeComponent),
         typeof(RunningDataComponent),
+        typeof(SpriteAnimateComponent),
+        typeof(StateComponent),
+        typeof(TweenComponent),
+        typeof(TweenResultComponent),
+        typeof(TweenResultPreserved),
+        typeof(ViewAssetComponent),
         typeof(ViewComponent)
     };
 }
