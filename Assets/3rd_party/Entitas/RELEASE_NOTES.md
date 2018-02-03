@@ -1,3 +1,173 @@
+# 1.0.0
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+#### Jenny
+🛠 Workaround for Unity 2017.3 GUI mask bug (still shows `Mixed...` instead of `Everything` -> Unity bug) #569
+
+
+# 0.47.9
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+#### Jenny
+🛠 Fixed issue with Entitas.Roslyn plugin and non-components with context attibute #564
+🛠 Fixed `auto-import` not making relative search paths on Windows
+
+#### Other
+⚙️ Included readme files in zip
+⚙️ Updated CONTRIBUTING.md and updated bee 🐝
+
+
+# 0.47.8
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+#### Jenny
+🛠 Fixed `The given assembly name or codebase was invalid` on windows #561
+
+
+# 0.47.7
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+#### Jenny
+🛠 Auto-Import properly handles paths with spaces #555
+
+
+# 0.47.6
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+#### Jenny
+- Using correct properties file for each Unity project by saving only the filename instead of full path
+
+
+# 0.47.5
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+#### Entitas
+- Hotfix for EntityLink throwing errors OnApplicationQuit
+
+
+# 0.47.4
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+#### Entitas
+- Hotfix for broken EntityLink (thanks to @c0ffeeartc for reporting so quickly)
+
+
+# 0.47.3
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+See and discuss changes in [Milestone 0.47.3](https://github.com/sschmid/Entitas-CSharp/milestone/17?closed=1)
+
+(Finally went back to Milestone development :) Transparency FTW!)
+
+#### Entitas
+- EntityLink will immediately throw an exception if the gameObject is destroyed but still linked to an entity #470
+- Fixed VisualDebugging Toggle in the Entitas Preferences Window #540
+
+#### Jenny
+- Even more support for multiple properties, see #550
+
+
+# 0.47.2
+
+As always, the Unity Asset Store version might take a few days to be processed and accepted by Unity.
+Please check for updates in 2 - 4 days here: https://www.assetstore.unity3d.com/#!/content/87638
+
+Here's another update to improve the code generator experience. Thanks again for all your great feedback!
+And thanks for going through this with me :) We're almost there!
+
+#### Breaking changes
+Please follow the [Entitas upgrade guide](https://github.com/sschmid/Entitas-CSharp/blob/master/EntitasUpgradeGuide.md)
+
+#### Entitas
+- Added migration 0.47.2
+
+#### Jenny
+- Added silent mode for `jenny fix` to simplify `jenny auto-import` experience. Use `-s`, e.g `jenny auto-import -s`
+- Added a potential fix for `jenny client gen` command never completes #546
+- Renamed keys from `CodeGenerator.*` to `Jenny.*`. Please apply migration 0.47.2
+- Added support to run CLI from any location
+- Warning when no properties found
+- Removed leading "./" from added searchPaths added by `jenny auto-import`
+- The Roslyn foundation moved to DesperateDevs
+- Using the latest Roslyn libs
+
+#### Other
+- Entitas project cleanup and maintenance
+- Added more automation tasks to bee 🐝
+
+# 0.47.1
+
+As always, the Unity Asset Store version might take a few days to be processed and accepted by Unity.
+Please check for updates in 2 - 4 days here: https://www.assetstore.unity3d.com/#!/content/87638
+
+#### Jenny
+- Handling BadImageFormatException
+- Not showing warnings for unresolved assemblies anymore
+- Fixed closing AssemblyResolver before all plugin dependencies were loaded
+- Fixed jenny server construction not complete before executing client command
+
+
+# 0.47.0
+
+#### General
+- Brand new build automation workflow (bee 🐝)
+- Completely automated build, sync and release flow for faster future updates (bzzz 🐝)
+- Only Entitas.zip is attached to GitHub releases
+- Jenny CLI is only bundled in Asset Store version
+- Added Assets folder to Entitas.zip #535
+- More flexible plugin-based CLI architecture
+
+#### Jenny
+- Unity support for multiple properties files by adding switch button to Entitas Preferences in case multiple properties files exist #536
+- Better CLI support for multiple properties files by showing a warning in case multiple properties files exist #536
+- Fixes for server / client errors (ObjectDisposedException) #529
+- Renamed key `CodeGenerator.CLI.Ignore.UnusedKeys` to `Ignore.Keys`
+- `auto-import` reflects assemblies and sets plugins based on content instead of name
+- `auto-import` automatically detects custom plugins in Unity project without manually setting up searchPaths
+- Added visual lines to `dump`
+- Renamed `ICodeGeneratorBase` to `ICodeGenerationPlugin`
+- Fixed `IConfigurable` commands not getting configured
+- Added minified properties support
+
+#### Asset Store
+- Fix for NullReferenceException (Entitas.Roslyn.SymbolExtension.ToCompilableString) #534
+- Support for WrapperComponent #532
+
+# 0.46.3
+
+As always, the Unity Asset Store version might take a few days to be processed and accepted by Unity.
+Please check for updates in 2 - 4 days.
+
+#### Code Generation
+- Added `IPreProcessor`
+- Added TargetFrameworkProfilePreProcessor
+- Fixed problems with Roslyn Generator and Visual Studio on Windows #503
+
+
 # 0.46.2
 
 As always, the Unity Asset Store version might take a few days to be processed and accepted by Unity.
