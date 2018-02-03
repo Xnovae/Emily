@@ -12,7 +12,7 @@ public static class Utils
 {
     public static string GetBundlePathForLoadFromFile(string relativePath)
     {
-#if UNITY_ANDROID
+#if UNITY_ANDROID && !UNITY_EDITOR
         var streamingAssetsPath = Application.dataPath + "!assets/";
 #else
         var streamingAssetsPath = Application.streamingAssetsPath;

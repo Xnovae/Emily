@@ -10,7 +10,7 @@ public class MapBlockGenerator
 {
     public const float Mesh_Unit = 0.01f;
 
-    [MenuItem("EditorTools/Generate Map Block")]
+    [MenuItem("EditorTools/Map/Generate Map Block")]
     private static void MenuItem_GenerateMapBlock()
     {
         string xmlPath = "Assets/Experiment/MapBlockGenerator/map_block.xml";

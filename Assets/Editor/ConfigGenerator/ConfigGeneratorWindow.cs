@@ -7,7 +7,7 @@ using System.Text;
 using LitJson;
 using UnityEngine;
 using UnityEditor;
-
+using UnityEngine.Assertions;
 using Object = UnityEngine.Object;
 
 //// zfc.exe -i D:\Project\Unity\OptimizeConfig\OptimizeConfig.csproj -o "ZeroFormatterGenerated.cs"
@@ -210,9 +210,18 @@ public class ConfigGeneratorWindow : EditorWindow
 
     private static Type GetJsonDataType(JsonData data)
     {
-        if (data.IsBoolean)
+        if (data == null)
+        {
+            // ���dataΪnull��Ĭ��Ϊstring
+            return typeof(string);
+        }
+        else if (data.IsBoolean)
         {
             return typeof(bool);
+        }
+        else if (data.IsString)
+        {
+            return typeof(string);
         }
         else if (data.IsDouble)
         {
@@ -226,12 +235,10 @@ public class ConfigGeneratorWindow : EditorWindow
         {
             return typeof(long);
         }
-        else if (data.IsString)
+        else
         {
-            return typeof(string);
+            throw new Exception("type error: " + data);
         }
-
-        return null;
     }
 
     // =============================
@@ -365,23 +372,111 @@ namespace ClientConfig
     {
         var lists = new List<ColumDefine>();
 
-        JsonData json = jsons[0];
-        foreach (var key in json.Keys)
+        Dictionary<string, Type> types = GetAllJsonItemTypes(jsons);
+
+        foreach (var item in types)
         {
-            JsonData value = json[key];
-
-            // Debug.LogFormat("!!! {0} : {1} type: {2}", key, value, GetJsonDataType(value));
-
             ColumDefine define = new ColumDefine()
             {
-                name = key,
-                type = GetJsonDataType(value)
+                name = item.Key,
+                type = item.Value,
             };
 
             lists.Add(define);
+
         }
 
         return lists;
+    }
+
+    private Dictionary<string, Type> GetAllJsonItemTypes(JsonData jsons)
+    {
+        Assert.IsTrue(jsons.Count > 0);
+
+        Dictionary<string, Type> dict = new Dictionary<string, Type>();
+        
+        List<string> keys = GetAllJsonItemKeys(jsons);
+
+        // bool, string, || double(float) int long
+
+        foreach (var key in keys)
+        {
+            dict.Add(key, GetBestType(jsons, key));
+        }
+
+        return dict;
+    }
+
+    private Type GetBestType(JsonData jsons, string key)
+    {
+        JsonData firstJsonData = jsons[0];
+        Type firstType = GetJsonDataType(firstJsonData[key]);
+
+        if (jsons.Count > 1)
+        {
+            if (firstType == typeof(bool) || firstType == typeof(string) || firstType == typeof(float))
+            {
+                // ���֮�����е��Ƿ��Ӧ
+                for (int i = 1, length = jsons.Count; i<length; ++i)
+                {
+                    var jsonData = jsons[i];
+                    Type type = GetJsonDataType(jsonData[key]);
+                    if (firstType != type)
+                    {
+                        throw new Exception(string.Format("!!! {0} != {1}", firstType, type));
+                    }
+                }
+
+                return firstType;
+            }
+            else if(firstType == typeof(int) || firstType == typeof(long))
+            {
+                //int long��Ҫ���Ƿ���ת���� float
+
+                bool isFloat = false;
+
+                for (int i = 1, length = jsons.Count; i < length; ++i)
+                {
+                    var jsonData = jsons[i];
+                    Type type = GetJsonDataType(jsonData[key]);
+                    if (type == typeof(float))
+                    {
+                        isFloat = true;
+                        break;
+                    }
+                }
+
+                return isFloat ? typeof(float) : firstType;
+            }
+            else
+            {
+                throw new Exception("!!! wtf type: " + firstType);
+            }
+        }
+        else
+        {
+            return firstType;
+        }
+    }
+
+    private List<string> GetAllJsonItemKeys(JsonData jsons)
+    {
+        var keys = new List<string>();
+
+        for (int i = 0, length = jsons.Count; i < length; ++i)
+        {
+            var json = jsons[i];
+
+            foreach (var key in json.Keys)
+            {
+                if (!keys.Contains(key))
+                {
+                    keys.Add(key);
+                }
+            }
+        }
+
+        return keys;
     }
 
     private void GenerateZeroFomatter()

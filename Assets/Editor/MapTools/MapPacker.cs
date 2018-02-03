@@ -44,7 +44,7 @@ public class EditorMapPacker : EditorWindow
     public const int MAP_WIDTH = 512;
     public const int MAP_HEIGHT = 512;
 
-    [MenuItem("EditorTools/Map Packer")]
+    [MenuItem("EditorTools/Map/Map Packer")]
     private static void MenuItem_MapPacker()
     {
         var window = GetWindow<EditorMapPacker>("Map Packer");
