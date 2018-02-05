@@ -133,9 +133,9 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
 
         e.AddView(null, assetName);
         e.AddPosition(new Vector2((float)x * MAP_ITEM_WIDTH / TexturePixelsPerUnit, (float)y * MAP_ITEM_HEIGHT / TexturePixelsPerUnit));
-        e.AddResourceAssetBundle(null, path);
+        e.AddResourceAssetBundle(path);
 
-        ResourceManager.Instance.GetAssetBundleAsset(null, path, assetName)
+        ResourceManager.Instance.GetAssetBundleAsset(path, assetName)
             .Then(asset =>
             {
                 var gameObject = asset as GameObject;
@@ -290,9 +290,9 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
 
             e.AddView(null, assetName);
             e.AddPosition(new Vector2((float)x * MAP_ITEM_WIDTH / TexturePixelsPerUnit, (float)y * MAP_ITEM_HEIGHT / TexturePixelsPerUnit));
-            e.AddResourceAssetBundle(null, path);
+            e.AddResourceAssetBundle(path);
 
-            ResourceManager.Instance.GetAssetBundleAsset(null, path, assetName)
+            ResourceManager.Instance.GetAssetBundleAsset(path, assetName)
                 .Then(asset =>
                 {
                     var gameObject = asset as GameObject;

@@ -59,68 +59,41 @@ public partial class ResourceManager
         public bool loadDone;
         public List<Action> loadDoneAction;
 
-        private List<UnityEngine.Object> _referenceObjects = new List<Object>(DEFAULT_LIST_SIZE);
         private List<int> _validRefCountList = new List<int>(DEFAULT_LIST_SIZE);
 
         public void DestroyAllReference()
         {
-            _referenceObjects.Clear();
             _validRefCountList.Clear();
         }
 
-        public void DestroyReference(UnityEngine.Object obj)
+        public void DestroyReference()
         {
-            System.Object rawObj = obj;
-            if (rawObj == null)
+            if (_validRefCountList.Count > 0)
             {
-                if (_validRefCountList.Count > 0)
-                {
-                    _validRefCountList.RemoveAt(0);
-                }
-            }
-            else
-            {
-                _referenceObjects.Remove(obj);
+                _validRefCountList.RemoveAt(0);
             }
         }
 
-        public void AddReference(UnityEngine.Object obj, int refCount)
+        public void AddReference(int refCount)
         {
-            System.Object rawObj = obj;
-            if (rawObj == null)
-            {
-                Assert.IsFalse(_validRefCountList.Contains(refCount));
+            Assert.IsFalse(_validRefCountList.Contains(refCount));
 
-                _validRefCountList.Add(refCount);
-            }
-            else
-            {
-                if (!_referenceObjects.Contains(obj))
-                    _referenceObjects.Add(obj);
-            }
+            _validRefCountList.Add(refCount);
         }
 
         public bool IsAllDestroyed()
         {
-            return _referenceObjects.Count == 0 && _validRefCountList.Count == 0;
+            return _validRefCountList.Count == 0;
         }
 
-        public bool IsContainTarget(UnityEngine.Object obj, int refCount)
+        public bool IsContainTarget(int refCount)
         {
-            System.Object rawObj = obj;
-            if (rawObj == null)
-            {
-                return _validRefCountList.Contains(refCount);
-            }
-            else
-            {
-                return _referenceObjects.Contains(obj);
-            }
+            return _validRefCountList.Contains(refCount);
         }
 
         public int GetReferenceCount()
         {
-            return _referenceObjects.Count + _validRefCountList.Count;
+            return _validRefCountList.Count;
         }
     }
 
@@ -148,12 +121,12 @@ public partial class ResourceManager
         return _idWWW;
     }
 
-    public void DestroyWWW(UnityEngine.Object target, string path)
+    public void DestroyWWW(string path)
     {
         WWWWrapper wrapper;
         if (_wwwWrappers.TryGetValue(path, out wrapper))
         {
-            wrapper.DestroyReference(target);
+            wrapper.DestroyReference();
 
             if (wrapper.IsAllDestroyed())
             {
@@ -183,7 +156,7 @@ public partial class ResourceManager
         }
     }
 
-    public IPromise<T> GetWWWAsset<T>(UnityEngine.Object target, string path) where T : UnityEngine.Object
+    public IPromise<T> GetWWWAsset<T>(string path) where T : UnityEngine.Object
     {
         WWWWrapper wwwWrapper = null;
 
@@ -191,33 +164,33 @@ public partial class ResourceManager
 
         if (_wwwWrappers.TryGetValue(path, out wwwWrapper))
         {
-            wwwWrapper.AddReference(target, refCount);
+            wwwWrapper.AddReference(refCount);
 
             if (wwwWrapper.loadDone)
             {
-                return RetriveWWW<T>(wwwWrapper, target, path, refCount);
+                return RetriveWWW<T>(wwwWrapper, path, refCount);
             }
             else
             {
-                return DelayRetriveWWW<T>(wwwWrapper, target, path, refCount);
+                return DelayRetriveWWW<T>(wwwWrapper, path, refCount);
             }
         }
         else
         {
-            return BrandNewLoadWWW<T>(target, path, refCount);
+            return BrandNewLoadWWW<T>(path, refCount);
         }
     }
 
-    private IPromise<T> RetriveWWW<T>(WWWWrapper wwwWrapper, Object target, string path, int refCount) where T : Object
+    private IPromise<T> RetriveWWW<T>(WWWWrapper wwwWrapper, string path, int refCount) where T : Object
     {
         var promise = new Promise<T>();
 
         var asset = wwwWrapper.asset.asset;
         if (asset)
         {
-            if (IsTargetDestroyed(target, wwwWrapper, refCount))
+            if (IsTargetDestroyed(wwwWrapper, refCount))
             {
-                promise.Reject(new TargetDestroyedException(null, asset));
+                promise.Reject(new TargetDestroyedException(null, refCount));
             }
             else
             {
@@ -240,23 +213,21 @@ public partial class ResourceManager
         return promise;
     }
 
-    private void AddLoadDoneAction<T>(Promise<T> promise, WWWWrapper wwwWrapper, Object target, string path, int refCount) where T : Object
+    private void AddLoadDoneAction<T>(Promise<T> promise, WWWWrapper wwwWrapper, string path, int refCount) where T : Object
     {
         Action loadDoneAction = new Action(() =>
         {
             T asset = wwwWrapper.asset.asset as T;
 
-            CheckTargetDestroy(wwwWrapper, target);
-
             if (wwwWrapper.IsAllDestroyed())
             {
                 promise.Reject(new LoadDoneAndDestroyAllException());
             }
-            else if (IsTargetDestroyed(target, wwwWrapper, refCount))
+            else if (IsTargetDestroyed(wwwWrapper, refCount))
             {
-                promise.Reject(new TargetDestroyedException(null, asset));
+                promise.Reject(new TargetDestroyedException(null, refCount));
             }
-            else if (!wwwWrapper.IsContainTarget(target, refCount))
+            else if (!wwwWrapper.IsContainTarget(refCount))
             {
                 promise.Reject(new LoadDoneAndDestroyMainException());
             }
@@ -277,26 +248,17 @@ public partial class ResourceManager
         wwwWrapper.loadDoneAction.Add(loadDoneAction);
     }
 
-    private void CheckTargetDestroy(WWWWrapper wwwWrapper, Object target)
-    {
-        object rawTarget = target;
-        if (rawTarget == null && !target)
-        {
-            wwwWrapper.DestroyReference(target);
-        }
-    }
-
-    private IPromise<T> DelayRetriveWWW<T>(WWWWrapper wwwWrapper, Object target, string path, int refCount) where T : Object
+    private IPromise<T> DelayRetriveWWW<T>(WWWWrapper wwwWrapper, string path, int refCount) where T : Object
     {
         var promise = new Promise<T>();
 
-       AddLoadDoneAction(promise, wwwWrapper, target, path, refCount);
+       AddLoadDoneAction(promise, wwwWrapper, path, refCount);
 
         return promise;
     }
 
 
-    private IPromise<T> BrandNewLoadWWW<T>(Object target, string path, int refCount) where T : UnityEngine.Object
+    private IPromise<T> BrandNewLoadWWW<T>(string path, int refCount) where T : UnityEngine.Object
     {
         var promise = new Promise<T>();
 
@@ -307,17 +269,17 @@ public partial class ResourceManager
             loadDone = false,
             loadDoneAction = new List<Action>(DEFAULT_LIST_SIZE),
         };
-        wwwWrapper.AddReference(target, refCount);
-        AddLoadDoneAction(promise, wwwWrapper, target, path, refCount);
+        wwwWrapper.AddReference(refCount);
+        AddLoadDoneAction(promise, wwwWrapper, path, refCount);
 
         _wwwWrappers.Add(path, wwwWrapper);
 
-        MainThreadDispatcher.StartUpdateMicroCoroutine(GetWWWInternal(target, path));
+        MainThreadDispatcher.StartUpdateMicroCoroutine(GetWWWInternal(path));
 
         return promise;
     }
 
-    private IEnumerator GetWWWInternal(Object target, string path)
+    private IEnumerator GetWWWInternal(string path)
     {
         var www = new WWW(path);
         while (!www.isDone)
@@ -384,23 +346,8 @@ public partial class ResourceManager
     }
 
 
-    private static bool IsTargetDestroyed(UnityEngine.Object target, WWWWrapper wrapper, int refCount)
+    private static bool IsTargetDestroyed(WWWWrapper wrapper, int refCount)
     {
-        System.Object targetRaw = target as System.Object;
-        if (targetRaw == null)
-        {
-            return !wrapper.IsContainTarget(target, refCount);
-        }
-        else
-        {
-            if (target)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        return !wrapper.IsContainTarget(refCount);
     }
 }

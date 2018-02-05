@@ -2,19 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 // load完目标被destroy
 public class TargetDestroyedException : Exception
 {
     public AssetBundle assetBundle;
-    public Object asset;
+    public int asset;
 
     public TargetDestroyedException()
     {
     }
 
-    public TargetDestroyedException(AssetBundle assetBundle, Object asset)
+    public TargetDestroyedException(AssetBundle assetBundle, int asset)
     {
         this.assetBundle = assetBundle;
         this.asset = asset;
@@ -107,13 +106,13 @@ public class WWWAssetException : Exception
 public class LoadDoneAndDestroyMainException : Exception
 {
     public AssetBundle assetBundle;
-    public Object asset;
+    public int asset;
 
     public LoadDoneAndDestroyMainException()
     {
     }
 
-    public LoadDoneAndDestroyMainException(AssetBundle assetBundle, Object asset)
+    public LoadDoneAndDestroyMainException(AssetBundle assetBundle, int asset)
     {
         this.assetBundle = assetBundle;
         this.asset = asset;
@@ -134,13 +133,13 @@ public class LoadDoneAndDestroyMainException : Exception
 public class LoadDoneAndDestroyAllException : Exception
 {
     public AssetBundle assetBundle;
-    public Object asset;
+    public int asset;
     
     public LoadDoneAndDestroyAllException()
     {
     }
 
-    public LoadDoneAndDestroyAllException(AssetBundle assetBundle, Object asset)
+    public LoadDoneAndDestroyAllException(AssetBundle assetBundle, int asset)
     {
         this.assetBundle = assetBundle;
         this.asset = asset;

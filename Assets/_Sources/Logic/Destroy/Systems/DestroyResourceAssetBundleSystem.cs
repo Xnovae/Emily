@@ -23,9 +23,8 @@ public class DestroyResourceAssetBundleSystem : ReactiveSystem<GameEntity>
     {
         foreach(var e in entities)
         {
-            UnityEngine.Object target = e.resourceAssetBundle.target;
             string path = e.resourceAssetBundle.assetBundlePath;
-            ResourceManager.Instance.DestroyAssetBundle(target, path);
+            ResourceManager.Instance.DestroyAssetBundle(path);
         }
     }
 

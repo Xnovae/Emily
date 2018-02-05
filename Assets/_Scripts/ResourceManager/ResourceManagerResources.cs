@@ -19,68 +19,41 @@ public partial class ResourceManager
         public bool loadDone;
         public List<Action> loadDoneAction;
 
-        private List<UnityEngine.Object> _referenceObjects = new List<Object>(DEFAULT_LIST_SIZE);
         private List<int> _validRefCountList = new List<int>(DEFAULT_LIST_SIZE);
 
         public void DestroyAllReference()
         {
-            _referenceObjects.Clear();
             _validRefCountList.Clear();
         }
 
-        public void DestroyReference(UnityEngine.Object obj)
+        public void DestroyReference()
         {
-            System.Object rawObj = obj;
-            if (rawObj == null)
+            if (_validRefCountList.Count > 0)
             {
-                if (_validRefCountList.Count > 0)
-                {
-                    _validRefCountList.RemoveAt(0);
-                }
-            }
-            else
-            {
-                _referenceObjects.Remove(obj);
+                _validRefCountList.RemoveAt(0);
             }
         }
 
-        public void AddReference(UnityEngine.Object obj, int refCount)
+        public void AddReference(int refCount)
         {
-            System.Object rawObj = obj;
-            if (rawObj == null)
-            {
-                Assert.IsFalse(_validRefCountList.Contains(refCount));
+            Assert.IsFalse(_validRefCountList.Contains(refCount));
 
-                _validRefCountList.Add(refCount);
-            }
-            else
-            {
-                if (!_referenceObjects.Contains(obj))
-                    _referenceObjects.Add(obj);
-            }
+            _validRefCountList.Add(refCount);
         }
 
         public bool IsAllDestroyed()
         {
-            return _referenceObjects.Count == 0 && _validRefCountList.Count == 0;
+            return _validRefCountList.Count == 0;
         }
 
-        public bool IsContainTarget(UnityEngine.Object obj, int refCount)
+        public bool IsContainTarget(int refCount)
         {
-            System.Object rawObj = obj;
-            if (rawObj == null)
-            {
-                return _validRefCountList.Contains(refCount);
-            }
-            else
-            {
-                return _referenceObjects.Contains(obj);
-            }
+            return _validRefCountList.Contains(refCount);
         }
 
         public int GetReferenceCount()
         {
-            return _referenceObjects.Count + _validRefCountList.Count;
+            return _validRefCountList.Count;
         }
     }
 
@@ -108,47 +81,45 @@ public partial class ResourceManager
         return _idResources;
     }
 
-    public IPromise<T> GetResourceAsset<T>(UnityEngine.Object target, string path) where T : UnityEngine.Object
+    public IPromise<T> GetResourceAsset<T>(string path) where T : UnityEngine.Object
     {
         ResourcesWrapper resourcesWrapper = null;
         int refCount = GetNextIdResources();
 
         if (_resourcesWrappers.TryGetValue(path, out resourcesWrapper))
         {
-            resourcesWrapper.AddReference(target, refCount);
+            resourcesWrapper.AddReference(refCount);
 
             if (resourcesWrapper.loadDone)
             {
-                return RetriveResources<T>(resourcesWrapper, target, path, refCount);
+                return RetriveResources<T>(resourcesWrapper, path, refCount);
             }
             else
             {
-                return DelayRetriveResources<T>(resourcesWrapper, target, path, refCount);
+                return DelayRetriveResources<T>(resourcesWrapper, path, refCount);
             }
         }
         else
         {
-            return BrandNewLoadResources<T>(target, path, refCount);
+            return BrandNewLoadResources<T>(path, refCount);
         }
     }
 
-    private void AddLoadDoneAction<T>(Promise<T> promise, ResourcesWrapper resourcesWrapper, Object target, string path, int refCount) where T : Object
+    private void AddLoadDoneAction<T>(Promise<T> promise, ResourcesWrapper resourcesWrapper, string path, int refCount) where T : Object
     {
         Action loadDoneAction = new Action(() =>
         {
             Object asset = resourcesWrapper.asset;
 
-            CheckTargetDestroy(resourcesWrapper, target);
-
             if (resourcesWrapper.IsAllDestroyed())
             {
                 promise.Reject(new LoadDoneAndDestroyAllException());
             }
-            else if (IsTargetDestroyed(target, resourcesWrapper, refCount))
+            else if (IsTargetDestroyed(resourcesWrapper, refCount))
             {
-                promise.Reject(new TargetDestroyedException(null, asset));
+                promise.Reject(new TargetDestroyedException(null, refCount));
             }
-            else if (!resourcesWrapper.IsContainTarget(target, refCount))
+            else if (!resourcesWrapper.IsContainTarget(refCount))
             {
                 promise.Reject(new LoadDoneAndDestroyMainException());
             }
@@ -169,34 +140,25 @@ public partial class ResourceManager
         resourcesWrapper.loadDoneAction.Add(loadDoneAction);
     }
 
-    private void CheckTargetDestroy(ResourcesWrapper resourcesWrapper, Object target)
-    {
-        object rawTarget = target;
-        if (rawTarget != null && !target)
-        {
-            resourcesWrapper.DestroyReference(target);
-        }
-    }
-
-    private IPromise<T> DelayRetriveResources<T>(ResourcesWrapper resourcesWrapper, Object target, string path, int refCount) where T : Object
+    private IPromise<T> DelayRetriveResources<T>(ResourcesWrapper resourcesWrapper, string path, int refCount) where T : Object
     {
         var promise = new Promise<T>();
 
-       AddLoadDoneAction(promise, resourcesWrapper, target ,path, refCount); 
+       AddLoadDoneAction(promise, resourcesWrapper, path, refCount); 
 
         return promise;
     }
 
-    private IPromise<T> RetriveResources<T>(ResourcesWrapper resourcesWrapper, Object target, string path, int refCount) where T : Object
+    private IPromise<T> RetriveResources<T>(ResourcesWrapper resourcesWrapper, string path, int refCount) where T : Object
     {
         var promise = new Promise<T>();
 
         var asset = resourcesWrapper.asset;
         if (asset)
         {
-            if (IsTargetDestroyed(target, resourcesWrapper, refCount))
+            if (IsTargetDestroyed(resourcesWrapper, refCount))
             {
-                promise.Reject(new TargetDestroyedException(null, asset));
+                promise.Reject(new TargetDestroyedException(null, refCount));
             }
             else
             {
@@ -219,7 +181,7 @@ public partial class ResourceManager
         return promise;
     }
 
-    private IPromise<T> BrandNewLoadResources<T>(Object target, string path, int refCount) where T : UnityEngine.Object
+    private IPromise<T> BrandNewLoadResources<T>(string path, int refCount) where T : UnityEngine.Object
     {
         var promise = new Promise<T>();
 
@@ -230,17 +192,17 @@ public partial class ResourceManager
             loadDone = false,
             loadDoneAction = new List<Action>(DEFAULT_LIST_SIZE),
         };
-        resourcesWrapper.AddReference(target, refCount);
-        AddLoadDoneAction(promise, resourcesWrapper, target, path, refCount);
+        resourcesWrapper.AddReference(refCount);
+        AddLoadDoneAction(promise, resourcesWrapper, path, refCount);
 
         _resourcesWrappers.Add(path, resourcesWrapper);
 
-        MainThreadDispatcher.StartUpdateMicroCoroutine(GetResourcesInternal<T>(target, path));
+        MainThreadDispatcher.StartUpdateMicroCoroutine(GetResourcesInternal<T>(path));
 
         return promise;
     }
 
-    private IEnumerator GetResourcesInternal<T>(Object target, string path) where T : UnityEngine.Object
+    private IEnumerator GetResourcesInternal<T>(string path) where T : UnityEngine.Object
     {
         var request = Resources.LoadAsync<T>(path);
         while (!request.isDone)
@@ -272,12 +234,12 @@ public partial class ResourceManager
         }
     }
 
-    public void DestroyResourceAsset(UnityEngine.Object target, string path)
+    public void DestroyResourceAsset(string path)
     {
         ResourcesWrapper wrapper;
         if (_resourcesWrappers.TryGetValue(path, out wrapper))
         {
-            wrapper.DestroyReference(target);
+            wrapper.DestroyReference();
 
             if (wrapper.IsAllDestroyed())
             {
@@ -307,24 +269,9 @@ public partial class ResourceManager
         }
     }
 
-    private static bool IsTargetDestroyed(UnityEngine.Object target, ResourcesWrapper wrapper, int refCount)
+    private static bool IsTargetDestroyed(ResourcesWrapper wrapper, int refCount)
     {
-        System.Object targetRaw = target as System.Object;
-        if (targetRaw == null)
-        {
-            return !wrapper.IsContainTarget(target, refCount);
-        }
-        else
-        {
-            if (target)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        return !wrapper.IsContainTarget(refCount);
     }
 
 }

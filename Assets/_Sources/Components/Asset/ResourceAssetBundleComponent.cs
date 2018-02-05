@@ -6,6 +6,5 @@ using Entitas;
 [Game]
 public class ResourceAssetBundleComponent : IComponent
 {
-    public UnityEngine.Object target;
     public string assetBundlePath;
 }

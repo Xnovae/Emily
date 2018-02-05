@@ -62,7 +62,7 @@ public partial class ResourceManager
     {
         var promise = new Promise<AssetBundleManifest>();
 
-        GetAssetBundleAsset(null, path, "AssetBundleManifest")
+        GetAssetBundleAsset(path, "AssetBundleManifest")
             .Then(obj =>
             {
                 var manifest = obj as AssetBundleManifest;

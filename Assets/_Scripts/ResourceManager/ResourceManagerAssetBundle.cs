@@ -11,9 +11,9 @@ using Object = UnityEngine.Object;
 
 public partial class ResourceManager
 {
-    public IPromise<UnityEngine.Object> GetAssetBundleAsset(UnityEngine.Object target, string path, string assetName)
+    public IPromise<UnityEngine.Object> GetAssetBundleAsset(string path, string assetName)
     {
-        return GetAssetBundle(target, path, assetName == "AssetBundleManifest")
+        return GetAssetBundle(path, assetName == "AssetBundleManifest")
             .Then(assetBundle => LoadBundleAsset(assetBundle, path, assetName));
     }
 
@@ -85,7 +85,6 @@ public partial class ResourceManager
         public bool loadDone;
         public List<Action> loadDoneAction;
 
-        private List<UnityEngine.Object> _referenceObjects = new List<Object>(DEFAULT_LIST_SIZE);
         private List<int> _validRefCountList = new List<int>(DEFAULT_LIST_SIZE);
         private List<string> _loadingAssets = new List<string>(DEFAULT_LIST_SIZE);
 
@@ -107,62 +106,36 @@ public partial class ResourceManager
 
         public void DestroyAllReference()
         {
-            _referenceObjects.Clear();
             _validRefCountList.Clear();
         }
 
-        public void DestroyReference(UnityEngine.Object obj)
+        public void DestroyReference()
         {
-            System.Object rawObj = obj;
-            if (rawObj == null)
+            if (_validRefCountList.Count > 0)
             {
-                if (_validRefCountList.Count > 0)
-                {
-                    _validRefCountList.RemoveAt(0);
-                }
-            }
-            else
-            {
-                _referenceObjects.Remove(obj);
+                _validRefCountList.RemoveAt(0);
             }
         }
 
-        public void AddReference(UnityEngine.Object obj, int refCount)
+        public void AddReference(int refCount)
         {
-            System.Object rawObj = obj;
-            if(rawObj == null)
-            {
-                Assert.IsFalse(_validRefCountList.Contains(refCount));
-                _validRefCountList.Add(refCount);
-            }
-            else
-            {
-                if(!_referenceObjects.Contains(obj))
-                    _referenceObjects.Add(obj);
-            }
+            Assert.IsFalse(_validRefCountList.Contains(refCount));
+            _validRefCountList.Add(refCount);
         }
 
         public int GetReferenceCount()
         {
-            return _referenceObjects.Count + _validRefCountList.Count;
+            return _validRefCountList.Count;
         }
 
         public bool IsAllDestroyed()
         {
-            return _referenceObjects.Count == 0 && _validRefCountList.Count == 0;
+            return _validRefCountList.Count == 0;
         }
 
-        public bool IsContainTarget(UnityEngine.Object obj, int refCount)
+        public bool IsContainTarget(int refCount)
         {
-            System.Object rawObj = obj;
-            if (rawObj == null)
-            {
-                return _validRefCountList.Contains(refCount);
-            }
-            else
-            {
-                return _referenceObjects.Contains(obj);
-            }
+            return _validRefCountList.Contains(refCount);
         }
     }
 
@@ -214,12 +187,12 @@ public partial class ResourceManager
         return _idAssetBundle;
     }
 
-    public void DestroyAssetBundle(UnityEngine.Object target, string path)
+    public void DestroyAssetBundle(string path)
     {
         AssetBundleWrapper wrapper;
         if (_assetBundleWrappers.TryGetValue(path, out wrapper))
         {
-            wrapper.DestroyReference(target);
+            wrapper.DestroyReference();
 
             if (wrapper.IsAllDestroyed())
             {
@@ -258,12 +231,12 @@ public partial class ResourceManager
         }
     }
 
-    public IPromise<AssetBundle> GetAssetBundle(UnityEngine.Object target, string path)
+    public IPromise<AssetBundle> GetAssetBundle(string path)
     {
-        return GetAssetBundle(target, path, false);
+        return GetAssetBundle(path, false);
     }
 
-    private IPromise<AssetBundle> GetAssetBundle(UnityEngine.Object target, string path, bool isManifestBundle)
+    private IPromise<AssetBundle> GetAssetBundle(string path, bool isManifestBundle)
     {
         if (!isManifestBundle && !_assetBundleManifest )
             throw new Exception("Please load assetBundle manifest first");
@@ -273,24 +246,24 @@ public partial class ResourceManager
 
         if (_assetBundleWrappers.TryGetValue(path, out assetBundleWrapper))
         {
-            assetBundleWrapper.AddReference(target, refCount);
+            assetBundleWrapper.AddReference(refCount);
 
             if (assetBundleWrapper.loadDone)
             {
-                return RetriveAssetBundle(assetBundleWrapper, target, path, refCount);
+                return RetriveAssetBundle(assetBundleWrapper, path, refCount);
             }
             else
             {
-                return DelayRetriveAssetBundle(assetBundleWrapper, target, path, refCount);
+                return DelayRetriveAssetBundle(assetBundleWrapper, path, refCount);
             }
         }
         else
         {
-            return BrandNewLoadAssetBundle(target, path, isManifestBundle, refCount);
+            return BrandNewLoadAssetBundle(path, isManifestBundle, refCount);
         }
     }
 
-    private IPromise<AssetBundle> BrandNewLoadAssetBundle(UnityEngine.Object target, string path, bool isManifestBundle, int refCount)
+    private IPromise<AssetBundle> BrandNewLoadAssetBundle(string path, bool isManifestBundle, int refCount)
     {
         var promise = new Promise<AssetBundle>();
 
@@ -301,12 +274,12 @@ public partial class ResourceManager
             loadDone = false,
             loadDoneAction = new List<Action>(DEFAULT_LIST_SIZE),
         };
-        assetBundleWrapper.AddReference(target, refCount);
-        AddLoadDoneAction(promise, assetBundleWrapper, target, path, refCount);
+        assetBundleWrapper.AddReference(refCount);
+        AddLoadDoneAction(promise, assetBundleWrapper, path, refCount);
 
         _assetBundleWrappers.Add(path, assetBundleWrapper);
 
-        MainThreadDispatcher.StartUpdateMicroCoroutine(GetAssetBundleInternal(target, path, isManifestBundle));
+        MainThreadDispatcher.StartUpdateMicroCoroutine(GetAssetBundleInternal(path, isManifestBundle));
 
         return promise;
     }
@@ -342,23 +315,21 @@ public partial class ResourceManager
         }
     }
 
-    private void AddLoadDoneAction(Promise<AssetBundle> promise, AssetBundleWrapper assetBundleWrapper, UnityEngine.Object target, string path, int refCount)
+    private void AddLoadDoneAction(Promise<AssetBundle> promise, AssetBundleWrapper assetBundleWrapper, string path, int refCount)
     {
         Action loadDoneAction = new Action(() =>
         {
             AssetBundle assetBundle = assetBundleWrapper.assetBundle;
 
-            CheckTargetDestroy(assetBundleWrapper, target);
-
             if (assetBundleWrapper.IsAllDestroyed())
             {
                 promise.Reject(new LoadDoneAndDestroyAllException());
             }
-            else if (IsTargetDestroyed(target, assetBundleWrapper, refCount))
+            else if (IsTargetDestroyed(assetBundleWrapper, refCount))
             {
-                promise.Reject(new TargetDestroyedException(assetBundle, target));
+                promise.Reject(new TargetDestroyedException(assetBundle, refCount));
             }
-            else if (!assetBundleWrapper.IsContainTarget(target, refCount))
+            else if (!assetBundleWrapper.IsContainTarget(refCount))
             {
                 promise.Reject(new LoadDoneAndDestroyMainException());
             }
@@ -378,34 +349,25 @@ public partial class ResourceManager
         assetBundleWrapper.loadDoneAction.Add(loadDoneAction);
     }
 
-    private void CheckTargetDestroy(AssetBundleWrapper assetBundleWrapper, Object target)
-    {
-        object rawTarget = target;
-        if (rawTarget != null && !target)
-        {
-            assetBundleWrapper.DestroyReference(target);
-        }
-    }
-
-    private IPromise<AssetBundle> DelayRetriveAssetBundle(AssetBundleWrapper assetBundleWrapper, UnityEngine.Object target, string path, int refCount)
+    private IPromise<AssetBundle> DelayRetriveAssetBundle(AssetBundleWrapper assetBundleWrapper, string path, int refCount)
     {
         var promise = new Promise<AssetBundle>();
 
-        AddLoadDoneAction(promise, assetBundleWrapper, target, path, refCount);
+        AddLoadDoneAction(promise, assetBundleWrapper, path, refCount);
 
         return promise;
     }
 
-    private IPromise<AssetBundle> RetriveAssetBundle(AssetBundleWrapper assetBundleWrapper, UnityEngine.Object target, string path, int refCount)
+    private IPromise<AssetBundle> RetriveAssetBundle(AssetBundleWrapper assetBundleWrapper, string path, int refCount)
     {
         var promise = new Promise<AssetBundle>();
 
         var assetBundle = assetBundleWrapper.assetBundle;
         if (assetBundle)
         {
-            if (IsTargetDestroyed(target, assetBundleWrapper, refCount))
+            if (IsTargetDestroyed(assetBundleWrapper, refCount))
             {
-                promise.Reject(new TargetDestroyedException(assetBundle, null));
+                promise.Reject(new TargetDestroyedException(assetBundle, refCount));
             }
             else
             {
@@ -420,7 +382,7 @@ public partial class ResourceManager
         return promise;
     }
 
-    private IEnumerator GetAssetBundleInternal(UnityEngine.Object target, string path, bool isManifestBundle)
+    private IEnumerator GetAssetBundleInternal(string path, bool isManifestBundle)
     {
         AssetBundleCreateRequest[] requests;
         string[] dependenciesURI = null;
@@ -547,24 +509,9 @@ public partial class ResourceManager
         return true;
     }
 
-    private static bool IsTargetDestroyed(UnityEngine.Object target, AssetBundleWrapper wrapper, int refCount)
+    private static bool IsTargetDestroyed(AssetBundleWrapper wrapper, int refCount)
     {
-        System.Object targetRaw = target as System.Object;
-        if (targetRaw == null)
-        {
-            return !wrapper.IsContainTarget(target, refCount);
-        }
-        else
-        {
-            if (target)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        return !wrapper.IsContainTarget(refCount);
     }
 
     private static string GetDependencyURI(string originPath, string dependencyName)

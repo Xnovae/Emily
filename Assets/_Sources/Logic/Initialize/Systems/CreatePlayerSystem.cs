@@ -40,7 +40,7 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
         var characterItem = ConfigManager.Instance.GetItem<Character, CharacterItem>(CHARACTER_ASSET_NAME, id);
         string path = Utils.GetBundlePathForLoadFromFile(characterItem.path);
 
-        ResourceManager.Instance.GetAssetBundleAsset(null, path, id)
+        ResourceManager.Instance.GetAssetBundleAsset(path, id)
             .Then(result =>
             {
                 var e = _gameContext.CreateEntity();

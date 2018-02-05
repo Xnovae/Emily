@@ -11,18 +11,16 @@ public partial class GameEntity {
     public ResourceAssetBundleComponent resourceAssetBundle { get { return (ResourceAssetBundleComponent)GetComponent(GameComponentsLookup.ResourceAssetBundle); } }
     public bool hasResourceAssetBundle { get { return HasComponent(GameComponentsLookup.ResourceAssetBundle); } }
 
-    public void AddResourceAssetBundle(UnityEngine.Object newTarget, string newAssetBundlePath) {
+    public void AddResourceAssetBundle(string newAssetBundlePath) {
         var index = GameComponentsLookup.ResourceAssetBundle;
         var component = CreateComponent<ResourceAssetBundleComponent>(index);
-        component.target = newTarget;
         component.assetBundlePath = newAssetBundlePath;
         AddComponent(index, component);
     }
 
-    public void ReplaceResourceAssetBundle(UnityEngine.Object newTarget, string newAssetBundlePath) {
+    public void ReplaceResourceAssetBundle(string newAssetBundlePath) {
         var index = GameComponentsLookup.ResourceAssetBundle;
         var component = CreateComponent<ResourceAssetBundleComponent>(index);
-        component.target = newTarget;
         component.assetBundlePath = newAssetBundlePath;
         ReplaceComponent(index, component);
     }
