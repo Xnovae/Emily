@@ -1,46 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Data.ConstantDatabase;
 using System.Diagnostics;
+using System.IO;
 using System.Reflection;
+using System.Text;
 using LitJson;
 using UnityEngine.Assertions;
 using ZeroFormatter;
 
-public abstract class ConfigGetItem<T1, T2>
-    where T1 : ConfigGetItem<T1, T2>, new ()
-    where T2 : class, new ()
+public abstract class ConfigGetItem<T>
+    where T : class, new ()
 {
-    protected abstract ILazyDictionary<string, byte[]> GetInternalDictionary();
-    protected abstract void SetInternalDictionary(ILazyDictionary<string, byte[]> dictionary);
+    private Dictionary<string, T> _dictionary;
 
-    private Dictionary<string, T2> _dictionary;
-
-    public Dictionary<string, T2> GetDictionary()
+    public Dictionary<string, T> GetDictionary()
     {
         return _dictionary;
-    }
-
-    public void LoadAll()
-    {
-        var internalDictionary = GetInternalDictionary();
-
-        int length = internalDictionary.Count;
-        if (length > 0)
-        {
-            string[] keys = new string[length];
-            int index = 0;
-
-            foreach (var item in internalDictionary)
-            {
-                keys[index] = item.Key;
-                ++index;
-            }
-
-            for(int i=0; i<length; ++i)
-            {
-                GetItem(keys[i]);
-            }
-        }
     }
 
     public object GetJsonDataValue(JsonData data, Type type)
@@ -201,89 +177,88 @@ public abstract class ConfigGetItem<T1, T2>
     }
 
 #if UNITY_EDITOR
-    public void SerializeObject(string jsonStr, string outputPath)
+    public void SerializeObject(CdbWriter cdbWriter, string jsonStr, string outputPath)
     {
         var jsons = JsonMapper.ToObject(jsonStr);
 
-        T1 container = new T1();
         Dictionary<string, byte[]> dict = new Dictionary<string, byte[]>(jsons.Count);
 
-        foreach (var key in jsons.Keys)
+        foreach (var id in jsons.Keys)
         {
-            JsonData json = jsons[key];
+            JsonData json = jsons[id];
 
-            T2 item = new T2();
+            T item = new T();
             foreach (var jsonsKey in json.Keys)
             {
                 SetValue(jsonsKey, item, json);
             }
 
-            byte[] itemBytes = ZeroFormatterSerializer.Serialize<T2>(item);
-            dict.Add(key, itemBytes);
+            byte[] itemBytes = ZeroFormatterSerializer.Serialize<T>(item);
+            dict.Add(id, itemBytes);
         }
 
-        var lazyDictionary = dict.AsLazyDictionary();
-        container.SetInternalDictionary(lazyDictionary);
+        string assetName = Path.GetFileNameWithoutExtension(outputPath);
+        foreach (var item in dict)
+        {
+            string id = item.Key;
+            byte[] key = EncodeKey(assetName, id);
+            byte[] value = item.Value;
 
-        byte[] containerBytes = ZeroFormatterSerializer.Serialize<T1>(container);
-        System.IO.File.WriteAllBytes(outputPath, containerBytes);
+            cdbWriter.Add(key, value);
+        }
     }
 
-    private void SetValue(string jsonsKey, T2 item, JsonData json)
+    private void SetValue(string jsonsKey, T item, JsonData json)
     {
-        Type type = GetMemberType<T2>(jsonsKey);
+        Type type = GetMemberType<T>(jsonsKey);
 
-        typeof(T2).InvokeMember(jsonsKey,
+        typeof(T).InvokeMember(jsonsKey,
             BindingFlags.Instance | BindingFlags.Public | BindingFlags.SetProperty,
             Type.DefaultBinder, item, new object[] { GetJsonDataValue(json[jsonsKey], type) });
     }
 
-    private Type GetMemberType<T>(string jsonsKey)
+    private Type GetMemberType<T2>(string jsonsKey)
     {
         return typeof(T2).GetProperty(jsonsKey).PropertyType;
     }
 #endif
 
-    public T2 GetItem(string key)
+    public T GetItem(string assetName, string id)
     {
-        var internalDictionary = GetInternalDictionary();
-        Assert.IsNotNull(internalDictionary);
-
         InitializeDictionary();
 
-        T2 item;
-        if (_dictionary.TryGetValue(key, out item))
+        T item;
+        if (_dictionary.TryGetValue(id, out item))
         {
             return item;
         }
         else
         {
-            byte[] bytes;
-            if (internalDictionary.TryGetValue(key, out bytes))
-            {
-                item = ZeroFormatterSerializer.Deserialize<T2>(bytes);
+            CdbReader cdbReader = ConfigManager.Instance.GetCdbReader();
 
-                _dictionary.Add(key, item);
-                internalDictionary.Remove(key);    // free bytes
+            byte[] key = EncodeKey(assetName, id);
 
-                return item;
-            }
-            else
-            {
-                UnityEngine.Debug.LogWarning("!!! config Achievement cannot find: " + key);
-                return null;
-            }
+            byte[] value = cdbReader.Find(key);
+            Assert.IsNotNull(value, string.Format("Can not find assetName: {0} id: {1}", assetName, id));
+
+            item = ZeroFormatterSerializer.Deserialize<T>(value);
+
+            _dictionary.Add(id, item);
+
+            return item;
         }
     }
 
     private void InitializeDictionary()
     {
-        var internalDictionary = GetInternalDictionary();
-
         if (_dictionary == null)
         {
-            int length = internalDictionary.Count;
-            _dictionary = new Dictionary<string, T2>(length);
+            _dictionary = new Dictionary<string, T>();
         }
+    }
+
+    public static byte[] EncodeKey(string assetName, string id)
+    {
+        return Encoding.UTF8.GetBytes(assetName + "$$" + id);
     }
 }

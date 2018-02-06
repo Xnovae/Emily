@@ -35,7 +35,7 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
 
     private void CreatePlayer(string id)
     {
-        var characterItem = ConfigManager.Instance.GetItem<Character, CharacterItem>(Consts.ASSET_NAME_CHARACTER, id);
+        var characterItem = ConfigManager.Instance.GetItem<CharacterItem>(Consts.ASSET_NAME_CHARACTER, id);
         string path = Utils.GetBundlePathForLoadFromFile(characterItem.path);
 
         ResourceManager.Instance.GetAssetBundleAsset(path, id)

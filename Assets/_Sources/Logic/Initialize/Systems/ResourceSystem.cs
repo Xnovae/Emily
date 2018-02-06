@@ -1,11 +1,14 @@
 using System;
+using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Entitas;
 using RSG;
 using UniRx;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Networking;
 using Object = UnityEngine.Object;
 
 public class ResourceSystem : IInitializeSystem
@@ -29,9 +32,9 @@ public class ResourceSystem : IInitializeSystem
 
                 return InitializeConfig();       // 加载所有配置
             })
-            .Then(configAssetBundle =>
+            .Then(cdbPath =>
             {
-                ConfigManager.Instance.Init(configAssetBundle);
+                ConfigManager.Instance.Init(cdbPath);
 
                 return InitializeShaders();
             })
@@ -81,23 +84,43 @@ public class ResourceSystem : IInitializeSystem
         return promise;
     }
 
-    private IPromise<AssetBundle> InitializeConfig()
+    private IPromise<string> InitializeConfig()
     {
-        var promise = new Promise<AssetBundle>();
+        var promise = new Promise<string>();
 
-        var mapConfig = Utils.GetBundlePathForLoadFromFile("config/client_config.assetbundle");
+        string sourcePath = Application.streamingAssetsPath + "/config.cdb";
+        string destPath = Application.persistentDataPath + "/config.cdb";
 
-        ResourceManager.Instance.GetAssetBundle(mapConfig)
-            .Then(assetBundle =>
-            {
-                promise.Resolve(assetBundle);
-            })
-            .Catch(ex =>
-            {
-                promise.Reject(new Exception("Fail to init map config ex: " + ex));
-            });
+        if (File.Exists(destPath))
+        {
+            promise.Resolve(destPath);
+        }
+        else
+        {
+            MainThreadDispatcher.StartUpdateMicroCoroutine(CopyConfigFiles(promise, sourcePath, destPath));
+        }
 
         return promise;
+    }
+
+    private IEnumerator CopyConfigFiles(Promise<string> promise, string sourcePath, string destPath)
+    {
+        using (UnityWebRequest webRequest = new UnityWebRequest(sourcePath))
+        {
+
+            byte[] buffer = ArrayPool<byte>.Shared.Rent(64 * 1024);
+
+            webRequest.downloadHandler = new SaveFileDownloadHandler(buffer, destPath);
+            var request = webRequest.SendWebRequest();
+            while (!request.isDone)
+            {
+                yield return null;
+            }
+
+            ArrayPool<byte>.Shared.Return(buffer);
+        }
+
+        promise.Resolve(destPath);
     }
 
     private IPromise InitializeShaders()

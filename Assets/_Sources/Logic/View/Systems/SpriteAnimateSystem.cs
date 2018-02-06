@@ -1,8 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Profiling;
 
 public class SpriteAnimateSystem : IExecuteSystem
 {
@@ -21,7 +22,7 @@ public class SpriteAnimateSystem : IExecuteSystem
 
     public void Execute()
     {
-        foreach (var e in _tweenValueElements)
+        foreach (var e in _tweenValueElements.GetEntities())
         {
             string spriteName = null;
 

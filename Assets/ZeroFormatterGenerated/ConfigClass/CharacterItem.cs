@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace ClientConfig
 {
     [ZeroFormattable]
-    public class CharacterItem
+    public class CharacterItem : ConfigGetItem<CharacterItem>
     {
         
     [Index(0)]

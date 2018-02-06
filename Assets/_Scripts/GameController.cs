@@ -33,6 +33,9 @@ public class GameController : MonoBehaviour
 
             // Destroy
             .Add(new DestroySystems(contexts))
+
+            // TearDown
+            .Add(new TearDownSystems(contexts))
             ; 
     }
 

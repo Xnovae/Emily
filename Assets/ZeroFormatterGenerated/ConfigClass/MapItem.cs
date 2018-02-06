@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace ClientConfig
 {
     [ZeroFormattable]
-    public class MapItem
+    public class MapItem : ConfigGetItem<MapItem>
     {
         
     [Index(0)]

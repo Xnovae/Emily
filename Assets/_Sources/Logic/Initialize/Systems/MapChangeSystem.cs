@@ -41,7 +41,7 @@ public class MapChangeSystem : IInitializeSystem
     {
         Assert.IsNotNull(map);
 
-        MapItem mapItem = ConfigManager.Instance.GetItem<Map, MapItem>(MAP_ASSET_NAME, map.id);
+        MapItem mapItem = ConfigManager.Instance.GetItem<MapItem>(MAP_ASSET_NAME, map.id);
 
         string name = mapItem.name;
         int width = mapItem.width;

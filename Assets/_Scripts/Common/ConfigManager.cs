@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Data.ConstantDatabase;
 using UnityEngine;
 using UnityEngine.Assertions;
 using ZeroFormatter;
@@ -21,44 +22,60 @@ public class ConfigManager
         }
     }
 
-    private AssetBundle _configAssetBundle;
+    private CdbReader _cdbReader;
 
     private Dictionary<string, object> _dict = new Dictionary<string, object>();
 
     private ConfigManager()
     { }
 
-    public void Init(AssetBundle configAssetBundle)
+    public void Init(string cdbPath)
     {
-        _configAssetBundle = configAssetBundle;
+        _cdbReader = new CdbReader(cdbPath);
     }
 
-    public T2 GetItem<T1, T2>(string assetName, string id)
-        where T1 : ConfigGetItem<T1, T2>, new()
-        where T2 : class, new()
+    public CdbReader GetCdbReader()
     {
-        Assert.IsNotNull(_configAssetBundle);
+        return _cdbReader;
+    }
 
+    public void Close()
+    {
+        if (_cdbReader != null)
+        {
+            _cdbReader.Close();
+        }
+    }
+
+    public T GetItem<T>(string assetName, string id)
+        where  T : ConfigGetItem<T>, new()
+    {
         object itemObj;
         if (_dict.TryGetValue(assetName, out itemObj))
         {
-            T1 item = itemObj as T1;
+            var item = itemObj as T;
             Assert.IsNotNull(item);
 
-            return item.GetItem(id);
+            return item.GetItem(assetName, id);
         }
         else
         {
-            TextAsset textAsset = _configAssetBundle.LoadAsset<TextAsset>(assetName);
-            Assert.IsNotNull(textAsset);
+            var item = new T();
 
-            itemObj = ZeroFormatterSerializer.Deserialize<T1>(textAsset.bytes);
-            _dict.Add(assetName, itemObj);
+            _dict.Add(assetName, item);
 
-            T1 item = itemObj as T1;
-            Assert.IsNotNull(item);
+            return item.GetItem(assetName, id);
 
-            return item.GetItem(id);
+            //TextAsset textAsset = _configAssetBundle.LoadAsset<TextAsset>(assetName);
+            //Assert.IsNotNull(textAsset);
+
+            //itemObj = ZeroFormatterSerializer.Deserialize<>(textAsset.bytes);
+            //_dict.Add(assetName, itemObj);
+
+            // item = itemObj as ;
+            //Assert.IsNotNull(item);
+
+            //return item.GetItem(id);
         }
     }
 }

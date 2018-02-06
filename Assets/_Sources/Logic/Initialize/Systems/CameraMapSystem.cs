@@ -281,30 +281,38 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
         }
         else
         {
-            e = _gameContext.CreateEntity();
-            e.Retain(this);
-            _mapItemDictionary.Add(key, e);
-
-            string path = string.Format(_gameContext.runningData.RuntimeData.mapPathFormat, x.ToString(), y.ToString());
-            string assetName = x.ToString() + "_" + y.ToString();
-
-            e.AddView(null, assetName);
-            e.AddPosition(new Vector2((float)x * MAP_ITEM_WIDTH / TexturePixelsPerUnit, (float)y * MAP_ITEM_HEIGHT / TexturePixelsPerUnit));
-            e.AddResourceAssetBundle(path);
-
-            ResourceManager.Instance.GetAssetBundleAsset(path, assetName)
-                .Then(asset =>
-                {
-                    var gameObject = asset as GameObject;
-                    Assert.IsNotNull(gameObject);
-                    var collectionData = gameObject.GetComponent<tk2dSpriteCollectionData>();
-
-                    // e.AddViewAsset(collectionData, assetName);    // CAUTION: DON'T use e, cause view and Asset not same
-                    _mapItemDictionary[key].AddViewAsset(collectionData, assetName);
-
-                    int count = ResourceManager.Instance.GetAssetBundleWrappersCount(path);
-                    Assert.AreEqual(1, count, "load map path: " + path + ", count: " + count);
-                });
+            LoadMapItemInternal(x, y, key);
         }
+    }
+
+    // Tips:: Not execute method should be extracted to avoid lamdba memory allocation
+    private void LoadMapItemInternal(int x, int y, Vector2i key)
+    {
+        GameEntity e;
+        e = _gameContext.CreateEntity();
+        e.Retain(this);
+        _mapItemDictionary.Add(key, e);
+
+        string path = string.Format(_gameContext.runningData.RuntimeData.mapPathFormat, x.ToString(), y.ToString());
+        string assetName = x.ToString() + "_" + y.ToString();
+
+        e.AddView(null, assetName);
+        e.AddPosition(new Vector2((float) x * MAP_ITEM_WIDTH / TexturePixelsPerUnit,
+            (float) y * MAP_ITEM_HEIGHT / TexturePixelsPerUnit));
+        e.AddResourceAssetBundle(path);
+
+        ResourceManager.Instance.GetAssetBundleAsset(path, assetName)
+            .Then(asset =>
+            {
+                var gameObject = asset as GameObject;
+                Assert.IsNotNull(gameObject);
+                var collectionData = gameObject.GetComponent<tk2dSpriteCollectionData>();
+
+                // e.AddViewAsset(collectionData, assetName);    // CAUTION: DON'T use e, cause view and Asset not same
+                _mapItemDictionary[key].AddViewAsset(collectionData, assetName);
+
+                int count = ResourceManager.Instance.GetAssetBundleWrappersCount(path);
+                Assert.AreEqual(1, count, "load map path: " + path + ", count: " + count);
+            });
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.ConstantDatabase;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -82,6 +83,24 @@ public class ConfigGeneratorWindow : EditorWindow
     private void BuildStageTriggerBuild()
     {
         // Debug.Log("!!! BuildStageTriggerBuild");
+        string cdbSourcePath = Application.streamingAssetsPath + "/config.cdb";
+        if (File.Exists(cdbSourcePath))
+        {
+            File.Delete(cdbSourcePath);
+        }
+
+        string cdbDestPath = Application.persistentDataPath + "/config.cdb";
+        if (File.Exists(cdbDestPath))
+        {
+            File.Delete(cdbDestPath);
+        }
+
+        if (File.Exists(ZeroFormatClassPath))
+        {
+            File.Delete(ZeroFormatClassPath);
+        }
+
+        AssetDatabase.Refresh();
         SetStage(ZeroFormatterBuildStage.Stage.GenerateClassFiles);
     }
 
@@ -120,7 +139,8 @@ public class ConfigGeneratorWindow : EditorWindow
     {
         // Debug.Log("!!! BuildStageCreateAssetBundle");
 
-        CreateAssetBundle();
+        // CDB does not Need AssetBundle
+        // CreateAssetBundle();
 
         AssetDatabase.Refresh();
         ClearStage();
@@ -395,27 +415,7 @@ public class ConfigGeneratorWindow : EditorWindow
     public static string ProtoClassDir = "Assets/ZeroFormatterGenerated/ConfigClass";
     public static string ProtoBytesDir = "Assets/ZeroFormatterGenerated/ConfigBytes";
 
-    public static string CLASS_FORMAT_FILE = @"using ZeroFormatter;
-
-namespace ClientConfig
-{{
-    [ZeroFormattable]
-    public class {0} : ConfigGetItem<{0}, {1}>
-    {{
-        [Index(0)]
-        public virtual ILazyDictionary<string, byte[]> _internalDictionary {{ get; set; }}
-
-        protected override ILazyDictionary<string, byte[]> GetInternalDictionary()
-        {{
-            return _internalDictionary;
-        }}
-        
-        protected override void SetInternalDictionary(ILazyDictionary<string, byte[]> dictionary)
-        {{
-            _internalDictionary = dictionary;
-        }}
-    }}
-}}";
+    public static string ZeroFormatClassPath = "Assets/ZeroFormatterGenerated/ConfigZeroFormatter.cs";
 
     public static string ITEM_FORMAT_FILE = @"using ZeroFormatter;
 using System.Collections.Generic;
@@ -423,7 +423,7 @@ using System.Collections.Generic;
 namespace ClientConfig
 {{
     [ZeroFormattable]
-    public class {0}
+    public class {0} : ConfigGetItem<{0}>
     {{
         {1}
     }}
@@ -494,11 +494,6 @@ namespace ClientConfig
             string itemContent = string.Format(ITEM_FORMAT_FILE, classItemName, sb.ToString());
             string itemPath = Path.Combine(ProtoClassDir, classItemName + ".cs");
             File.WriteAllText(itemPath, itemContent);
-
-            // generate class
-            string classContent = string.Format(CLASS_FORMAT_FILE, className, classItemName);
-            string classPath = Path.Combine(ProtoClassDir, className + ".cs");
-            File.WriteAllText(classPath, classContent);
         }
     }
 
@@ -638,7 +633,7 @@ namespace ClientConfig
     {
         string zfcPath = new FileInfo("Assets/3rd_party/ZeroFormatter/zfc.exe").FullName;
         string csprojPath = new FileInfo("Emily.csproj").FullName;
-        string outputPath = new FileInfo("Assets/ZeroFormatterGenerated/ConfigZeroFormatter.cs").FullName;
+        string outputPath = new FileInfo(ZeroFormatClassPath).FullName;
 
         string command = string.Format("{0} -i {1} -o {2}", zfcPath, csprojPath, outputPath);
         Utils.ExecuteCommandSync(command);
@@ -674,21 +669,27 @@ namespace ClientConfig
             Debug.LogError("can not find type ZeroFormatter.ZeroFormatterInitializer");
         }
 
-        foreach (var fileInfo in new DirectoryInfo(ConfigDir).GetFiles("*.json", SearchOption.TopDirectoryOnly))
+        string cdbPath = Application.streamingAssetsPath + "/config.cdb";
+        using (CdbWriter cdbWriter = new CdbWriter(cdbPath))
         {
-            try
+            foreach (var fileInfo in new DirectoryInfo(ConfigDir).GetFiles("*.json", SearchOption.TopDirectoryOnly))
             {
-                if (!fileInfo.Name.StartsWith("EditorOnly-"))
-                    GenerateBytesInternal(fileInfo);
+                try
+                {
+                    if (!fileInfo.Name.StartsWith("EditorOnly-"))
+                        GenerateBytesInternal(cdbWriter, fileInfo);
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
             }
-            catch (Exception e)
-            {
-                Debug.LogException(e);
-            }
+
+            cdbWriter.Finish();
         }
     }
 
-    private static void GenerateBytesInternal(FileInfo fileInfo)
+    private static void GenerateBytesInternal(CdbWriter CdbWriter, FileInfo fileInfo)
     {
         string jsonStr = File.ReadAllText(fileInfo.FullName);
         string outputPath = Path.Combine(ProtoBytesDir, Path.GetFileNameWithoutExtension(fileInfo.Name) + ".bytes");
@@ -696,12 +697,12 @@ namespace ClientConfig
         string className = Path.GetFileNameWithoutExtension(fileInfo.Name);
         className = UpperCaseHeader(className);
 
-        Type classType = Utils.NameToType("ClientConfig." + className);
+        Type classType = Utils.NameToType("ClientConfig." + className + "Item");
 
         object obj = Activator.CreateInstance(classType);
         var methodInfo = classType.GetMethod("SerializeObject");
         if (methodInfo != null)
-            methodInfo.Invoke(obj, new object[] { jsonStr, outputPath });
+            methodInfo.Invoke(obj, new object[] { CdbWriter, jsonStr, outputPath });
     }
 
     private void CreateAssetBundle()

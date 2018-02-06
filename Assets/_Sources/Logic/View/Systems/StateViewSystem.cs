@@ -29,7 +29,7 @@ public class StateViewSystem : ReactiveSystem<GameEntity>
         foreach (var e in entities)
         {
             string id = e.identifier.name;
-            var characterItem = ConfigManager.Instance.GetItem<Character, CharacterItem>(Consts.ASSET_NAME_CHARACTER, id);
+            var characterItem = ConfigManager.Instance.GetItem<CharacterItem>(Consts.ASSET_NAME_CHARACTER, id);
 
             string[] sprites = GetSpriteAnimate(characterItem, e.state.state);
             e.ReplaceSpriteAnimate(sprites);
