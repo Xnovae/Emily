@@ -1,7 +1,10 @@
-﻿using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using ClientConfig;
 using Entitas;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class StateViewSystem : ReactiveSystem<GameEntity>
 {
@@ -13,19 +16,58 @@ public class StateViewSystem : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.State);
+        return context.CreateCollector(GameMatcher.State.Added());
     }
 
     protected override bool Filter(GameEntity entity)
     {
-        return true;
+        return entity.hasIdentifier;
     }
 
     protected override void Execute(List<GameEntity> entities)
     {
         foreach (var e in entities)
         {
-            
+            string id = e.identifier.name;
+            var characterItem = ConfigManager.Instance.GetItem<Character, CharacterItem>(Consts.ASSET_NAME_CHARACTER, id);
+
+            string[] sprites = GetSpriteAnimate(characterItem, e.state.state);
+            e.ReplaceSpriteAnimate(sprites);
+
+            e.ReplaceTween(0, 1, 1, true);
+        }
+    }
+
+    private string[] GetSpriteAnimate(CharacterItem config, CharacterState state)
+    {
+        switch (state)
+        {
+            case CharacterState.Idle:
+                return config.actionIdle;
+
+            case CharacterState.Run:
+                return config.actionRun;
+
+            case CharacterState.LightAttack1:
+                return config.actionLightAttack1;
+
+            case CharacterState.LightAttack2:
+                return config.actionLightAttack2;
+
+            case CharacterState.HeavyAttack1:
+                return config.actionHeavyAttack1;
+
+            case CharacterState.HeavyAttack2:
+                return config.actionHeavyAttack2;
+
+            case CharacterState.LevelUp:
+                return config.actionLevelUp;
+
+            case CharacterState.Die:
+                return config.actionDie;
+
+            default:
+                throw new Exception("!!! invalid state: " + state);
         }
     }
 }

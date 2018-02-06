@@ -16,7 +16,6 @@ public class SpriteAnimateSystem : IExecuteSystem
         _tweenValueElements = _context.GetGroup(GameMatcher.AllOf(
                                                     GameMatcher.TweenResult,
                                                     GameMatcher.SpriteAnimate,
-                                                    GameMatcher.View,
                                                     GameMatcher.ViewAsset));
     }
 
@@ -24,14 +23,13 @@ public class SpriteAnimateSystem : IExecuteSystem
     {
         foreach (var e in _tweenValueElements)
         {
-            var viewController = e.view.viewController;
             string spriteName = null;
 
             bool success = GetSpriteName(e.tweenResult.value, e.spriteAnimate.sprites, ref spriteName);
             if (success)
             {
                 var collection = e.viewAsset.collectionData;
-                viewController.tk2dSprite.SetSprite(collection, spriteName);
+                e.ReplaceViewAsset(collection, spriteName);
             }
         }
     }

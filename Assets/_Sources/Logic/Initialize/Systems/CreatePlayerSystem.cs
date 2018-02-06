@@ -7,8 +7,6 @@ using UnityEngine.Assertions;
 
 public class CreatePlayerSystem : ReactiveSystem<GameEntity>
 {
-    public const string CHARACTER_ASSET_NAME = "character";
-
     private GameContext _gameContext;
 
     public CreatePlayerSystem(Contexts contexts)
@@ -37,7 +35,7 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
 
     private void CreatePlayer(string id)
     {
-        var characterItem = ConfigManager.Instance.GetItem<Character, CharacterItem>(CHARACTER_ASSET_NAME, id);
+        var characterItem = ConfigManager.Instance.GetItem<Character, CharacterItem>(Consts.ASSET_NAME_CHARACTER, id);
         string path = Utils.GetBundlePathForLoadFromFile(characterItem.path);
 
         ResourceManager.Instance.GetAssetBundleAsset(path, id)
@@ -52,7 +50,7 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
                 string assetName = id;
                 e.AddView(null, assetName);
 
-                e.AddState(CharacterState.Idle);
+                e.AddState(CharacterState.LevelUp);
                 e.AddDirection(CharacterDirection.Right);
 
                 var asset = result as GameObject;

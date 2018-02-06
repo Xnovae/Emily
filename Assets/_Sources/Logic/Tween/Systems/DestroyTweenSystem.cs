@@ -14,7 +14,7 @@ public class DestroyTweenSystem : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.Tween.Removed());
+        return context.CreateCollector(GameMatcher.Destroy.Added());
     }
 
     protected override bool Filter(GameEntity entity)
@@ -27,9 +27,6 @@ public class DestroyTweenSystem : ReactiveSystem<GameEntity>
         foreach (var e in entities)
         {
             e.tweenResult.tweener.Kill();
-
-            e.RemoveTweenResult();
         }
-
     }
 }
