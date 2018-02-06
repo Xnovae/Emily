@@ -26,7 +26,7 @@ public class DirectionViewSystem : ReactiveSystem<GameEntity>
     {
         foreach (var e in entities)
         {
-            tk2dSprite sprite = e.view.viewController.tk2dSprite;
+            tk2dSprite sprite = e.view.viewController.displaySprite;
             if (e.direction.direction == CharacterDirection.Right)
             {
                 sprite.FlipX = false;

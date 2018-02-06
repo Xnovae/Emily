@@ -34,7 +34,7 @@ public class AddViewAssetSystem : ReactiveSystem<GameEntity>
             var viewController = e.view.viewController;
 
             if(e.viewAsset.spriteName != null)
-                viewController.tk2dSprite.SetSprite(e.viewAsset.collectionData, e.viewAsset.spriteName);
+                viewController.displaySprite.SetSprite(e.viewAsset.collectionData, e.viewAsset.spriteName);
 
             viewController.gameObject.SetActive(true);
         }
