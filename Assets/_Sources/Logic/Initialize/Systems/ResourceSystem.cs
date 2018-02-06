@@ -51,7 +51,7 @@ public class ResourceSystem : IInitializeSystem
         ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Tk2dSprite_Template)
             .Then(spriteTemplate =>
             {
-                PoolManager.WarmPool(spriteTemplate, 50);
+                PoolManager.Instance.WarmPool(spriteTemplate, 50);
                 promise.Resolve(spriteTemplate);
             })
             .Catch(ex =>

@@ -34,7 +34,8 @@ public class StateViewSystem : ReactiveSystem<GameEntity>
             string[] sprites = GetSpriteAnimate(characterItem, e.state.state);
             e.ReplaceSpriteAnimate(sprites);
 
-            e.ReplaceTween(0, 1, 1, true);
+            float duration = Consts.Sprite_Gap_Time * sprites.Length;
+            e.ReplaceTween(0, 1, duration, true);
         }
     }
 

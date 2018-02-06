@@ -33,7 +33,7 @@ public class PoolManager : Singleton<PoolManager>
 		}
 	}
 
-	public void warmPool(GameObject prefab, int size)
+	public void WarmPool(GameObject prefab, int size)
 	{
 		if(prefabLookup.ContainsKey(prefab))
 		{
@@ -51,12 +51,12 @@ public class PoolManager : Singleton<PoolManager>
 		dirty = true;
 	}
 
-	public GameObject spawnObject(GameObject prefab)
+	public GameObject SpawnObject(GameObject prefab)
 	{
-		return spawnObject(prefab, Vector3.zero, Quaternion.identity);
+		return SpawnObject(prefab, Vector3.zero, Quaternion.identity);
 	}
 
-	public GameObject spawnObject(GameObject prefab, Vector3 position, Quaternion rotation)
+	public GameObject SpawnObject(GameObject prefab, Vector3 position, Quaternion rotation)
 	{
 		if (!prefabLookup.ContainsKey(prefab))
 		{
@@ -75,7 +75,7 @@ public class PoolManager : Singleton<PoolManager>
 		return clone;
 	}
 
-	public void releaseObject(GameObject clone)
+	public void ReleaseObject(GameObject clone)
 	{
 		clone.SetActive(false);
         clone.transform.SetParent(container, false);
@@ -110,25 +110,25 @@ public class PoolManager : Singleton<PoolManager>
 
 	#region Static API
 
-	public static void WarmPool(GameObject prefab, int size)
-	{
-		Instance.warmPool(prefab, size);
-	}
+	//public static void WarmPool(GameObject prefab, int size)
+	//{
+	//	Instance.warmPool(prefab, size);
+	//}
 
-	public static GameObject SpawnObject(GameObject prefab)
-	{
-		return Instance.spawnObject(prefab);
-	}
+	//public static GameObject SpawnObject(GameObject prefab)
+	//{
+	//	return Instance.spawnObject(prefab);
+	//}
 
-	public static GameObject SpawnObject(GameObject prefab, Vector3 position, Quaternion rotation)
-	{
-		return Instance.spawnObject(prefab, position, rotation);
-	}
+	//public static GameObject SpawnObject(GameObject prefab, Vector3 position, Quaternion rotation)
+	//{
+	//	return Instance.spawnObject(prefab, position, rotation);
+	//}
 
-	public static void ReleaseObject(GameObject clone)
-	{
-		Instance.releaseObject(clone);
-	}
+	//public static void ReleaseObject(GameObject clone)
+	//{
+	//	Instance.releaseObject(clone);
+	//}
 
 	#endregion
 }

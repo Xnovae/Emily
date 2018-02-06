@@ -5,7 +5,7 @@ using UnityEngine;
 
 public interface IViewController
 {
-    tk2dSprite tk2dSprite { get; set; }
+    tk2dSprite displaySprite { get; set; }
 
     Vector3 position { get; set; }
 
@@ -16,7 +16,7 @@ public interface IViewController
 
 public class ViewController : MonoBehaviour, IViewController
 {
-    public tk2dSprite tk2dSprite { get; set; }
+    public tk2dSprite displaySprite { get; set; }
 
     public Vector3 position
     {
@@ -26,7 +26,7 @@ public class ViewController : MonoBehaviour, IViewController
 
     void Awake()
     {
-        tk2dSprite = GetComponent<tk2dSprite>();
+        displaySprite = GetComponent<tk2dSprite>();
     }
 
     public void Destroy()
@@ -34,8 +34,10 @@ public class ViewController : MonoBehaviour, IViewController
         EntityLink link = gameObject.GetEntityLink();
         link.Unlink();
 
+        displaySprite.SetSprite(Consts.Tk2dSprite_Not_Exist);
+
         gameObject.name = "spriteTemplate(Clone)";
         gameObject.SetActive(false);
-        PoolManager.Instance.releaseObject(gameObject);
+        PoolManager.Instance.ReleaseObject(gameObject);
     }
 }

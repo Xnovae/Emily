@@ -34,7 +34,7 @@ public class AddViewSystem : ReactiveSystem<GameEntity>
         {
             GameObject prefab = _gameContext.runningData.ResourceData.spriteTemplate;
 
-            GameObject gameObject = PoolManager.SpawnObject(prefab);
+            GameObject gameObject = PoolManager.Instance.SpawnObject(prefab);
             gameObject.name = e.view.name;
 
             gameObject.transform.SetParent(_container, false);
