@@ -29,14 +29,14 @@ public class AddViewAssetSystem : ReactiveSystem<GameEntity>
     {
         foreach (var e in entities)
         {
+            Assert.IsNotNull(e.viewAsset.collectionData);
+
             var viewController = e.view.viewController;
 
-            viewController.tk2dSprite.SetSprite(e.viewAsset.collectionData, e.viewAsset.spriteName);
+            if(e.viewAsset.spriteName != null)
+                viewController.tk2dSprite.SetSprite(e.viewAsset.collectionData, e.viewAsset.spriteName);
 
             viewController.gameObject.SetActive(true);
-
-            Assert.IsNotNull(viewController.tk2dSprite.Collection);
-            Assert.AreEqual(true, viewController.tk2dSprite.Collection);
         }
     }
 }

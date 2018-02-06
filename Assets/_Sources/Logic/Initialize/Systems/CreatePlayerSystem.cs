@@ -57,7 +57,7 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
                 Assert.IsNotNull(asset);
 
                 var collectionData = asset.GetComponent<tk2dSpriteCollectionData>();
-                e.AddViewAsset(collectionData, characterItem.initSpriteName);
+                e.AddViewAsset(collectionData, null);       // only set collection data, no sprite name
             })
             .Catch(ex => { Debug.LogException(ex); });
     }

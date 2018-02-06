@@ -840,21 +840,20 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             {
                 var startOffset = offset;
 
-                offset += (8 + 4 * (11 + 1));
+                offset += (8 + 4 * (10 + 1));
                 offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string>(ref bytes, startOffset, offset, 0, value.id);
                 offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string>(ref bytes, startOffset, offset, 1, value.name);
-                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string>(ref bytes, startOffset, offset, 2, value.initSpriteName);
-                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string>(ref bytes, startOffset, offset, 3, value.path);
-                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 4, value.actionIdle);
-                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 5, value.actionRun);
-                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 6, value.actionLightAttack1);
-                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 7, value.actionLightAttack2);
-                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 8, value.actionHeavyAttack1);
-                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 9, value.actionHeavyAttack2);
-                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 10, value.actionLevelUp);
-                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 11, value.actionDie);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string>(ref bytes, startOffset, offset, 2, value.path);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 3, value.actionIdle);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 4, value.actionRun);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 5, value.actionLightAttack1);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 6, value.actionLightAttack2);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 7, value.actionHeavyAttack1);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 8, value.actionHeavyAttack2);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 9, value.actionLevelUp);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 10, value.actionDie);
 
-                return ObjectSegmentHelper.WriteSize(ref bytes, startOffset, offset, 11);
+                return ObjectSegmentHelper.WriteSize(ref bytes, startOffset, offset, 10);
             }
         }
 
@@ -873,7 +872,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
     public class CharacterItemObjectSegment<TTypeResolver> : global::ClientConfig.CharacterItem, IZeroFormatterSegment
         where TTypeResolver : ITypeResolver, new()
     {
-        static readonly int[] __elementSizes = new int[]{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        static readonly int[] __elementSizes = new int[]{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
         readonly ArraySegment<byte> __originalBytes;
         readonly global::ZeroFormatter.DirtyTracker __tracker;
@@ -882,7 +881,6 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
 
         CacheSegment<TTypeResolver, string> _id;
         CacheSegment<TTypeResolver, string> _name;
-        CacheSegment<TTypeResolver, string> _initSpriteName;
         CacheSegment<TTypeResolver, string> _path;
         CacheSegment<TTypeResolver, string[]> _actionIdle;
         CacheSegment<TTypeResolver, string[]> _actionRun;
@@ -920,19 +918,6 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
         }
 
         // 2
-        public override string initSpriteName
-        {
-            get
-            {
-                return _initSpriteName.Value;
-            }
-            set
-            {
-                _initSpriteName.Value = value;
-            }
-        }
-
-        // 3
         public override string path
         {
             get
@@ -945,7 +930,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             }
         }
 
-        // 4
+        // 3
         public override string[] actionIdle
         {
             get
@@ -958,7 +943,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             }
         }
 
-        // 5
+        // 4
         public override string[] actionRun
         {
             get
@@ -971,7 +956,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             }
         }
 
-        // 6
+        // 5
         public override string[] actionLightAttack1
         {
             get
@@ -984,7 +969,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             }
         }
 
-        // 7
+        // 6
         public override string[] actionLightAttack2
         {
             get
@@ -997,7 +982,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             }
         }
 
-        // 8
+        // 7
         public override string[] actionHeavyAttack1
         {
             get
@@ -1010,7 +995,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             }
         }
 
-        // 9
+        // 8
         public override string[] actionHeavyAttack2
         {
             get
@@ -1023,7 +1008,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             }
         }
 
-        // 10
+        // 9
         public override string[] actionLevelUp
         {
             get
@@ -1036,7 +1021,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             }
         }
 
-        // 11
+        // 10
         public override string[] actionDie
         {
             get
@@ -1058,20 +1043,19 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             this.__tracker = dirtyTracker = dirtyTracker.CreateChild();
             this.__binaryLastIndex = BinaryUtil.ReadInt32(ref __array, originalBytes.Offset + 4);
 
-            this.__extraFixedBytes = ObjectSegmentHelper.CreateExtraFixedBytes(this.__binaryLastIndex, 11, __elementSizes);
+            this.__extraFixedBytes = ObjectSegmentHelper.CreateExtraFixedBytes(this.__binaryLastIndex, 10, __elementSizes);
 
             _id = new CacheSegment<TTypeResolver, string>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 0, __binaryLastIndex, __tracker));
             _name = new CacheSegment<TTypeResolver, string>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 1, __binaryLastIndex, __tracker));
-            _initSpriteName = new CacheSegment<TTypeResolver, string>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 2, __binaryLastIndex, __tracker));
-            _path = new CacheSegment<TTypeResolver, string>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 3, __binaryLastIndex, __tracker));
-            _actionIdle = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 4, __binaryLastIndex, __tracker));
-            _actionRun = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 5, __binaryLastIndex, __tracker));
-            _actionLightAttack1 = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 6, __binaryLastIndex, __tracker));
-            _actionLightAttack2 = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 7, __binaryLastIndex, __tracker));
-            _actionHeavyAttack1 = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 8, __binaryLastIndex, __tracker));
-            _actionHeavyAttack2 = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 9, __binaryLastIndex, __tracker));
-            _actionLevelUp = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 10, __binaryLastIndex, __tracker));
-            _actionDie = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 11, __binaryLastIndex, __tracker));
+            _path = new CacheSegment<TTypeResolver, string>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 2, __binaryLastIndex, __tracker));
+            _actionIdle = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 3, __binaryLastIndex, __tracker));
+            _actionRun = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 4, __binaryLastIndex, __tracker));
+            _actionLightAttack1 = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 5, __binaryLastIndex, __tracker));
+            _actionLightAttack2 = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 6, __binaryLastIndex, __tracker));
+            _actionHeavyAttack1 = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 7, __binaryLastIndex, __tracker));
+            _actionHeavyAttack2 = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 8, __binaryLastIndex, __tracker));
+            _actionLevelUp = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 9, __binaryLastIndex, __tracker));
+            _actionDie = new CacheSegment<TTypeResolver, string[]>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 10, __binaryLastIndex, __tracker));
         }
 
         public bool CanDirectCopy()
@@ -1089,22 +1073,21 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             if (__extraFixedBytes != null || __tracker.IsDirty)
             {
                 var startOffset = offset;
-                offset += (8 + 4 * (11 + 1));
+                offset += (8 + 4 * (10 + 1));
 
                 offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string>(ref targetBytes, startOffset, offset, 0, ref _id);
                 offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string>(ref targetBytes, startOffset, offset, 1, ref _name);
-                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string>(ref targetBytes, startOffset, offset, 2, ref _initSpriteName);
-                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string>(ref targetBytes, startOffset, offset, 3, ref _path);
-                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 4, ref _actionIdle);
-                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 5, ref _actionRun);
-                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 6, ref _actionLightAttack1);
-                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 7, ref _actionLightAttack2);
-                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 8, ref _actionHeavyAttack1);
-                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 9, ref _actionHeavyAttack2);
-                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 10, ref _actionLevelUp);
-                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 11, ref _actionDie);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string>(ref targetBytes, startOffset, offset, 2, ref _path);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 3, ref _actionIdle);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 4, ref _actionRun);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 5, ref _actionLightAttack1);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 6, ref _actionLightAttack2);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 7, ref _actionHeavyAttack1);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 8, ref _actionHeavyAttack2);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 9, ref _actionLevelUp);
+                offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 10, ref _actionDie);
 
-                return ObjectSegmentHelper.WriteSize(ref targetBytes, startOffset, offset, 11);
+                return ObjectSegmentHelper.WriteSize(ref targetBytes, startOffset, offset, 10);
             }
             else
             {

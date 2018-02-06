@@ -14,33 +14,30 @@ namespace ClientConfig
     public virtual string name { get; set; }
 
     [Index(2)]
-    public virtual string initSpriteName { get; set; }
-
-    [Index(3)]
     public virtual string path { get; set; }
 
-    [Index(4)]
+    [Index(3)]
     public virtual string[] actionIdle { get; set; }
 
-    [Index(5)]
+    [Index(4)]
     public virtual string[] actionRun { get; set; }
 
-    [Index(6)]
+    [Index(5)]
     public virtual string[] actionLightAttack1 { get; set; }
 
-    [Index(7)]
+    [Index(6)]
     public virtual string[] actionLightAttack2 { get; set; }
 
-    [Index(8)]
+    [Index(7)]
     public virtual string[] actionHeavyAttack1 { get; set; }
 
-    [Index(9)]
+    [Index(8)]
     public virtual string[] actionHeavyAttack2 { get; set; }
 
-    [Index(10)]
+    [Index(9)]
     public virtual string[] actionLevelUp { get; set; }
 
-    [Index(11)]
+    [Index(10)]
     public virtual string[] actionDie { get; set; }
 
     }

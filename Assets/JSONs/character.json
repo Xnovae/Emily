@@ -2,7 +2,6 @@
   "heroes_archer": {
     "id": "heroes_archer",
     "name": "heroes_archer",
-    "initSpriteName": "hero_archer_0002",
     "path": "character/heroes_archer.assetbundle",
     "actionIdle": [
       "hero_archer_0036"
