@@ -19,6 +19,10 @@ public class GameController : MonoBehaviour
     private Systems CreateSystems(Contexts contexts)
     {
        return new Feature("Systems")
+
+            // Debug
+            .Add(new DebugSystems(contexts))
+
             // Create
             .Add(new InitializeSystems(contexts))
 
