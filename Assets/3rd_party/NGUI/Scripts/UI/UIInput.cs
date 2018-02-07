@@ -660,7 +660,6 @@ public class UIInput : MonoBehaviour
 #if UNITY_4_3
 				|| pf == RuntimePlatform.BB10Player
 #else
-				|| pf == RuntimePlatform.BlackBerryPlayer
 				|| pf == RuntimePlatform.WSAPlayerARM
 				|| pf == RuntimePlatform.WSAPlayerX64
 				|| pf == RuntimePlatform.WSAPlayerX86

@@ -40,17 +40,6 @@ public partial class ResourceManager
         }
     }
 
-    class WWWMovieTexture : WWWResource
-    {
-        public override void GenerateAsset(WWW www)
-        {
-            Assert.IsNotNull(www);
-            Assert.IsTrue(string.IsNullOrEmpty(www.error));
-
-            asset = www.GetMovieTexture();
-        }
-    }
-
     class WWWWrapper
     {
         public string path;
@@ -334,10 +323,6 @@ public partial class ResourceManager
         else if (typeof(T) == typeof(AudioClip))
         {
             return new WWWAudioClip();
-        }
-        else if (typeof(T) == typeof(MovieTexture))
-        {
-           return new WWWMovieTexture(); 
         }
         else
         {
