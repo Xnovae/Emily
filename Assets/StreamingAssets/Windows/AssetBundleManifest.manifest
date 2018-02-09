@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 630009384
+CRC: 3906921061
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -291,5 +291,9 @@ AssetBundleManifest:
       Dependencies:
         Dependency_0: dependency/shaders.assetbundle
     Info_72:
+      Name: character/heroes_archer.assetbundle
+      Dependencies:
+        Dependency_0: dependency/shaders.assetbundle
+    Info_73:
       Name: dependency/shaders.assetbundle
       Dependencies: {}
