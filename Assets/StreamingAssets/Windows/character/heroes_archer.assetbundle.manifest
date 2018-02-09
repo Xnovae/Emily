@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1012571352
+CRC: 79296223
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8d775a480cba288be44842e2e21ed391
+    Hash: 6ec3846a62c3892800791443ce069373
   TypeTreeHash:
     serializedVersion: 2
     Hash: 77c7b93fea82c3652931aec724263bca
@@ -25,4 +25,5 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/_SpriteCollection/heroes_archer Data/heroes_archer.prefab
-Dependencies: []
+Dependencies:
+- E:/Projects/3rd_party/Emily/Assets/StreamingAssets/Windows/dependency/shaders.assetbundle

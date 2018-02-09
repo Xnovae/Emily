@@ -1,7 +1,0 @@
-ManifestFileVersion: 0
-CRC: 4076882367
-AssetBundleManifest:
-  AssetBundleInfos:
-    Info_0:
-      Name: config/client_config.assetbundle
-      Dependencies: {}

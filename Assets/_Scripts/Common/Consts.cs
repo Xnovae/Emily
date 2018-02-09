@@ -10,7 +10,6 @@ public static class Consts
 
     public static readonly float Sprite_Gap_Time = 1.0f / 12.0f;
 
-    public static readonly string Tk2dSprite_Not_Exist = "Tk2dSprite_Not_Exist";
     public static readonly string Tk2dSprite_Template = "tk2dSprite_template";
 
     public static readonly string ID_HERO_ARCHER = "heroes_archer";

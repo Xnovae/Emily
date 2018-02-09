@@ -4,6 +4,7 @@ using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using LitJson;
 using UnityEngine.Assertions;
 
 using Object = UnityEngine.Object;
@@ -11,6 +12,8 @@ using Object = UnityEngine.Object;
 public static class EditorUtils
 {
     public const string AssetBundlesOutputPath = "AssetBundles";
+
+    public const string DEPENDENCY_JSON_PATH = "Assets/JSONs/EditorOnly-dependency.json";
 
     public static T ParseEnum<T>(string value)
     {
@@ -40,8 +43,15 @@ public static class EditorUtils
             // and "/c " as the parameters.
             // Incidentally, /c tells cmd that we want it to execute the command that follows,
             // and then exit.
-            System.Diagnostics.ProcessStartInfo procStartInfo =
-                new System.Diagnostics.ProcessStartInfo("cmd", "/c " + command);
+            System.Diagnostics.ProcessStartInfo procStartInfo = new System.Diagnostics.ProcessStartInfo();
+
+#if UNITY_IOS
+            procStartInfo.FileName = "/bin/bash";
+            procStartInfo.Arguments = "-c \"" + command + "\"";
+#else
+            procStartInfo.FileName = "cmd.exe";
+            procStartInfo.Arguments = "/c " + command;
+#endif
 
             // The following commands are needed to redirect the standard output.
             // This means that it will be redirected to the Process.StandardOutput StreamReader.
@@ -56,18 +66,22 @@ public static class EditorUtils
             // Get the output into a string
             string result = proc.StandardOutput.ReadToEnd();
             // Display the command output.
-            if(!string.IsNullOrEmpty(result))
-                Debug.LogError(result);
+            Debug.Log(result);
         }
-        catch (Exception objException)
+        catch (Exception e)
         {
-            Debug.LogException(objException);
+            Debug.LogError(e.Message);
         }
     }
 
     public static T[] GetAtPath<T>(string path) where T : Object
     {
-        path = path.StartsWith("Assets/") ? path : path.Substring(path.IndexOf("Assets/"));
+        path = path.Replace("\\", "/");
+        int index = path.IndexOf("Assets/", StringComparison.Ordinal);
+        if (index == -1)
+            throw new Exception(string.Format("path: {0} not contains Assets/", path));
+
+        path = path.Substring(index);
         Assert.IsTrue(path.StartsWith("Assets/"));
 
         ArrayList al = new ArrayList();
@@ -84,6 +98,34 @@ public static class EditorUtils
             result[i] = (T)al[i];
 
         return result;
+    }
+
+    public static Dictionary<string, string> MergeDictionary(Dictionary<string, string> dict1,
+        Dictionary<string, string> dict2)
+    {
+        var dict = new Dictionary<string, string>(dict1.Count + dict2.Count);
+
+        foreach (var item in dict1)
+        {
+            dict.Add(item.Key, item.Value);
+        }
+
+        foreach (var item in dict2)
+        {
+            dict.Add(item.Key, item.Value);
+        }
+
+        return dict;
+    }
+
+    public static string TrimAssetPath(string originPath)
+    {
+        originPath = originPath.Replace("\\", "/");
+        int index = originPath.IndexOf("Assets/", StringComparison.Ordinal);
+        if (index == -1)
+            throw new Exception(string.Format("originPath {0} not contains Assets/", originPath));
+
+        return originPath.Substring(index);
     }
 
     public static void CreateAssetBundle(Object[] objs, string subFolder, string assetBundleName)
@@ -119,7 +161,7 @@ public static class EditorUtils
         BuildPipeline.BuildAssetBundles(destFolder, buildMap, BuildAssetBundleOptions.ChunkBasedCompression | BuildAssetBundleOptions.ForceRebuildAssetBundle | BuildAssetBundleOptions.DeterministicAssetBundle, EditorUserBuildSettings.activeBuildTarget);
     }
 
-    public static void CreateAssetBundleWithDependency(Object[] objs, string subFolder, string assetBundleName, Dictionary<string, string> dict)
+    public static void CreateAssetBundles(Dictionary<string, string> dict)
     {
         string destFolder = string.Format("{0}/{1}", Application.streamingAssetsPath, Utils.GetPlatformName());
         if (!Directory.Exists(destFolder))
@@ -127,31 +169,10 @@ public static class EditorUtils
             Directory.CreateDirectory(destFolder);
         }
 
-        int objsLength = objs.Length;
-        int dependencyLength = dict.Count;
+        int length = dict.Count;
+        AssetBundleBuild[] buildMap = new AssetBundleBuild[length];
 
-        AssetBundleBuild[] buildMap = new AssetBundleBuild[objsLength + dependencyLength];
-
-        for (int i = 0; i < objsLength; ++i)
-        {
-            Object obj = objs[i];
-
-            string sourcePath = AssetDatabase.GetAssetPath(obj);
-
-            if (string.IsNullOrEmpty(assetBundleName))
-            {
-                buildMap[i].assetBundleName = subFolder + "/" + obj.name + ".assetbundle";
-            }
-            else
-            {
-                buildMap[i].assetBundleName = subFolder + "/" + assetBundleName;
-            }
-
-            string[] resourcesAssets = new string[1] { sourcePath };
-            buildMap[i].assetNames = resourcesAssets;
-        }
-
-        int index = objsLength;
+        int index = 0;
         var enumrator = dict.GetEnumerator();
         while (enumrator.MoveNext())
         {
@@ -169,4 +190,24 @@ public static class EditorUtils
 
         BuildPipeline.BuildAssetBundles(destFolder, buildMap, BuildAssetBundleOptions.ChunkBasedCompression | BuildAssetBundleOptions.ForceRebuildAssetBundle | BuildAssetBundleOptions.DeterministicAssetBundle, EditorUserBuildSettings.activeBuildTarget);
     }
+
+    public static Dictionary<string, string> GetDependency()
+    {
+        Assert.IsTrue(File.Exists(DEPENDENCY_JSON_PATH));
+        string jsonStr = File.ReadAllText(DEPENDENCY_JSON_PATH);
+        var jsons = JsonMapper.ToObject(jsonStr);
+
+        var dict = new Dictionary<string, string>();
+        for (int i = 0, length = jsons.Count; i < length; ++i)
+        {
+            var json = jsons[i];
+            string assertPath = (string)json["assetsPath"];
+            string assetBundlePath = (string)json["assetBundlePath"];
+
+            dict[assertPath] = assetBundlePath;
+        }
+
+        return dict;
+    }
+
 }

@@ -39,8 +39,6 @@ public class EditorMapPacker : EditorWindow
 
     public const string TK2D_MAP_SHADER = "tk2d/Map";
 
-    public const string DEPENDENCY_JSON_PATH = "Assets/JSONs/EditorOnly-dependency.json";
-
     public const int MAP_WIDTH = 512;
     public const int MAP_HEIGHT = 512;
 
@@ -51,13 +49,12 @@ public class EditorMapPacker : EditorWindow
         window.Show();
     }
 
-    private string _mapPath = "Assets/Temp/Map/town.tga";
-    private string _slicePath = "Assets/Temp/Map_Slicer/town/";
-    private string _collectionPath = "Assets/Temp/Map_Collection/town/";
+    private string _mapPath = "Assets/Temp/Map/";
+    private string _slicePath = "Assets/Temp/Map_Slicer/";
+    private string _collectionPath = "Assets/Temp/Map_Collection/";
 
     private void OnGUI()
     {
-        // 图片 切片放哪 图集放哪？
         string mapPath = EditorGUILayout.TextField("map path: ", _mapPath);
         if(mapPath != _mapPath)
         {
@@ -82,68 +79,103 @@ public class EditorMapPacker : EditorWindow
 
         if(GUILayout.Button("Slice Map"))
         {
-            SliceMap(_mapPath, MAP_WIDTH, MAP_HEIGHT, _slicePath);
+            SliceMap();
+
             AssetDatabase.Refresh();
         }
 
         if(GUILayout.Button("Gen Collection"))
         {
-            GenCollection(_slicePath, _collectionPath);
+            GenCollection();
+
+            AssetDatabase.Refresh();
+        }
+
+        if (GUILayout.Button("Build AssetBundle"))
+        {
+            BuildAssetBundle();
+
             AssetDatabase.Refresh();
         }
 
         this.Repaint();
     }
 
-    private void GenCollection(string slicePath, string collectionPath)
+    private void GenCollection()
     {
-        if(Directory.Exists(collectionPath))
+        if (Directory.Exists(_collectionPath))
         {
-            Directory.Delete(collectionPath, true);
+            Directory.Delete(_collectionPath, true);
         }
-        Directory.CreateDirectory(collectionPath);
+        Directory.CreateDirectory(_collectionPath);
         AssetDatabase.Refresh();
 
-        Texture2D[] textures = EditorUtils.GetAtPath<Texture2D>(_slicePath);
-
-        int length = textures.Length;
-        Object[] packageCollections = new Object[length];
-        for(int i=0; i<length; ++i)
+        var directoryInfo = new DirectoryInfo(_slicePath);
+        foreach (var directory in directoryInfo.GetDirectories("*", SearchOption.TopDirectoryOnly))
         {
-            Texture2D texture = textures[i];
-            var collection = GenCollectionInternal(collectionPath, texture);
+            string mapName = directory.Name;
 
-            packageCollections[i] = PackageAssetBundle(collection);
+            GenCollectionInternal(_slicePath + mapName + "/", _collectionPath + mapName + "/");
+        }
+    }
+
+    private void SliceMap()
+    {
+        Texture2D[] textures = EditorUtils.GetAtPath<Texture2D>(_mapPath);
+
+        foreach (var texture in textures)
+        {
+            string path = AssetDatabase.GetAssetPath(texture);
+            string assetPath = EditorUtils.TrimAssetPath(path);
+
+            SliceMapInternal(assetPath, MAP_WIDTH, MAP_HEIGHT, _slicePath + texture.name + "/");
+        }
+    }
+
+    private void BuildAssetBundle()
+    {
+        var directoryInfo = new DirectoryInfo(_collectionPath);
+
+        Dictionary<string, string> mapDict = new Dictionary<string, string>();
+
+        var directories = directoryInfo.GetDirectories("*", SearchOption.TopDirectoryOnly);
+        foreach (var directory in directories)
+        {
+            foreach (var fileInfo in directory.GetFiles("*.prefab", SearchOption.TopDirectoryOnly))
+            {
+                string fileName = Path.GetFileNameWithoutExtension(fileInfo.Name);
+                string dataPath = string.Format("{0}/{1} Data/{2}.prefab", fileInfo.DirectoryName, fileName, fileName);
+
+                string assetPath = EditorUtils.TrimAssetPath(dataPath);
+                string assetBundleName = string.Format("map/{0}/{1}.assetbundle", directory.Name, fileName);
+
+                mapDict.Add(assetPath, assetBundleName);
+            }
         }
 
         // 打包
-        var dependency = GetDependency();
+        var dependencyDict = EditorUtils.GetDependency();
 
-        string mapFolder = "map/" + new DirectoryInfo(slicePath).Name;
-        EditorUtils.CreateAssetBundleWithDependency(packageCollections, mapFolder, null, dependency);
+        var dict = EditorUtils.MergeDictionary(mapDict, dependencyDict);
 
-        AssetDatabase.Refresh();
+        EditorUtils.CreateAssetBundles(dict);
     }
 
-    private Dictionary<string, string> GetDependency()
+    private void GenCollectionInternal(string slicePath, string collectionPath)
     {
-        Assert.IsTrue(File.Exists(DEPENDENCY_JSON_PATH));
-        string jsonStr = File.ReadAllText(DEPENDENCY_JSON_PATH);
-        var jsons = JsonMapper.ToObject(jsonStr);
-
-        var dict = new Dictionary<string, string>();
-        for (int i=0, length = jsons.Count; i<length; ++i)
+        if (!Directory.Exists(collectionPath))
         {
-            var json = jsons[i];
-            string assertPath = (string) json["assetsPath"];
-            string assetBundlePath = (string) json["assetBundlePath"];
-
-            dict[assertPath] = assetBundlePath;
+            Directory.CreateDirectory(collectionPath);
         }
 
-        return dict;
+        Texture2D[] textures = EditorUtils.GetAtPath<Texture2D>(slicePath);
+        foreach (var texture in textures)
+        {
+            GenCollectionInternal(collectionPath, texture);
+        }
     }
 
+    
     private tk2dSpriteCollection GenCollectionInternal(string collectionPath, Texture2D texture)
     {
         // 生成 tk2d prefab
@@ -156,20 +188,6 @@ public class EditorMapPacker : EditorWindow
         ChangeShader(collection);
 
         return collection;
-    }
-
-    private Object PackageAssetBundle(tk2dSpriteCollection collection)
-    {
-        string fullPath = AssetDatabase.GetAssetPath(collection);
-
-        string parentDir = Path.GetDirectoryName(fullPath);
-        string nameWidthoutExt = Path.GetFileNameWithoutExtension(fullPath);
-
-        string collectionPath = string.Format("{0}/{1} Data/{2}.prefab", parentDir, nameWidthoutExt, nameWidthoutExt);
-
-        Object obj = AssetDatabase.LoadAssetAtPath<Object>(collectionPath);
-
-        return obj;
     }
 
     private void ChangeShader(tk2dSpriteCollection collection)
@@ -207,7 +225,7 @@ public class EditorMapPacker : EditorWindow
         return tk2dSpriteCollectionEditor.CreateSpriteCollection(basePath, texture.name);
     }
 
-    private void SliceMap(string mapPath, int mapWidth, int mapHeight, string slicePath)
+    private void SliceMapInternal(string mapPath, int mapWidth, int mapHeight, string slicePath)
     {
         Assert.IsNotNull(mapPath);
         Assert.IsNotNull(slicePath);

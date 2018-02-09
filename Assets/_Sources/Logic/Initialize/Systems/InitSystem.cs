@@ -12,6 +12,7 @@ public class InitSystem : IInitializeSystem
 
     public void Initialize()
     {
+        // DoTween
         DOTween.Init(true, false, LogBehaviour.Default).SetCapacity(200, 10);    // recycleAllByDefault, useSafeMode
     }
 }

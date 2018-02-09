@@ -34,9 +34,8 @@ public class ViewController : MonoBehaviour, IViewController
         EntityLink link = gameObject.GetEntityLink();
         link.Unlink();
 
-        displaySprite.SetSprite(Consts.Tk2dSprite_Not_Exist);
+        gameObject.name = "tk2dSprite_template(Clone)";
 
-        gameObject.name = "spriteTemplate(Clone)";
         gameObject.SetActive(false);
         PoolManager.Instance.ReleaseObject(gameObject);
     }

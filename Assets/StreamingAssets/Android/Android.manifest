@@ -1,7 +1,0 @@
-ManifestFileVersion: 0
-CRC: 2985406272
-AssetBundleManifest:
-  AssetBundleInfos:
-    Info_0:
-      Name: temp/heroes_archer.assetbundle
-      Dependencies: {}

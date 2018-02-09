@@ -636,7 +636,7 @@ namespace ClientConfig
         string outputPath = new FileInfo(ZeroFormatClassPath).FullName;
 
         string command = string.Format("{0} -i {1} -o {2}", zfcPath, csprojPath, outputPath);
-        Utils.ExecuteCommandSync(command);
+        EditorUtils.ExecuteCommandSync(command);
     }
 
     private void CallStaticMethod(Type type, string methodName)

@@ -129,7 +129,7 @@ public class ResourceSystem : IInitializeSystem
 
         var shadersAssetBundle = Utils.GetBundlePathForLoadFromFile("dependency/shaders.assetbundle");
 
-        ResourceManager.Instance.GetAssetBundle(shadersAssetBundle)
+        ResourceManager.Instance.GetAssetBundle(shadersAssetBundle, true)
             .Then(assetBundle =>
             {
                 var obj = Resources.Load<GameObject>("quad_template");

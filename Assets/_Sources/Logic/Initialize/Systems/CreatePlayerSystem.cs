@@ -42,6 +42,7 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
             .Then(result =>
             {
                 var e = _gameContext.CreateEntity();
+                e.AddResourceAssetBundle(path);
 
                 e.AddIdentifier(id);
                 e.isControllable = true;

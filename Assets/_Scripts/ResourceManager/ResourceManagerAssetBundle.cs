@@ -13,7 +13,7 @@ public partial class ResourceManager
 {
     public IPromise<UnityEngine.Object> GetAssetBundleAsset(string path, string assetName)
     {
-        return GetAssetBundle(path, assetName == "AssetBundleManifest")
+        return GetAssetBundle(path, assetName == "AssetBundleManifest", false)
             .Then(assetBundle => LoadBundleAsset(assetBundle, path, assetName));
     }
 
@@ -236,9 +236,14 @@ public partial class ResourceManager
         return GetAssetBundle(path, false);
     }
 
-    private IPromise<AssetBundle> GetAssetBundle(string path, bool isManifestBundle)
+    public IPromise<AssetBundle> GetAssetBundle(string path, bool isDependency)
     {
-        if (!isManifestBundle && !_assetBundleManifest )
+        return GetAssetBundle(path, false, isDependency);
+    }
+
+    private IPromise<AssetBundle> GetAssetBundle(string path, bool isManifestBundle, bool isDependency)
+    {
+        if (!isManifestBundle && !_assetBundleManifest)
             throw new Exception("Please load assetBundle manifest first");
 
         AssetBundleWrapper assetBundleWrapper = null;
@@ -259,11 +264,11 @@ public partial class ResourceManager
         }
         else
         {
-            return BrandNewLoadAssetBundle(path, isManifestBundle, refCount);
+            return BrandNewLoadAssetBundle(path, isManifestBundle, isDependency, refCount);
         }
     }
 
-    private IPromise<AssetBundle> BrandNewLoadAssetBundle(string path, bool isManifestBundle, int refCount)
+    private IPromise<AssetBundle> BrandNewLoadAssetBundle(string path, bool isManifestBundle, bool isDependency, int refCount)
     {
         var promise = new Promise<AssetBundle>();
 
@@ -279,7 +284,7 @@ public partial class ResourceManager
 
         _assetBundleWrappers.Add(path, assetBundleWrapper);
 
-        MainThreadDispatcher.StartUpdateMicroCoroutine(GetAssetBundleInternal(path, isManifestBundle));
+        MainThreadDispatcher.StartUpdateMicroCoroutine(GetAssetBundleInternal(path, isManifestBundle, isDependency));
 
         return promise;
     }
@@ -290,7 +295,7 @@ public partial class ResourceManager
         string[] dependencies = _assetBundleManifest.GetAllDependencies(assetBundleName);
         for (int i = 0, count = dependencies.Length; i < count; ++i)
         {
-            string uri = GetDependencyURI(path, dependencies[i]);
+            string uri = Utils.GetBundlePathForLoadFromFile(dependencies[i]);
 
             DependencyAssetBundleWrapper wrapper;
             if (_dependenciesWrappers.TryGetValue(uri, out wrapper))
@@ -382,7 +387,7 @@ public partial class ResourceManager
         return promise;
     }
 
-    private IEnumerator GetAssetBundleInternal(string path, bool isManifestBundle)
+    private IEnumerator GetAssetBundleInternal(string path, bool isManifestBundle, bool isDependency)
     {
         AssetBundleCreateRequest[] requests;
         string[] dependenciesURI = null;
@@ -392,14 +397,17 @@ public partial class ResourceManager
         }
         else
         {
-            string assetBundleName = Path.GetFileName(path);
+            string pathPrefix = Utils.GetBundlePathForLoadFromFile("");
+            string assetBundleName = path.Substring(pathPrefix.Length);
+
             dependenciesURI = _assetBundleManifest.GetAllDependencies(assetBundleName);
             for(int i=0, count = dependenciesURI.Length; i<count; ++i)
             {
-                dependenciesURI[i] = GetDependencyURI(path, dependenciesURI[i]);
+                dependenciesURI[i] = Utils.GetBundlePathForLoadFromFile(dependenciesURI[i]);
             }
 
             requests = new AssetBundleCreateRequest[dependenciesURI.Length + 1];    // last one contains self AssetBundle
+            // dependency
             int length = requests.Length;
             for (int i = 0; i < length - 1; ++i)
             {
@@ -426,7 +434,19 @@ public partial class ResourceManager
                     requests[i] = AssetBundle.LoadFromFileAsync(depencyURI);
                 }
             }
+            // self
             requests[length - 1] = AssetBundle.LoadFromFileAsync(path);
+            if (isDependency)
+            {
+                var wrapper = new DependencyAssetBundleWrapper()
+                {
+                    assetBundle = null,
+                    loadDone = false,
+                };
+                wrapper.SetReferenceCount(1);
+
+                _dependenciesWrappers.Add(path, wrapper);
+            }
         }
 
         while (!AllRequestsDone(requests, dependenciesURI))
@@ -449,6 +469,18 @@ public partial class ResourceManager
                     wrapper.loadDone = true;
                 }
             }
+        }
+
+        // self is dependency
+        if (isDependency)
+        {
+            var wrapper = _dependenciesWrappers[path];
+            Assert.IsNotNull(wrapper);
+
+            int length = requests.Length;
+            wrapper.assetBundle = requests[length - 1].assetBundle;
+            Assert.IsNotNull(wrapper.assetBundle);
+            wrapper.loadDone = true;
         }
 
         AssetBundle assetBundle = requests[requests.Length - 1].assetBundle;
@@ -514,10 +546,5 @@ public partial class ResourceManager
         return !wrapper.IsContainTarget(refCount);
     }
 
-    private static string GetDependencyURI(string originPath, string dependencyName)
-    {
-        string prefix = Path.GetDirectoryName(originPath);
-        return prefix + "/" + dependencyName;
-    }
     // ====================== Utils ================================
 }
