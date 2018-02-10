@@ -16,12 +16,12 @@ public class StateViewSystem : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.State.Added());
+        return context.CreateCollector(GameMatcher.State);
     }
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasIdentifier;
+        return entity.hasIdentifier && entity.hasState;
     }
 
     protected override void Execute(List<GameEntity> entities)
@@ -35,7 +35,9 @@ public class StateViewSystem : ReactiveSystem<GameEntity>
             e.ReplaceSpriteAnimate(sprites);
 
             float duration = Consts.Sprite_Gap_Time * sprites.Length;
-            e.ReplaceTween(0.0f, 1.0f, duration, true);
+
+            bool loop = e.state.state == CharacterState.Idle || e.state.state == CharacterState.Run;
+            e.ReplaceTween(0.0f, 1.0f, duration, loop);
         }
     }
 

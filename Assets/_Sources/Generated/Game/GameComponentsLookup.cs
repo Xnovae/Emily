@@ -12,27 +12,31 @@ public static class GameComponentsLookup {
     public const int Destroy = 1;
     public const int Direction = 2;
     public const int Identifier = 3;
-    public const int Map = 4;
-    public const int MapLoad = 5;
-    public const int Position = 6;
-    public const int ResourceAssetBundle = 7;
-    public const int ResourceInitialize = 8;
-    public const int RunningData = 9;
-    public const int SpriteAnimate = 10;
-    public const int State = 11;
-    public const int Tween = 12;
-    public const int TweenResult = 13;
-    public const int TweenResultPreserved = 14;
-    public const int ViewAsset = 15;
-    public const int View = 16;
+    public const int LastDirection = 4;
+    public const int Map = 5;
+    public const int MapLoad = 6;
+    public const int Position = 7;
+    public const int ResourceAssetBundle = 8;
+    public const int ResourceInitialize = 9;
+    public const int RunningData = 10;
+    public const int SpriteAnimate = 11;
+    public const int State = 12;
+    public const int StateMachine = 13;
+    public const int Tween = 14;
+    public const int TweenResult = 15;
+    public const int TweenResultPreserved = 16;
+    public const int Velocity = 17;
+    public const int ViewAsset = 18;
+    public const int View = 19;
 
-    public const int TotalComponents = 17;
+    public const int TotalComponents = 20;
 
     public static readonly string[] componentNames = {
         "Controllable",
         "Destroy",
         "Direction",
         "Identifier",
+        "LastDirection",
         "Map",
         "MapLoad",
         "Position",
@@ -41,9 +45,11 @@ public static class GameComponentsLookup {
         "RunningData",
         "SpriteAnimate",
         "State",
+        "StateMachine",
         "Tween",
         "TweenResult",
         "TweenResultPreserved",
+        "Velocity",
         "ViewAsset",
         "View"
     };
@@ -53,6 +59,7 @@ public static class GameComponentsLookup {
         typeof(DestroyComponent),
         typeof(DirectionComponent),
         typeof(IdentifierComponent),
+        typeof(LastDirectionComponent),
         typeof(MapComponent),
         typeof(MapLoadComponent),
         typeof(PositionComponent),
@@ -61,9 +68,11 @@ public static class GameComponentsLookup {
         typeof(RunningDataComponent),
         typeof(SpriteAnimateComponent),
         typeof(StateComponent),
+        typeof(StateMachineComponent),
         typeof(TweenComponent),
         typeof(TweenResultComponent),
         typeof(TweenResultPreserved),
+        typeof(VelocityComponent),
         typeof(ViewAssetComponent),
         typeof(ViewComponent)
     };

@@ -26,6 +26,9 @@ public class GameController : MonoBehaviour
             // Create
             .Add(new InitializeSystems(contexts))
 
+            // Input
+            .Add(new InputSystems(contexts))
+
             // Control
             .Add(new ControlSystems(contexts))
 

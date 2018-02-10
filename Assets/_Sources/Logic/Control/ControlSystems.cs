@@ -7,5 +7,8 @@ public class ControlSystems : Feature
     public ControlSystems(Contexts contexts)
         : base("Control Systems")
     {
+        Add(new VelocitySystem(contexts));
+        Add(new StateMachineSystem(contexts));
+        Add(new UpdateStateMachineSystem(contexts));
     }
 }

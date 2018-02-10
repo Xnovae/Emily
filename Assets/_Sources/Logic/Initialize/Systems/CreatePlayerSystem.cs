@@ -44,14 +44,14 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
                 var e = _gameContext.CreateEntity();
                 e.AddResourceAssetBundle(path);
 
-                e.AddIdentifier(id);
                 e.isControllable = true;
+                e.AddIdentifier(id);
                 e.AddPosition(new Vector2(21.5f, 31.5f));
 
                 string assetName = id;
                 e.AddView(null, assetName);
 
-                e.AddState(CharacterState.LevelUp);
+                e.AddState(CharacterState.Idle);
                 e.AddDirection(CharacterDirection.Right);
 
                 var asset = result as GameObject;
