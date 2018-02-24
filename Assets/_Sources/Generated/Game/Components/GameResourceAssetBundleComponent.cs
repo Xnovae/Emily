@@ -11,17 +11,19 @@ public partial class GameEntity {
     public ResourceAssetBundleComponent resourceAssetBundle { get { return (ResourceAssetBundleComponent)GetComponent(GameComponentsLookup.ResourceAssetBundle); } }
     public bool hasResourceAssetBundle { get { return HasComponent(GameComponentsLookup.ResourceAssetBundle); } }
 
-    public void AddResourceAssetBundle(string newAssetBundlePath) {
+    public void AddResourceAssetBundle(string newAssetBundlePath, object newOwner) {
         var index = GameComponentsLookup.ResourceAssetBundle;
         var component = CreateComponent<ResourceAssetBundleComponent>(index);
         component.assetBundlePath = newAssetBundlePath;
+        component.owner = newOwner;
         AddComponent(index, component);
     }
 
-    public void ReplaceResourceAssetBundle(string newAssetBundlePath) {
+    public void ReplaceResourceAssetBundle(string newAssetBundlePath, object newOwner) {
         var index = GameComponentsLookup.ResourceAssetBundle;
         var component = CreateComponent<ResourceAssetBundleComponent>(index);
         component.assetBundlePath = newAssetBundlePath;
+        component.owner = newOwner;
         ReplaceComponent(index, component);
     }
 

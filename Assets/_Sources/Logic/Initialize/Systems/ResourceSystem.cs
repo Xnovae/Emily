@@ -51,7 +51,7 @@ public class ResourceSystem : IInitializeSystem
     {
         var promise = new Promise<GameObject>();
 
-        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Tk2dSprite_Template)
+        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Tk2dSprite_Template, this)
             .Then(spriteTemplate =>
             {
                 PoolManager.Instance.WarmPool(spriteTemplate, 50);
@@ -71,7 +71,7 @@ public class ResourceSystem : IInitializeSystem
 
         var manifestPath = Utils.GetBundlePathForLoadFromFile("AssetBundleManifest");
 
-        ResourceManager.Instance.InitAssetBundleManifest(manifestPath)
+        ResourceManager.Instance.InitAssetBundleManifest(manifestPath, this)
             .Then(() =>
             {
                 promise.Resolve();
@@ -129,7 +129,7 @@ public class ResourceSystem : IInitializeSystem
 
         var shadersAssetBundle = Utils.GetBundlePathForLoadFromFile("dependency/shaders.assetbundle");
 
-        ResourceManager.Instance.GetAssetBundle(shadersAssetBundle, true)
+        ResourceManager.Instance.GetAssetBundle(shadersAssetBundle, true, this)
             .Then(assetBundle =>
             {
                 var obj = Resources.Load<GameObject>("quad_template");

@@ -7,4 +7,5 @@ using Entitas;
 public class ResourceAssetBundleComponent : IComponent
 {
     public string assetBundlePath;
+    public object owner;
 }

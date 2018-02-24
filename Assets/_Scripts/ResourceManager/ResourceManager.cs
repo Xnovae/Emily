@@ -33,7 +33,7 @@ public partial class ResourceManager
     private ResourceManager()
     { }
 
-    public IPromise InitAssetBundleManifest(string assetBundleManifestPath)
+    public IPromise InitAssetBundleManifest(string assetBundleManifestPath, object owner)
     {
         var promise = new Promise();
 
@@ -42,7 +42,7 @@ public partial class ResourceManager
             promise.Resolve();
         }
 
-        GetAssetBundleManifest(assetBundleManifestPath)
+        GetAssetBundleManifest(assetBundleManifestPath, owner)
             .Then(manifest =>
             {
                 _assetBundleManifest = manifest;
@@ -58,11 +58,11 @@ public partial class ResourceManager
         return promise;
     }
 
-    private IPromise<AssetBundleManifest> GetAssetBundleManifest(string path)
+    private IPromise<AssetBundleManifest> GetAssetBundleManifest(string path, object owner)
     {
         var promise = new Promise<AssetBundleManifest>();
 
-        GetAssetBundleAsset(path, "AssetBundleManifest")
+        GetAssetBundleAsset(path, "AssetBundleManifest", owner)
             .Then(obj =>
             {
                 var manifest = obj as AssetBundleManifest;

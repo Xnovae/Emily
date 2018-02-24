@@ -7,13 +7,13 @@ using UnityEngine;
 public class TargetDestroyedException : Exception
 {
     public AssetBundle assetBundle;
-    public int asset;
+    public object asset;
 
     public TargetDestroyedException()
     {
     }
 
-    public TargetDestroyedException(AssetBundle assetBundle, int asset)
+    public TargetDestroyedException(AssetBundle assetBundle, object asset)
     {
         this.assetBundle = assetBundle;
         this.asset = asset;

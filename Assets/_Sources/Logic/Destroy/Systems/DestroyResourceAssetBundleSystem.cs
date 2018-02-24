@@ -24,7 +24,9 @@ public class DestroyResourceAssetBundleSystem : ReactiveSystem<GameEntity>
         foreach(var e in entities)
         {
             string path = e.resourceAssetBundle.assetBundlePath;
-            ResourceManager.Instance.DestroyAssetBundle(path);
+            object owner = e.resourceAssetBundle.owner;
+
+            ResourceManager.Instance.DestroyAssetBundle(path, owner);
         }
     }
 

@@ -11,9 +11,9 @@ using Object = UnityEngine.Object;
 
 public partial class ResourceManager
 {
-    public IPromise<UnityEngine.Object> GetAssetBundleAsset(string path, string assetName)
+    public IPromise<UnityEngine.Object> GetAssetBundleAsset(string path, string assetName, object owner)
     {
-        return GetAssetBundle(path, assetName == "AssetBundleManifest", false)
+        return GetAssetBundle(path, assetName == "AssetBundleManifest", false, owner)
             .Then(assetBundle => LoadBundleAsset(assetBundle, path, assetName));
     }
 
@@ -85,7 +85,7 @@ public partial class ResourceManager
         public bool loadDone;
         public List<Action> loadDoneAction;
 
-        private List<int> _validRefCountList = new List<int>(DEFAULT_LIST_SIZE);
+        private List<object> _referenceList = new List<object>(DEFAULT_LIST_SIZE);
         private List<string> _loadingAssets = new List<string>(DEFAULT_LIST_SIZE);
 
         public void AddLoadingAssets(string assetName)
@@ -106,36 +106,34 @@ public partial class ResourceManager
 
         public void DestroyAllReference()
         {
-            _validRefCountList.Clear();
+            _referenceList.Clear();
         }
 
-        public void DestroyReference()
+        public void DestroyReference(object owner)
         {
-            if (_validRefCountList.Count > 0)
-            {
-                _validRefCountList.RemoveAt(0);
-            }
+            bool removed = _referenceList.Remove(owner);
+            Assert.IsTrue(removed, string.Format("remove {0} is not exist", owner));
         }
 
-        public void AddReference(int refCount)
+        public void AddReference(object owner)
         {
-            Assert.IsFalse(_validRefCountList.Contains(refCount));
-            _validRefCountList.Add(refCount);
+            Assert.IsFalse(_referenceList.Contains(owner));
+            _referenceList.Add(owner);
         }
 
         public int GetReferenceCount()
         {
-            return _validRefCountList.Count;
+            return _referenceList.Count;
         }
 
         public bool IsAllDestroyed()
         {
-            return _validRefCountList.Count == 0;
+            return _referenceList.Count == 0;
         }
 
-        public bool IsContainTarget(int refCount)
+        public bool IsContainTarget(object owner)
         {
-            return _validRefCountList.Contains(refCount);
+            return _referenceList.Contains(owner);
         }
     }
 
@@ -178,21 +176,12 @@ public partial class ResourceManager
         }
     }
 
-    private static int _idAssetBundle = 0;
-
-    private static int GetNextIdAssetBundle()
-    {
-        ++_idAssetBundle;
-
-        return _idAssetBundle;
-    }
-
-    public void DestroyAssetBundle(string path)
+    public void DestroyAssetBundle(string path, object owner)
     {
         AssetBundleWrapper wrapper;
         if (_assetBundleWrappers.TryGetValue(path, out wrapper))
         {
-            wrapper.DestroyReference();
+            wrapper.DestroyReference(owner);
 
             if (wrapper.IsAllDestroyed())
             {
@@ -231,44 +220,43 @@ public partial class ResourceManager
         }
     }
 
-    public IPromise<AssetBundle> GetAssetBundle(string path)
+    public IPromise<AssetBundle> GetAssetBundle(string path, object owner)
     {
-        return GetAssetBundle(path, false);
+        return GetAssetBundle(path, false, owner);
     }
 
-    public IPromise<AssetBundle> GetAssetBundle(string path, bool isDependency)
+    public IPromise<AssetBundle> GetAssetBundle(string path, bool isDependency, object owner)
     {
-        return GetAssetBundle(path, false, isDependency);
+        return GetAssetBundle(path, false, isDependency, owner);
     }
 
-    private IPromise<AssetBundle> GetAssetBundle(string path, bool isManifestBundle, bool isDependency)
+    private IPromise<AssetBundle> GetAssetBundle(string path, bool isManifestBundle, bool isDependency, object owner)
     {
         if (!isManifestBundle && !_assetBundleManifest)
             throw new Exception("Please load assetBundle manifest first");
 
         AssetBundleWrapper assetBundleWrapper = null;
-        int refCount = GetNextIdAssetBundle();
 
         if (_assetBundleWrappers.TryGetValue(path, out assetBundleWrapper))
         {
-            assetBundleWrapper.AddReference(refCount);
+            assetBundleWrapper.AddReference(owner);
 
             if (assetBundleWrapper.loadDone)
             {
-                return RetriveAssetBundle(assetBundleWrapper, path, refCount);
+                return RetriveAssetBundle(assetBundleWrapper, path, owner);
             }
             else
             {
-                return DelayRetriveAssetBundle(assetBundleWrapper, path, refCount);
+                return DelayRetriveAssetBundle(assetBundleWrapper, path, owner);
             }
         }
         else
         {
-            return BrandNewLoadAssetBundle(path, isManifestBundle, isDependency, refCount);
+            return BrandNewLoadAssetBundle(path, isManifestBundle, isDependency, owner);
         }
     }
 
-    private IPromise<AssetBundle> BrandNewLoadAssetBundle(string path, bool isManifestBundle, bool isDependency, int refCount)
+    private IPromise<AssetBundle> BrandNewLoadAssetBundle(string path, bool isManifestBundle, bool isDependency, object owner)
     {
         var promise = new Promise<AssetBundle>();
 
@@ -279,8 +267,8 @@ public partial class ResourceManager
             loadDone = false,
             loadDoneAction = new List<Action>(DEFAULT_LIST_SIZE),
         };
-        assetBundleWrapper.AddReference(refCount);
-        AddLoadDoneAction(promise, assetBundleWrapper, path, refCount);
+        assetBundleWrapper.AddReference(owner);
+        AddLoadDoneAction(promise, assetBundleWrapper, path, owner);
 
         _assetBundleWrappers.Add(path, assetBundleWrapper);
 
@@ -320,7 +308,7 @@ public partial class ResourceManager
         }
     }
 
-    private void AddLoadDoneAction(Promise<AssetBundle> promise, AssetBundleWrapper assetBundleWrapper, string path, int refCount)
+    private void AddLoadDoneAction(Promise<AssetBundle> promise, AssetBundleWrapper assetBundleWrapper, string path, object owner)
     {
         Action loadDoneAction = new Action(() =>
         {
@@ -330,11 +318,11 @@ public partial class ResourceManager
             {
                 promise.Reject(new LoadDoneAndDestroyAllException());
             }
-            else if (IsTargetDestroyed(assetBundleWrapper, refCount))
+            else if (IsTargetDestroyed(assetBundleWrapper, owner))
             {
-                promise.Reject(new TargetDestroyedException(assetBundle, refCount));
+                promise.Reject(new TargetDestroyedException(assetBundle, owner));
             }
-            else if (!assetBundleWrapper.IsContainTarget(refCount))
+            else if (!assetBundleWrapper.IsContainTarget(owner))
             {
                 promise.Reject(new LoadDoneAndDestroyMainException());
             }
@@ -354,25 +342,25 @@ public partial class ResourceManager
         assetBundleWrapper.loadDoneAction.Add(loadDoneAction);
     }
 
-    private IPromise<AssetBundle> DelayRetriveAssetBundle(AssetBundleWrapper assetBundleWrapper, string path, int refCount)
+    private IPromise<AssetBundle> DelayRetriveAssetBundle(AssetBundleWrapper assetBundleWrapper, string path, object owner)
     {
         var promise = new Promise<AssetBundle>();
 
-        AddLoadDoneAction(promise, assetBundleWrapper, path, refCount);
+        AddLoadDoneAction(promise, assetBundleWrapper, path, owner);
 
         return promise;
     }
 
-    private IPromise<AssetBundle> RetriveAssetBundle(AssetBundleWrapper assetBundleWrapper, string path, int refCount)
+    private IPromise<AssetBundle> RetriveAssetBundle(AssetBundleWrapper assetBundleWrapper, string path, object owner)
     {
         var promise = new Promise<AssetBundle>();
 
         var assetBundle = assetBundleWrapper.assetBundle;
         if (assetBundle)
         {
-            if (IsTargetDestroyed(assetBundleWrapper, refCount))
+            if (IsTargetDestroyed(assetBundleWrapper, owner))
             {
-                promise.Reject(new TargetDestroyedException(assetBundle, refCount));
+                promise.Reject(new TargetDestroyedException(assetBundle, owner));
             }
             else
             {
@@ -541,9 +529,9 @@ public partial class ResourceManager
         return true;
     }
 
-    private static bool IsTargetDestroyed(AssetBundleWrapper wrapper, int refCount)
+    private static bool IsTargetDestroyed(AssetBundleWrapper wrapper, object owner)
     {
-        return !wrapper.IsContainTarget(refCount);
+        return !wrapper.IsContainTarget(owner);
     }
 
     // ====================== Utils ================================

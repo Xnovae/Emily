@@ -48,41 +48,38 @@ public partial class ResourceManager
         public bool loadDone;
         public List<Action> loadDoneAction;
 
-        private List<int> _validRefCountList = new List<int>(DEFAULT_LIST_SIZE);
+        private List<object> _referenceList = new List<object>(DEFAULT_LIST_SIZE);
 
         public void DestroyAllReference()
         {
-            _validRefCountList.Clear();
+            _referenceList.Clear();
         }
 
-        public void DestroyReference()
+        public void DestroyReference(object owner)
         {
-            if (_validRefCountList.Count > 0)
-            {
-                _validRefCountList.RemoveAt(0);
-            }
+            bool removed = _referenceList.Remove(owner);
+            Assert.IsTrue(removed, string.Format("remove {0} is not exist", owner));
         }
 
-        public void AddReference(int refCount)
+        public void AddReference(object owner)
         {
-            Assert.IsFalse(_validRefCountList.Contains(refCount));
-
-            _validRefCountList.Add(refCount);
+            Assert.IsFalse(_referenceList.Contains(owner));
+            _referenceList.Add(owner);
         }
 
         public bool IsAllDestroyed()
         {
-            return _validRefCountList.Count == 0;
+            return _referenceList.Count == 0;
         }
 
-        public bool IsContainTarget(int refCount)
+        public bool IsContainTarget(object owner)
         {
-            return _validRefCountList.Contains(refCount);
+            return _referenceList.Contains(owner);
         }
 
         public int GetReferenceCount()
         {
-            return _validRefCountList.Count;
+            return _referenceList.Count;
         }
     }
 
@@ -101,21 +98,12 @@ public partial class ResourceManager
         }
     }
 
-    private static int _idWWW = 0;
-
-    private static int GetNextIdWWW()
-    {
-        ++_idWWW;
-
-        return _idWWW;
-    }
-
-    public void DestroyWWW(string path)
+    public void DestroyWWW(string path, object owner)
     {
         WWWWrapper wrapper;
         if (_wwwWrappers.TryGetValue(path, out wrapper))
         {
-            wrapper.DestroyReference();
+            wrapper.DestroyReference(owner);
 
             if (wrapper.IsAllDestroyed())
             {
@@ -145,41 +133,39 @@ public partial class ResourceManager
         }
     }
 
-    public IPromise<T> GetWWWAsset<T>(string path) where T : UnityEngine.Object
+    public IPromise<T> GetWWWAsset<T>(string path, object owner) where T : UnityEngine.Object
     {
         WWWWrapper wwwWrapper = null;
 
-        int refCount = GetNextIdWWW();
-
         if (_wwwWrappers.TryGetValue(path, out wwwWrapper))
         {
-            wwwWrapper.AddReference(refCount);
+            wwwWrapper.AddReference(owner);
 
             if (wwwWrapper.loadDone)
             {
-                return RetriveWWW<T>(wwwWrapper, path, refCount);
+                return RetriveWWW<T>(wwwWrapper, path, owner);
             }
             else
             {
-                return DelayRetriveWWW<T>(wwwWrapper, path, refCount);
+                return DelayRetriveWWW<T>(wwwWrapper, path, owner);
             }
         }
         else
         {
-            return BrandNewLoadWWW<T>(path, refCount);
+            return BrandNewLoadWWW<T>(path, owner);
         }
     }
 
-    private IPromise<T> RetriveWWW<T>(WWWWrapper wwwWrapper, string path, int refCount) where T : Object
+    private IPromise<T> RetriveWWW<T>(WWWWrapper wwwWrapper, string path, object owner) where T : Object
     {
         var promise = new Promise<T>();
 
         var asset = wwwWrapper.asset.asset;
         if (asset)
         {
-            if (IsTargetDestroyed(wwwWrapper, refCount))
+            if (IsTargetDestroyed(wwwWrapper, owner))
             {
-                promise.Reject(new TargetDestroyedException(null, refCount));
+                promise.Reject(new TargetDestroyedException(null, owner));
             }
             else
             {
@@ -202,7 +188,7 @@ public partial class ResourceManager
         return promise;
     }
 
-    private void AddLoadDoneAction<T>(Promise<T> promise, WWWWrapper wwwWrapper, string path, int refCount) where T : Object
+    private void AddLoadDoneAction<T>(Promise<T> promise, WWWWrapper wwwWrapper, string path, object owner) where T : Object
     {
         Action loadDoneAction = new Action(() =>
         {
@@ -212,11 +198,11 @@ public partial class ResourceManager
             {
                 promise.Reject(new LoadDoneAndDestroyAllException());
             }
-            else if (IsTargetDestroyed(wwwWrapper, refCount))
+            else if (IsTargetDestroyed(wwwWrapper, owner))
             {
-                promise.Reject(new TargetDestroyedException(null, refCount));
+                promise.Reject(new TargetDestroyedException(null, owner));
             }
-            else if (!wwwWrapper.IsContainTarget(refCount))
+            else if (!wwwWrapper.IsContainTarget(owner))
             {
                 promise.Reject(new LoadDoneAndDestroyMainException());
             }
@@ -237,17 +223,17 @@ public partial class ResourceManager
         wwwWrapper.loadDoneAction.Add(loadDoneAction);
     }
 
-    private IPromise<T> DelayRetriveWWW<T>(WWWWrapper wwwWrapper, string path, int refCount) where T : Object
+    private IPromise<T> DelayRetriveWWW<T>(WWWWrapper wwwWrapper, string path, object owner) where T : Object
     {
         var promise = new Promise<T>();
 
-       AddLoadDoneAction(promise, wwwWrapper, path, refCount);
+       AddLoadDoneAction(promise, wwwWrapper, path, owner);
 
         return promise;
     }
 
 
-    private IPromise<T> BrandNewLoadWWW<T>(string path, int refCount) where T : UnityEngine.Object
+    private IPromise<T> BrandNewLoadWWW<T>(string path, object owner) where T : UnityEngine.Object
     {
         var promise = new Promise<T>();
 
@@ -258,8 +244,8 @@ public partial class ResourceManager
             loadDone = false,
             loadDoneAction = new List<Action>(DEFAULT_LIST_SIZE),
         };
-        wwwWrapper.AddReference(refCount);
-        AddLoadDoneAction(promise, wwwWrapper, path, refCount);
+        wwwWrapper.AddReference(owner);
+        AddLoadDoneAction(promise, wwwWrapper, path, owner);
 
         _wwwWrappers.Add(path, wwwWrapper);
 
@@ -331,8 +317,8 @@ public partial class ResourceManager
     }
 
 
-    private static bool IsTargetDestroyed(WWWWrapper wrapper, int refCount)
+    private static bool IsTargetDestroyed(WWWWrapper wrapper, object owner)
     {
-        return !wrapper.IsContainTarget(refCount);
+        return !wrapper.IsContainTarget(owner);
     }
 }
