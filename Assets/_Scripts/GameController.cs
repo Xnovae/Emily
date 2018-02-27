@@ -43,6 +43,9 @@ public class GameController : MonoBehaviour
 
             // TearDown
             .Add(new TearDownSystems(contexts))
+
+            // LateUpdate
+            .Add(new LateUpdateSystems(contexts))
             ; 
     }
 

@@ -22,14 +22,15 @@ public static class GameComponentsLookup {
     public const int SpriteAnimate = 11;
     public const int State = 12;
     public const int StateMachine = 13;
-    public const int Tween = 14;
-    public const int TweenResult = 15;
-    public const int TweenResultPreserved = 16;
-    public const int Velocity = 17;
-    public const int ViewAsset = 18;
-    public const int View = 19;
+    public const int Tag = 14;
+    public const int Tween = 15;
+    public const int TweenResult = 16;
+    public const int TweenResultPreserved = 17;
+    public const int Velocity = 18;
+    public const int ViewAsset = 19;
+    public const int View = 20;
 
-    public const int TotalComponents = 20;
+    public const int TotalComponents = 21;
 
     public static readonly string[] componentNames = {
         "Controllable",
@@ -46,6 +47,7 @@ public static class GameComponentsLookup {
         "SpriteAnimate",
         "State",
         "StateMachine",
+        "Tag",
         "Tween",
         "TweenResult",
         "TweenResultPreserved",
@@ -69,6 +71,7 @@ public static class GameComponentsLookup {
         typeof(SpriteAnimateComponent),
         typeof(StateComponent),
         typeof(StateMachineComponent),
+        typeof(TagComponent),
         typeof(TweenComponent),
         typeof(TweenResultComponent),
         typeof(TweenResultPreserved),

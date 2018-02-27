@@ -44,6 +44,7 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
                 var e = _gameContext.CreateEntity();
                 e.AddResourceAssetBundle(path, this);
 
+                e.AddTag(Consts.TAG_PLAYER);
                 e.isControllable = true;
                 e.AddIdentifier(id);
                 e.AddPosition(new Vector2(21.5f, 31.5f));

@@ -385,6 +385,7 @@ public partial class ResourceManager
         }
         else
         {
+            // TODO All AssetBundle locates in StreammingAssets, change later
             string pathPrefix = Utils.GetBundlePathForLoadFromFile("");
             string assetBundleName = path.Substring(pathPrefix.Length);
 

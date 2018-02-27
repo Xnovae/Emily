@@ -27,6 +27,7 @@ public class SaveFileDownloadHandler : DownloadHandlerScript
         {
             return false;
         }
+
         received += dataLength;
         if (!canceled) fileStream.Write(data, 0, dataLength);
         return true;

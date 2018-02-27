@@ -13,5 +13,6 @@ public class ViewSystems : Feature
         Add(new DirectionViewSystem(contexts));
         Add(new StateViewSystem(contexts));
         Add(new SpriteAnimateSystem(contexts));
+        Add(new TagSystem(contexts));
     }
 }

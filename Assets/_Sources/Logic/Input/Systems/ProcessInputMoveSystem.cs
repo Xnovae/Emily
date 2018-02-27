@@ -54,7 +54,11 @@ public class ProcessInputMoveSystem : ReactiveSystem<InputEntity>, ICleanupSyste
         Assert.IsTrue(!Mathf.Approximately(x, 0.0f) || !Mathf.Approximately(y, 0.0f));
 
         float inverseSqrtLength = Approximation.InvSqrt(x * x + y * y); // => 1 / Mathf.Sqrt(x*x + y*y);
-        return new Vector2(x * inverseSqrtLength, y * inverseSqrtLength);
+        Vector2 velocity = new Vector2(x * inverseSqrtLength, y * inverseSqrtLength);
+
+        velocity = velocity * 2;
+
+        return velocity;
     }
 
     public void Cleanup()

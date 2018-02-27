@@ -11,8 +11,6 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
     public const int MAP_ITEM_WIDTH = 512;
     public const int MAP_ITEM_HEIGHT = 512;
 
-    public const int TexturePixelsPerUnit = 100;
-
     private GameContext _gameContext;
 
     private Camera _camera;
@@ -43,8 +41,8 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
         // _mapParentTransform = new GameObject("Maps").transform;
         _cameraLoadingBounds = _camera.GetComponent<CameraLoadingBounds>();
 
-        _mapItemWidth = (float)MAP_ITEM_WIDTH / TexturePixelsPerUnit;
-        _mapItemHeight = (float)MAP_ITEM_WIDTH / TexturePixelsPerUnit;
+        _mapItemWidth = (float)MAP_ITEM_WIDTH / Consts.TexturePixelsPerUnit;
+        _mapItemHeight = (float)MAP_ITEM_WIDTH / Consts.TexturePixelsPerUnit;
 
         _gameContext.GetGroup(GameMatcher.Map).OnEntityAdded += (group, entity, index, component) =>
         {
@@ -132,7 +130,7 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
         string assetName = x.ToString() + "_" + y.ToString();
 
         e.AddView(null, assetName);
-        e.AddPosition(new Vector2((float)x * MAP_ITEM_WIDTH / TexturePixelsPerUnit, (float)y * MAP_ITEM_HEIGHT / TexturePixelsPerUnit));
+        e.AddPosition(new Vector2((float)x * MAP_ITEM_WIDTH / Consts.TexturePixelsPerUnit, (float)y * MAP_ITEM_HEIGHT / Consts.TexturePixelsPerUnit));
         e.AddResourceAssetBundle(path, this);
 
         ResourceManager.Instance.GetAssetBundleAsset(path, assetName, this)
@@ -297,8 +295,8 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
         string assetName = x.ToString() + "_" + y.ToString();
 
         e.AddView(null, assetName);
-        e.AddPosition(new Vector2((float) x * MAP_ITEM_WIDTH / TexturePixelsPerUnit,
-            (float) y * MAP_ITEM_HEIGHT / TexturePixelsPerUnit));
+        e.AddPosition(new Vector2((float) x * MAP_ITEM_WIDTH / Consts.TexturePixelsPerUnit,
+            (float) y * MAP_ITEM_HEIGHT / Consts.TexturePixelsPerUnit));
         e.AddResourceAssetBundle(path, this);
 
         ResourceManager.Instance.GetAssetBundleAsset(path, assetName, this)

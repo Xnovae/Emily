@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class Consts
 {
+    public const int TexturePixelsPerUnit = 100;
+
     // https://en.wikipedia.org/wiki/Machine_epsilon
     // pow(2, -24) -> 5.96e-08, magic minimal number
     public static readonly float Epsilon_Float = 5.96e-08f;
@@ -17,4 +19,7 @@ public static class Consts
     // Asset names
     public const string ASSET_NAME_CHARACTER = "character";
 
+    // Tags
+    public const string TAG_PLAYER = "Player";
+    public const string TAG_MAIN_CAMERA = "MainCamera";
 }
