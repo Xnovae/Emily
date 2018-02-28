@@ -28,32 +28,23 @@ public class EmitTweenSystem : ReactiveSystem<GameEntity>
         {
             if (!e.hasTweenResult)
             {
-                AddTweenResult(e);
+                AddTweenResult(e, 0.0f);
             }
             else
             {
-                ReplaceTweenResult(e);
+                // ReplaceTweenResult(e);
+
+                float startValue = e.isTweenResultPreserved? e.tweenResult.tweener.fullPosition : 0.0f;
+
+                e.tweenResult.tweener.Kill(false);
+                e.RemoveTweenResult();
+
+                AddTweenResult(e, startValue);
             }
         }
     }
 
-    private void ReplaceTweenResult(GameEntity e)
-    {
-        Tweener tweener = e.tweenResult.tweener;
-
-        float startValue = e.tween.startValue;
-        float endValue = e.tween.endValue - Consts.Epsilon_Float;
-        float duration = e.tween.duration;
-
-        bool repeat = e.tween.repeat;
-
-        float oldTweenValue = tweener.fullPosition;
-
-        tweener.ChangeValues(startValue, endValue, duration).SetLoops(repeat ? -1 : 1);
-        tweener.fullPosition = e.isTweenResultPreserved ? oldTweenValue : 0.0f;
-    }
-
-    private void AddTweenResult(GameEntity e)
+    private void AddTweenResult(GameEntity e, float startValue)
     {
         e.AddTweenResult(null, e.tween.startValue);
 
@@ -62,7 +53,17 @@ public class EmitTweenSystem : ReactiveSystem<GameEntity>
         bool repeat = e.tween.repeat;
         var tweener = DOTween.To(() => e.tweenResult.value, x => e.tweenResult.value = x, e.tween.endValue, e.tween.duration)
                         .SetLoops(repeat ? -1 : 1)
-                        .OnKill(() => { e.tweenResult.tweener = null; });
+                        .OnComplete(() =>
+                        {
+                            // 如果有状态机，需要触发
+                            if (e.hasStateMachine)
+                            {
+                                e.stateMachine.fsm.TriggerEvent("OnTweenComplete");
+                            }
+
+                            e.tweenResult.tweener = null;
+                        });
+        tweener.fullPosition = startValue;
 
         e.tweenResult.tweener = tweener;
     }

@@ -8,31 +8,33 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Controllable = 0;
-    public const int Destroy = 1;
-    public const int Direction = 2;
-    public const int Identifier = 3;
-    public const int LastDirection = 4;
-    public const int Map = 5;
-    public const int MapLoad = 6;
-    public const int Position = 7;
-    public const int ResourceAssetBundle = 8;
-    public const int ResourceInitialize = 9;
-    public const int RunningData = 10;
-    public const int SpriteAnimate = 11;
-    public const int State = 12;
-    public const int StateMachine = 13;
-    public const int Tag = 14;
-    public const int Tween = 15;
-    public const int TweenResult = 16;
-    public const int TweenResultPreserved = 17;
-    public const int Velocity = 18;
-    public const int ViewAsset = 19;
-    public const int View = 20;
+    public const int AttempPosition = 0;
+    public const int Controllable = 1;
+    public const int Destroy = 2;
+    public const int Direction = 3;
+    public const int Identifier = 4;
+    public const int LastDirection = 5;
+    public const int Map = 6;
+    public const int MapLoad = 7;
+    public const int Position = 8;
+    public const int ResourceAssetBundle = 9;
+    public const int ResourceInitialize = 10;
+    public const int RunningData = 11;
+    public const int SpriteAnimate = 12;
+    public const int State = 13;
+    public const int StateMachine = 14;
+    public const int Tag = 15;
+    public const int Tween = 16;
+    public const int TweenResult = 17;
+    public const int TweenResultPreserved = 18;
+    public const int Velocity = 19;
+    public const int ViewAsset = 20;
+    public const int View = 21;
 
-    public const int TotalComponents = 21;
+    public const int TotalComponents = 22;
 
     public static readonly string[] componentNames = {
+        "AttempPosition",
         "Controllable",
         "Destroy",
         "Direction",
@@ -57,6 +59,7 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AttempPositionComponent),
         typeof(ControllableComponent),
         typeof(DestroyComponent),
         typeof(DirectionComponent),

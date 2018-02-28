@@ -19,7 +19,7 @@ public class VelocitySystem : ReactiveSystem<GameEntity>
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasVelocity && entity.hasPosition && entity.hasDirection && entity.hasState;
+        return entity.hasVelocity && entity.hasDirection && entity.hasState;
     }
 
     protected override void Execute(List<GameEntity> entities)
@@ -30,9 +30,9 @@ public class VelocitySystem : ReactiveSystem<GameEntity>
             if (e.state.state != CharacterState.Run)
                 continue;
 
-            // TODO implement map block
             var newPosition = e.position.value + e.velocity.velocity * Time.deltaTime;
-            e.ReplacePosition(newPosition);
+            // e.ReplacePosition(newPosition);
+            e.AddAttempPosition(newPosition);
 
             CharacterDirection newDirection = GetCharacterDirection(e.velocity.velocity.x, e.velocity.velocity.y);
             if (newDirection != CharacterDirection.None)

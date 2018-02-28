@@ -40,5 +40,11 @@ namespace ClientConfig
     [Index(10)]
     public virtual string[] actionDie { get; set; }
 
+    [Index(11)]
+    public virtual int renderOffsetX { get; set; }
+
+    [Index(12)]
+    public virtual float renderOffsetY { get; set; }
+
     }
 }

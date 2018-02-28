@@ -51,7 +51,7 @@ public class ProcessInputActionSystem : ReactiveSystem<InputEntity>
         foreach (var e in _controllableEntities.GetEntities())
         {
             // TODO fix too early
-            e.stateMachine.fsm.TriggerEvent("ResetIdle");
+            e.stateMachine.fsm.TriggerEvent("ResetToIdle");
             e.stateMachine.fsm.TriggerEvent(stateStringCache[newState]);
         }
     }

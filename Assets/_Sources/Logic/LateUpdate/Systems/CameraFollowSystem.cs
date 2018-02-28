@@ -65,7 +65,7 @@ public class CameraFollowSystem : IInitializeSystem, IExecuteSystem
 
         if (viewWidth >= mapLogicWidth)
         {
-            focusX = playerPos.x;
+            focusX = mapLogicWidth / 2;
         }
         else
         {
@@ -88,7 +88,7 @@ public class CameraFollowSystem : IInitializeSystem, IExecuteSystem
         float focusY = -1;
         if (viewHeight >= mapLogicHeight)
         {
-            focusY = playerPos.y;
+            focusY = mapLogicHeight / 2;
         }
         else
         {

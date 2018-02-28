@@ -8,6 +8,7 @@ public class ControlSystems : Feature
         : base("Control Systems")
     {
         Add(new VelocitySystem(contexts));
+        Add(new PositionSystem(contexts));
         Add(new StateMachineSystem(contexts));
         Add(new UpdateStateMachineSystem(contexts));
     }

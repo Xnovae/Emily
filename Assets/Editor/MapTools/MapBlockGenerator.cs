@@ -10,7 +10,7 @@ public class MapBlockGenerator
 {
     public const float Mesh_Unit = 0.01f;
 
-    private static string _mapBlockPath = "Assets/Temp/Map_Block";
+    private static string _mapBlockPath = "Assets/Temp/Map";
 
     [MenuItem("EditorTools/Map/Generate Map Block")]
     private static void MenuItem_GenerateMapBlock()

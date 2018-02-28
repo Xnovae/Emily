@@ -47,6 +47,56 @@ namespace ZeroFormatter
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BlockManager.BlockMode?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableBlockManager_BlockModeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BlockManager.BlockMode?>.Register(new NullableEqualityComparer<global::BlockManager.BlockMode>());
             
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::MappedAxis>.Register(new ZeroFormatter.DynamicObjectSegments.MappedAxisFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::MappedAxis>.Register(new ZeroFormatter.DynamicObjectSegments.MappedAxisEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::MappedAxis?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableMappedAxisFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::MappedAxis?>.Register(new NullableEqualityComparer<global::MappedAxis>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::MappedButton>.Register(new ZeroFormatter.DynamicObjectSegments.MappedButtonFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::MappedButton>.Register(new ZeroFormatter.DynamicObjectSegments.MappedButtonEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::MappedButton?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableMappedButtonFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::MappedButton?>.Register(new NullableEqualityComparer<global::MappedButton>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::GamepadAnalogStick>.Register(new ZeroFormatter.DynamicObjectSegments.GamepadAnalogStickFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::GamepadAnalogStick>.Register(new ZeroFormatter.DynamicObjectSegments.GamepadAnalogStickEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::GamepadAnalogStick?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableGamepadAnalogStickFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::GamepadAnalogStick?>.Register(new NullableEqualityComparer<global::GamepadAnalogStick>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::GamepadAxis>.Register(new ZeroFormatter.DynamicObjectSegments.GamepadAxisFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::GamepadAxis>.Register(new ZeroFormatter.DynamicObjectSegments.GamepadAxisEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::GamepadAxis?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableGamepadAxisFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::GamepadAxis?>.Register(new NullableEqualityComparer<global::GamepadAxis>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::GamepadButton>.Register(new ZeroFormatter.DynamicObjectSegments.GamepadButtonFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::GamepadButton>.Register(new ZeroFormatter.DynamicObjectSegments.GamepadButtonEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::GamepadButton?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableGamepadButtonFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::GamepadButton?>.Register(new NullableEqualityComparer<global::GamepadButton>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::GamepadTrigger>.Register(new ZeroFormatter.DynamicObjectSegments.GamepadTriggerFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::GamepadTrigger>.Register(new ZeroFormatter.DynamicObjectSegments.GamepadTriggerEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::GamepadTrigger?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableGamepadTriggerFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::GamepadTrigger?>.Register(new NullableEqualityComparer<global::GamepadTrigger>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::UnGamepadConfig.InputTarget>.Register(new ZeroFormatter.DynamicObjectSegments.UnGamepadConfig_InputTargetFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::UnGamepadConfig.InputTarget>.Register(new ZeroFormatter.DynamicObjectSegments.UnGamepadConfig_InputTargetEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::UnGamepadConfig.InputTarget?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableUnGamepadConfig_InputTargetFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::UnGamepadConfig.InputTarget?>.Register(new NullableEqualityComparer<global::UnGamepadConfig.InputTarget>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::UnGamepadConfig.InputType>.Register(new ZeroFormatter.DynamicObjectSegments.UnGamepadConfig_InputTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::UnGamepadConfig.InputType>.Register(new ZeroFormatter.DynamicObjectSegments.UnGamepadConfig_InputTypeEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::UnGamepadConfig.InputType?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableUnGamepadConfig_InputTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::UnGamepadConfig.InputType?>.Register(new NullableEqualityComparer<global::UnGamepadConfig.InputType>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::UnGamepadPlatform>.Register(new ZeroFormatter.DynamicObjectSegments.UnGamepadPlatformFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::UnGamepadPlatform>.Register(new ZeroFormatter.DynamicObjectSegments.UnGamepadPlatformEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::UnGamepadPlatform?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableUnGamepadPlatformFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::UnGamepadPlatform?>.Register(new NullableEqualityComparer<global::UnGamepadPlatform>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::AxisDirection>.Register(new ZeroFormatter.DynamicObjectSegments.AxisDirectionFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::AxisDirection>.Register(new ZeroFormatter.DynamicObjectSegments.AxisDirectionEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::AxisDirection?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableAxisDirectionFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::AxisDirection?>.Register(new NullableEqualityComparer<global::AxisDirection>());
+            
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::UIButtonColor.State>.Register(new ZeroFormatter.DynamicObjectSegments.UIButtonColor_StateFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::UIButtonColor.State>.Register(new ZeroFormatter.DynamicObjectSegments.UIButtonColor_StateEqualityComparer());
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::UIButtonColor.State?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableUIButtonColor_StateFormatter<ZeroFormatter.Formatters.DefaultResolver>());
@@ -726,7 +776,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             {
                 var startOffset = offset;
 
-                offset += (8 + 4 * (10 + 1));
+                offset += (8 + 4 * (12 + 1));
                 offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string>(ref bytes, startOffset, offset, 0, value.id);
                 offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string>(ref bytes, startOffset, offset, 1, value.name);
                 offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string>(ref bytes, startOffset, offset, 2, value.path);
@@ -738,8 +788,10 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
                 offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 8, value.actionHeavyAttack2);
                 offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 9, value.actionLevelUp);
                 offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, string[]>(ref bytes, startOffset, offset, 10, value.actionDie);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, int>(ref bytes, startOffset, offset, 11, value.renderOffsetX);
+                offset += ObjectSegmentHelper.SerializeFromFormatter<TTypeResolver, float>(ref bytes, startOffset, offset, 12, value.renderOffsetY);
 
-                return ObjectSegmentHelper.WriteSize(ref bytes, startOffset, offset, 10);
+                return ObjectSegmentHelper.WriteSize(ref bytes, startOffset, offset, 12);
             }
         }
 
@@ -758,7 +810,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
     public class CharacterItemObjectSegment<TTypeResolver> : global::ClientConfig.CharacterItem, IZeroFormatterSegment
         where TTypeResolver : ITypeResolver, new()
     {
-        static readonly int[] __elementSizes = new int[]{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        static readonly int[] __elementSizes = new int[]{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4 };
 
         readonly ArraySegment<byte> __originalBytes;
         readonly global::ZeroFormatter.DirtyTracker __tracker;
@@ -920,6 +972,32 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             }
         }
 
+        // 11
+        public override int renderOffsetX
+        {
+            get
+            {
+                return ObjectSegmentHelper.GetFixedProperty<TTypeResolver, int>(__originalBytes, 11, __binaryLastIndex, __extraFixedBytes, __tracker);
+            }
+            set
+            {
+                ObjectSegmentHelper.SetFixedProperty<TTypeResolver, int>(__originalBytes, 11, __binaryLastIndex, __extraFixedBytes, value, __tracker);
+            }
+        }
+
+        // 12
+        public override float renderOffsetY
+        {
+            get
+            {
+                return ObjectSegmentHelper.GetFixedProperty<TTypeResolver, float>(__originalBytes, 12, __binaryLastIndex, __extraFixedBytes, __tracker);
+            }
+            set
+            {
+                ObjectSegmentHelper.SetFixedProperty<TTypeResolver, float>(__originalBytes, 12, __binaryLastIndex, __extraFixedBytes, value, __tracker);
+            }
+        }
+
 
         public CharacterItemObjectSegment(global::ZeroFormatter.DirtyTracker dirtyTracker, ArraySegment<byte> originalBytes)
         {
@@ -929,7 +1007,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             this.__tracker = dirtyTracker = dirtyTracker.CreateChild();
             this.__binaryLastIndex = BinaryUtil.ReadInt32(ref __array, originalBytes.Offset + 4);
 
-            this.__extraFixedBytes = ObjectSegmentHelper.CreateExtraFixedBytes(this.__binaryLastIndex, 10, __elementSizes);
+            this.__extraFixedBytes = ObjectSegmentHelper.CreateExtraFixedBytes(this.__binaryLastIndex, 12, __elementSizes);
 
             _id = new CacheSegment<TTypeResolver, string>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 0, __binaryLastIndex, __tracker));
             _name = new CacheSegment<TTypeResolver, string>(__tracker, ObjectSegmentHelper.GetSegment(originalBytes, 1, __binaryLastIndex, __tracker));
@@ -959,7 +1037,7 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
             if (__extraFixedBytes != null || __tracker.IsDirty)
             {
                 var startOffset = offset;
-                offset += (8 + 4 * (10 + 1));
+                offset += (8 + 4 * (12 + 1));
 
                 offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string>(ref targetBytes, startOffset, offset, 0, ref _id);
                 offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string>(ref targetBytes, startOffset, offset, 1, ref _name);
@@ -972,8 +1050,10 @@ namespace ZeroFormatter.DynamicObjectSegments.ClientConfig
                 offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 8, ref _actionHeavyAttack2);
                 offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 9, ref _actionLevelUp);
                 offset += ObjectSegmentHelper.SerializeCacheSegment<TTypeResolver, string[]>(ref targetBytes, startOffset, offset, 10, ref _actionDie);
+                offset += ObjectSegmentHelper.SerializeFixedLength<TTypeResolver, int>(ref targetBytes, startOffset, offset, 11, __binaryLastIndex, __originalBytes, __extraFixedBytes, __tracker);
+                offset += ObjectSegmentHelper.SerializeFixedLength<TTypeResolver, float>(ref targetBytes, startOffset, offset, 12, __binaryLastIndex, __originalBytes, __extraFixedBytes, __tracker);
 
-                return ObjectSegmentHelper.WriteSize(ref targetBytes, startOffset, offset, 10);
+                return ObjectSegmentHelper.WriteSize(ref targetBytes, startOffset, offset, 12);
             }
             else
             {
@@ -1522,6 +1602,716 @@ namespace ZeroFormatter.DynamicObjectSegments
         }
 
         public int GetHashCode(global::BlockManager.BlockMode x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class MappedAxisFormatter<TTypeResolver> : Formatter<TTypeResolver, global::MappedAxis>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::MappedAxis value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::MappedAxis Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::MappedAxis)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableMappedAxisFormatter<TTypeResolver> : Formatter<TTypeResolver, global::MappedAxis?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::MappedAxis? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::MappedAxis? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::MappedAxis)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class MappedAxisEqualityComparer : IEqualityComparer<global::MappedAxis>
+    {
+        public bool Equals(global::MappedAxis x, global::MappedAxis y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::MappedAxis x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class MappedButtonFormatter<TTypeResolver> : Formatter<TTypeResolver, global::MappedButton>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::MappedButton value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::MappedButton Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::MappedButton)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableMappedButtonFormatter<TTypeResolver> : Formatter<TTypeResolver, global::MappedButton?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::MappedButton? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::MappedButton? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::MappedButton)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class MappedButtonEqualityComparer : IEqualityComparer<global::MappedButton>
+    {
+        public bool Equals(global::MappedButton x, global::MappedButton y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::MappedButton x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class GamepadAnalogStickFormatter<TTypeResolver> : Formatter<TTypeResolver, global::GamepadAnalogStick>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::GamepadAnalogStick value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::GamepadAnalogStick Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::GamepadAnalogStick)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableGamepadAnalogStickFormatter<TTypeResolver> : Formatter<TTypeResolver, global::GamepadAnalogStick?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::GamepadAnalogStick? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::GamepadAnalogStick? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::GamepadAnalogStick)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class GamepadAnalogStickEqualityComparer : IEqualityComparer<global::GamepadAnalogStick>
+    {
+        public bool Equals(global::GamepadAnalogStick x, global::GamepadAnalogStick y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::GamepadAnalogStick x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class GamepadAxisFormatter<TTypeResolver> : Formatter<TTypeResolver, global::GamepadAxis>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::GamepadAxis value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::GamepadAxis Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::GamepadAxis)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableGamepadAxisFormatter<TTypeResolver> : Formatter<TTypeResolver, global::GamepadAxis?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::GamepadAxis? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::GamepadAxis? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::GamepadAxis)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class GamepadAxisEqualityComparer : IEqualityComparer<global::GamepadAxis>
+    {
+        public bool Equals(global::GamepadAxis x, global::GamepadAxis y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::GamepadAxis x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class GamepadButtonFormatter<TTypeResolver> : Formatter<TTypeResolver, global::GamepadButton>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::GamepadButton value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::GamepadButton Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::GamepadButton)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableGamepadButtonFormatter<TTypeResolver> : Formatter<TTypeResolver, global::GamepadButton?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::GamepadButton? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::GamepadButton? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::GamepadButton)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class GamepadButtonEqualityComparer : IEqualityComparer<global::GamepadButton>
+    {
+        public bool Equals(global::GamepadButton x, global::GamepadButton y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::GamepadButton x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class GamepadTriggerFormatter<TTypeResolver> : Formatter<TTypeResolver, global::GamepadTrigger>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::GamepadTrigger value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::GamepadTrigger Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::GamepadTrigger)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableGamepadTriggerFormatter<TTypeResolver> : Formatter<TTypeResolver, global::GamepadTrigger?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::GamepadTrigger? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::GamepadTrigger? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::GamepadTrigger)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class GamepadTriggerEqualityComparer : IEqualityComparer<global::GamepadTrigger>
+    {
+        public bool Equals(global::GamepadTrigger x, global::GamepadTrigger y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::GamepadTrigger x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class UnGamepadConfig_InputTargetFormatter<TTypeResolver> : Formatter<TTypeResolver, global::UnGamepadConfig.InputTarget>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::UnGamepadConfig.InputTarget value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::UnGamepadConfig.InputTarget Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::UnGamepadConfig.InputTarget)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableUnGamepadConfig_InputTargetFormatter<TTypeResolver> : Formatter<TTypeResolver, global::UnGamepadConfig.InputTarget?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::UnGamepadConfig.InputTarget? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::UnGamepadConfig.InputTarget? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::UnGamepadConfig.InputTarget)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class UnGamepadConfig_InputTargetEqualityComparer : IEqualityComparer<global::UnGamepadConfig.InputTarget>
+    {
+        public bool Equals(global::UnGamepadConfig.InputTarget x, global::UnGamepadConfig.InputTarget y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::UnGamepadConfig.InputTarget x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class UnGamepadConfig_InputTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::UnGamepadConfig.InputType>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::UnGamepadConfig.InputType value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::UnGamepadConfig.InputType Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::UnGamepadConfig.InputType)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableUnGamepadConfig_InputTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::UnGamepadConfig.InputType?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::UnGamepadConfig.InputType? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::UnGamepadConfig.InputType? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::UnGamepadConfig.InputType)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class UnGamepadConfig_InputTypeEqualityComparer : IEqualityComparer<global::UnGamepadConfig.InputType>
+    {
+        public bool Equals(global::UnGamepadConfig.InputType x, global::UnGamepadConfig.InputType y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::UnGamepadConfig.InputType x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class UnGamepadPlatformFormatter<TTypeResolver> : Formatter<TTypeResolver, global::UnGamepadPlatform>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::UnGamepadPlatform value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::UnGamepadPlatform Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::UnGamepadPlatform)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableUnGamepadPlatformFormatter<TTypeResolver> : Formatter<TTypeResolver, global::UnGamepadPlatform?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::UnGamepadPlatform? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::UnGamepadPlatform? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::UnGamepadPlatform)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class UnGamepadPlatformEqualityComparer : IEqualityComparer<global::UnGamepadPlatform>
+    {
+        public bool Equals(global::UnGamepadPlatform x, global::UnGamepadPlatform y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::UnGamepadPlatform x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class AxisDirectionFormatter<TTypeResolver> : Formatter<TTypeResolver, global::AxisDirection>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::AxisDirection value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::AxisDirection Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::AxisDirection)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableAxisDirectionFormatter<TTypeResolver> : Formatter<TTypeResolver, global::AxisDirection?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::AxisDirection? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::AxisDirection? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::AxisDirection)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class AxisDirectionEqualityComparer : IEqualityComparer<global::AxisDirection>
+    {
+        public bool Equals(global::AxisDirection x, global::AxisDirection y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::AxisDirection x)
         {
             return (int)x;
         }

@@ -85,6 +85,8 @@
     "actionDie": [
       "hero_archer_0123",
       "hero_archer_0125"
-    ]
+    ],
+    "renderOffsetX": 0,
+    "renderOffsetY": -0.4
   }
 }

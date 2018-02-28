@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ClientConfig;
 using Entitas;
 using UnityEngine;
 
@@ -24,7 +25,19 @@ public class RenderPositionSystem : ReactiveSystem<GameEntity>
     {
         foreach (var e in entities)
         {
-            e.view.viewController.position = e.position.value;
+            if (e.hasIdentifier)
+            {
+                string id = e.identifier.name;
+                var characterItem = ConfigManager.Instance.GetItem<CharacterItem>(Consts.ASSET_NAME_CHARACTER, id);
+
+                Vector2 renderOffset = new Vector2(characterItem.renderOffsetX, characterItem.renderOffsetY);
+
+                e.view.viewController.position = e.position.value + renderOffset;
+            }
+            else
+            {
+                e.view.viewController.position = e.position.value;
+            }
         }
     }
 }
