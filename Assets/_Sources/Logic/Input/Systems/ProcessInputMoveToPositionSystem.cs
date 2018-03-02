@@ -8,20 +8,20 @@ public class ProcessInputMoveToPositionSystem : ReactiveSystem<InputEntity>, IIn
 {
     public static readonly string STRING_FSM_RUN = "Run";
 
-    private IGroup<GameEntity> _controllableGroup;
+    //private IGroup<GameEntity> _controllableGroup;
 
-    private Transform _targetTransform;
+    //private Transform _targetTransform;
 
     public ProcessInputMoveToPositionSystem(Contexts contexts)
         : base(contexts.input)
     {
-        _controllableGroup = contexts.game.GetGroup(GameMatcher.Controllable);
+        //_controllableGroup = contexts.game.GetGroup(GameMatcher.Controllable);
     }
 
     public void Initialize()
     {
-        GameObject obj = new GameObject("PressPosition");
-        _targetTransform = obj.transform;
+        //GameObject obj = new GameObject("PressPosition");
+        //_targetTransform = obj.transform;
     }
 
 
