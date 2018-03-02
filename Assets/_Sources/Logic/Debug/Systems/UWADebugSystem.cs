@@ -10,7 +10,7 @@ public class UWADebugSystem : IInitializeSystem, ITearDownSystem
 
     public void Initialize()
     {
-#if !UNITY_EDITOR && UNITY_ANDROID
+#if !UNITY_EDITOR && UNITY_ANDROID && DEVELOPMENT_BUILD
         UWAEngine.StaticInit();
 
         UWAEngine.Start(UWAEngine.Mode.Overview);
@@ -19,7 +19,7 @@ public class UWADebugSystem : IInitializeSystem, ITearDownSystem
 
     public void TearDown()
     {
-#if !UNITY_EDITOR && UNITY_ANDROID
+#if !UNITY_EDITOR && UNITY_ANDROID && DEVELOPMENT_BUILD
         UWAEngine.Stop();
 #endif
     }
