@@ -381,937 +381,937 @@ MonoBehaviour:
     assetName: 
     version: 3
   - name: 0_0
-    spriteCollectionGUID: d1fc92479c45a0347b4ffba7a83cfff5
-    spriteCollectionDataGUID: 01bc8e268d34dba4cb845afd9e444333
+    spriteCollectionGUID: 1f43c1b3c413bb94cb9004c71c7f905d
+    spriteCollectionDataGUID: 021e001d2832f38439183ac6ded08da2
     spriteNames:
     - 0_0
     spriteTextureGUIDs:
-    - a04d776fd5c41074cbb4535113c9aef0
+    - c880d29c4aba56045a0cd52cb92a9ebf
     spriteTextureTimeStamps:
-    - 1520009858.79469
+    - 1520018908.71719
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 0_1
-    spriteCollectionGUID: a7a8b5a095f2a4f479e4873ae9a619f4
-    spriteCollectionDataGUID: 3d0ef29f5ffb7764ba288ed770d95336
+    spriteCollectionGUID: 9ef3867341fb7064d810e61fd03edcfb
+    spriteCollectionDataGUID: e2641c8399c149143af99931cae3b175
     spriteNames:
     - 0_1
     spriteTextureGUIDs:
-    - bd82b93a0e7716245885fb77d2c566de
+    - 7358991516dbfd444b22a8cc60283910
     spriteTextureTimeStamps:
-    - 1520009858.79871
+    - 1520018908.7197
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 0_2
-    spriteCollectionGUID: 28285d99293b37f47bb3adb78a9b9422
-    spriteCollectionDataGUID: f10fbbdc0e23d6242aedb7a50c39f97e
+    spriteCollectionGUID: eb60377d469388a489d4c6f0f8ffab9e
+    spriteCollectionDataGUID: 1c1af9b9426f81548a931349c4dfdd24
     spriteNames:
     - 0_2
     spriteTextureGUIDs:
-    - f9a9d7a2c085c0542b26b615a09e5075
+    - fcfa1e937efa76241bc4e210191b17fb
     spriteTextureTimeStamps:
-    - 1520009858.80344
+    - 1520018908.72221
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 0_3
-    spriteCollectionGUID: 58b11e5d34d6f5f47a1d53d875be0716
-    spriteCollectionDataGUID: 55314d19f80b6c54db719e02f9b7c974
+    spriteCollectionGUID: e83d07991215a374a854c378721a9177
+    spriteCollectionDataGUID: e2361ce78e312df4da6376dbbd18efc3
     spriteNames:
     - 0_3
     spriteTextureGUIDs:
-    - 3971935c66dd34f4a9feb1b88bf06e33
+    - 75efac2540c84114e9cde5b435aac647
     spriteTextureTimeStamps:
-    - 1520009858.80745
+    - 1520018908.72472
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 0_4
-    spriteCollectionGUID: fc831d60be533e648a78d24613038907
-    spriteCollectionDataGUID: 0e1ed4834958e6a4ca3ecb81f3b1967f
+    spriteCollectionGUID: 1085b5afb8bb85f4e8f5d83b3b67f058
+    spriteCollectionDataGUID: d42ebfa2f6837ce41b59ef41f538ddd8
     spriteNames:
     - 0_4
     spriteTextureGUIDs:
-    - 96f2caf35452f4d48975ac40917f2910
+    - 70a9d626ce99cec4481c6dee68a829f6
     spriteTextureTimeStamps:
-    - 1520009858.81197
+    - 1520018908.72723
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 0_5
-    spriteCollectionGUID: e33aa9c8e398a8e45b2b1c2330f81b22
-    spriteCollectionDataGUID: 1ceb98cb2e508324481b42051c29dc64
+    spriteCollectionGUID: 66cb611f9747dd44297db735d6fb3ab8
+    spriteCollectionDataGUID: bf4c5602ee13a474a8f4e1561f255d96
     spriteNames:
     - 0_5
     spriteTextureGUIDs:
-    - 79ee45cedbcb3a046a457a04ef158623
+    - 80603c51b73fc914a8df28d5c3ff4756
     spriteTextureTimeStamps:
-    - 1520009858.81598
+    - 1520018908.72974
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 0_6
-    spriteCollectionGUID: 3ceea1301fb62b74bad76143e7e7937d
-    spriteCollectionDataGUID: 9a2710bca42957a4995de0d15fbdf818
+    spriteCollectionGUID: ce2c4be2b58768745924bc27f1bd5e9d
+    spriteCollectionDataGUID: b8551f00675548a48af4a67b97e9458a
     spriteNames:
     - 0_6
     spriteTextureGUIDs:
-    - 6bb27f4169c75d344a49324d7f28a03c
+    - 5caf4d51956d6604aa8098ef3786222a
     spriteTextureTimeStamps:
-    - 1520009858.81949
+    - 1520018908.73225
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 0_7
-    spriteCollectionGUID: 49d0a8e9d222bd843b4c52556b2dc439
-    spriteCollectionDataGUID: ea2eeea3c7f24d5469de19c93b34621a
+    spriteCollectionGUID: 895985710971ac34786166dc35014254
+    spriteCollectionDataGUID: 722c91fa5bccd7d44a7bdd0f4568273d
     spriteNames:
     - 0_7
     spriteTextureGUIDs:
-    - b8c25e8b4ed231940b9702f0f7e38fde
+    - e51dc1f7bb9e27840af32256a853d8fe
     spriteTextureTimeStamps:
-    - 1520009858.8225
+    - 1520018908.73476
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 0_8
-    spriteCollectionGUID: 252c8c7176d0f3f40aac2a39a6becf71
-    spriteCollectionDataGUID: 4c86297f72ccf424e9b02d87545148e4
+    spriteCollectionGUID: 46d5f1250ce9c4b4fa1e81a37cab8ea1
+    spriteCollectionDataGUID: b068bcc94efe1db449f8c45920e26bad
     spriteNames:
     - 0_8
     spriteTextureGUIDs:
-    - cfce8d507bd19f141905f7dd037892ad
+    - 669100165520a4d4e9fa6f1cf9297c4e
     spriteTextureTimeStamps:
-    - 1520009859.15052
+    - 1520018908.92323
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 1_0
-    spriteCollectionGUID: 0919b6997f59bdc4a858f847428de86c
-    spriteCollectionDataGUID: 7180b56a41cc51e4e8916d78ad38d80d
+    spriteCollectionGUID: 83027e814231035488d52d8e2af4c129
+    spriteCollectionDataGUID: 94f0c5d3e1b786c438073bb3a15dc159
     spriteNames:
     - 1_0
     spriteTextureGUIDs:
-    - 64418fbfb4d652a4bb3f2888d42ca24a
+    - b8e5a0a1fd3f4084e9e8aa6d2ff08915
     spriteTextureTimeStamps:
-    - 1520009858.82551
+    - 1520018908.73726
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 1_1
-    spriteCollectionGUID: 125965a6608204e44a3d30e987f025cd
-    spriteCollectionDataGUID: aadb2ba7d8b620543a2adda8dd1a2a90
+    spriteCollectionGUID: 9d8adc142573e2a43a763cd5f46f68b6
+    spriteCollectionDataGUID: e10eff31eeaa13942983764e6e7f85a5
     spriteNames:
     - 1_1
     spriteTextureGUIDs:
-    - b035d4461f29cba40b77e0e946324f34
+    - f15c3efc29f53e6438e377f1e8d1f26a
     spriteTextureTimeStamps:
-    - 1520009858.82852
+    - 1520018908.73977
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 1_2
-    spriteCollectionGUID: 466b7ca26b2357040b4eeedef1a09a94
-    spriteCollectionDataGUID: f4b2de8e22a7a54419bd768aee8c4e19
+    spriteCollectionGUID: 1f8cec796db28f14f89d8c531d5d31c5
+    spriteCollectionDataGUID: ee8e9a20f46ddb84e8c1ae051e5ce27d
     spriteNames:
     - 1_2
     spriteTextureGUIDs:
-    - f483556acad9dd84aac6a2da9547e03d
+    - 6533761be6bbd4b46987178526bdda99
     spriteTextureTimeStamps:
-    - 1520009858.83153
+    - 1520018908.74178
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 1_3
-    spriteCollectionGUID: 9b1a984f1e7521449bf8512dd65b4ae6
-    spriteCollectionDataGUID: 3f83ff7b74f99d74187447b4f71daa78
+    spriteCollectionGUID: f9529a245dea340498b5e1da381170d1
+    spriteCollectionDataGUID: 960bf9dec0e20ef4eaa915929e3654b4
     spriteNames:
     - 1_3
     spriteTextureGUIDs:
-    - dbf829d429a592548a9389ebfd58568b
+    - de58940be4b96174e97f87e9668550bc
     spriteTextureTimeStamps:
-    - 1520009858.83454
+    - 1520018908.74629
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 1_4
-    spriteCollectionGUID: 7bee3919fcc9a5645b7604db6efd07ec
-    spriteCollectionDataGUID: 97f12c78ce220604d9602f4b6a701c95
+    spriteCollectionGUID: 5a38ea4392f40f94ea6eea3efb89a258
+    spriteCollectionDataGUID: 990a2850983382f409b74185f8b49c1e
     spriteNames:
     - 1_4
     spriteTextureGUIDs:
-    - df80ed5a5db045b4eb5e2b22478afd0d
+    - 579293c8141c7834d879e673f3dee5d6
     spriteTextureTimeStamps:
-    - 1520009858.83705
+    - 1520018908.75081
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 1_5
-    spriteCollectionGUID: 3251b2f97109fda4d98e989b1fa44b90
-    spriteCollectionDataGUID: b2faf0c563599b84b828398c21ed9053
+    spriteCollectionGUID: 1b1cde757567d4a4b8509949b5ffce54
+    spriteCollectionDataGUID: 0aa283ae7e205a1418b4763bf6359228
     spriteNames:
     - 1_5
     spriteTextureGUIDs:
-    - 3f77e45fc1544f141ba7bbb9f7b9fb56
+    - 85388e449bbe55c4386e23cabd2a8de6
     spriteTextureTimeStamps:
-    - 1520009858.84006
+    - 1520018908.75533
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 1_6
-    spriteCollectionGUID: 32077f3b5731bf94da913a4a3d37bc95
-    spriteCollectionDataGUID: 1637929d0ac3e9747a6a7e815638ed80
+    spriteCollectionGUID: 5009aec036be62844a90a26a46105181
+    spriteCollectionDataGUID: deed154fb14e3c645bb65a8ecc43c669
     spriteNames:
     - 1_6
     spriteTextureGUIDs:
-    - fa9a892245e6d1445bcb01f39b35cfeb
+    - 737a3bde5184a46489bf07100f5bd4bc
     spriteTextureTimeStamps:
-    - 1520009858.84307
+    - 1520018908.75984
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 1_7
-    spriteCollectionGUID: 8cebebde30080554eb84533996ba3619
-    spriteCollectionDataGUID: 372eab99da64ec5449423c5a7a100505
+    spriteCollectionGUID: b1195eadccac63d48870ef515f8341e7
+    spriteCollectionDataGUID: 347d45887c211754ba2aa8e4d4685fd3
     spriteNames:
     - 1_7
     spriteTextureGUIDs:
-    - a3b6ad55bee63be4d8ea45790707a906
+    - 19f2d23eea4628f46a64704ed3974275
     spriteTextureTimeStamps:
-    - 1520009858.84608
+    - 1520018908.76486
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 1_8
-    spriteCollectionGUID: 148674219877a7f4e988cf3127336f87
-    spriteCollectionDataGUID: 304d049d211353f4a98e0301103d4215
+    spriteCollectionGUID: 8ebec3c1fc7a9d14783d48ea5d14c722
+    spriteCollectionDataGUID: 0c1d66dd64e6190479c6d0130be06ba8
     spriteNames:
     - 1_8
     spriteTextureGUIDs:
-    - e747fdd82624c724b8f571269d768488
+    - 9efc75c805035c447a1736cde7b5c02f
     spriteTextureTimeStamps:
-    - 1520009859.15303
+    - 1520018908.92523
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 2_0
-    spriteCollectionGUID: 9fd05b89df6405a49a4192de1b6290fa
-    spriteCollectionDataGUID: 1482ec7004e9d7844aad4ac251fefce1
+    spriteCollectionGUID: 7f934d9369fa39a47842a794d821b70e
+    spriteCollectionDataGUID: 1e96daa144c810844bd0b986b60874d2
     spriteNames:
     - 2_0
     spriteTextureGUIDs:
-    - 16c2651a07a520f45a40acbd8b500f44
+    - ac72c687e489ee54caeff006f7119aaa
     spriteTextureTimeStamps:
-    - 1520009858.8486
+    - 1520018908.76887
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 2_1
-    spriteCollectionGUID: 70b75c5a3fa38304f97cdb75fa114570
-    spriteCollectionDataGUID: 7c699b842fa609a4ca08f1e99842901b
+    spriteCollectionGUID: 92d57fe77ae18d7418c171ed09d16f97
+    spriteCollectionDataGUID: 114d932caad397f4290cc1b45117d754
     spriteNames:
     - 2_1
     spriteTextureGUIDs:
-    - 591c7c20c0e916a4b89bd64397797926
+    - 116148773e1877348a7ae0aa8e71496b
     spriteTextureTimeStamps:
-    - 1520009858.8511
+    - 1520018908.77339
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 2_2
-    spriteCollectionGUID: e241e0fd0856d9442af2d1b16899508f
-    spriteCollectionDataGUID: 4e13dfc156902da45977bea45efd5c45
+    spriteCollectionGUID: b8fc71021ccbee1469f3ab4d69d41ee1
+    spriteCollectionDataGUID: 016a64d98e055c74ca0fbf8533343179
     spriteNames:
     - 2_2
     spriteTextureGUIDs:
-    - 795b5d89618aed949941817af74f6d9b
+    - 23a6c20b202e3b54ab7764147fd14338
     spriteTextureTimeStamps:
-    - 1520009858.85662
+    - 1520018908.7779
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 2_3
-    spriteCollectionGUID: 78d6a6f185c89fc4185813d8c5e57962
-    spriteCollectionDataGUID: a9f8ede6393a65749990a3eb8f936145
+    spriteCollectionGUID: d829cdc1dd8395f43b71820eec464a94
+    spriteCollectionDataGUID: d069b52caa90405498df89cfae88658e
     spriteNames:
     - 2_3
     spriteTextureGUIDs:
-    - 1aa93715b7fcc644683768e0a5d7d31f
+    - 292a0c489bb62394ea38df9d83d52c25
     spriteTextureTimeStamps:
-    - 1520009858.86013
+    - 1520018908.78199
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 2_4
-    spriteCollectionGUID: 2da80f47a220dfd4eb94c10a1c012a68
-    spriteCollectionDataGUID: 7a408b9a3e84c114b9f977ef4b95b5cf
+    spriteCollectionGUID: 5d0fc784cb0fb4244bbddf37ef7ba6d0
+    spriteCollectionDataGUID: 7ec042bb55410e24c90c963600e815c1
     spriteNames:
     - 2_4
     spriteTextureGUIDs:
-    - d604a336081376e4488de6224f6014b5
+    - a09aebfbe722e9642960bd9265b31b2c
     spriteTextureTimeStamps:
-    - 1520009858.86264
+    - 1520018908.7865
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 2_5
-    spriteCollectionGUID: 009e474763c62d342b04c1bda026c607
-    spriteCollectionDataGUID: bccf41622086fea43bcef5f604c56396
+    spriteCollectionGUID: 4c2f7096b2565734087599d5e136f64f
+    spriteCollectionDataGUID: a7af4b91d9268894dbf969ba6e50be85
     spriteNames:
     - 2_5
     spriteTextureGUIDs:
-    - c4acf214597221f49a2b7a43963882b0
+    - 38e7cc5fa72f4ed458cae63fa498398a
     spriteTextureTimeStamps:
-    - 1520009858.86515
+    - 1520018908.79102
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 2_6
-    spriteCollectionGUID: 561c0452b5b28ca4dbe9ad7eddaa320a
-    spriteCollectionDataGUID: 2ea725cab5e40684d8edf988687014fa
+    spriteCollectionGUID: 9981a8956c25f22448637076294f5172
+    spriteCollectionDataGUID: 8730027c17867f046a8e001f6449ca3f
     spriteNames:
     - 2_6
     spriteTextureGUIDs:
-    - 2db3803d575d6f540b6330a9a073c45f
+    - bfe12313e2b70db40b837f73138e847e
     spriteTextureTimeStamps:
-    - 1520009858.86766
+    - 1520018908.79554
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 2_7
-    spriteCollectionGUID: c286174cd26b4604c9ffb81ac3654a29
-    spriteCollectionDataGUID: 11b42f9a664087740b3e41aecaed698e
+    spriteCollectionGUID: bde8c18537ce0fc4d8881a62b7436c03
+    spriteCollectionDataGUID: bc684b682cc8a4847bcf1aff3d85f772
     spriteNames:
     - 2_7
     spriteTextureGUIDs:
-    - d36cbb7e1e4da3c429c29b9b5b6753f2
+    - 2f4598b1dcbf8a24486347a173df88ea
     spriteTextureTimeStamps:
-    - 1520009858.87017
+    - 1520018908.79804
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 2_8
-    spriteCollectionGUID: b7b4dc475c39a5348a04479acb5c4ac7
-    spriteCollectionDataGUID: 275ecf758aed5134aaf8ef581b4e3c89
+    spriteCollectionGUID: ef931753010cc974cabddc136db18b41
+    spriteCollectionDataGUID: d0a9ca490eec36147af1d9ada3ab771c
     spriteNames:
     - 2_8
     spriteTextureGUIDs:
-    - 9ff674a140ee64c40807c105489d6b72
+    - 33e338a3a296f9b489b112cd15e28bca
     spriteTextureTimeStamps:
-    - 1520009859.15504
+    - 1520018908.92825
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 3_0
-    spriteCollectionGUID: 1199a1049cc97924695e57e1baa7b330
-    spriteCollectionDataGUID: 1729bd05752c8504885bf5773519a7c2
+    spriteCollectionGUID: 105689d2c9c8a1e4aa7b22100dbd572e
+    spriteCollectionDataGUID: 2437da84a374c5f43bbe1dd3b35c13f6
     spriteNames:
     - 3_0
     spriteTextureGUIDs:
-    - 3074486a2f53b0a47a1c705ec40d583f
+    - 6f4fc6ff225f1b9479d11f202761aca2
     spriteTextureTimeStamps:
-    - 1520009858.87318
+    - 1520018908.80227
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 3_1
-    spriteCollectionGUID: a8fd6b708d3863a4c80006c9e0b4425a
-    spriteCollectionDataGUID: 438d68e93fb270841848a56a89d0850e
+    spriteCollectionGUID: f135b61a7854fb94dbb44269f977d1b0
+    spriteCollectionDataGUID: 52acc03fed196a346b5ab704031c2cbf
     spriteNames:
     - 3_1
     spriteTextureGUIDs:
-    - cbe8d9c8325644449afd4af47193399c
+    - 4d4bb972a058e8844ab05dbc9f2897d1
     spriteTextureTimeStamps:
-    - 1520009858.87569
+    - 1520018908.80679
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 3_2
-    spriteCollectionGUID: 594e8cf6ae5e77b4695d3785b570deba
-    spriteCollectionDataGUID: fd1908783d2b8514c85dff4545a89437
+    spriteCollectionGUID: 95412068c630c2245b82d913be4caf55
+    spriteCollectionDataGUID: 7584a9a06ae80aa479ac341e8e188b43
     spriteNames:
     - 3_2
     spriteTextureGUIDs:
-    - f9a7a3ab4ff3d4644a4fbe71fde8af11
+    - 6703bf00b905a48439d7d2bec27b3230
     spriteTextureTimeStamps:
-    - 1520009858.8787
+    - 1520018908.81131
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 3_3
-    spriteCollectionGUID: 8588cab841752094da6945c16cd9db9d
-    spriteCollectionDataGUID: 6a0d128310db27c4eb8790da2026c3bb
+    spriteCollectionGUID: 9bdb309167115e949ada8c333d9d4b0d
+    spriteCollectionDataGUID: 521c7cae3c0154044be498a0ab3f1c28
     spriteNames:
     - 3_3
     spriteTextureGUIDs:
-    - c96d962ecba3d4b488b427b388093e1e
+    - 36d2da6601a80684d801b7a4d675348c
     spriteTextureTimeStamps:
-    - 1520009858.8812
+    - 1520018908.81582
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 3_4
-    spriteCollectionGUID: fca426b1803ead24aaf4c437ba512939
-    spriteCollectionDataGUID: 6417b1afcee308e43814f56677e1e977
+    spriteCollectionGUID: 2aef7bd472c4bc54288a1ba0f08c9da7
+    spriteCollectionDataGUID: 7a32225bcce9ecf488d8f457831dab5e
     spriteNames:
     - 3_4
     spriteTextureGUIDs:
-    - 9a78c6cbbc91c80499476a8ade41d4d3
+    - e3d4f6a58b72e6d45b2977dee30f3c10
     spriteTextureTimeStamps:
-    - 1520009858.88371
+    - 1520018908.81983
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 3_5
-    spriteCollectionGUID: a1a6e9b9ea898ec4ebf81c39897b0695
-    spriteCollectionDataGUID: 0ac7adf311c901348af0775519918390
+    spriteCollectionGUID: 1602517a74ecd49449eef47b36788831
+    spriteCollectionDataGUID: 4d499052b52deba48a29bda9130325c9
     spriteNames:
     - 3_5
     spriteTextureGUIDs:
-    - 6d1239b171efdde41ab29f13f96fad7b
+    - 4b779a8545255e5498d85cc1f50b2b37
     spriteTextureTimeStamps:
-    - 1520009858.88622
+    - 1520018908.82435
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 3_6
-    spriteCollectionGUID: e3beb550e27acec4bbbc4b8f92e2cf6e
-    spriteCollectionDataGUID: 0b647d32433316d44afb1f77c462e681
+    spriteCollectionGUID: 9cac5967f6ae8d94aac7bc91f023e945
+    spriteCollectionDataGUID: 5337333326300b9498278562ddd16ea0
     spriteNames:
     - 3_6
     spriteTextureGUIDs:
-    - d56e1383b786f794f9c1c153f3b84833
+    - 64b5521b83a28b64c9c78c1caa6796c0
     spriteTextureTimeStamps:
-    - 1520009858.88873
+    - 1520018908.82887
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 3_7
-    spriteCollectionGUID: b99081cfbaa5c4443aea9813d4bbaa0d
-    spriteCollectionDataGUID: 4e80144df41af844382044a946def560
+    spriteCollectionGUID: 7953909f75c1d8f4f8781c4d68a697a0
+    spriteCollectionDataGUID: 1eda003829dd58a4cab963a93a2bdce5
     spriteNames:
     - 3_7
     spriteTextureGUIDs:
-    - e9757ee0a506c5e49b8851f03f1de879
+    - ed79036ab1eda2e419edea62a9c2eaa6
     spriteTextureTimeStamps:
-    - 1520009858.89174
+    - 1520018908.83137
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 3_8
-    spriteCollectionGUID: be5a9464b87c1094999803f0364ce689
-    spriteCollectionDataGUID: 3d62683199a621b4f975d63c34f3560e
+    spriteCollectionGUID: 8e968a3f9fe2e674a8ae1289cefab73d
+    spriteCollectionDataGUID: 455518708fedcee45b3a9610824b70fd
     spriteNames:
     - 3_8
     spriteTextureGUIDs:
-    - 6771dde4681082146b4d731bf4a47e5c
+    - 172e1c6bec79fe947b2ac5977d489ab7
     spriteTextureTimeStamps:
-    - 1520009859.15755
+    - 1520018908.93035
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 4_0
-    spriteCollectionGUID: 9895da98fb7ce5646927b2271aa43b0e
-    spriteCollectionDataGUID: cf112fac993cbe741b9dabbab139b4f8
+    spriteCollectionGUID: b82f7fb4b57becc4d8913885e4847ddd
+    spriteCollectionDataGUID: 6c8d88d970691fd4da208cdd9b9fd282
     spriteNames:
     - 4_0
     spriteTextureGUIDs:
-    - ab098245d59d11749acf5b65bae4c40c
+    - 6eff2bd10834b0649b02012e30afbc5f
     spriteTextureTimeStamps:
-    - 1520009858.89425
+    - 1520018908.83388
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 4_1
-    spriteCollectionGUID: eda6085725fa9b743b23f5da028dc6c5
-    spriteCollectionDataGUID: 56a7fd49de8785d4884c923ade1f551d
+    spriteCollectionGUID: 094c870db72b8634da091e91a558c84a
+    spriteCollectionDataGUID: 3e39e4eab6d53b34398df46ec5b8517e
     spriteNames:
     - 4_1
     spriteTextureGUIDs:
-    - a1ac51694c6fb1e4fa81d695c60d431b
+    - 074734e547bde084b9bffb3d24246daa
     spriteTextureTimeStamps:
-    - 1520009858.89726
+    - 1520018908.83639
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 4_2
-    spriteCollectionGUID: ea2c83a400c250b4ea0ba0a17f71fdac
-    spriteCollectionDataGUID: 0a31e6b08651be6469e487d3529d4621
+    spriteCollectionGUID: 9da6845408db9794cb5e8e03946379a8
+    spriteCollectionDataGUID: a2bf579497112c244bfca6b9a2f61258
     spriteNames:
     - 4_2
     spriteTextureGUIDs:
-    - 037c41774f31f4b44a4a9b3ce37c003d
+    - ffa9e88fceef5764487bbe5846499531
     spriteTextureTimeStamps:
-    - 1520009858.89977
+    - 1520018908.8389
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 4_3
-    spriteCollectionGUID: 38c5f98ee763a3e4092ccec9d1e8124f
-    spriteCollectionDataGUID: 17480ffbd0a2c25449fb48901ed176a2
+    spriteCollectionGUID: 5e717dea7155dc44cbc1c3e004ad0c1e
+    spriteCollectionDataGUID: 7d733d80bc9629b4e928f4ab6af957fd
     spriteNames:
     - 4_3
     spriteTextureGUIDs:
-    - ac331bd4f36929f46aefef6477fe240f
+    - 0d091d463b224e24685d3625e81aef74
     spriteTextureTimeStamps:
-    - 1520009858.90228
+    - 1520018908.84141
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 4_4
-    spriteCollectionGUID: 4d5b792c5e4d5254393e06e4b7aeda36
-    spriteCollectionDataGUID: 191d226619f022f49bcbad1c47b89e61
+    spriteCollectionGUID: 3fd4527c7ded57044bba8c71ca463e98
+    spriteCollectionDataGUID: 6dfe384e9be98674981ff13908852bd0
     spriteNames:
     - 4_4
     spriteTextureGUIDs:
-    - d6edb622b7ee2a84ba16814850e1de56
+    - bd8f66fcf9e0e3c479d0d0ff5396e86b
     spriteTextureTimeStamps:
-    - 1520009858.90478
+    - 1520018908.84392
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 4_5
-    spriteCollectionGUID: c62bbd7599246c9469605e7ec8a23140
-    spriteCollectionDataGUID: a1e5783f1de8a57418c78fc510d81c82
+    spriteCollectionGUID: 85c684e40c1c94d4ea088bd7721b0d0e
+    spriteCollectionDataGUID: dac99c16df523864ab1e69187874de04
     spriteNames:
     - 4_5
     spriteTextureGUIDs:
-    - 24774983f381ed24792952695d0e641a
+    - 354a78c63c9cf394babfe84e7b44b331
     spriteTextureTimeStamps:
-    - 1520009858.90729
+    - 1520018908.84793
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 4_6
-    spriteCollectionGUID: cee155b2b6b671c44911cc052606f31a
-    spriteCollectionDataGUID: acd1bc85b58267a40b848fecc726855f
+    spriteCollectionGUID: dfdf9bc804f2edb4293146b4b0e4b0e3
+    spriteCollectionDataGUID: 560b69a47ca978e43a911435296c45c9
     spriteNames:
     - 4_6
     spriteTextureGUIDs:
-    - 01e9bd4611e75ef459eb9754be1f05ac
+    - ec9379ae82e273841b4a941238124a07
     spriteTextureTimeStamps:
-    - 1520009858.9098
+    - 1520018908.85295
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 4_7
-    spriteCollectionGUID: 2ad3590fe6e053145ba50a9204f01db4
-    spriteCollectionDataGUID: c7a3252741cb61b43ba89002054c21da
+    spriteCollectionGUID: a0d8b75f769f19e489303dbc075c4d81
+    spriteCollectionDataGUID: edd219cb96b6f664f9460ba817520fe0
     spriteNames:
     - 4_7
     spriteTextureGUIDs:
-    - cfaa4b277e69e1247af7f269c88be578
+    - 152cfccf1300ffe45861a195dc6444a3
     spriteTextureTimeStamps:
-    - 1520009858.91231
+    - 1520018908.85646
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 4_8
-    spriteCollectionGUID: cd50c21256cad9b4ebf1b058a0a303a1
-    spriteCollectionDataGUID: 40eed1fff8f7b1b4e81c35ef7aee13cf
+    spriteCollectionGUID: a3b48e3da84d6e84c922b5705900309b
+    spriteCollectionDataGUID: 0a0614201207128489f49ed15efd102e
     spriteNames:
     - 4_8
     spriteTextureGUIDs:
-    - fcb3f2c6757f15a4db1dbe491821af30
+    - b94ff662d019a604dbd5e6c21b7cbc9a
     spriteTextureTimeStamps:
-    - 1520009859.15956
+    - 1520018908.93286
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 5_0
-    spriteCollectionGUID: 85301fb7f33c87d4696a99c23afe1a83
-    spriteCollectionDataGUID: 18e96166a77304c47ad4efa3614ee9bc
+    spriteCollectionGUID: 94d6ca2ecdc2bda418b2645d6c4d3e18
+    spriteCollectionDataGUID: 8ab3a2947ba655444bbe8540ae151a5a
     spriteNames:
     - 5_0
     spriteTextureGUIDs:
-    - ee1d53ca27040db428ba43b4c864924a
+    - 28076f54ebaff264cb9676dec7c0831b
     spriteTextureTimeStamps:
-    - 1520009858.91482
+    - 1520018908.85947
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 5_1
-    spriteCollectionGUID: 8d6bcdcd9f608394797bdf7d8c1cb6c8
-    spriteCollectionDataGUID: 6d1105467ba6a724cb73e0c7ea9668af
+    spriteCollectionGUID: 0570801c30fbb65469ad46f320b46a7c
+    spriteCollectionDataGUID: 174df261d1951ad44a85f64d9fdd1968
     spriteNames:
     - 5_1
     spriteTextureGUIDs:
-    - 0a624ca94f07c5b4497c4f56476a1565
+    - 9ff2f15386241884fb646e32f5efee54
     spriteTextureTimeStamps:
-    - 1520009859.08244
+    - 1520018908.86348
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 5_2
-    spriteCollectionGUID: 4b75c59c59f893e40905a2f7d6fb1579
-    spriteCollectionDataGUID: aa7983f0d7cf73e478ece2442f1b734f
+    spriteCollectionGUID: 807d3ff8526fde641a265bfcf8f8d337
+    spriteCollectionDataGUID: e7423ab7667598240a0c102d49b2e22a
     spriteNames:
     - 5_2
     spriteTextureGUIDs:
-    - 7e067231f01b6454fbf2ae74e6816577
+    - cfb7dbfb4323ff14cbba6c00166287c7
     spriteTextureTimeStamps:
-    - 1520009859.08653
+    - 1520018908.86599
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 5_3
-    spriteCollectionGUID: ac89dd92366387541b18c450e53233a6
-    spriteCollectionDataGUID: 180f7c65f43eef44baae7110cfaade0a
+    spriteCollectionGUID: f083f752c9f488640aede89123c4640d
+    spriteCollectionDataGUID: f3275cd6b6fcce940a2cf50a12c3aeda
     spriteNames:
     - 5_3
     spriteTextureGUIDs:
-    - baa601010899caf4185779402eeefefa
+    - ea52372193d965d47b953fc9ac4ebc26
     spriteTextureTimeStamps:
-    - 1520009859.09074
+    - 1520018908.869
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 5_4
-    spriteCollectionGUID: 18e2b2ba71f6e7343bb456d8990ad0e1
-    spriteCollectionDataGUID: 6abf61ad134141f4c887acf98b93d75d
+    spriteCollectionGUID: e0da96b4a731fd641b719ea465308f7b
+    spriteCollectionDataGUID: 2026d7339556ada45ae877f7d38c0605
     spriteNames:
     - 5_4
     spriteTextureGUIDs:
-    - 89f36e10f2910a24a86d5a110d1cfea3
+    - 4409403c565defa4eb86a7cdc49a0c5b
     spriteTextureTimeStamps:
-    - 1520009859.09476
+    - 1520018908.87151
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 5_5
-    spriteCollectionGUID: 5f370c345d2439147819493545f7ec12
-    spriteCollectionDataGUID: 0e965caf818c90e4fa58c18c15145872
+    spriteCollectionGUID: 24431f56752378649a5ffc85cfed1a0a
+    spriteCollectionDataGUID: fc732fe805064904b8be7271926a32ef
     spriteNames:
     - 5_5
     spriteTextureGUIDs:
-    - 0d54675fea643934a9e4b49a862e72b8
+    - 5b58f6abaf7bf144a8ecdb9b1c6a105a
     spriteTextureTimeStamps:
-    - 1520009859.09877
+    - 1520018908.87402
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 5_6
-    spriteCollectionGUID: 59cfe16d77b1a1f4bac4bee9ead2755b
-    spriteCollectionDataGUID: b19e4c3b54ede26479d92d74001dd5d6
+    spriteCollectionGUID: 74fa9abadf0b0674dba8394d08c35064
+    spriteCollectionDataGUID: ce7aae039bcd2b34ca5b604f500876b9
     spriteNames:
     - 5_6
     spriteTextureGUIDs:
-    - 49827aeec07f2eb4980537bbcffc2a19
+    - b185d68e0bb23c846b73bf818ab3afe3
     spriteTextureTimeStamps:
-    - 1520009859.10279
+    - 1520018908.87703
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 5_7
-    spriteCollectionGUID: fde49292bf9250f4c9f4dd723ac582b4
-    spriteCollectionDataGUID: b3a8bfcac2c34e0458293b9cc408dd50
+    spriteCollectionGUID: 02011ee6eab730b4b9fad129440aa74b
+    spriteCollectionDataGUID: 677e6b7e0c07ba64f8d96850766e54ab
     spriteNames:
     - 5_7
     spriteTextureGUIDs:
-    - 736e4bbc4d87a224b81a2311fbd2611f
+    - dabaf2e976c53a94dac90e2593b70071
     spriteTextureTimeStamps:
-    - 1520009859.1067
+    - 1520018908.87954
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 5_8
-    spriteCollectionGUID: bd62bae724247814c991bb7a42850f6f
-    spriteCollectionDataGUID: eb2ef74a7ecde9547a1eb652e8111e62
+    spriteCollectionGUID: 8af7f49947334fa49b95e531ab990120
+    spriteCollectionDataGUID: 2414192c67f99b14f9e5e4d3ac39c583
     spriteNames:
     - 5_8
     spriteTextureGUIDs:
-    - 474d54fdeff3e114e93e70ae32178dfc
+    - 8dc418c4424bbd142b2f611c7b4b741b
     spriteTextureTimeStamps:
-    - 1520009859.16206
+    - 1520018908.93487
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 6_0
-    spriteCollectionGUID: 4a1e870eb1296844ba10f87511780273
-    spriteCollectionDataGUID: 439b74d6477dd554dab0876877466457
+    spriteCollectionGUID: cfe51be198a09414f9b7212ac43c4675
+    spriteCollectionDataGUID: 5a55178cbd870db4eb66700478015555
     spriteNames:
     - 6_0
     spriteTextureGUIDs:
-    - 55a587ad6dc7a274ebe2a654b20ceb14
+    - d4c4430a3f0ba144d844211d7d4dae85
     spriteTextureTimeStamps:
-    - 1520009859.11071
+    - 1520018908.88255
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 6_1
-    spriteCollectionGUID: 859dc9cadea4f224f8c28861938e71b8
-    spriteCollectionDataGUID: 0073e3387a781e440a74a9df85754326
+    spriteCollectionGUID: 70df3c3f39eaac242a175e884782b4c4
+    spriteCollectionDataGUID: 2ce7c6eaa8d4a8e42a1c430b1e680828
     spriteNames:
     - 6_1
     spriteTextureGUIDs:
-    - 0f5cf4f0f1a12744fb374a8b2fe6897d
+    - 25ff81d774bbe984cb438d2bf9db1cc4
     spriteTextureTimeStamps:
-    - 1520009859.11473
+    - 1520018908.88556
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 6_2
-    spriteCollectionGUID: 64642fb8cee1c624aad78647826eb176
-    spriteCollectionDataGUID: de394a4c1806d7547bc70d86272f157a
+    spriteCollectionGUID: 36ef726797cca274cbe32f6b3d190f58
+    spriteCollectionDataGUID: 29ad76da40d58e748858526dc79d5d10
     spriteNames:
     - 6_2
     spriteTextureGUIDs:
-    - d47f30d66e1344b43a5602fb8ed4befe
+    - 554c0f58ff696c44cb1271b8bcbdd302
     spriteTextureTimeStamps:
-    - 1520009859.11823
+    - 1520018908.88907
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 6_3
-    spriteCollectionGUID: e070b50732fe888469c6196c165a94cc
-    spriteCollectionDataGUID: 0560938945cd5e742b37a4acae10e5a1
+    spriteCollectionGUID: 8574729f1070c2044a3a031bfc2a7767
+    spriteCollectionDataGUID: e9e0f0e0cd24fea47ad4a55655512a33
     spriteNames:
     - 6_3
     spriteTextureGUIDs:
-    - 7036a72077cbe2b44b227a94f2f9c2e8
+    - 1aae013ae0176dd478ac34e6719df2ae
     spriteTextureTimeStamps:
-    - 1520009859.12055
+    - 1520018908.89208
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 6_4
-    spriteCollectionGUID: 4c1f1fb92f2e1d442952045c24924518
-    spriteCollectionDataGUID: bc6fb0399b1670f48a971cfe63508bb8
+    spriteCollectionGUID: e61263ee10642a14f8ab254da74ac57f
+    spriteCollectionDataGUID: a7a042e7a1e768c49a95b372f439b65e
     spriteNames:
     - 6_4
     spriteTextureGUIDs:
-    - 0b5aa08d3694a8847974cbe761cb2891
+    - f93d349bf2b75d04ba27143433dc0b2c
     spriteTextureTimeStamps:
-    - 1520009859.12306
+    - 1520018908.89413
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 6_5
-    spriteCollectionGUID: ba81d8d9639261241a4b2df462447a64
-    spriteCollectionDataGUID: 859b4dcd2165ceb4c93e34a43c2838ad
+    spriteCollectionGUID: 6262dd5ed21ad14488ad0371b040fcdb
+    spriteCollectionDataGUID: 52dedd1c71cd44a4d9101b0d790c707e
     spriteNames:
     - 6_5
     spriteTextureGUIDs:
-    - 5f2dcaa5638c7884793c2dc49f8abd93
+    - 0f1080aecdbdc414daa7667e75138ebb
     spriteTextureTimeStamps:
-    - 1520009859.12522
+    - 1520018908.89714
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 6_6
-    spriteCollectionGUID: 913e959f6468f2a44bbdd978c28ed13a
-    spriteCollectionDataGUID: f9daca57c92e26245a6917fff3195964
+    spriteCollectionGUID: 2baacb02a025e3745bea83628526fbc5
+    spriteCollectionDataGUID: 04590070216052d4abb513ddabd95d80
     spriteNames:
     - 6_6
     spriteTextureGUIDs:
-    - 2d28fdb4ba0f20e42bde0925f2d78224
+    - 4190241f33b28c0409a6654e45b46242
     spriteTextureTimeStamps:
-    - 1520009859.1278
+    - 1520018908.89915
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 6_7
-    spriteCollectionGUID: 20fbc949591456b4baa5419dea355bc9
-    spriteCollectionDataGUID: ed38d9df3ea1b534db8aa2a067b67e25
+    spriteCollectionGUID: 525a8e17de0ef2f4fabd496c1ed9481d
+    spriteCollectionDataGUID: 525652bacfcf6c644b4e698d1743bb0a
     spriteNames:
     - 6_7
     spriteTextureGUIDs:
-    - 8dbf539e56443234581e0665440800cc
+    - d93ad4e5bb88c594fbadb7c8669f7745
     spriteTextureTimeStamps:
-    - 1520009859.13025
+    - 1520018908.90165
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 6_8
-    spriteCollectionGUID: 47b32db094198c842bf47163771a35aa
-    spriteCollectionDataGUID: 86006f3572bea9241a3e80c71d40d579
+    spriteCollectionGUID: 7bd5c2aecf3b5764ebb71b5dba2be928
+    spriteCollectionDataGUID: 97be317ba26d0d041be8362486ecdb5d
     spriteNames:
     - 6_8
     spriteTextureGUIDs:
-    - af681268ee53ebe4e86cb0c2d9db0af9
+    - a10334254321c0746a58ba083956b172
     spriteTextureTimeStamps:
-    - 1520009859.16457
+    - 1520018908.93738
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 7_0
-    spriteCollectionGUID: 9b3cc48cd6ee1c545b194b989437feb2
-    spriteCollectionDataGUID: 6f68176417c9c284794f465c78ac56ba
+    spriteCollectionGUID: b2fbc3a667583c94d840083e1e36d03f
+    spriteCollectionDataGUID: 2a77b86df9da65749a80e16de5570cb2
     spriteNames:
     - 7_0
     spriteTextureGUIDs:
-    - f778a3819e88bfe41bcc3f1b20aa8790
+    - 2c3c31e7abb0ece48b3999606925df93
     spriteTextureTimeStamps:
-    - 1520009859.13231
+    - 1520018908.90416
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 7_1
-    spriteCollectionGUID: cbfa87cb893f6d44bac2d6f6c44b589a
-    spriteCollectionDataGUID: 34c3d693fbbf6b646b40fc212caa34c5
+    spriteCollectionGUID: 1588d46dfef5add47938a907546b6672
+    spriteCollectionDataGUID: 97a3c6e870b07a5468c838470ede4ac3
     spriteNames:
     - 7_1
     spriteTextureGUIDs:
-    - 05ee26a9499b1c545846b47d49d53d7b
+    - 3660fb100b054a04a8c9400050c1e96a
     spriteTextureTimeStamps:
-    - 1520009859.13447
+    - 1520018908.90617
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 7_2
-    spriteCollectionGUID: 32f854b3af307bf4880a0953c560c0e0
-    spriteCollectionDataGUID: fb4d769d0bf914a4d90cda9639e1c984
+    spriteCollectionGUID: 591439db40ef84a4c9e0410239978871
+    spriteCollectionDataGUID: 505f5e769a758ab4c89a651e713e4cd5
     spriteNames:
     - 7_2
     spriteTextureGUIDs:
-    - 8f8c6e9b17cd05c4b89573d1fd43fcee
+    - 9aa6efe027113bc42b6ef1fd167be95f
     spriteTextureTimeStamps:
-    - 1520009859.13698
+    - 1520018908.90868
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 7_3
-    spriteCollectionGUID: 068c14fa9e74d5141b796931de4f6f87
-    spriteCollectionDataGUID: b18c30b9a5c1fa4409959d0bfcfea4e8
+    spriteCollectionGUID: 9cce4cf3fb8edeb4cb3fddc95d283624
+    spriteCollectionDataGUID: 43a822067db60fc40948f17e1210d70d
     spriteNames:
     - 7_3
     spriteTextureGUIDs:
-    - 4377db6da20cabb47abb8d1701aa0ad7
+    - e14ddb3e914104346805c6ce5751e238
     spriteTextureTimeStamps:
-    - 1520009859.13899
+    - 1520018908.91119
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 7_4
-    spriteCollectionGUID: b09edcd7f67d2014287743599977493b
-    spriteCollectionDataGUID: 1f6b6febe69064a46bca15c745124718
+    spriteCollectionGUID: 1a6eb5b7846ff7b4caa83c45f0c33712
+    spriteCollectionDataGUID: ea087eb670129d340ab0a48c08e651f9
     spriteNames:
     - 7_4
     spriteTextureGUIDs:
-    - 367eede69ad64ce478a251f970faa816
+    - 2c00a61252c3474439e36fd772bae0ee
     spriteTextureTimeStamps:
-    - 1520009859.14099
+    - 1520018908.91319
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 7_5
-    spriteCollectionGUID: 2587673b71ca2c84e9bbfcf6f315f960
-    spriteCollectionDataGUID: 56af9fcdcb763194ea3d9953fe4dc1af
+    spriteCollectionGUID: ae3ba017b85b6f34aa10338ab3bab86c
+    spriteCollectionDataGUID: f8e4c0b708f84504fb6f91d2d3c6c815
     spriteNames:
     - 7_5
     spriteTextureGUIDs:
-    - dbe29cb2f3b239f44b8b789ea5f71f55
+    - 9e49c5bfcd351864db452b1b83147602
     spriteTextureTimeStamps:
-    - 1520009859.143
+    - 1520018908.9152
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 7_6
-    spriteCollectionGUID: 28780ecb699c8514792b86a6573c1933
-    spriteCollectionDataGUID: a451f5ad58617b44fb557bb8f6aa6315
+    spriteCollectionGUID: a8cc0055f202f2a49b24098cbdc73395
+    spriteCollectionDataGUID: 0612133d8a3c8b240afe9032f284f744
     spriteNames:
     - 7_6
     spriteTextureGUIDs:
-    - 9907e5d04c799e44fb907fdb0655e423
+    - ee2d9b3510bcbe141a5c3a9787bfd8e3
     spriteTextureTimeStamps:
-    - 1520009859.14551
+    - 1520018908.91821
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 7_7
-    spriteCollectionGUID: 9c707532a97f417448ae36b452b8b281
-    spriteCollectionDataGUID: 968f2c4d4da096147bd9771f01085343
+    spriteCollectionGUID: 7a8d0627c650d4a4c87d74f1db7f66a4
+    spriteCollectionDataGUID: c98e9f66c7840524293aa8e3b6c9c94b
     spriteNames:
     - 7_7
     spriteTextureGUIDs:
-    - 96c0bd8a3e8083445940e48d19d27deb
+    - d22e62f934b8af5468cf232eefc45eb3
     spriteTextureTimeStamps:
-    - 1520009859.14802
+    - 1520018908.92022
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
     version: 3
   - name: 7_8
-    spriteCollectionGUID: 90549969c875e3a4693147462751330a
-    spriteCollectionDataGUID: f500fa2e147c04043864886045b479df
+    spriteCollectionGUID: ce11fc838d5202c479f6783deceb6d5c
+    spriteCollectionDataGUID: 9d6c35f3e27ed344ca6a304ae6dd3bc3
     spriteNames:
     - 7_8
     spriteTextureGUIDs:
-    - 0a1765a8862520041ace3562ad4c5d62
+    - 110a4aa3329a6b34499fecf19289def5
     spriteTextureTimeStamps:
-    - 1520009859.16708
+    - 1520018908.93938
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
