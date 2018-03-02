@@ -5,4 +5,5 @@ using UnityEngine;
 public class ResourceData
 {
     public GameObject spriteTemplate;
+    public GameObject characterTemplate;
 }

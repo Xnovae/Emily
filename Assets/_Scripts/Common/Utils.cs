@@ -100,4 +100,23 @@ public static class Utils
 
         return null;
     }
+
+    public static Vector2 ScreenToLogicPosition(Camera camera, Vector2 screenPosition)
+    {
+        Vector3 cameraPosition = camera.transform.position;
+
+
+        float cameraHeightSize = camera.orthographicSize;
+        float cameraWidthSize = camera.aspect * cameraHeightSize;
+
+        Vector4 cameraBounds = new Vector4();
+
+        cameraBounds.x = cameraPosition.x - cameraWidthSize;
+        cameraBounds.y = cameraPosition.y - cameraHeightSize;
+        cameraBounds.z = 2 * cameraWidthSize;      // width
+        cameraBounds.w = 2 * cameraHeightSize;     // height
+
+        return new Vector2(cameraBounds.x + cameraBounds.z * screenPosition.x,
+            cameraBounds.y + cameraBounds.w * screenPosition.y);
+    }
 }

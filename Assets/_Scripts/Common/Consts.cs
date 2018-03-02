@@ -14,6 +14,8 @@ public static class Consts
 
     public static readonly string Tk2dSprite_Template = "tk2dSprite_template";
 
+    public static readonly string Tk2dSprite_Character_Template = "tk2dSprite_character_template";
+
     public static readonly string ID_HERO_ARCHER = "heroes_archer";
 
     // Asset names

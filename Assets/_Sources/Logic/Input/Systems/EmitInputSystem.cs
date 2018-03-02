@@ -99,56 +99,12 @@ public class EmitInputSystem : IExecuteSystem, ICleanupSystem
         return input;
     }
 
-    static Vector2 GetKBInput()
+    // handles KeyBoard and GamePad only
+    // Tips: Touch handled in GameGestureDispatcher
+    private Vector2 GetInput()
     {
-        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-    }
-
-    Vector2 touchOrigin = -Vector2.one;
-
-    Vector2 GetInput()
-    {
-#if !UNITY_EDITOR && (UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE)
-        return GetTouchInput();
-#else
-        // return GetKBInput();
         return GetKBControllerInput();
-#endif
     }
-
-    Vector2 GetTouchInput()
-    {
-        //Check if Input has registered more than zero touches
-        if (Input.touchCount <= 0)
-        {
-            return Vector2.zero;
-        }
-
-        float horizontal = 0.0f;
-        float vertical = 0.0f;
-
-        Touch firstTouch = Input.touches[0];
-
-        //Check if the phase of that touch equals Began
-        if (firstTouch.phase == TouchPhase.Began)
-        {
-            //If so, store position of that touch for later calculations
-            touchOrigin = firstTouch.position;
-        }
-        else if (firstTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
-        {
-            Vector2 touchEnd = firstTouch.position;
-            horizontal = touchEnd.x - touchOrigin.x;
-            vertical = touchEnd.y - touchOrigin.y;
-
-            // Set touchOrigin.x to -1 so that our else if statement will 
-            // evaluate false and not repeat immediately.
-            touchOrigin.x = -1;
-        }
-
-        return new Vector2(horizontal, vertical);
-    }
-
 
     public void Cleanup()
     {

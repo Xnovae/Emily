@@ -50,7 +50,7 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
                 e.AddPosition(new Vector2(21.5f, 31.5f));
 
                 string assetName = id;
-                e.AddView(null, assetName);
+                e.AddView(null, assetName, true);
 
                 e.AddState(CharacterState.Idle);
                 e.AddDirection(CharacterDirection.Right);

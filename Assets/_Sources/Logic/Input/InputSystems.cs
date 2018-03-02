@@ -10,5 +10,6 @@ public class InputSystems : Feature
         Add(new EmitInputSystem(contexts));
         Add(new ProcessInputMoveSystem(contexts));
         Add(new ProcessInputActionSystem(contexts));
+        Add(new ProcessInputMoveToPositionSystem(contexts));
     }
 }

@@ -25,10 +25,16 @@ public class ResourceSystem : IInitializeSystem
         _gameContext.SetRunningData(new ResourceData(), new RuntimeData());
 
         InitializeAssetBundleManifest()             // 加载 AssetBundle Manifest
-            .Then(() => InitializePoolManager())    // 生成 tk2d template
+            .Then(() => InitializeSpritePoolManager())    // 生成 tk2d template
             .Then(spriteTemplate =>
             {
                 _gameContext.runningData.ResourceData.spriteTemplate = spriteTemplate;
+
+                return InitializeCharacterPoolManager();
+            })
+            .Then(characterTemplate =>
+            {
+                _gameContext.runningData.ResourceData.characterTemplate = characterTemplate;
 
                 return InitializeConfig();       // 加载所有配置
             })
@@ -47,7 +53,7 @@ public class ResourceSystem : IInitializeSystem
             .Catch(ex => Debug.LogException(ex));
     }
 
-    private IPromise<GameObject> InitializePoolManager()
+    private IPromise<GameObject> InitializeSpritePoolManager()
     {
         var promise = new Promise<GameObject>();
 
@@ -60,6 +66,24 @@ public class ResourceSystem : IInitializeSystem
             .Catch(ex =>
             {
                 promise.Reject(new Exception("Fail to load tk2dSprite_template ex: " + ex));
+            });
+
+        return promise;
+    }
+
+    private IPromise<GameObject> InitializeCharacterPoolManager()
+    {
+        var promise = new Promise<GameObject>();
+
+        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Tk2dSprite_Character_Template, this)
+            .Then(spriteTemplate =>
+            {
+                PoolManager.Instance.WarmPool(spriteTemplate, 50);
+                promise.Resolve(spriteTemplate);
+            })
+            .Catch(ex =>
+            {
+                promise.Reject(new Exception("Fail to load tk2dSprite_character_template ex: " + ex));
             });
 
         return promise;
