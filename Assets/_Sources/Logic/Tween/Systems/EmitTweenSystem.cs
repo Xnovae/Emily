@@ -34,7 +34,7 @@ public class EmitTweenSystem : ReactiveSystem<GameEntity>
             {
                 // ReplaceTweenResult(e);
 
-                float startValue = e.isTweenResultPreserved? e.tweenResult.tweener.fullPosition : 0.0f;
+                float startValue = e.isTweenResultPreserved ? e.tweenResult.tweener.fullPosition : 0.0f;
 
                 e.tweenResult.tweener.Kill(false);
                 e.RemoveTweenResult();

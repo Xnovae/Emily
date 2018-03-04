@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Text;
 using tk2dEditor.SpriteCollectionEditor;
+using Object = UnityEngine.Object;
 
 namespace tk2dEditor.SpriteCollectionEditor
 {
@@ -25,7 +27,7 @@ namespace tk2dEditor.SpriteCollectionEditor
 		void Commit();
 	}
 	
-	public class SpriteCollectionEditorEntry
+	public class SpriteCollectionEditorEntry : IComparable<SpriteCollectionEditorEntry>
 	{
 		public enum Type
 		{
@@ -45,7 +47,12 @@ namespace tk2dEditor.SpriteCollectionEditor
 		// list management
 		public int listIndex; // index into the currently active list
 		public int selectionKey; // a timestamp of when the entry was selected, to decide the last selected one
-	}
+
+	    public int CompareTo(SpriteCollectionEditorEntry other)
+	    {
+	        return name.CompareTo(other.name);
+	    }
+    }
 }
 
 public partial class tk2dSpriteCollectionEditorPopup : EditorWindow, IEditorHost
@@ -434,9 +441,31 @@ public partial class tk2dSpriteCollectionEditorPopup : EditorWindow, IEditorHost
 		
 		if (GUILayout.Button("Commit", EditorStyles.toolbarButton) && spriteCollectionProxy != null)
 			Commit();
-		
-		GUILayout.EndHorizontal();
+
+	    if (GUILayout.Button("PrintSprites", EditorStyles.toolbarButton) && spriteCollectionProxy != null)
+	        PrintSprites();
+
+        GUILayout.EndHorizontal();
 	}
+
+    public void PrintSprites()
+    {
+        var sb = new StringBuilder();
+
+        bool first = true;
+        var sorted = from s in selectedEntries orderby s select s;
+        foreach (var selected in sorted)
+        {
+            if (!first)
+                sb.Append(",");
+
+            sb.Append(selected.name);
+
+            first = false;
+        }
+
+        Debug.Log(sb.ToString());
+    }
 
     public void Commit()
 	{

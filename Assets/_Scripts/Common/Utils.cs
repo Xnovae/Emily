@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,10 +42,8 @@ public static class Utils
         {
             case BuildTarget.Android:
                 return "Android";
-#if UNITY_TVOS
-                case BuildTarget.tvOS:
-                    return "tvOS";
-#endif
+            case BuildTarget.tvOS:
+                return "tvOS";
             case BuildTarget.iOS:
                 return "iOS";
             case BuildTarget.WebGL:
@@ -71,10 +69,8 @@ public static class Utils
                 return "Android";
             case RuntimePlatform.IPhonePlayer:
                 return "iOS";
-#if UNITY_TVOS
-                case RuntimePlatform.tvOS:
-                    return "tvOS";
-#endif
+            case RuntimePlatform.tvOS:
+                return "tvOS";
             case RuntimePlatform.WebGLPlayer:
                 return "WebGL";
             case RuntimePlatform.WindowsPlayer:

@@ -697,6 +697,81 @@ namespace ZeroFormatter
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.Util.TileHandler.CutMode?>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.Util.NullableTileHandler_CutModeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.Util.TileHandler.CutMode?>.Register(new NullableEqualityComparer<global::Pathfinding.Util.TileHandler.CutMode>());
             
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.TouchManager.MessageType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.TouchManager_MessageTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.TouchManager.MessageType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.TouchManager_MessageTypeEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.TouchManager.MessageType?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.NullableTouchManager_MessageTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.TouchManager.MessageType?>.Register(new NullableEqualityComparer<global::TouchScript.TouchManager.MessageType>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.TouchManager.MessageName>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.TouchManager_MessageNameFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.TouchManager.MessageName>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.TouchManager_MessageNameEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.TouchManager.MessageName?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.NullableTouchManager_MessageNameFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.TouchManager.MessageName?>.Register(new NullableEqualityComparer<global::TouchScript.TouchManager.MessageName>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Behaviors.Cursors.PointerCursor_CursorStateFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Behaviors.Cursors.PointerCursor_CursorStateEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Behaviors.Cursors.NullablePointerCursor_CursorStateFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState?>.Register(new NullableEqualityComparer<global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Behaviors.Cursors.UI.GradientTexture_ResFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Behaviors.Cursors.UI.GradientTexture_ResEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Behaviors.Cursors.UI.NullableGradientTexture_ResFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res?>.Register(new NullableEqualityComparer<global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Gestures.FlickGesture.GestureDirection>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.FlickGesture_GestureDirectionFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Gestures.FlickGesture.GestureDirection>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.FlickGesture_GestureDirectionEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Gestures.FlickGesture.GestureDirection?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.NullableFlickGesture_GestureDirectionFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Gestures.FlickGesture.GestureDirection?>.Register(new NullableEqualityComparer<global::TouchScript.Gestures.FlickGesture.GestureDirection>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Gestures.Gesture.GestureState>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.Gesture_GestureStateFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Gestures.Gesture.GestureState>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.Gesture_GestureStateEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Gestures.Gesture.GestureState?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.NullableGesture_GestureStateFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Gestures.Gesture.GestureState?>.Register(new NullableEqualityComparer<global::TouchScript.Gestures.Gesture.GestureState>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.TransformGestures.TransformGesture_TransformTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.TransformGestures.TransformGesture_TransformTypeEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.TransformGestures.NullableTransformGesture_TransformTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType?>.Register(new NullableEqualityComparer<global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.TransformGestures.TransformGesture_ProjectionTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.TransformGestures.TransformGesture_ProjectionTypeEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.TransformGestures.NullableTransformGesture_ProjectionTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType?>.Register(new NullableEqualityComparer<global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Hit.HitData.HitType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Hit.HitData_HitTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Hit.HitData.HitType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Hit.HitData_HitTypeEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Hit.HitData.HitType?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Hit.NullableHitData_HitTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Hit.HitData.HitType?>.Register(new NullableEqualityComparer<global::TouchScript.Hit.HitData.HitType>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Hit.HitResult>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Hit.HitResultFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Hit.HitResult>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Hit.HitResultEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Hit.HitResult?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Hit.NullableHitResultFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Hit.HitResult?>.Register(new NullableEqualityComparer<global::TouchScript.Hit.HitResult>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.InputSources.StandardInput.Windows8APIType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.InputSources.StandardInput_Windows8APITypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.InputSources.StandardInput.Windows8APIType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.InputSources.StandardInput_Windows8APITypeEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.InputSources.StandardInput.Windows8APIType?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.InputSources.NullableStandardInput_Windows8APITypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.InputSources.StandardInput.Windows8APIType?>.Register(new NullableEqualityComparer<global::TouchScript.InputSources.StandardInput.Windows8APIType>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.InputSources.StandardInput.Windows7APIType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.InputSources.StandardInput_Windows7APITypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.InputSources.StandardInput.Windows7APIType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.InputSources.StandardInput_Windows7APITypeEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.InputSources.StandardInput.Windows7APIType?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.InputSources.NullableStandardInput_Windows7APITypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.InputSources.StandardInput.Windows7APIType?>.Register(new NullableEqualityComparer<global::TouchScript.InputSources.StandardInput.Windows7APIType>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Layers.FullscreenLayer.LayerType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Layers.FullscreenLayer_LayerTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Layers.FullscreenLayer.LayerType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Layers.FullscreenLayer_LayerTypeEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Layers.FullscreenLayer.LayerType?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Layers.NullableFullscreenLayer_LayerTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Layers.FullscreenLayer.LayerType?>.Register(new NullableEqualityComparer<global::TouchScript.Layers.FullscreenLayer.LayerType>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Pointers.Pointer.PointerType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Pointers.Pointer_PointerTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Pointers.Pointer.PointerType>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Pointers.Pointer_PointerTypeEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Pointers.Pointer.PointerType?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Pointers.NullablePointer_PointerTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Pointers.Pointer.PointerType?>.Register(new NullableEqualityComparer<global::TouchScript.Pointers.Pointer.PointerType>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Pointers.Pointer.PointerButtonState>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Pointers.Pointer_PointerButtonStateFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Pointers.Pointer.PointerButtonState>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Pointers.Pointer_PointerButtonStateEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::TouchScript.Pointers.Pointer.PointerButtonState?>.Register(new ZeroFormatter.DynamicObjectSegments.TouchScript.Pointers.NullablePointer_PointerButtonStateFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::TouchScript.Pointers.Pointer.PointerButtonState?>.Register(new NullableEqualityComparer<global::TouchScript.Pointers.Pointer.PointerButtonState>());
+            
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::UniRx.NotificationKind>.Register(new ZeroFormatter.DynamicObjectSegments.UniRx.NotificationKindFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::UniRx.NotificationKind>.Register(new ZeroFormatter.DynamicObjectSegments.UniRx.NotificationKindEqualityComparer());
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::UniRx.NotificationKind?>.Register(new ZeroFormatter.DynamicObjectSegments.UniRx.NullableNotificationKindFormatter<ZeroFormatter.Formatters.DefaultResolver>());
@@ -10922,6 +10997,1233 @@ namespace ZeroFormatter.DynamicObjectSegments.Pathfinding.Util
         }
 
         public int GetHashCode(global::Pathfinding.Util.TileHandler.CutMode x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+}
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+namespace ZeroFormatter.DynamicObjectSegments.TouchScript
+{
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::ZeroFormatter.Formatters;
+    using global::ZeroFormatter.Internal;
+    using global::ZeroFormatter.Segments;
+
+
+    public class TouchManager_MessageTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.TouchManager.MessageType>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.TouchManager.MessageType value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.TouchManager.MessageType Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.TouchManager.MessageType)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableTouchManager_MessageTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.TouchManager.MessageType?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.TouchManager.MessageType? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.TouchManager.MessageType? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.TouchManager.MessageType)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class TouchManager_MessageTypeEqualityComparer : IEqualityComparer<global::TouchScript.TouchManager.MessageType>
+    {
+        public bool Equals(global::TouchScript.TouchManager.MessageType x, global::TouchScript.TouchManager.MessageType y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.TouchManager.MessageType x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class TouchManager_MessageNameFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.TouchManager.MessageName>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.TouchManager.MessageName value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.TouchManager.MessageName Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.TouchManager.MessageName)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableTouchManager_MessageNameFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.TouchManager.MessageName?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.TouchManager.MessageName? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.TouchManager.MessageName? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.TouchManager.MessageName)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class TouchManager_MessageNameEqualityComparer : IEqualityComparer<global::TouchScript.TouchManager.MessageName>
+    {
+        public bool Equals(global::TouchScript.TouchManager.MessageName x, global::TouchScript.TouchManager.MessageName y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.TouchManager.MessageName x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+}
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+namespace ZeroFormatter.DynamicObjectSegments.TouchScript.Behaviors.Cursors
+{
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::ZeroFormatter.Formatters;
+    using global::ZeroFormatter.Internal;
+    using global::ZeroFormatter.Segments;
+
+
+    public class PointerCursor_CursorStateFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullablePointerCursor_CursorStateFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class PointerCursor_CursorStateEqualityComparer : IEqualityComparer<global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState>
+    {
+        public bool Equals(global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState x, global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.Behaviors.Cursors.PointerCursor.CursorState x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+}
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+namespace ZeroFormatter.DynamicObjectSegments.TouchScript.Behaviors.Cursors.UI
+{
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::ZeroFormatter.Formatters;
+    using global::ZeroFormatter.Internal;
+    using global::ZeroFormatter.Segments;
+
+
+    public class GradientTexture_ResFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableGradientTexture_ResFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class GradientTexture_ResEqualityComparer : IEqualityComparer<global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res>
+    {
+        public bool Equals(global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res x, global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.Behaviors.Cursors.UI.GradientTexture.Res x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+}
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+namespace ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures
+{
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::ZeroFormatter.Formatters;
+    using global::ZeroFormatter.Internal;
+    using global::ZeroFormatter.Segments;
+
+
+    public class FlickGesture_GestureDirectionFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Gestures.FlickGesture.GestureDirection>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Gestures.FlickGesture.GestureDirection value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.Gestures.FlickGesture.GestureDirection Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.Gestures.FlickGesture.GestureDirection)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableFlickGesture_GestureDirectionFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Gestures.FlickGesture.GestureDirection?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Gestures.FlickGesture.GestureDirection? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.Gestures.FlickGesture.GestureDirection? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.Gestures.FlickGesture.GestureDirection)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class FlickGesture_GestureDirectionEqualityComparer : IEqualityComparer<global::TouchScript.Gestures.FlickGesture.GestureDirection>
+    {
+        public bool Equals(global::TouchScript.Gestures.FlickGesture.GestureDirection x, global::TouchScript.Gestures.FlickGesture.GestureDirection y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.Gestures.FlickGesture.GestureDirection x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class Gesture_GestureStateFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Gestures.Gesture.GestureState>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Gestures.Gesture.GestureState value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.Gestures.Gesture.GestureState Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.Gestures.Gesture.GestureState)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableGesture_GestureStateFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Gestures.Gesture.GestureState?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Gestures.Gesture.GestureState? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.Gestures.Gesture.GestureState? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.Gestures.Gesture.GestureState)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class Gesture_GestureStateEqualityComparer : IEqualityComparer<global::TouchScript.Gestures.Gesture.GestureState>
+    {
+        public bool Equals(global::TouchScript.Gestures.Gesture.GestureState x, global::TouchScript.Gestures.Gesture.GestureState y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.Gestures.Gesture.GestureState x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+}
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+namespace ZeroFormatter.DynamicObjectSegments.TouchScript.Gestures.TransformGestures
+{
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::ZeroFormatter.Formatters;
+    using global::ZeroFormatter.Internal;
+    using global::ZeroFormatter.Segments;
+
+
+    public class TransformGesture_TransformTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableTransformGesture_TransformTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class TransformGesture_TransformTypeEqualityComparer : IEqualityComparer<global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType>
+    {
+        public bool Equals(global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType x, global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.Gestures.TransformGestures.TransformGesture.TransformType x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class TransformGesture_ProjectionTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableTransformGesture_ProjectionTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class TransformGesture_ProjectionTypeEqualityComparer : IEqualityComparer<global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType>
+    {
+        public bool Equals(global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType x, global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.Gestures.TransformGestures.TransformGesture.ProjectionType x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+}
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+namespace ZeroFormatter.DynamicObjectSegments.TouchScript.Hit
+{
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::ZeroFormatter.Formatters;
+    using global::ZeroFormatter.Internal;
+    using global::ZeroFormatter.Segments;
+
+
+    public class HitData_HitTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Hit.HitData.HitType>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Hit.HitData.HitType value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.Hit.HitData.HitType Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.Hit.HitData.HitType)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableHitData_HitTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Hit.HitData.HitType?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Hit.HitData.HitType? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.Hit.HitData.HitType? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.Hit.HitData.HitType)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class HitData_HitTypeEqualityComparer : IEqualityComparer<global::TouchScript.Hit.HitData.HitType>
+    {
+        public bool Equals(global::TouchScript.Hit.HitData.HitType x, global::TouchScript.Hit.HitData.HitType y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.Hit.HitData.HitType x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class HitResultFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Hit.HitResult>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Hit.HitResult value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.Hit.HitResult Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.Hit.HitResult)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableHitResultFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Hit.HitResult?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Hit.HitResult? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.Hit.HitResult? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.Hit.HitResult)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class HitResultEqualityComparer : IEqualityComparer<global::TouchScript.Hit.HitResult>
+    {
+        public bool Equals(global::TouchScript.Hit.HitResult x, global::TouchScript.Hit.HitResult y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.Hit.HitResult x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+}
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+namespace ZeroFormatter.DynamicObjectSegments.TouchScript.InputSources
+{
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::ZeroFormatter.Formatters;
+    using global::ZeroFormatter.Internal;
+    using global::ZeroFormatter.Segments;
+
+
+    public class StandardInput_Windows8APITypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.InputSources.StandardInput.Windows8APIType>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.InputSources.StandardInput.Windows8APIType value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.InputSources.StandardInput.Windows8APIType Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.InputSources.StandardInput.Windows8APIType)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableStandardInput_Windows8APITypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.InputSources.StandardInput.Windows8APIType?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.InputSources.StandardInput.Windows8APIType? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.InputSources.StandardInput.Windows8APIType? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.InputSources.StandardInput.Windows8APIType)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class StandardInput_Windows8APITypeEqualityComparer : IEqualityComparer<global::TouchScript.InputSources.StandardInput.Windows8APIType>
+    {
+        public bool Equals(global::TouchScript.InputSources.StandardInput.Windows8APIType x, global::TouchScript.InputSources.StandardInput.Windows8APIType y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.InputSources.StandardInput.Windows8APIType x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class StandardInput_Windows7APITypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.InputSources.StandardInput.Windows7APIType>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.InputSources.StandardInput.Windows7APIType value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.InputSources.StandardInput.Windows7APIType Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.InputSources.StandardInput.Windows7APIType)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableStandardInput_Windows7APITypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.InputSources.StandardInput.Windows7APIType?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.InputSources.StandardInput.Windows7APIType? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.InputSources.StandardInput.Windows7APIType? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.InputSources.StandardInput.Windows7APIType)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class StandardInput_Windows7APITypeEqualityComparer : IEqualityComparer<global::TouchScript.InputSources.StandardInput.Windows7APIType>
+    {
+        public bool Equals(global::TouchScript.InputSources.StandardInput.Windows7APIType x, global::TouchScript.InputSources.StandardInput.Windows7APIType y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.InputSources.StandardInput.Windows7APIType x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+}
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+namespace ZeroFormatter.DynamicObjectSegments.TouchScript.Layers
+{
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::ZeroFormatter.Formatters;
+    using global::ZeroFormatter.Internal;
+    using global::ZeroFormatter.Segments;
+
+
+    public class FullscreenLayer_LayerTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Layers.FullscreenLayer.LayerType>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Layers.FullscreenLayer.LayerType value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.Layers.FullscreenLayer.LayerType Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.Layers.FullscreenLayer.LayerType)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableFullscreenLayer_LayerTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Layers.FullscreenLayer.LayerType?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Layers.FullscreenLayer.LayerType? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.Layers.FullscreenLayer.LayerType? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.Layers.FullscreenLayer.LayerType)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class FullscreenLayer_LayerTypeEqualityComparer : IEqualityComparer<global::TouchScript.Layers.FullscreenLayer.LayerType>
+    {
+        public bool Equals(global::TouchScript.Layers.FullscreenLayer.LayerType x, global::TouchScript.Layers.FullscreenLayer.LayerType y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.Layers.FullscreenLayer.LayerType x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+}
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+namespace ZeroFormatter.DynamicObjectSegments.TouchScript.Pointers
+{
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::ZeroFormatter.Formatters;
+    using global::ZeroFormatter.Internal;
+    using global::ZeroFormatter.Segments;
+
+
+    public class Pointer_PointerTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Pointers.Pointer.PointerType>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Pointers.Pointer.PointerType value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.Pointers.Pointer.PointerType Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.Pointers.Pointer.PointerType)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullablePointer_PointerTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Pointers.Pointer.PointerType?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Pointers.Pointer.PointerType? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.Pointers.Pointer.PointerType? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.Pointers.Pointer.PointerType)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class Pointer_PointerTypeEqualityComparer : IEqualityComparer<global::TouchScript.Pointers.Pointer.PointerType>
+    {
+        public bool Equals(global::TouchScript.Pointers.Pointer.PointerType x, global::TouchScript.Pointers.Pointer.PointerType y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.Pointers.Pointer.PointerType x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class Pointer_PointerButtonStateFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Pointers.Pointer.PointerButtonState>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Pointers.Pointer.PointerButtonState value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::TouchScript.Pointers.Pointer.PointerButtonState Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::TouchScript.Pointers.Pointer.PointerButtonState)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullablePointer_PointerButtonStateFormatter<TTypeResolver> : Formatter<TTypeResolver, global::TouchScript.Pointers.Pointer.PointerButtonState?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::TouchScript.Pointers.Pointer.PointerButtonState? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::TouchScript.Pointers.Pointer.PointerButtonState? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::TouchScript.Pointers.Pointer.PointerButtonState)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class Pointer_PointerButtonStateEqualityComparer : IEqualityComparer<global::TouchScript.Pointers.Pointer.PointerButtonState>
+    {
+        public bool Equals(global::TouchScript.Pointers.Pointer.PointerButtonState x, global::TouchScript.Pointers.Pointer.PointerButtonState y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::TouchScript.Pointers.Pointer.PointerButtonState x)
         {
             return (int)x;
         }

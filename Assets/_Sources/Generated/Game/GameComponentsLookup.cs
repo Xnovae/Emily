@@ -30,8 +30,9 @@ public static class GameComponentsLookup {
     public const int Velocity = 19;
     public const int ViewAsset = 20;
     public const int View = 21;
+    public const int ViewValid = 22;
 
-    public const int TotalComponents = 22;
+    public const int TotalComponents = 23;
 
     public static readonly string[] componentNames = {
         "AttempPosition",
@@ -55,7 +56,8 @@ public static class GameComponentsLookup {
         "TweenResultPreserved",
         "Velocity",
         "ViewAsset",
-        "View"
+        "View",
+        "ViewValid"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -80,6 +82,7 @@ public static class GameComponentsLookup {
         typeof(TweenResultPreserved),
         typeof(VelocityComponent),
         typeof(ViewAssetComponent),
-        typeof(ViewComponent)
+        typeof(ViewComponent),
+        typeof(ViewValidComponent)
     };
 }

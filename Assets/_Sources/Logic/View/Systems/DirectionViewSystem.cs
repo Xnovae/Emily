@@ -14,12 +14,12 @@ public class DirectionViewSystem : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.Direction);
+        return context.CreateCollector(GameMatcher.AllOf(GameMatcher.Direction, GameMatcher.ViewValid));
     }
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasView;
+        return entity.hasView && entity.isViewValid;
     }
 
     protected override void Execute(List<GameEntity> entities)

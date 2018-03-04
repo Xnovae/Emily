@@ -223,7 +223,7 @@ public abstract class ConfigGetItem<T>
     }
 #endif
 
-    public T GetItem(string assetName, string id)
+    public T GetItem(CdbReader cdbReader, string assetName, string id)
     {
         InitializeDictionary();
 
@@ -234,8 +234,6 @@ public abstract class ConfigGetItem<T>
         }
         else
         {
-            CdbReader cdbReader = ConfigManager.Instance.GetCdbReader();
-
             byte[] key = EncodeKey(assetName, id);
 
             byte[] value = cdbReader.Find(key);

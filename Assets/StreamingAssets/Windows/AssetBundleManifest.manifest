@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 3906921061
+CRC: 3458133301
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -295,5 +295,13 @@ AssetBundleManifest:
       Dependencies:
         Dependency_0: dependency/shaders.assetbundle
     Info_73:
+      Name: character/heroes_panda.assetbundle
+      Dependencies:
+        Dependency_0: dependency/shaders.assetbundle
+    Info_74:
+      Name: character/heroes_phoenix.assetbundle
+      Dependencies:
+        Dependency_0: dependency/shaders.assetbundle
+    Info_75:
       Name: dependency/shaders.assetbundle
       Dependencies: {}

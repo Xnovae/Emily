@@ -5,13 +5,52 @@ using ClientConfig;
 using Entitas;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.Assertions;
 
 public class StateViewSystem : ReactiveSystem<GameEntity>
 {
     public StateViewSystem(Contexts contexts)
         : base(contexts.game)
     {
-        
+        IGroup<GameEntity> stateGroup = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.State, GameMatcher.Identifier));
+
+        stateGroup.OnEntityUpdated += (group, entity, index, component, newComponent) =>
+        {
+            StateComponent oldState = component as StateComponent;
+            StateComponent newState = newComponent as StateComponent;
+
+            if (oldState == null || newState == null)
+            {
+                // if it's not state change, ignore
+                return;
+            }
+
+            string id = entity.identifier.name;
+            var characterItem = ConfigManager.Instance.GetItem<CharacterItem>(Consts.ASSET_NAME_CHARACTER, id);
+
+            string[] oldSprites = GetSpriteAnimate(characterItem, oldState.state);
+            string[] newSprites = GetSpriteAnimate(characterItem, newState.state);
+
+            bool isEqual = true;
+            if (oldSprites.Length != newSprites.Length)
+            {
+                isEqual = false;
+            }
+            else
+            {
+                int length = oldSprites.Length;
+                for (int i = 0; i < length; ++i)
+                {
+                    if (oldSprites[i] != newSprites[i])
+                    {
+                        isEqual = false;
+                        break;
+                    }
+                }
+            }
+
+            entity.isTweenResultPreserved = isEqual;
+        };
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)

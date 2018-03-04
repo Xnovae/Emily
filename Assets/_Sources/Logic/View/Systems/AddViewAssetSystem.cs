@@ -33,8 +33,11 @@ public class AddViewAssetSystem : ReactiveSystem<GameEntity>
 
             var viewController = e.view.viewController;
 
-            if(e.viewAsset.spriteName != null)
+            if (e.viewAsset.spriteName != null)
+            {
                 viewController.displaySprite.SetSprite(e.viewAsset.collectionData, e.viewAsset.spriteName);
+                e.isViewValid = true;
+            }
 
             viewController.gameObject.SetActive(true);
         }

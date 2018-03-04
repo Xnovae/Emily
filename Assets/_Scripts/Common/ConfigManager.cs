@@ -34,11 +34,6 @@ public class ConfigManager
         _cdbReader = new CdbReader(cdbPath);
     }
 
-    public CdbReader GetCdbReader()
-    {
-        return _cdbReader;
-    }
-
     public void Close()
     {
         if (_cdbReader != null)
@@ -56,7 +51,7 @@ public class ConfigManager
             var item = itemObj as T;
             Assert.IsNotNull(item);
 
-            return item.GetItem(assetName, id);
+            return item.GetItem(_cdbReader, assetName, id);
         }
         else
         {
@@ -64,18 +59,7 @@ public class ConfigManager
 
             _dict.Add(assetName, item);
 
-            return item.GetItem(assetName, id);
-
-            //TextAsset textAsset = _configAssetBundle.LoadAsset<TextAsset>(assetName);
-            //Assert.IsNotNull(textAsset);
-
-            //itemObj = ZeroFormatterSerializer.Deserialize<>(textAsset.bytes);
-            //_dict.Add(assetName, itemObj);
-
-            // item = itemObj as ;
-            //Assert.IsNotNull(item);
-
-            //return item.GetItem(id);
+            return item.GetItem(_cdbReader, assetName, id);
         }
     }
 }
