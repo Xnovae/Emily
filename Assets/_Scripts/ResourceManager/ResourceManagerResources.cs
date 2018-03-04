@@ -13,13 +13,34 @@ public partial class ResourceManager
 {
     class ResourcesWrapper
     {
+        class RefData
+        {
+            public object owner;
+            public List<int> internalRefList = new List<int>(DEFAULT_LIST_SIZE);
+        }
+
         public string path;
         public Object asset;
 
         public bool loadDone;
         public List<Action> loadDoneAction;
 
-        private List<object> _referenceList = new List<object>(DEFAULT_LIST_SIZE);
+        private List<RefData> _referenceList = new List<RefData>(DEFAULT_LIST_SIZE);
+
+        private RefData FindRefData(object owner)
+        {
+            for (int i = 0, length = _referenceList.Count; i < length; ++i)
+            {
+                RefData refData = _referenceList[i];
+
+                if (refData.owner == owner)
+                {
+                    return refData;
+                }
+            }
+
+            return null;
+        }
 
         public void DestroyAllReference()
         {
@@ -28,15 +49,38 @@ public partial class ResourceManager
 
         public void DestroyReference(object owner)
         {
-            bool removed = _referenceList.Remove(owner);
-            Assert.IsTrue(removed, string.Format("remove {0} is not exist", owner));
+            RefData refData = FindRefData(owner);
+            Assert.IsNotNull(refData);
+
+            Assert.IsTrue(refData.internalRefList.Count > 0);
+
+            refData.internalRefList.RemoveAt(0);    // remove first internal id
+
+            if (refData.internalRefList.Count == 0)
+            {
+                bool removed = _referenceList.Remove(refData);
+                Assert.IsTrue(removed, string.Format("remove {0} is not exist", owner));
+            }
         }
 
-        public void AddReference(object owner)
+        public void AddReference(object owner, int id)
         {
-            Assert.IsFalse(_referenceList.Contains(owner));
+            RefData refData = FindRefData(owner);
 
-            _referenceList.Add(owner);
+            if (refData == null)
+            {
+                refData = new RefData { owner = owner };
+                refData.internalRefList.Add(id);
+
+                _referenceList.Add(refData);
+            }
+            else
+            {
+                Assert.IsNotNull(refData.internalRefList);
+                Assert.IsFalse(refData.internalRefList.Contains(id));
+
+                refData.internalRefList.Add(id);
+            }
         }
 
         public bool IsAllDestroyed()
@@ -44,14 +88,22 @@ public partial class ResourceManager
             return _referenceList.Count == 0;
         }
 
-        public bool IsContainTarget(object owner)
+        public bool IsContainTarget(object owner, int id)
         {
-            return _referenceList.Contains(owner);
+            RefData refData = FindRefData(owner);
+
+            return refData.internalRefList.Contains(id);
         }
 
         public int GetReferenceCount()
         {
-            return _referenceList.Count;
+            int refCount = 0;
+            for (int i = 0, length = _referenceList.Count; i < length; ++i)
+            {
+                refCount += _referenceList[i].internalRefList.Count;
+            }
+
+            return refCount;
         }
     }
 
@@ -74,26 +126,28 @@ public partial class ResourceManager
     {
         ResourcesWrapper resourcesWrapper = null;
 
+        int id = GetNextIDResources();
+
         if (_resourcesWrappers.TryGetValue(path, out resourcesWrapper))
         {
-            resourcesWrapper.AddReference(owner);
+            resourcesWrapper.AddReference(owner, id);
 
             if (resourcesWrapper.loadDone)
             {
-                return RetriveResources<T>(resourcesWrapper, path, owner);
+                return RetriveResources<T>(resourcesWrapper, path, owner, id);
             }
             else
             {
-                return DelayRetriveResources<T>(resourcesWrapper, path, owner);
+                return DelayRetriveResources<T>(resourcesWrapper, path, owner, id);
             }
         }
         else
         {
-            return BrandNewLoadResources<T>(path, owner);
+            return BrandNewLoadResources<T>(path, owner, id);
         }
     }
 
-    private void AddLoadDoneAction<T>(Promise<T> promise, ResourcesWrapper resourcesWrapper, string path, object owner) where T : Object
+    private void AddLoadDoneAction<T>(Promise<T> promise, ResourcesWrapper resourcesWrapper, string path, object owner, int id) where T : Object
     {
         Action loadDoneAction = new Action(() =>
         {
@@ -103,11 +157,11 @@ public partial class ResourceManager
             {
                 promise.Reject(new LoadDoneAndDestroyAllException());
             }
-            else if (IsTargetDestroyed(resourcesWrapper, owner))
+            else if (IsTargetDestroyed(resourcesWrapper, owner, id))
             {
                 promise.Reject(new TargetDestroyedException(null, owner));
             }
-            else if (!resourcesWrapper.IsContainTarget(owner))
+            else if (!resourcesWrapper.IsContainTarget(owner, id))
             {
                 promise.Reject(new LoadDoneAndDestroyMainException());
             }
@@ -128,23 +182,23 @@ public partial class ResourceManager
         resourcesWrapper.loadDoneAction.Add(loadDoneAction);
     }
 
-    private IPromise<T> DelayRetriveResources<T>(ResourcesWrapper resourcesWrapper, string path, object owner) where T : Object
+    private IPromise<T> DelayRetriveResources<T>(ResourcesWrapper resourcesWrapper, string path, object owner, int id) where T : Object
     {
         var promise = new Promise<T>();
 
-       AddLoadDoneAction(promise, resourcesWrapper, path, owner); 
+       AddLoadDoneAction(promise, resourcesWrapper, path, owner, id); 
 
         return promise;
     }
 
-    private IPromise<T> RetriveResources<T>(ResourcesWrapper resourcesWrapper, string path, object owner) where T : Object
+    private IPromise<T> RetriveResources<T>(ResourcesWrapper resourcesWrapper, string path, object owner, int id) where T : Object
     {
         var promise = new Promise<T>();
 
         var asset = resourcesWrapper.asset;
         if (asset)
         {
-            if (IsTargetDestroyed(resourcesWrapper, owner))
+            if (IsTargetDestroyed(resourcesWrapper, owner, id))
             {
                 promise.Reject(new TargetDestroyedException(null, owner));
             }
@@ -169,7 +223,7 @@ public partial class ResourceManager
         return promise;
     }
 
-    private IPromise<T> BrandNewLoadResources<T>(string path, object owner) where T : UnityEngine.Object
+    private IPromise<T> BrandNewLoadResources<T>(string path, object owner, int id) where T : UnityEngine.Object
     {
         var promise = new Promise<T>();
 
@@ -180,8 +234,8 @@ public partial class ResourceManager
             loadDone = false,
             loadDoneAction = new List<Action>(DEFAULT_LIST_SIZE),
         };
-        resourcesWrapper.AddReference(owner);
-        AddLoadDoneAction(promise, resourcesWrapper, path, owner);
+        resourcesWrapper.AddReference(owner, id);
+        AddLoadDoneAction(promise, resourcesWrapper, path, owner, id);
 
         _resourcesWrappers.Add(path, resourcesWrapper);
 
@@ -257,9 +311,18 @@ public partial class ResourceManager
         }
     }
 
-    private static bool IsTargetDestroyed(ResourcesWrapper wrapper, object owner)
+    private static bool IsTargetDestroyed(ResourcesWrapper wrapper, object owner, int id)
     {
-        return !wrapper.IsContainTarget(owner);
+        return !wrapper.IsContainTarget(owner, id);
+    }
+
+    private static int _idResources= 0;
+
+    private static int GetNextIDResources()
+    {
+        _idResources = _idResources + 1;
+
+        return _idResources;
     }
 
 }
