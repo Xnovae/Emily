@@ -426,11 +426,86 @@ public partial class ResourceManager
 
     private IEnumerator GetAssetBundleInternal(string path, bool isManifestBundle, bool isDependency)
     {
-        AssetBundleCreateRequest[] requests;
-        string[] dependenciesURI = null;
+        string[] dependenciesURI = GetAllDependenciesURI(path, isManifestBundle); ;
+        AssetBundleCreateRequest[] requests = GetAssetBundleRequests(path, isManifestBundle, isDependency, dependenciesURI);
+
+        while (!AllRequestsDone(requests, dependenciesURI))
+        {
+            yield return null;
+        }
+
+        // process dependency AssetBundle
+        int dependencyLength = isDependency ? requests.Length : requests.Length - 1;
+        for (int i = 0; i < dependencyLength; ++i)
+        {
+            if (requests[i] != null)
+            {
+                string dependencyURI = GetDependencyURI(dependenciesURI, i, path);
+
+                var wrapper = _dependenciesWrappers[dependencyURI];
+                Assert.IsNotNull(wrapper);
+
+                wrapper.assetBundle = requests[i].assetBundle;
+                Assert.IsNotNull(wrapper.assetBundle);
+                wrapper.loadDone = true;
+            }
+        }
+
+        // process self
+        AssetBundle assetBundle = requests[requests.Length - 1].assetBundle;
+
+        var wwwWrapper = _assetBundleWrappers[path];
+        Assert.IsNotNull(wwwWrapper);
+
+        wwwWrapper.assetBundle = assetBundle;
+        Assert.IsNotNull(wwwWrapper.assetBundle);
+        wwwWrapper.loadDone = true;
+
+        // callback
+        if (wwwWrapper.loadDoneAction != null)
+        {
+            for (int i = 0, length = wwwWrapper.loadDoneAction.Count; i < length; ++i)
+            {
+                wwwWrapper.loadDoneAction[i]();
+            }
+            wwwWrapper.loadDoneAction = null;
+        }
+
+        // check ALL destroyed
+        if (wwwWrapper.IsAllDestroyed())
+        {
+            _assetBundleWrappers.Remove(path);
+
+            assetBundle.Unload(true);
+            DestroyDependency(path);
+        }
+    }
+
+    private string GetDependencyURI(string[] dependenciesURI, int i, string path)
+    {
+        string dependencyURI;
+        if (i < dependenciesURI.Length)
+        {
+            dependencyURI = dependenciesURI[i];
+        }
+        else if (i == dependenciesURI.Length)
+        {
+            dependencyURI = path;
+        }
+        else
+        {
+            throw new Exception(string.Format("i: {0} exceed dependenciesURI.Length: {1}",
+                i, dependenciesURI.Length));
+        }
+        return dependencyURI;
+    }
+
+    private string[] GetAllDependenciesURI(string path, bool isManifestBundle)
+    {
+        string[] dependenciesURI;
         if (isManifestBundle)
         {
-            requests = new AssetBundleCreateRequest[1] { AssetBundle.LoadFromFileAsync(path) };
+            dependenciesURI = null;
         }
         else
         {
@@ -439,12 +514,26 @@ public partial class ResourceManager
             string assetBundleName = path.Substring(pathPrefix.Length);
 
             dependenciesURI = _assetBundleManifest.GetAllDependencies(assetBundleName);
-            for(int i=0, count = dependenciesURI.Length; i<count; ++i)
+            for (int i = 0, count = dependenciesURI.Length; i < count; ++i)
             {
-                dependenciesURI[i] = Utils.GetBundlePathForLoadFromFile(dependenciesURI[i]);
+                string originURI = dependenciesURI[i];
+                dependenciesURI[i] = Utils.GetBundlePathForLoadFromFile(originURI);
             }
+        }
 
-            requests = new AssetBundleCreateRequest[dependenciesURI.Length + 1];    // last one contains self AssetBundle
+        return dependenciesURI;
+    }
+
+    private AssetBundleCreateRequest[] GetAssetBundleRequests(string path, bool isManifestBundle, bool isDependency, string[] dependenciesURI)
+    {
+        AssetBundleCreateRequest[] requests;
+        if (isManifestBundle)
+        {
+            requests = new AssetBundleCreateRequest[1] {AssetBundle.LoadFromFileAsync(path)};
+        }
+        else
+        {
+            requests = new AssetBundleCreateRequest[dependenciesURI.Length + 1]; // last one contains self AssetBundle
             // dependency
             int length = requests.Length;
             for (int i = 0; i < length - 1; ++i)
@@ -473,7 +562,6 @@ public partial class ResourceManager
                 }
             }
             // self
-            requests[length - 1] = AssetBundle.LoadFromFileAsync(path);
             if (isDependency)
             {
                 var wrapper = new DependencyAssetBundleWrapper()
@@ -484,68 +572,16 @@ public partial class ResourceManager
                 wrapper.SetReferenceCount(1);
 
                 _dependenciesWrappers.Add(path, wrapper);
+
+                requests[length - 1] = AssetBundle.LoadFromFileAsync(path);
             }
-        }
-
-        while (!AllRequestsDone(requests, dependenciesURI))
-        {
-            yield return null;
-        }
-
-        // process dependency AssetBundle
-        if(dependenciesURI != null)
-        {
-            for(int i=0, count = dependenciesURI.Length; i<count; ++i)
+            else
             {
-                if(requests[i] != null)
-                {
-                    var wrapper = _dependenciesWrappers[dependenciesURI[i]];
-                    Assert.IsNotNull(wrapper);
-
-                    wrapper.assetBundle = requests[i].assetBundle;
-                    Assert.IsNotNull(wrapper.assetBundle);
-                    wrapper.loadDone = true;
-                }
+                requests[length - 1] = AssetBundle.LoadFromFileAsync(path);
             }
         }
 
-        // self is dependency
-        if (isDependency)
-        {
-            var wrapper = _dependenciesWrappers[path];
-            Assert.IsNotNull(wrapper);
-
-            int length = requests.Length;
-            wrapper.assetBundle = requests[length - 1].assetBundle;
-            Assert.IsNotNull(wrapper.assetBundle);
-            wrapper.loadDone = true;
-        }
-
-        AssetBundle assetBundle = requests[requests.Length - 1].assetBundle;
-
-        var wwwWrapper = _assetBundleWrappers[path];
-        Assert.IsNotNull(wwwWrapper);
-
-        wwwWrapper.assetBundle = assetBundle;
-        Assert.IsNotNull(wwwWrapper.assetBundle);
-        wwwWrapper.loadDone = true;
-
-        if (wwwWrapper.loadDoneAction != null)
-        {
-            for (int i = 0, length = wwwWrapper.loadDoneAction.Count; i < length; ++i)
-            {
-                wwwWrapper.loadDoneAction[i]();
-            }
-            wwwWrapper.loadDoneAction = null;
-        }
-
-        if (wwwWrapper.IsAllDestroyed())
-        {
-            _assetBundleWrappers.Remove(path);
-
-            assetBundle.Unload(true);
-            DestroyDependency(path);
-        }
+        return requests;
     }
 
     private bool AllRequestsDone(AssetBundleCreateRequest[] requests, string[] dependenciesURI)
