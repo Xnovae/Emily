@@ -53,9 +53,10 @@ public class EmitTweenSystem : ReactiveSystem<GameEntity>
         bool repeat = e.tween.repeat;
         var tweener = DOTween.To(() => e.tweenResult.value, x => e.tweenResult.value = x, e.tween.endValue, e.tween.duration)
                         .SetLoops(repeat ? -1 : 1)
+                        .SetEase(Ease.Linear)
                         .OnComplete(() =>
                         {
-                            // 如果有状态机，需要触发
+                            // trigger state machine
                             if (e.hasStateMachine)
                             {
                                 e.stateMachine.fsm.TriggerEvent("OnTweenComplete");
