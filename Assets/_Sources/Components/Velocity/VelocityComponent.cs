@@ -6,5 +6,6 @@ using UnityEngine;
 [Game]
 public class VelocityComponent : IComponent
 {
-    public Vector2 velocity;
+    public float x;
+    public float y;
 }

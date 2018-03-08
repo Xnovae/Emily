@@ -51,10 +51,10 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
                 e.AddTag(Consts.TAG_PLAYER);
                 e.isControllable = true;
                 e.AddIdentifier(id);
-                e.AddPosition(new Vector2(x, y));
+                e.AddPosition(x, y);
 
                 string assetName = id;
-                e.AddView(null, assetName, true);
+                e.AddView(null, assetName);
 
                 e.AddState(CharacterState.Idle);
                 e.AddDirection(direction);
@@ -81,10 +81,10 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
                 e.AddResourceAssetBundle(path, this);
 
                 e.AddIdentifier(id);
-                e.AddPosition(new Vector2(x, y));
+                e.AddPosition(x, y);
 
                 string assetName = id;
-                e.AddView(null, assetName, true);
+                e.AddView(null, assetName);
 
                 e.AddState(CharacterState.Idle);
                 e.AddDirection(direction);

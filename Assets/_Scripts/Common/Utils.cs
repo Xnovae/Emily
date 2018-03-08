@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Reflection;
+using UnityEngine.Assertions;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -114,5 +115,21 @@ public static class Utils
 
         return new Vector2(cameraBounds.x + cameraBounds.z * screenPosition.x,
             cameraBounds.y + cameraBounds.w * screenPosition.y);
+    }
+
+    public static CharacterDirection GetCharacterDirection(float x, float y)
+    {
+        if (x > 0.0f)
+        {
+            return CharacterDirection.Right;
+        }
+        else if (x < 0.0f)
+        {
+            return CharacterDirection.Left;
+        }
+        else
+        {
+            return CharacterDirection.None;
+        }
     }
 }

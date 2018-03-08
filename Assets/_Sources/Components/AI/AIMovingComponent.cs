@@ -4,8 +4,7 @@ using Entitas;
 using UnityEngine;
 
 [Game]
-public class AttempPositionComponent : IComponent
+public class AIMovingComponent : IComponent
 {
-    public float x;
-    public float y;
+
 }

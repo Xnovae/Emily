@@ -7,8 +7,6 @@ using UnityEngine.Assertions;
 
 public class ProcessInputMoveSystem : ReactiveSystem<InputEntity>, ICleanupSystem
 {
-    public static readonly string STRING_FSM_RUN = "Run";
-
     private GameContext _gameContext;
 
     private readonly IGroup<GameEntity> _controllableEntities;
@@ -42,10 +40,10 @@ public class ProcessInputMoveSystem : ReactiveSystem<InputEntity>, ICleanupSyste
         foreach (var controllableEntity in _controllableEntities.GetEntities())
         {
             var velocity = ToVelocity(input.x, input.y);
-            controllableEntity.AddVelocity(velocity);
+            controllableEntity.AddVelocity(velocity.x, velocity.y);
 
             // trigger Run
-            controllableEntity.stateMachine.fsm.TriggerEvent(STRING_FSM_RUN);
+            controllableEntity.stateMachine.fsm.TriggerEvent(Consts.STRING_FSM_RUN);
         }
     }
 

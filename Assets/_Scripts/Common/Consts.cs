@@ -12,9 +12,10 @@ public static class Consts
 
     public static readonly float Sprite_Gap_Time = 1.0f / 12.0f;
 
-    public static readonly string Tk2dSprite_Template = "tk2dSprite_template";
+    public static readonly string Template_Tk2dSprite = "tk2dSprite_template";
 
-    public static readonly string Tk2dSprite_Character_Template = "tk2dSprite_character_template";
+    public static readonly string Template_PathFinding_Target = "pathfinding_target_template";
+    public static readonly string Template_PathFinding_Seeker = "pathfinding_seeker_template";
 
     public static readonly string ID_HERO_ARCHER = "heroes_archer";
     public static readonly string ID_HERO_PHOENIX = "heroes_phoenix";
@@ -26,4 +27,7 @@ public static class Consts
     // Tags
     public const string TAG_PLAYER = "Player";
     public const string TAG_MAIN_CAMERA = "MainCamera";
+
+    // State Machine
+    public static readonly string STRING_FSM_RUN = "Run";
 }

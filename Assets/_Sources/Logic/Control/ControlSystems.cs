@@ -11,5 +11,6 @@ public class ControlSystems : Feature
         Add(new PositionSystem(contexts));
         Add(new StateMachineSystem(contexts));
         Add(new UpdateStateMachineSystem(contexts));
+        Add(new PathFindingSystem(contexts));
     }
 }

@@ -32,9 +32,7 @@ public class AddViewSystem : ReactiveSystem<GameEntity>
     {
         foreach (var e in entities)
         {
-            GameObject prefab = e.view.needAI
-                ? _gameContext.runningData.ResourceData.characterTemplate   // 带AI组件
-                : _gameContext.runningData.ResourceData.spriteTemplate;     // 普通展示
+            GameObject prefab = _gameContext.runningData.ResourceData.spriteTemplate;
 
             GameObject gameObject = PoolManager.Instance.SpawnObject(prefab);
             gameObject.name = e.view.name;

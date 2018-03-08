@@ -38,7 +38,7 @@ public class RenderOrderSystem : IInitializeSystem, IExecuteSystem
 
     private static int ComparePosition(GameEntity a, GameEntity b)
     {
-        return b.position.value.y.CompareTo(a.position.value.y);
+        return b.position.y.CompareTo(a.position.y);
     }
 
     public void Execute()

@@ -1,29 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Entitas;
+using Pathfinding;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class ProcessInputMoveToPositionSystem : ReactiveSystem<InputEntity>, IInitializeSystem
+public class ProcessInputMoveToPositionSystem : ReactiveSystem<InputEntity>
 {
-    public static readonly string STRING_FSM_RUN = "Run";
+    private static NNConstraint walkableArea = NNConstraint.Default;
 
-    //private IGroup<GameEntity> _controllableGroup;
+    private GameContext _gameContext;
 
-    //private Transform _targetTransform;
+    private IGroup<GameEntity> _controllableGroup;
 
     public ProcessInputMoveToPositionSystem(Contexts contexts)
         : base(contexts.input)
     {
-        //_controllableGroup = contexts.game.GetGroup(GameMatcher.Controllable);
-    }
+        _gameContext = contexts.game;
 
-    public void Initialize()
-    {
-        //GameObject obj = new GameObject("PressPosition");
-        //_targetTransform = obj.transform;
+        _controllableGroup = _gameContext.GetGroup(GameMatcher.Controllable);
     }
-
 
     protected override ICollector<InputEntity> GetTrigger(IContext<InputEntity> context)
     {
@@ -37,23 +33,44 @@ public class ProcessInputMoveToPositionSystem : ReactiveSystem<InputEntity>, IIn
 
     protected override void Execute(List<InputEntity> entities)
     {
-        // TODO: still has bug, comment out
-        //var inputEntity = entities.SingleEntity();
-        //var input = inputEntity.inputMoveToPosition;
+        var inputEntity = entities.SingleEntity();
+        var input = inputEntity.inputMoveToPosition;
 
-        //_targetTransform.position = new Vector3(input.x, input.y);
+        Vector3 targetPosition = new Vector3(input.x, input.y);
+        Vector3 nearestPosition = AstarPath.active.GetNearest(targetPosition, walkableArea).position;
 
-        //foreach (var e in _controllableGroup.GetEntities())
-        //{
-        //    Assert.IsTrue(e.hasView);
+        foreach (var e in _controllableGroup.GetEntities())
+        {
+            Assert.IsTrue(e.hasPosition);
+            Assert.IsTrue(e.hasStateMachine);
 
-        //    AIPath aiPath = e.view.viewController.gameObject.GetComponent<AIPath>();
-        //    Assert.IsNotNull(aiPath);
+            // 生成 seeker 和 target，然后UpdateMove设置位置，最后释放
+            if (e.hasPathFinding)
+            {
+                e.pathFinding.target.transform.position = nearestPosition;
+                e.pathFinding.aiPath.MoveToTarget(e.pathFinding.target);
+            }
+            else
+            {
+                Vector2 startPosition = new Vector2(e.position.x, e.position.y);
 
-        //    aiPath.target = _targetTransform;
-        //}
+                var seekerPrefab = _gameContext.runningData.ResourceData.pathFindingSeekerTempldate;
+                var targetPrefab = _gameContext.runningData.ResourceData.pathFindingTargetTempldate;
 
-        //inputEntity.Destroy();
+                GameObject seeker = PoolManager.Instance.SpawnObject(seekerPrefab);
+                seeker.transform.position = new Vector3(startPosition.x, startPosition.y, 0);
+                CustomAIPath aiPath = seeker.GetComponent<CustomAIPath>();
+
+                GameObject target = PoolManager.Instance.SpawnObject(targetPrefab);
+                target.transform.position = nearestPosition;
+
+                aiPath.MoveToTarget(target);
+
+                e.ReplacePathFinding(aiPath, target);
+            }
+        }
+
+        inputEntity.Destroy();
     }
 
 }

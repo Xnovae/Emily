@@ -32,11 +32,13 @@ public class RenderPositionSystem : ReactiveSystem<GameEntity>
 
                 Vector2 renderOffset = new Vector2(characterItem.renderOffsetX, characterItem.renderOffsetY);
 
-                e.view.viewController.position = e.position.value + renderOffset;
+                Vector3 position = new Vector3(e.position.x + renderOffset.x, e.position.y + renderOffset.y, 0);
+                e.view.viewController.position = position;
             }
             else
             {
-                e.view.viewController.position = e.position.value;
+                Vector3 position = new Vector3(e.position.x, e.position.y, 0);
+                e.view.viewController.position = position;
             }
         }
     }

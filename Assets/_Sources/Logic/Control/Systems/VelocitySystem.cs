@@ -30,11 +30,11 @@ public class VelocitySystem : ReactiveSystem<GameEntity>
             if (e.state.state != CharacterState.Run)
                 continue;
 
-            var newPosition = e.position.value + e.velocity.velocity * Time.deltaTime;
-            // e.ReplacePosition(newPosition);
-            e.AddAttempPosition(newPosition);
+            float x = e.position.x + e.velocity.x * Time.deltaTime;
+            float y = e.position.y + e.velocity.y * Time.deltaTime;
+            e.AddAttempPosition(x, y);
 
-            CharacterDirection newDirection = GetCharacterDirection(e.velocity.velocity.x, e.velocity.velocity.y);
+            CharacterDirection newDirection = Utils.GetCharacterDirection(e.velocity.x, e.velocity.y);
             if (newDirection != CharacterDirection.None)
             {
                 CharacterDirection oldDirection = e.direction.direction;
@@ -45,27 +45,9 @@ public class VelocitySystem : ReactiveSystem<GameEntity>
                 }
             }
 
-            float angle = Mathf.Atan2(e.velocity.velocity.y, e.velocity.velocity.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(e.velocity.y, e.velocity.x) * Mathf.Rad2Deg;
             angle = Mathf.Repeat(angle, 360.0f);
             e.ReplaceLastDirection(angle);
-        }
-    }
-
-    private CharacterDirection GetCharacterDirection(float x, float y)
-    {
-        Assert.IsTrue(!Mathf.Approximately(x, 0.0f) || !Mathf.Approximately(y, 0.0f));
-
-        if (x > 0.0f)
-        {
-            return CharacterDirection.Right;
-        }
-        else if (x < 0.0f)
-        {
-            return CharacterDirection.Left;
-        }
-        else
-        {
-            return CharacterDirection.None;
         }
     }
 }

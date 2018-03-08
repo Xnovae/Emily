@@ -9,23 +9,36 @@ public class GameGestureDispatcher : MonoBehaviour
 {
     public ScreenTransformGesture screenTransformGesture;
 
+    public PressGesture pressGesture;
+
     private Vector2 _touchStartPoint;
     private Vector2 _touchEndPoint;
 
     private bool _isTransforming = false;
 
+    private Camera _camera;
+
+    void Awake()
+    {
+        _camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
+
     private void OnEnable()
     {
-        screenTransformGesture.TransformStarted += OnTransformStart;
-        screenTransformGesture.Transformed += OnTransformUpdate;
-        screenTransformGesture.TransformCompleted += OnTransformComplete;
+        //screenTransformGesture.TransformStarted += OnTransformStart;
+        //screenTransformGesture.Transformed += OnTransformUpdate;
+        //screenTransformGesture.TransformCompleted += OnTransformComplete;
+
+        pressGesture.Pressed += OnGesturePressed;
     }
 
     private void OnDisable()
     {
-        screenTransformGesture.TransformStarted -= OnTransformStart;
-        screenTransformGesture.Transformed -= OnTransformUpdate;
-        screenTransformGesture.TransformCompleted -= OnTransformComplete;
+        //screenTransformGesture.TransformStarted -= OnTransformStart;
+        //screenTransformGesture.Transformed -= OnTransformUpdate;
+        //screenTransformGesture.TransformCompleted -= OnTransformComplete;
+
+        pressGesture.Pressed -= OnGesturePressed;
     }
 
     void Update()
@@ -59,5 +72,14 @@ public class GameGestureDispatcher : MonoBehaviour
     private void OnTransformComplete(object sender, EventArgs e)
     {
         _isTransforming = false;
+    }
+
+    private void OnGesturePressed(object sender, EventArgs e)
+    {
+        PressGesture gesture = (PressGesture) sender;
+
+        Vector2 position = Utils.ScreenToLogicPosition(_camera, gesture.NormalizedScreenPosition);
+
+        Contexts.sharedInstance.input.CreateEntity().AddInputMoveToPosition(position.x, position.y);
     }
 }

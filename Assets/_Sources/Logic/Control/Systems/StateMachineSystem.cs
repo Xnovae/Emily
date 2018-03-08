@@ -95,7 +95,23 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
                 // Debug.Log("!!! Event ResetIdle frame: " + Time.frameCount);
                 state.Parent.PopState();
             })
-            .Condition(() => !e.hasVelocity || (Mathf.Approximately(0.0f, e.velocity.velocity.x) && Mathf.Approximately(0.0f, e.velocity.velocity.y)),
+            .Condition(() =>
+                {
+                    if (e.isAIMoving)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        if (e.hasVelocity
+                            && (!Mathf.Approximately(0.0f, e.velocity.x) || !Mathf.Approximately(0.0f, e.velocity.y)))
+                        {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                },
                 state =>
                 {
                     // Debug.Log("!!! Condition Run frame: " + Time.frameCount);

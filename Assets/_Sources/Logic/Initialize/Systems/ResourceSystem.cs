@@ -30,11 +30,17 @@ public class ResourceSystem : IInitializeSystem
             {
                 _gameContext.runningData.ResourceData.spriteTemplate = spriteTemplate;
 
-                return InitializeCharacterPoolManager();
+                return InitializeSeekerPoolManager();   // 加载寻路 Seeker
             })
-            .Then(characterTemplate =>
+            .Then(seekerTemplate =>
             {
-                _gameContext.runningData.ResourceData.characterTemplate = characterTemplate;
+                _gameContext.runningData.ResourceData.pathFindingSeekerTempldate = seekerTemplate;
+
+                return InitializeTargetPoolManager();    // 加载寻路 Target
+            })
+            .Then(targetTemplate =>
+            {
+                _gameContext.runningData.ResourceData.pathFindingTargetTempldate = targetTemplate;
 
                 return InitializeConfig();       // 加载所有配置
             })
@@ -57,7 +63,7 @@ public class ResourceSystem : IInitializeSystem
     {
         var promise = new Promise<GameObject>();
 
-        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Tk2dSprite_Template, this)
+        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_Tk2dSprite, this)
             .Then(spriteTemplate =>
             {
                 PoolManager.Instance.WarmPool(spriteTemplate, 50);
@@ -65,25 +71,43 @@ public class ResourceSystem : IInitializeSystem
             })
             .Catch(ex =>
             {
-                promise.Reject(new Exception("Fail to load tk2dSprite_template ex: " + ex));
+                promise.Reject(new Exception("Fail to load Template_Tk2dSprite ex: " + ex));
             });
 
         return promise;
     }
 
-    private IPromise<GameObject> InitializeCharacterPoolManager()
+    private IPromise<GameObject> InitializeSeekerPoolManager()
     {
         var promise = new Promise<GameObject>();
 
-        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Tk2dSprite_Character_Template, this)
-            .Then(spriteTemplate =>
+        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_PathFinding_Seeker, this)
+            .Then(gameObjectTemplate =>
             {
-                PoolManager.Instance.WarmPool(spriteTemplate, 50);
-                promise.Resolve(spriteTemplate);
+                PoolManager.Instance.WarmPool(gameObjectTemplate, 50);
+                promise.Resolve(gameObjectTemplate);
             })
             .Catch(ex =>
             {
-                promise.Reject(new Exception("Fail to load tk2dSprite_character_template ex: " + ex));
+                promise.Reject(new Exception("Fail to load Template_PathFinding_Seeker ex: " + ex));
+            });
+
+        return promise;
+    }
+
+    private IPromise<GameObject> InitializeTargetPoolManager()
+    {
+        var promise = new Promise<GameObject>();
+
+        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_PathFinding_Target, this)
+            .Then(gameObjectTemplate =>
+            {
+                PoolManager.Instance.WarmPool(gameObjectTemplate, 50);
+                promise.Resolve(gameObjectTemplate);
+            })
+            .Catch(ex =>
+            {
+                promise.Reject(new Exception("Fail to load Template_PathFinding_Target ex: " + ex));
             });
 
         return promise;

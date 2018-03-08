@@ -53,7 +53,10 @@ public class PoolManager : Singleton<PoolManager>
 
 	public GameObject SpawnObject(GameObject prefab)
 	{
-		return SpawnObject(prefab, Vector3.zero, Quaternion.identity);
+        var gameObject = SpawnObject(prefab, Vector3.zero, Quaternion.identity);
+	    gameObject.transform.parent = null;
+
+	    return gameObject;
 	}
 
 	public GameObject SpawnObject(GameObject prefab, Vector3 position, Quaternion rotation)

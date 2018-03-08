@@ -4,8 +4,8 @@ using Entitas;
 using UnityEngine;
 
 [Game]
-public class AttempPositionComponent : IComponent
+public class PathFindingComponent : IComponent
 {
-    public float x;
-    public float y;
+    public CustomAIPath aiPath;
+    public GameObject target;
 }
