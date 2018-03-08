@@ -95,11 +95,6 @@ public class ConfigGeneratorWindow : EditorWindow
             File.Delete(cdbDestPath);
         }
 
-        if (File.Exists(ZeroFormatClassPath))
-        {
-            File.Delete(ZeroFormatClassPath);
-        }
-
         AssetDatabase.Refresh();
         SetStage(ZeroFormatterBuildStage.Stage.GenerateClassFiles);
     }
@@ -413,7 +408,6 @@ public class ConfigGeneratorWindow : EditorWindow
     public static string ConfigDir = "Assets/JSONs";
 
     public static string ProtoClassDir = "Assets/ZeroFormatterGenerated/ConfigClass";
-    public static string ProtoBytesDir = "Assets/ZeroFormatterGenerated/ConfigBytes";
 
     public static string ZeroFormatClassPath = "Assets/ZeroFormatterGenerated/ConfigZeroFormatter.cs";
 
@@ -437,23 +431,54 @@ namespace ClientConfig
 
     private void GenerateClassFile()
     {
-        if (Directory.Exists(ProtoClassDir))
+        if (!Directory.Exists(ProtoClassDir))
         {
-            Directory.Delete(ProtoClassDir, true);
+            Directory.CreateDirectory(ProtoClassDir);
         }
-        Directory.CreateDirectory(ProtoClassDir);
+
+        List<FileInfo> validFileInfo = new List<FileInfo>();
 
         foreach (var fileInfo in new DirectoryInfo(ConfigDir).GetFiles("*.json", SearchOption.TopDirectoryOnly))
         {
+            if (!fileInfo.Name.StartsWith("EditorOnly-"))
+            {
+                validFileInfo.Add(fileInfo);
+            }
+        }
+
+        // Delete Unused Class
+        DeleteUnusedClass(validFileInfo);
+
+        // Generate
+        foreach (var fileInfo in validFileInfo)
+        {
             try
             {
-                if(!fileInfo.Name.StartsWith("EditorOnly-"))
-                    GenerateClassInternal(fileInfo);
+                GenerateClassInternal(fileInfo);
             }
             catch (Exception e)
             {
                 Debug.LogError("!!! error parse: " + fileInfo.Name);
                 Debug.LogException(e);
+            }
+        }
+    }
+
+    private void DeleteUnusedClass(List<FileInfo> validFileInfo)
+    {
+        List<string> nameList = new List<string>(validFileInfo.Count);
+        foreach (var fileInfo in validFileInfo)
+        {
+            nameList.Add(fileInfo.Name);
+        }
+
+        foreach (var fileInfo in new DirectoryInfo(ProtoClassDir).GetFiles("*.cs", SearchOption.TopDirectoryOnly))
+        {
+            string name = fileInfo.Name;
+
+            if (!nameList.Contains(name))
+            {
+                File.Delete(fileInfo.FullName);
             }
         }
     }
@@ -653,12 +678,6 @@ namespace ClientConfig
 
     private void GenerateBytes()
     {
-        if (Directory.Exists(ProtoBytesDir))
-        {
-            Directory.Delete(ProtoBytesDir, true);
-        }
-        Directory.CreateDirectory(ProtoBytesDir);
-
         Type type = Utils.NameToType("ZeroFormatter.ZeroFormatterInitializer");
         if (type != null)
         {
@@ -692,7 +711,7 @@ namespace ClientConfig
     private static void GenerateBytesInternal(CdbWriter CdbWriter, FileInfo fileInfo)
     {
         string jsonStr = File.ReadAllText(fileInfo.FullName);
-        string outputPath = Path.Combine(ProtoBytesDir, Path.GetFileNameWithoutExtension(fileInfo.Name) + ".bytes");
+        string fileName = Path.GetFileNameWithoutExtension(fileInfo.Name) + ".bytes";
 
         string className = Path.GetFileNameWithoutExtension(fileInfo.Name);
         className = UpperCaseHeader(className);
@@ -702,20 +721,6 @@ namespace ClientConfig
         object obj = Activator.CreateInstance(classType);
         var methodInfo = classType.GetMethod("SerializeObject");
         if (methodInfo != null)
-            methodInfo.Invoke(obj, new object[] { CdbWriter, jsonStr, outputPath });
-    }
-
-    private void CreateAssetBundle()
-    {
-        List<Object> lists = new List<Object>();
-
-        foreach (var path in Directory.GetFiles(ProtoBytesDir, "*.bytes"))
-        {
-            var obj = AssetDatabase.LoadAssetAtPath<Object>(path);
-
-            lists.Add(obj);
-        }
-
-        EditorUtils.CreateAssetBundle(lists.ToArray(), "config", "client_config.assetbundle");
+            methodInfo.Invoke(obj, new object[] { CdbWriter, jsonStr, fileName });
     }
 }

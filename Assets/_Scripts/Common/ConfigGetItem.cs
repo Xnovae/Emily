@@ -177,7 +177,7 @@ public abstract class ConfigGetItem<T>
     }
 
 #if UNITY_EDITOR
-    public void SerializeObject(CdbWriter cdbWriter, string jsonStr, string outputPath)
+    public void SerializeObject(CdbWriter cdbWriter, string jsonStr, string fileName)
     {
         var jsons = JsonMapper.ToObject(jsonStr);
 
@@ -197,7 +197,7 @@ public abstract class ConfigGetItem<T>
             dict.Add(id, itemBytes);
         }
 
-        string assetName = Path.GetFileNameWithoutExtension(outputPath);
+        string assetName = Path.GetFileNameWithoutExtension(fileName);
         foreach (var item in dict)
         {
             string id = item.Key;
