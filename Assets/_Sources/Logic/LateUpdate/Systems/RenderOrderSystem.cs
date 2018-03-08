@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +48,8 @@ public class RenderOrderSystem : IInitializeSystem, IExecuteSystem
         {
             var entities = _positionGroup.GetEntities();
 
-            entities.TimSort(ComparePosition);
+            // entities.TimSort(ComparePosition);
+            Array.Sort(entities, ComparePosition);
 
             for (int i = 0, length = entities.Length; i < length; ++i)
             {

@@ -11,6 +11,8 @@ public class EmitInputSystem : IExecuteSystem, ICleanupSystem
 
     private readonly Action[] _buttonActions = new Action[6];
 
+    private List<InputEntity> _cleanBuffer = new List<InputEntity>();
+
     public EmitInputSystem(Contexts contexts)
     {
         _inputContext = contexts.input;
@@ -108,7 +110,7 @@ public class EmitInputSystem : IExecuteSystem, ICleanupSystem
 
     public void Cleanup()
     {
-        foreach (var e in _inputGroup.GetEntities())
+        foreach (var e in _inputGroup.GetEntities(_cleanBuffer))
         {
             e.Destroy();
         }

@@ -165,8 +165,11 @@ public class AILerp : VersionedMonoBehaviour {
 	 */
 	protected IEnumerator RepeatTrySearchPath () {
 		while (true) {
-			float v = TrySearchPath();
-			yield return new WaitForSeconds(v);
+			// float v = TrySearchPath();
+			// yield return new WaitForSeconds(v);
+
+			TrySearchPath();
+		    yield return null;
 		}
 	}
 

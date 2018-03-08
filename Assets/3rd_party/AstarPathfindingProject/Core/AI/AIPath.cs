@@ -160,7 +160,12 @@ public class AIPath : AIBase {
 	 * \see TrySearchPath
 	 */
 	protected IEnumerator RepeatTrySearchPath () {
-		while (true) yield return new WaitForSeconds(TrySearchPath());
+	    while (true) {
+            // yield return new WaitForSeconds(TrySearchPath());
+
+	        TrySearchPath();
+            yield return null;
+	    }
 	}
 
 	/** Tries to search for a path.

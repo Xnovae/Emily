@@ -12,6 +12,8 @@ public class ProcessInputMoveSystem : ReactiveSystem<InputEntity>, ICleanupSyste
     private readonly IGroup<GameEntity> _controllableEntities;
     private readonly IGroup<GameEntity> _velocityEntities;
 
+    private List<GameEntity> _cleanBuffer = new List<GameEntity>();
+
     public ProcessInputMoveSystem(Contexts contexts)
         : base(contexts.input)
     {
@@ -61,7 +63,7 @@ public class ProcessInputMoveSystem : ReactiveSystem<InputEntity>, ICleanupSyste
 
     public void Cleanup()
     {
-        foreach (var e in _velocityEntities.GetEntities())
+        foreach (var e in _velocityEntities.GetEntities(_cleanBuffer))
         {
             e.RemoveVelocity();
         }
