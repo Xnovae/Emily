@@ -1,3 +1,95 @@
+# 1.4.1
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+This is a hotfix release to patch the bugs introduced by the code generator refactoring from 1.4.0.
+
+#### Entitas
+🛠 Fixed component name generation for EventType.Removed #631 (thanks to @hegi25)
+
+#### Jenny
+🛠 Fixed jenny "Collection was modified; enumeration operation may not execute." #628
+🛠 Fixed jenny "Index was outside the bounds of the array." #628
+
+
+
+# 1.4.0
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+Breaking changes are marked with ⚠️️
+
+#### Entitas
+🆕 Added group.GetEntities(buffer) #624
+🆕 Made group iteration alloc free #624
+⚙️ Added support for multiple events per component
+⚙️ Added `removeComponentWhenEmpty` to optionally remove or keep empty listener component
+🛠 Fixed accessing non existing component in generated event system for EventType.Removed
+🛠 Fixed events inheriting unique attribute from component
+⚠️ Removed EventType.AddedOrRemoved
+💄 Refactored and simplified all code generators
+
+# 1.3.0
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+This update improves the new Entitas Events introduced in 1.1.0
+
+Breaking changes are marked with ⚠️️
+
+#### Entitas
+⚙️ Added support for multiple event listeners per entity
+⚙️ EventInterfaceGenerator generates correct filename matching the class name. Thanks to @c0ffeeartc
+⚠️️ Renamed some generators. Please use `auto-import` to update the generator names
+
+
+# 1.2.0
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+This update improves the new Entitas Events introduced in 1.1.0
+
+Breaking changes are marked with ⚠️️
+
+#### Entitas
+⚙️ Added support for multiple contexts for events. Context prefix will be skipped if a component only has one context in favour of a nicer API
+⚠️️ Passing sender entity as first argument in event delegate
+🆕 Added new optional event types `EventType.Added`, `EventType.Removed`, `EventType.AddedOrRemoved`
+🛠 Fixed typo `_listsners` in event generator Thanks to @FNGgames
+
+
+#### Jenny
+🛠 Fixed `scan` command
+
+
+# 1.1.0
+
+As always, the Unity Asset Store version might take a few days to be processed
+and accepted by Unity. Please check for updates in 2 - 4 days here:
+https://www.assetstore.unity3d.com/#!/content/87638
+
+#### Entitas
+🆕 Added Events aka Reactive-UI #591
+⚠️ Changed `ComponentEntityInterfaceGenerator` to generate `IXyzEntity` insetad of `IXyz` to avoid name collisions with `EventInterfaceGenerator`
+⚙️ Added enum support for Code Generator Attributes
+⚙️ Removed `partial` keyword from ComponentGenerator
+⚙️ Removed attributes from generated components
+
+#### Jenny
+🆕 Added `Jenny-Auto-Import` scripts to reducde terminal interaction
+⚙️ Added silent `-s` info to Jenny help page
+⚙️ Using Console.WriteLine when prompting user input to support silent mode
+⚙️ CodeGeneratorData can now be cloned
+
+
 # 1.0.0
 
 As always, the Unity Asset Store version might take a few days to be processed
