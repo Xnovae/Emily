@@ -9,4 +9,6 @@ public class ViewComponent : IComponent
     public IViewController viewController;
 
     public string name;                     // GameObject name
+
+    public bool simpleView;                 // is just for show
 }

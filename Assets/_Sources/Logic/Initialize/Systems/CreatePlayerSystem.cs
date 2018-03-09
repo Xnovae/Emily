@@ -54,7 +54,7 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
                 e.AddPosition(x, y);
 
                 string assetName = id;
-                e.AddView(null, assetName);
+                e.AddView(null, assetName, false);
 
                 e.AddState(CharacterState.Idle);
                 e.AddDirection(direction);
@@ -84,7 +84,7 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
                 e.AddPosition(x, y);
 
                 string assetName = id;
-                e.AddView(null, assetName);
+                e.AddView(null, assetName, false);
 
                 e.AddState(CharacterState.Idle);
                 e.AddDirection(direction);

@@ -13,6 +13,7 @@ public static class Consts
     public static readonly float Sprite_Gap_Time = 1.0f / 12.0f;
 
     public static readonly string Template_Tk2dSprite = "tk2dSprite_template";
+    public static readonly string Template_Character = "tk2dSprite_character_template";
 
     public static readonly string Template_PathFinding_Target = "pathfinding_target_template";
     public static readonly string Template_PathFinding_Seeker = "pathfinding_seeker_template";

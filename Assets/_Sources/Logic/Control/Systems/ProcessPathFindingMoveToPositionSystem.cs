@@ -5,44 +5,34 @@ using Pathfinding;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class ProcessInputMoveToPositionSystem : ReactiveSystem<InputEntity>
+public class ProcessPathFindingMoveToPositionSystem : ReactiveSystem<GameEntity>
 {
     private static NNConstraint walkableArea = NNConstraint.Default;
 
     private GameContext _gameContext;
 
-    private IGroup<GameEntity> _controllableGroup;
-
-    public ProcessInputMoveToPositionSystem(Contexts contexts)
-        : base(contexts.input)
+    public ProcessPathFindingMoveToPositionSystem(Contexts contexts)
+        : base(contexts.game)
     {
         _gameContext = contexts.game;
-
-        _controllableGroup = _gameContext.GetGroup(GameMatcher.Controllable);
     }
 
-    protected override ICollector<InputEntity> GetTrigger(IContext<InputEntity> context)
+    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(InputMatcher.PathFindingToPosition.Added());
+        return context.CreateCollector(GameMatcher.PathFindingToPosition.Added());
     }
 
-    protected override bool Filter(InputEntity entity)
+    protected override bool Filter(GameEntity entity)
     {
-        return true;
+        return entity.hasPosition && entity.hasStateMachine;
     }
 
-    protected override void Execute(List<InputEntity> entities)
+    protected override void Execute(List<GameEntity> entities)
     {
-        var inputEntity = entities.SingleEntity();
-        var input = new Vector2(inputEntity.pathFindingToPosition.x, inputEntity.pathFindingToPosition.y);
-
-        Vector3 targetPosition = new Vector3(input.x, input.y);
-        Vector3 nearestPosition = AstarPath.active.GetNearest(targetPosition, walkableArea).position;
-
-        foreach (var e in _controllableGroup.GetEntities())
+        foreach (var e in entities)
         {
-            Assert.IsTrue(e.hasPosition);
-            Assert.IsTrue(e.hasStateMachine);
+            Vector3 targetPosition = new Vector3(e.pathFindingToPosition.x, e.pathFindingToPosition.y, 0.0f);
+            Vector3 nearestPosition = AstarPath.active.GetNearest(targetPosition, walkableArea).position;
 
             // 生成 seeker 和 target，然后UpdateMove设置位置，最后释放
             if (e.hasPathFinding)
@@ -68,9 +58,8 @@ public class ProcessInputMoveToPositionSystem : ReactiveSystem<InputEntity>
 
                 e.ReplacePathFinding(aiPath, target);
             }
+
+            e.RemovePathFindingToPosition();
         }
-
-        inputEntity.Destroy();
     }
-
 }

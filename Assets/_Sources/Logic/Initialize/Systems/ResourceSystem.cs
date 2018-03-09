@@ -30,6 +30,12 @@ public class ResourceSystem : IInitializeSystem
             {
                 _gameContext.runningData.ResourceData.spriteTemplate = spriteTemplate;
 
+                return InitializeCharacterPoolManager();    // 加载角色
+            })
+            .Then(characterTemplate =>
+            {
+                _gameContext.runningData.ResourceData.characterTemplate = characterTemplate;
+
                 return InitializeSeekerPoolManager();   // 加载寻路 Seeker
             })
             .Then(seekerTemplate =>
@@ -72,6 +78,24 @@ public class ResourceSystem : IInitializeSystem
             .Catch(ex =>
             {
                 promise.Reject(new Exception("Fail to load Template_Tk2dSprite ex: " + ex));
+            });
+
+        return promise;
+    }
+
+    private IPromise<GameObject> InitializeCharacterPoolManager()
+    {
+        var promise = new Promise<GameObject>();
+
+        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_Character, this)
+            .Then(spriteTemplate =>
+            {
+                PoolManager.Instance.WarmPool(spriteTemplate, 50);
+                promise.Resolve(spriteTemplate);
+            })
+            .Catch(ex =>
+            {
+                promise.Reject(new Exception("Fail to load Template_Character ex: " + ex));
             });
 
         return promise;

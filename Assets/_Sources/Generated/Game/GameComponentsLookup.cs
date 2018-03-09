@@ -18,23 +18,24 @@ public static class GameComponentsLookup {
     public const int Map = 7;
     public const int MapLoad = 8;
     public const int PathFinding = 9;
-    public const int Position = 10;
-    public const int ResourceAssetBundle = 11;
-    public const int ResourceInitialize = 12;
-    public const int RunningData = 13;
-    public const int SpriteAnimate = 14;
-    public const int State = 15;
-    public const int StateMachine = 16;
-    public const int Tag = 17;
-    public const int Tween = 18;
-    public const int TweenResult = 19;
-    public const int TweenResultPreserved = 20;
-    public const int Velocity = 21;
-    public const int ViewAsset = 22;
-    public const int View = 23;
-    public const int ViewValid = 24;
+    public const int PathFindingToPosition = 10;
+    public const int Position = 11;
+    public const int ResourceAssetBundle = 12;
+    public const int ResourceInitialize = 13;
+    public const int RunningData = 14;
+    public const int SpriteAnimate = 15;
+    public const int State = 16;
+    public const int StateMachine = 17;
+    public const int Tag = 18;
+    public const int Tween = 19;
+    public const int TweenResult = 20;
+    public const int TweenResultPreserved = 21;
+    public const int Velocity = 22;
+    public const int ViewAsset = 23;
+    public const int View = 24;
+    public const int ViewValid = 25;
 
-    public const int TotalComponents = 25;
+    public const int TotalComponents = 26;
 
     public static readonly string[] componentNames = {
         "AIMoving",
@@ -47,6 +48,7 @@ public static class GameComponentsLookup {
         "Map",
         "MapLoad",
         "PathFinding",
+        "PathFindingToPosition",
         "Position",
         "ResourceAssetBundle",
         "ResourceInitialize",
@@ -75,6 +77,7 @@ public static class GameComponentsLookup {
         typeof(MapComponent),
         typeof(MapLoadComponent),
         typeof(PathFindingComponent),
+        typeof(PathFindingToPositionComponent),
         typeof(PositionComponent),
         typeof(ResourceAssetBundleComponent),
         typeof(ResourceInitializeComponent),

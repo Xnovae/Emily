@@ -32,7 +32,7 @@ public class AddViewSystem : ReactiveSystem<GameEntity>
     {
         foreach (var e in entities)
         {
-            GameObject prefab = _gameContext.runningData.ResourceData.spriteTemplate;
+            GameObject prefab = GetPrefab(e);
 
             GameObject gameObject = PoolManager.Instance.SpawnObject(prefab);
             gameObject.name = e.view.name;
@@ -44,6 +44,18 @@ public class AddViewSystem : ReactiveSystem<GameEntity>
             e.view.viewController = viewController;
 
             gameObject.SetActive(false);
+        }
+    }
+
+    private GameObject GetPrefab(GameEntity e)
+    {
+        if (e.view.simpleView)
+        {
+            return _gameContext.runningData.ResourceData.spriteTemplate;
+        }
+        else
+        {
+            return _gameContext.runningData.ResourceData.characterTemplate;
         }
     }
 }
