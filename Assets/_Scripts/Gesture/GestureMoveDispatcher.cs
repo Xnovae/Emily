@@ -44,7 +44,7 @@ public class GestureMoveDispatcher : MonoBehaviour
         GameEntity entity = gameObject.GetEntityLink().entity as GameEntity;
         Assert.IsNotNull(entity);
 
-        entity.AddPathFindingToPosition(entity, position.x, position.y);
+        entity.AddPathFindingToPosition(position.x, position.y);
     }
 
     private void OnDisable()

@@ -33,8 +33,8 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
         CreatePlayer(Consts.ID_HERO_ARCHER, 23.5f, 31.5f, CharacterDirection.Right);
 
         CreateMonster(Consts.ID_HERO_PANDA, 17.5f, 33.7f, CharacterDirection.Right);
-        CreateMonster(Consts.ID_HERO_PANDA, 16.5f, 22.5f, CharacterDirection.Left);
-        CreateMonster(Consts.ID_HERO_PHOENIX, 27.5f, 29.5f, CharacterDirection.Left);
+        //CreateMonster(Consts.ID_HERO_PANDA, 16.5f, 22.5f, CharacterDirection.Left);
+        //CreateMonster(Consts.ID_HERO_PHOENIX, 27.5f, 29.5f, CharacterDirection.Left);
     }
 
     private void CreatePlayer(string id, float x, float y, CharacterDirection direction)
@@ -54,7 +54,9 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
                 e.AddPosition(x, y);
 
                 string assetName = id;
-                e.AddView(null, assetName, false);
+
+                GameObject prefab = _gameContext.runningData.ResourceData.characterTemplate;
+                e.AddView(null, assetName, prefab);
 
                 e.AddState(CharacterState.Idle);
                 e.AddDirection(direction);
@@ -82,9 +84,13 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
 
                 e.AddIdentifier(id);
                 e.AddPosition(x, y);
+                e.AddCampusPosition(x, y);
+                e.AddBehaviourTree(null, "BehaviorMonster");
+                e.isMonster = true;
 
                 string assetName = id;
-                e.AddView(null, assetName, false);
+                GameObject prefab = _gameContext.runningData.ResourceData.monsterTemplate;
+                e.AddView(null, assetName, prefab);
 
                 e.AddState(CharacterState.Idle);
                 e.AddDirection(direction);

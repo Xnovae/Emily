@@ -14,6 +14,7 @@ public static class Consts
 
     public static readonly string Template_Tk2dSprite = "tk2dSprite_template";
     public static readonly string Template_Character = "tk2dSprite_character_template";
+    public static readonly string Template_Monster = "tk2dSprite_monster_template";
 
     public static readonly string Template_PathFinding_Target = "pathfinding_target_template";
     public static readonly string Template_PathFinding_Seeker = "pathfinding_seeker_template";
@@ -31,4 +32,19 @@ public static class Consts
 
     // State Machine
     public static readonly string STRING_FSM_RUN = "Run";
+
+    // TODO Enum Dictionay still has GC
+    public static Dictionary<CharacterState, string> StateStringCache = new Dictionary<CharacterState, string>(8);
+
+    static Consts()
+    {
+        StateStringCache.Add(CharacterState.Idle, CharacterState.Idle.ToString());
+        StateStringCache.Add(CharacterState.Run, CharacterState.Run.ToString());
+        StateStringCache.Add(CharacterState.LightAttack1, CharacterState.LightAttack1.ToString());
+        StateStringCache.Add(CharacterState.LightAttack2, CharacterState.LightAttack2.ToString());
+        StateStringCache.Add(CharacterState.HeavyAttack1, CharacterState.HeavyAttack1.ToString());
+        StateStringCache.Add(CharacterState.HeavyAttack2, CharacterState.HeavyAttack2.ToString());
+        StateStringCache.Add(CharacterState.LevelUp, CharacterState.LevelUp.ToString());
+        StateStringCache.Add(CharacterState.Die, CharacterState.Die.ToString());
+    }
 }

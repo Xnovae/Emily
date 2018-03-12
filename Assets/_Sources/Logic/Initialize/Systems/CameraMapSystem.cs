@@ -129,7 +129,9 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
         string path = string.Format(_gameContext.runningData.RuntimeData.mapPathFormat, x.ToString(), y.ToString());
         string assetName = x.ToString() + "_" + y.ToString();
 
-        e.AddView(null, assetName, true);
+        GameObject prefab = _gameContext.runningData.ResourceData.spriteTemplate;
+        e.AddView(null, assetName, prefab);
+
         e.AddPosition((float)x * MAP_ITEM_WIDTH / Consts.TexturePixelsPerUnit, (float)y * MAP_ITEM_HEIGHT / Consts.TexturePixelsPerUnit);
         e.AddResourceAssetBundle(path, this);
 
@@ -294,7 +296,9 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
         string path = string.Format(_gameContext.runningData.RuntimeData.mapPathFormat, x.ToString(), y.ToString());
         string assetName = x.ToString() + "_" + y.ToString();
 
-        e.AddView(null, assetName, true);
+        GameObject prefab = _gameContext.runningData.ResourceData.spriteTemplate;
+        e.AddView(null, assetName, prefab);
+
         e.AddPosition((float) x * MAP_ITEM_WIDTH / Consts.TexturePixelsPerUnit,
                         (float) y * MAP_ITEM_HEIGHT / Consts.TexturePixelsPerUnit);
         e.AddResourceAssetBundle(path, this);

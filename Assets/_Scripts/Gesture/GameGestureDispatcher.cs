@@ -80,6 +80,6 @@ public class GameGestureDispatcher : MonoBehaviour
 
         Vector2 position = Utils.ScreenToLogicPosition(_camera, gesture.NormalizedScreenPosition);
 
-        Contexts.sharedInstance.input.CreateEntity().AddPathFindingToPosition(null, position.x, position.y);
+        Contexts.sharedInstance.input.CreateEntity().AddPathFindingToPosition(position.x, position.y);
     }
 }

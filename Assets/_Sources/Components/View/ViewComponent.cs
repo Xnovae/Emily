@@ -10,5 +10,5 @@ public class ViewComponent : IComponent
 
     public string name;                     // GameObject name
 
-    public bool simpleView;                 // is just for show
+    public GameObject prefab;               // PoolManagerPrefab
 }

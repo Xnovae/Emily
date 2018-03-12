@@ -567,6 +567,41 @@ namespace ZeroFormatter
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::AnimationOrTween.DisableCondition?>.Register(new ZeroFormatter.DynamicObjectSegments.AnimationOrTween.NullableDisableConditionFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::AnimationOrTween.DisableCondition?>.Register(new NullableEqualityComparer<global::AnimationOrTween.DisableCondition>());
             
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator_OperationEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation?>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.NullableBoolOperator_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation?>.Register(new NullableEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison_OperationEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation?>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.NullableFloatComparison_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation?>.Register(new NullableEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator_OperationEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation?>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.NullableFloatOperator_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation?>.Register(new NullableEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison_OperationEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation?>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.NullableIntComparison_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation?>.Register(new NullableEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator_OperationEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation?>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math.NullableIntOperator_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation?>.Register(new NullableEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator_OperationEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation?>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.NullableOperator_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation?>.Register(new NullableEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator_OperationEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation?>.Register(new ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.NullableOperator_OperationFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation?>.Register(new NullableEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation>());
+            
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::MessagePack.TinyJsonToken>.Register(new ZeroFormatter.DynamicObjectSegments.MessagePack.TinyJsonTokenFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::MessagePack.TinyJsonToken>.Register(new ZeroFormatter.DynamicObjectSegments.MessagePack.TinyJsonTokenEqualityComparer());
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::MessagePack.TinyJsonToken?>.Register(new ZeroFormatter.DynamicObjectSegments.MessagePack.NullableTinyJsonTokenFormatter<ZeroFormatter.Formatters.DefaultResolver>());
@@ -9079,6 +9114,557 @@ namespace ZeroFormatter.DynamicObjectSegments.AnimationOrTween
         }
 
         public int GetHashCode(global::AnimationOrTween.DisableCondition x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+}
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+namespace ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.Math
+{
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::ZeroFormatter.Formatters;
+    using global::ZeroFormatter.Internal;
+    using global::ZeroFormatter.Segments;
+
+
+    public class BoolOperator_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableBoolOperator_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class BoolOperator_OperationEqualityComparer : IEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation>
+    {
+        public bool Equals(global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation x, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::BehaviorDesigner.Runtime.Tasks.Basic.Math.BoolOperator.Operation x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class FloatComparison_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableFloatComparison_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class FloatComparison_OperationEqualityComparer : IEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation>
+    {
+        public bool Equals(global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation x, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatComparison.Operation x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class FloatOperator_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableFloatOperator_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class FloatOperator_OperationEqualityComparer : IEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation>
+    {
+        public bool Equals(global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation x, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::BehaviorDesigner.Runtime.Tasks.Basic.Math.FloatOperator.Operation x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class IntComparison_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableIntComparison_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class IntComparison_OperationEqualityComparer : IEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation>
+    {
+        public bool Equals(global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation x, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntComparison.Operation x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class IntOperator_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableIntOperator_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class IntOperator_OperationEqualityComparer : IEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation>
+    {
+        public bool Equals(global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation x, global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::BehaviorDesigner.Runtime.Tasks.Basic.Math.IntOperator.Operation x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+}
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+namespace ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2
+{
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::ZeroFormatter.Formatters;
+    using global::ZeroFormatter.Internal;
+    using global::ZeroFormatter.Segments;
+
+
+    public class Operator_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableOperator_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class Operator_OperationEqualityComparer : IEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation>
+    {
+        public bool Equals(global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation x, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector2.Operator.Operation x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+}
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+namespace ZeroFormatter.DynamicObjectSegments.BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3
+{
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::ZeroFormatter.Formatters;
+    using global::ZeroFormatter.Internal;
+    using global::ZeroFormatter.Segments;
+
+
+    public class Operator_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableOperator_OperationFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class Operator_OperationEqualityComparer : IEqualityComparer<global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation>
+    {
+        public bool Equals(global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation x, global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::BehaviorDesigner.Runtime.Tasks.Basic.UnityVector3.Operator.Operation x)
         {
             return (int)x;
         }

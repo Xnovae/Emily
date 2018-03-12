@@ -37,7 +37,6 @@ public class CameraFollowSystem : IInitializeSystem, IExecuteSystem
         if (_playerTransform == null)
             return;
 
-
         Vector3 cameraPosition = _cameraTransform.position;
 
         Vector3 focusPosition = GetFocusPosition();

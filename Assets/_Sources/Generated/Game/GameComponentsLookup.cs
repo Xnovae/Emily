@@ -9,37 +9,46 @@
 public static class GameComponentsLookup {
 
     public const int AIMoving = 0;
-    public const int AttempPosition = 1;
-    public const int Controllable = 2;
-    public const int Destroy = 3;
-    public const int Direction = 4;
-    public const int Identifier = 5;
-    public const int LastDirection = 6;
-    public const int Map = 7;
-    public const int MapLoad = 8;
-    public const int PathFinding = 9;
-    public const int PathFindingToPosition = 10;
-    public const int Position = 11;
-    public const int ResourceAssetBundle = 12;
-    public const int ResourceInitialize = 13;
-    public const int RunningData = 14;
-    public const int SpriteAnimate = 15;
-    public const int State = 16;
-    public const int StateMachine = 17;
-    public const int Tag = 18;
-    public const int Tween = 19;
-    public const int TweenResult = 20;
-    public const int TweenResultPreserved = 21;
-    public const int Velocity = 22;
-    public const int ViewAsset = 23;
-    public const int View = 24;
-    public const int ViewValid = 25;
+    public const int Attacker = 1;
+    public const int AttempPosition = 2;
+    public const int AwayFromCampus = 3;
+    public const int BehaviourTree = 4;
+    public const int CampusPosition = 5;
+    public const int Controllable = 6;
+    public const int Destroy = 7;
+    public const int Direction = 8;
+    public const int Identifier = 9;
+    public const int LastDirection = 10;
+    public const int Map = 11;
+    public const int MapLoad = 12;
+    public const int Monster = 13;
+    public const int PathFinding = 14;
+    public const int PathFindingToPosition = 15;
+    public const int Position = 16;
+    public const int ResourceAssetBundle = 17;
+    public const int ResourceInitialize = 18;
+    public const int RunningData = 19;
+    public const int SpriteAnimate = 20;
+    public const int State = 21;
+    public const int StateMachine = 22;
+    public const int Tag = 23;
+    public const int Tween = 24;
+    public const int TweenResult = 25;
+    public const int TweenResultPreserved = 26;
+    public const int Velocity = 27;
+    public const int ViewAsset = 28;
+    public const int View = 29;
+    public const int ViewValid = 30;
 
-    public const int TotalComponents = 26;
+    public const int TotalComponents = 31;
 
     public static readonly string[] componentNames = {
         "AIMoving",
+        "Attacker",
         "AttempPosition",
+        "AwayFromCampus",
+        "BehaviourTree",
+        "CampusPosition",
         "Controllable",
         "Destroy",
         "Direction",
@@ -47,6 +56,7 @@ public static class GameComponentsLookup {
         "LastDirection",
         "Map",
         "MapLoad",
+        "Monster",
         "PathFinding",
         "PathFindingToPosition",
         "Position",
@@ -68,7 +78,11 @@ public static class GameComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(AIMovingComponent),
+        typeof(AttackerComponent),
         typeof(AttempPositionComponent),
+        typeof(AwayFromCampusComponent),
+        typeof(BehaviourTreeComponent),
+        typeof(CampusPositionComponent),
         typeof(ControllableComponent),
         typeof(DestroyComponent),
         typeof(DirectionComponent),
@@ -76,6 +90,7 @@ public static class GameComponentsLookup {
         typeof(LastDirectionComponent),
         typeof(MapComponent),
         typeof(MapLoadComponent),
+        typeof(MonsterComponent),
         typeof(PathFindingComponent),
         typeof(PathFindingToPositionComponent),
         typeof(PositionComponent),

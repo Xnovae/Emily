@@ -11,19 +11,17 @@ public partial class InputEntity {
     public PathFindingToPositionComponent pathFindingToPosition { get { return (PathFindingToPositionComponent)GetComponent(InputComponentsLookup.PathFindingToPosition); } }
     public bool hasPathFindingToPosition { get { return HasComponent(InputComponentsLookup.PathFindingToPosition); } }
 
-    public void AddPathFindingToPosition(GameEntity newE, float newX, float newY) {
+    public void AddPathFindingToPosition(float newX, float newY) {
         var index = InputComponentsLookup.PathFindingToPosition;
         var component = CreateComponent<PathFindingToPositionComponent>(index);
-        component.e = newE;
         component.x = newX;
         component.y = newY;
         AddComponent(index, component);
     }
 
-    public void ReplacePathFindingToPosition(GameEntity newE, float newX, float newY) {
+    public void ReplacePathFindingToPosition(float newX, float newY) {
         var index = InputComponentsLookup.PathFindingToPosition;
         var component = CreateComponent<PathFindingToPositionComponent>(index);
-        component.e = newE;
         component.x = newX;
         component.y = newY;
         ReplaceComponent(index, component);

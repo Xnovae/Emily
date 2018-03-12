@@ -11,7 +11,7 @@ public interface IPathFindingToPositionEntity {
     PathFindingToPositionComponent pathFindingToPosition { get; }
     bool hasPathFindingToPosition { get; }
 
-    void AddPathFindingToPosition(GameEntity newE, float newX, float newY);
-    void ReplacePathFindingToPosition(GameEntity newE, float newX, float newY);
+    void AddPathFindingToPosition(float newX, float newY);
+    void ReplacePathFindingToPosition(float newX, float newY);
     void RemovePathFindingToPosition();
 }

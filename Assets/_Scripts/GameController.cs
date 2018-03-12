@@ -38,6 +38,9 @@ public class GameController : MonoBehaviour
             // View
             .Add(new ViewSystems(contexts))
 
+            // BehaviourTree
+            .Add(new BehaviourTreeSystems(contexts))
+
             // Destroy
             .Add(new DestroySystems(contexts))
 

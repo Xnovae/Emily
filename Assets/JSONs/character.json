@@ -89,6 +89,59 @@
     "renderOffsetX": 0,
     "renderOffsetY": -0.4
   },
+  "heroes_archer_wildcat": {
+    "id": "heroes_archer_wildcat",
+    "name": "heroes_archer_wildcat",
+    "path": "character/heroes_archer.assetbundle",
+    "actionIdle": [
+      "hero_archer_wildcat_0001"
+    ],
+    "actionRun": [
+      "hero_archer_wildcat_0006",
+      "hero_archer_wildcat_0007",
+      "hero_archer_wildcat_0009"
+    ],
+    "actionLightAttack1": [
+      "hero_archer_wildcat_0018",
+      "hero_archer_wildcat_0020",
+      "hero_archer_wildcat_0022",
+      "hero_archer_wildcat_0023",
+      "hero_archer_wildcat_0024",
+      "hero_archer_wildcat_0025",
+      "hero_archer_wildcat_0026",
+      "hero_archer_wildcat_0027"
+    ],
+    "actionLevelUp": [
+      "hero_archer_wildcat_0028",
+      "hero_archer_wildcat_0029",
+      "hero_archer_wildcat_0031",
+      "hero_archer_wildcat_0032",
+      "hero_archer_wildcat_0033",
+      "hero_archer_wildcat_0034",
+      "hero_archer_wildcat_0035",
+      "hero_archer_wildcat_0036",
+      "hero_archer_wildcat_0037",
+      "hero_archer_wildcat_0038",
+      "hero_archer_wildcat_0039",
+      "hero_archer_wildcat_0040",
+      "hero_archer_wildcat_0041",
+      "hero_archer_wildcat_0042",
+      "hero_archer_wildcat_0043",
+      "hero_archer_wildcat_0044",
+      "hero_archer_wildcat_0046"
+    ],
+    "actionDie": [
+      "hero_archer_wildcat_0047",
+      "hero_archer_wildcat_0051",
+      "hero_archer_wildcat_0053",
+      "hero_archer_wildcat_0055",
+      "hero_archer_wildcat_0057",
+      "hero_archer_wildcat_0059",
+      "hero_archer_wildcat_0061"
+    ],
+    "renderOffsetX": 0,
+    "renderOffsetY": -0.4
+  },
   "heroes_phoenix": {
     "id": "heroes_phoenix",
     "name": "heroes_phoenix",

@@ -24,7 +24,8 @@ public class ProcessPathFindingMoveToPositionSystem : ReactiveSystem<GameEntity>
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasPosition && entity.hasStateMachine;
+        return entity.hasPosition && entity.hasStateMachine && 
+            entity.hasState && (entity.state.state == CharacterState.Idle || entity.state.state == CharacterState.Run);
     }
 
     protected override void Execute(List<GameEntity> entities)

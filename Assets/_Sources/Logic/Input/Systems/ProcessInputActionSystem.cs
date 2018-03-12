@@ -6,8 +6,7 @@ using UnityEngine;
 public class ProcessInputActionSystem : ReactiveSystem<InputEntity>
 {
     private readonly IGroup<GameEntity> _controllableEntities;
-
-    public Dictionary<CharacterState, string> stateStringCache = new Dictionary<CharacterState, string>(8);
+    private readonly IGroup<GameEntity> _monsters;
 
     public ProcessInputActionSystem(Contexts contexts)
         : base(contexts.input)
@@ -15,14 +14,7 @@ public class ProcessInputActionSystem : ReactiveSystem<InputEntity>
         _controllableEntities =
             contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Controllable, GameMatcher.StateMachine));
 
-        stateStringCache.Add(CharacterState.Idle, CharacterState.Idle.ToString());
-        stateStringCache.Add(CharacterState.Run, CharacterState.Run.ToString());
-        stateStringCache.Add(CharacterState.LightAttack1, CharacterState.LightAttack1.ToString());
-        stateStringCache.Add(CharacterState.LightAttack2, CharacterState.LightAttack2.ToString());
-        stateStringCache.Add(CharacterState.HeavyAttack1, CharacterState.HeavyAttack1.ToString());
-        stateStringCache.Add(CharacterState.HeavyAttack2, CharacterState.HeavyAttack2.ToString());
-        stateStringCache.Add(CharacterState.LevelUp, CharacterState.LevelUp.ToString());
-        stateStringCache.Add(CharacterState.Die, CharacterState.Die.ToString());
+        _monsters = contexts.game.GetGroup(GameMatcher.Monster);
     }
 
     protected override ICollector<InputEntity> GetTrigger(IContext<InputEntity> context)
@@ -51,7 +43,17 @@ public class ProcessInputActionSystem : ReactiveSystem<InputEntity>
         foreach (var e in _controllableEntities.GetEntities())
         {
             e.stateMachine.fsm.TriggerEvent("ResetToIdle");
-            e.stateMachine.fsm.TriggerEvent(stateStringCache[newState]);
+            e.stateMachine.fsm.TriggerEvent(Consts.StateStringCache[newState]);
+
+            AttackMonster(e);
+        }
+    }
+
+    private void AttackMonster(GameEntity attacker)
+    {
+        foreach (var e in _monsters)
+        {
+            e.ReplaceAttacker(attacker, 10.0f);
         }
     }
 }

@@ -36,6 +36,12 @@ public class ResourceSystem : IInitializeSystem
             {
                 _gameContext.runningData.ResourceData.characterTemplate = characterTemplate;
 
+                return InitializeMonsterPoolManager();      // 加载怪物
+            })
+            .Then(monsterTemplate =>
+            {
+                _gameContext.runningData.ResourceData.monsterTemplate = monsterTemplate;
+
                 return InitializeSeekerPoolManager();   // 加载寻路 Seeker
             })
             .Then(seekerTemplate =>
@@ -96,6 +102,24 @@ public class ResourceSystem : IInitializeSystem
             .Catch(ex =>
             {
                 promise.Reject(new Exception("Fail to load Template_Character ex: " + ex));
+            });
+
+        return promise;
+    }
+
+    private IPromise<GameObject> InitializeMonsterPoolManager()
+    {
+        var promise = new Promise<GameObject>();
+
+        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_Monster, this)
+            .Then(spriteTemplate =>
+            {
+                PoolManager.Instance.WarmPool(spriteTemplate, 50);
+                promise.Resolve(spriteTemplate);
+            })
+            .Catch(ex =>
+            {
+                promise.Reject(new Exception("Fail to load Template_Monster ex: " + ex));
             });
 
         return promise;

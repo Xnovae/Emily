@@ -1,4 +1,5 @@
-﻿using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using Entitas;
 using Entitas.Unity;
@@ -32,7 +33,7 @@ public class AddViewSystem : ReactiveSystem<GameEntity>
     {
         foreach (var e in entities)
         {
-            GameObject prefab = GetPrefab(e);
+            GameObject prefab = e.view.prefab;
 
             GameObject gameObject = PoolManager.Instance.SpawnObject(prefab);
             gameObject.name = e.view.name;
@@ -42,20 +43,6 @@ public class AddViewSystem : ReactiveSystem<GameEntity>
 
             var viewController = gameObject.GetComponent<ViewController>();
             e.view.viewController = viewController;
-
-            gameObject.SetActive(false);
-        }
-    }
-
-    private GameObject GetPrefab(GameEntity e)
-    {
-        if (e.view.simpleView)
-        {
-            return _gameContext.runningData.ResourceData.spriteTemplate;
-        }
-        else
-        {
-            return _gameContext.runningData.ResourceData.characterTemplate;
         }
     }
 }

@@ -11,21 +11,21 @@ public partial class GameEntity {
     public ViewComponent view { get { return (ViewComponent)GetComponent(GameComponentsLookup.View); } }
     public bool hasView { get { return HasComponent(GameComponentsLookup.View); } }
 
-    public void AddView(IViewController newViewController, string newName, bool newSimpleView) {
+    public void AddView(IViewController newViewController, string newName, UnityEngine.GameObject newPrefab) {
         var index = GameComponentsLookup.View;
         var component = CreateComponent<ViewComponent>(index);
         component.viewController = newViewController;
         component.name = newName;
-        component.simpleView = newSimpleView;
+        component.prefab = newPrefab;
         AddComponent(index, component);
     }
 
-    public void ReplaceView(IViewController newViewController, string newName, bool newSimpleView) {
+    public void ReplaceView(IViewController newViewController, string newName, UnityEngine.GameObject newPrefab) {
         var index = GameComponentsLookup.View;
         var component = CreateComponent<ViewComponent>(index);
         component.viewController = newViewController;
         component.name = newName;
-        component.simpleView = newSimpleView;
+        component.prefab = newPrefab;
         ReplaceComponent(index, component);
     }
 
