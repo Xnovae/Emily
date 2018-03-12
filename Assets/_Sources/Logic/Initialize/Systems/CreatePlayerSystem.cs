@@ -33,8 +33,8 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
         CreatePlayer(Consts.ID_HERO_ARCHER, 23.5f, 31.5f, CharacterDirection.Right);
 
         CreateMonster(Consts.ID_HERO_PANDA, 17.5f, 33.7f, CharacterDirection.Right);
-        //CreateMonster(Consts.ID_HERO_PANDA, 16.5f, 22.5f, CharacterDirection.Left);
-        //CreateMonster(Consts.ID_HERO_PHOENIX, 27.5f, 29.5f, CharacterDirection.Left);
+        CreateMonster(Consts.ID_HERO_PANDA, 16.5f, 22.5f, CharacterDirection.Left);
+        CreateMonster(Consts.ID_HERO_PHOENIX, 27.5f, 29.5f, CharacterDirection.Left);
     }
 
     private void CreatePlayer(string id, float x, float y, CharacterDirection direction)
@@ -87,6 +87,7 @@ public class CreatePlayerSystem : ReactiveSystem<GameEntity>
                 e.AddCampusPosition(x, y);
                 e.AddBehaviourTree(null, "BehaviorMonster");
                 e.isMonster = true;
+                e.AddMonsterParameter(25.0f, 25.0f, 0.0f, 10.0f);
 
                 string assetName = id;
                 GameObject prefab = _gameContext.runningData.ResourceData.monsterTemplate;

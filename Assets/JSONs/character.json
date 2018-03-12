@@ -87,7 +87,7 @@
       "hero_archer_0125"
     ],
     "renderOffsetX": 0,
-    "renderOffsetY": -0.4
+    "renderOffsetY": -0.25
   },
   "heroes_archer_wildcat": {
     "id": "heroes_archer_wildcat",
@@ -140,7 +140,7 @@
       "hero_archer_wildcat_0061"
     ],
     "renderOffsetX": 0,
-    "renderOffsetY": -0.4
+    "renderOffsetY": -0.25
   },
   "heroes_phoenix": {
     "id": "heroes_phoenix",
@@ -255,34 +255,14 @@
       "phoenix_hero_0137"
     ],
     "renderOffsetX": 0,
-    "renderOffsetY": -0.8
+    "renderOffsetY": -1.5
   },
   "heroes_panda": {
     "id": "heroes_panda",
     "name": "heroes_panda",
     "path": "character/heroes_panda.assetbundle",
     "actionIdle": [
-      "xin_hero_0156",
-      "xin_hero_0158",
-      "xin_hero_0160",
-      "xin_hero_0162",
-      "xin_hero_0164",
-      "xin_hero_0166",
-      "xin_hero_0168",
-      "xin_hero_0170",
-      "xin_hero_0172",
-      "xin_hero_0174",
-      "xin_hero_0176",
-      "xin_hero_0178",
-      "xin_hero_0180",
-      "xin_hero_0182",
-      "xin_hero_0184",
-      "xin_hero_0186",
-      "xin_hero_0188",
-      "xin_hero_0190",
-      "xin_hero_0192",
-      "xin_hero_0194",
-      "xin_hero_0196"
+      "xin_hero_0001"
     ],
     "actionRun": [
       "xin_hero_0002",
@@ -330,8 +310,7 @@
       "xin_hero_0143",
       "xin_hero_0145",
       "xin_hero_0147",
-      "xin_hero_0149",
-      "xin_hero_0152"
+      "xin_hero_0149"
     ],
     "actionHeavyAttack1": [
       "xin_hero_0201",

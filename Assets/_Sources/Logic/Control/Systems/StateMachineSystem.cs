@@ -129,6 +129,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             .Enter(state =>
             {
                 // Debug.Log("!!! Enter action frame: " + Time.frameCount);
+                e.isAIMoving = false;
                 e.ReplaceState(CharacterState.LightAttack1);
             })
             .Event("OnTweenComplete", state =>
@@ -148,6 +149,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             .State<GameState>(CharacterState.LightAttack2.ToString())
             .Enter(state =>
             {
+                e.isAIMoving = false;
                 e.ReplaceState(CharacterState.LightAttack2);
             })
             .Event("OnTweenComplete", state =>
@@ -164,6 +166,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             .State<GameState>(CharacterState.HeavyAttack1.ToString())
             .Enter(state =>
             {
+                e.isAIMoving = false;
                 e.ReplaceState(CharacterState.HeavyAttack1);
             })
             .Event("OnTweenComplete", state =>
@@ -180,6 +183,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             .State<GameState>(CharacterState.HeavyAttack2.ToString())
             .Enter(state =>
             {
+                e.isAIMoving = false;
                 e.ReplaceState(CharacterState.HeavyAttack2);
             })
             .Event("OnTweenComplete", state =>
@@ -196,6 +200,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             .State<GameState>(CharacterState.LevelUp.ToString())
             .Enter(state =>
             {
+                e.isAIMoving = false;
                 e.ReplaceState(CharacterState.LevelUp);
             })
             .Event("OnTweenComplete", state =>
@@ -212,6 +217,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             .State<GameState>(CharacterState.Die.ToString())
             .Enter(state =>
             {
+                e.isAIMoving = false;
                 e.ReplaceState(CharacterState.Die);
             })
             .Event("OnTweenComplete", state =>

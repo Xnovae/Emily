@@ -8,25 +8,45 @@ public class AttackAction : Action
 {
     public SharedGameEntity gameEntity;
 
+    private CharacterState _attackState;
+
+    private static CharacterState[] AttackStates = new CharacterState[4];
+
+    static AttackAction()
+    {
+        AttackStates[0] = CharacterState.LightAttack1;
+        AttackStates[1] = CharacterState.LightAttack2;
+        AttackStates[2] = CharacterState.HeavyAttack1;
+        AttackStates[3] = CharacterState.HeavyAttack2;
+    }
+
     public override void OnStart()
     {
+        InitAttackState();
+
         GameEntity e = gameEntity.Value;
 
         e.stateMachine.fsm.TriggerEvent("ResetToIdle");
-        e.stateMachine.fsm.TriggerEvent(Consts.StateStringCache[CharacterState.LightAttack1]);
+        e.stateMachine.fsm.TriggerEvent(Consts.GetStateString(_attackState));
+    }
+
+    private void InitAttackState()
+    {
+        int index = Random.Range(0, 4);
+        _attackState = AttackStates[index];
     }
 
     public override TaskStatus OnUpdate()
     {
         GameEntity e = gameEntity.Value;
 
-        if (e.state.state == CharacterState.HeavyAttack1)
+        if (e.state.state != _attackState)
         {
-            return TaskStatus.Running;
+            return TaskStatus.Success;
         }
         else
         {
-            return TaskStatus.Success;
+            return TaskStatus.Running;
         }
     }
 }

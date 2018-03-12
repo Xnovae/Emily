@@ -44,33 +44,40 @@ public class ProcessInputMoveToPositionSystem : ReactiveSystem<InputEntity>
             Assert.IsTrue(e.hasPosition);
             Assert.IsTrue(e.hasStateMachine);
 
-            // 生成 seeker 和 target，然后UpdateMove设置位置，最后释放
-            if (e.hasPathFinding)
+            if (e.state.state == CharacterState.Idle || e.state.state == CharacterState.Run)
             {
-                e.pathFinding.target.transform.position = nearestPosition;
-                e.pathFinding.aiPath.MoveToTarget(e.pathFinding.target);
-            }
-            else
-            {
-                Vector2 startPosition = new Vector2(e.position.x, e.position.y);
-
-                var seekerPrefab = _gameContext.runningData.ResourceData.pathFindingSeekerTempldate;
-                var targetPrefab = _gameContext.runningData.ResourceData.pathFindingTargetTempldate;
-
-                GameObject seeker = PoolManager.Instance.SpawnObject(seekerPrefab);
-                seeker.transform.position = new Vector3(startPosition.x, startPosition.y, 0);
-                CustomAIPath aiPath = seeker.GetComponent<CustomAIPath>();
-
-                GameObject target = PoolManager.Instance.SpawnObject(targetPrefab);
-                target.transform.position = nearestPosition;
-
-                aiPath.MoveToTarget(target);
-
-                e.ReplacePathFinding(aiPath, target);
+                FindPathToPosition(e, nearestPosition);
             }
         }
 
         inputEntity.Destroy();
     }
 
+    private void FindPathToPosition(GameEntity e, Vector3 nearestPosition)
+    {
+        // 生成 seeker 和 target，然后UpdateMove设置位置，最后释放
+        if (e.hasPathFinding)
+        {
+            e.pathFinding.target.transform.position = nearestPosition;
+            e.pathFinding.aiPath.MoveToTarget(e.pathFinding.target);
+        }
+        else
+        {
+            Vector2 startPosition = new Vector2(e.position.x, e.position.y);
+
+            var seekerPrefab = _gameContext.runningData.ResourceData.pathFindingSeekerTempldate;
+            var targetPrefab = _gameContext.runningData.ResourceData.pathFindingTargetTempldate;
+
+            GameObject seeker = PoolManager.Instance.SpawnObject(seekerPrefab);
+            seeker.transform.position = new Vector3(startPosition.x, startPosition.y, 0);
+            CustomAIPath aiPath = seeker.GetComponent<CustomAIPath>();
+
+            GameObject target = PoolManager.Instance.SpawnObject(targetPrefab);
+            target.transform.position = nearestPosition;
+
+            aiPath.MoveToTarget(target);
+
+            e.ReplacePathFinding(aiPath, target);
+        }
+    }
 }

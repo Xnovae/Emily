@@ -43,7 +43,7 @@ public class ProcessInputActionSystem : ReactiveSystem<InputEntity>
         foreach (var e in _controllableEntities.GetEntities())
         {
             e.stateMachine.fsm.TriggerEvent("ResetToIdle");
-            e.stateMachine.fsm.TriggerEvent(Consts.StateStringCache[newState]);
+            e.stateMachine.fsm.TriggerEvent(Consts.GetStateString(newState));
 
             AttackMonster(e);
         }
@@ -53,7 +53,18 @@ public class ProcessInputActionSystem : ReactiveSystem<InputEntity>
     {
         foreach (var e in _monsters)
         {
-            e.ReplaceAttacker(attacker, 10.0f);
+            if (IsAttackerWithinRange(e, attacker))
+            {
+                e.ReplaceAttacker(attacker, 10.0f);
+            }
         }
+    }
+
+    private bool IsAttackerWithinRange(GameEntity target, GameEntity attacker)
+    {
+        float diffX = attacker.position.x - target.position.x;
+        float diffY = attacker.position.y - target.position.y;
+
+        return (diffX * diffX + diffY * diffY) <= target.monsterParameter.alarmRange;
     }
 }

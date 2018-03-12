@@ -7,8 +7,6 @@ public class PathFindingSystem : IExecuteSystem
 {
     private IGroup<GameEntity> _pathFindingGroup;
 
-    private List<GameEntity> _removalList = new List<GameEntity>();
-
     public PathFindingSystem(Contexts contexts)
     {
         _pathFindingGroup = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.PathFinding, GameMatcher.Position, GameMatcher.Direction, GameMatcher.StateMachine));
@@ -16,8 +14,6 @@ public class PathFindingSystem : IExecuteSystem
 
     public void Execute()
     {
-        _removalList.Clear();
-
         foreach (var e in _pathFindingGroup.GetEntities())
         {
             bool isMoving = e.pathFinding.aiPath.IsMoving;
@@ -36,20 +32,9 @@ public class PathFindingSystem : IExecuteSystem
             }
             else
             {
+                // path finding finished
                 e.isAIMoving = false;
-
-                _removalList.Add(e);
             }
-        }
-
-        for (int i = 0, length = _removalList.Count; i < length; ++i)
-        {
-            GameEntity e = _removalList[i];
-
-            PoolManager.Instance.ReleaseObject(e.pathFinding.aiPath.gameObject);
-            PoolManager.Instance.ReleaseObject(e.pathFinding.target);
-
-            e.RemovePathFinding();
         }
     }
 

@@ -22,25 +22,26 @@ public static class GameComponentsLookup {
     public const int Map = 11;
     public const int MapLoad = 12;
     public const int Monster = 13;
-    public const int PathFinding = 14;
-    public const int PathFindingToPosition = 15;
-    public const int Position = 16;
-    public const int ResourceAssetBundle = 17;
-    public const int ResourceInitialize = 18;
-    public const int RunningData = 19;
-    public const int SpriteAnimate = 20;
-    public const int State = 21;
-    public const int StateMachine = 22;
-    public const int Tag = 23;
-    public const int Tween = 24;
-    public const int TweenResult = 25;
-    public const int TweenResultPreserved = 26;
-    public const int Velocity = 27;
-    public const int ViewAsset = 28;
-    public const int View = 29;
-    public const int ViewValid = 30;
+    public const int MonsterParameter = 14;
+    public const int PathFinding = 15;
+    public const int PathFindingToPosition = 16;
+    public const int Position = 17;
+    public const int ResourceAssetBundle = 18;
+    public const int ResourceInitialize = 19;
+    public const int RunningData = 20;
+    public const int SpriteAnimate = 21;
+    public const int State = 22;
+    public const int StateMachine = 23;
+    public const int Tag = 24;
+    public const int Tween = 25;
+    public const int TweenResult = 26;
+    public const int TweenResultPreserved = 27;
+    public const int Velocity = 28;
+    public const int ViewAsset = 29;
+    public const int View = 30;
+    public const int ViewValid = 31;
 
-    public const int TotalComponents = 31;
+    public const int TotalComponents = 32;
 
     public static readonly string[] componentNames = {
         "AIMoving",
@@ -57,6 +58,7 @@ public static class GameComponentsLookup {
         "Map",
         "MapLoad",
         "Monster",
+        "MonsterParameter",
         "PathFinding",
         "PathFindingToPosition",
         "Position",
@@ -91,6 +93,7 @@ public static class GameComponentsLookup {
         typeof(MapComponent),
         typeof(MapLoadComponent),
         typeof(MonsterComponent),
+        typeof(MonsterParameterComponent),
         typeof(PathFindingComponent),
         typeof(PathFindingToPositionComponent),
         typeof(PositionComponent),

@@ -43,6 +43,7 @@ public class AddViewSystem : ReactiveSystem<GameEntity>
 
             var viewController = gameObject.GetComponent<ViewController>();
             e.view.viewController = viewController;
+            gameObject.SetActive(false);
         }
     }
 }

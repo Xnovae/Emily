@@ -33,18 +33,22 @@ public static class Consts
     // State Machine
     public static readonly string STRING_FSM_RUN = "Run";
 
-    // TODO Enum Dictionay still has GC
-    public static Dictionary<CharacterState, string> StateStringCache = new Dictionary<CharacterState, string>(8);
+    private static Dictionary<int, string> StateStringCache = new Dictionary<int, string>(8);
 
     static Consts()
     {
-        StateStringCache.Add(CharacterState.Idle, CharacterState.Idle.ToString());
-        StateStringCache.Add(CharacterState.Run, CharacterState.Run.ToString());
-        StateStringCache.Add(CharacterState.LightAttack1, CharacterState.LightAttack1.ToString());
-        StateStringCache.Add(CharacterState.LightAttack2, CharacterState.LightAttack2.ToString());
-        StateStringCache.Add(CharacterState.HeavyAttack1, CharacterState.HeavyAttack1.ToString());
-        StateStringCache.Add(CharacterState.HeavyAttack2, CharacterState.HeavyAttack2.ToString());
-        StateStringCache.Add(CharacterState.LevelUp, CharacterState.LevelUp.ToString());
-        StateStringCache.Add(CharacterState.Die, CharacterState.Die.ToString());
+        StateStringCache.Add((int)CharacterState.Idle, CharacterState.Idle.ToString());
+        StateStringCache.Add((int)CharacterState.Run, CharacterState.Run.ToString());
+        StateStringCache.Add((int)CharacterState.LightAttack1, CharacterState.LightAttack1.ToString());
+        StateStringCache.Add((int)CharacterState.LightAttack2, CharacterState.LightAttack2.ToString());
+        StateStringCache.Add((int)CharacterState.HeavyAttack1, CharacterState.HeavyAttack1.ToString());
+        StateStringCache.Add((int)CharacterState.HeavyAttack2, CharacterState.HeavyAttack2.ToString());
+        StateStringCache.Add((int)CharacterState.LevelUp, CharacterState.LevelUp.ToString());
+        StateStringCache.Add((int)CharacterState.Die, CharacterState.Die.ToString());
+    }
+
+    public static string GetStateString(CharacterState state)
+    {
+        return StateStringCache[(int) state];
     }
 }

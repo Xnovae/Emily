@@ -5,13 +5,11 @@ using UnityEngine;
 
 public class AwayFromCampusSystem : IExecuteSystem
 {
-    public const float Distance_Square = 5 * 5;
-
     private IGroup<GameEntity> _groups;
 
     public AwayFromCampusSystem(Contexts contexts)
     {
-        _groups = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Position, GameMatcher.CampusPosition));
+        _groups = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Position, GameMatcher.CampusPosition, GameMatcher.MonsterParameter));
     }
 
     public void Execute()
@@ -29,6 +27,6 @@ public class AwayFromCampusSystem : IExecuteSystem
 
         float distance = diffX * diffX + diffY * diffY;
 
-        return distance > Distance_Square;
+        return distance > e.monsterParameter.campusRange;
     }
 }
