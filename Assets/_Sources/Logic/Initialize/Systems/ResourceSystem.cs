@@ -185,6 +185,7 @@ public class ResourceSystem : IInitializeSystem
         var promise = new Promise<string>();
 
         string sourcePath = Application.streamingAssetsPath + "/config.cdb";
+#if !UNITY_EDITOR && UNITY_ANDROID
         string destPath = Application.persistentDataPath + "/config.cdb";
 
         if (File.Exists(destPath))
@@ -195,6 +196,9 @@ public class ResourceSystem : IInitializeSystem
         {
             MainThreadDispatcher.StartUpdateMicroCoroutine(CopyConfigFiles(promise, sourcePath, destPath));
         }
+#else
+        promise.Resolve(sourcePath);
+#endif
 
         return promise;
     }
