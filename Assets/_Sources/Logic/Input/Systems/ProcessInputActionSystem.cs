@@ -45,6 +45,7 @@ public class ProcessInputActionSystem : ReactiveSystem<InputEntity>
             e.stateMachine.fsm.TriggerEvent("ResetToIdle");
             e.stateMachine.fsm.TriggerEvent(Consts.GetStateString(newState));
 
+            // TODO refactor this!!!
             AttackMonster(e);
         }
     }

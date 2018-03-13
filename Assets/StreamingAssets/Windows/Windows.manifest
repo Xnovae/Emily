@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 4166516579
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: temp/heroes_pixie.assetbundle
+      Dependencies: {}

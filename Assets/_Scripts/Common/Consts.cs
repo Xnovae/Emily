@@ -22,6 +22,7 @@ public static class Consts
     public static readonly string ID_HERO_ARCHER = "heroes_archer";
     public static readonly string ID_HERO_PHOENIX = "heroes_phoenix";
     public static readonly string ID_HERO_PANDA = "heroes_panda";
+    public static readonly string ID_HERO_PIXIE = "heroes_pixie";
 
     // Asset names
     public const string ASSET_NAME_CHARACTER = "character";
