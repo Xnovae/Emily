@@ -32,20 +32,10 @@ namespace ZeroFormatter
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::CharacterState?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableCharacterStateFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::CharacterState?>.Register(new NullableEqualityComparer<global::CharacterState>());
             
-            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Seeker.ModifierPass>.Register(new ZeroFormatter.DynamicObjectSegments.Seeker_ModifierPassFormatter<ZeroFormatter.Formatters.DefaultResolver>());
-            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Seeker.ModifierPass>.Register(new ZeroFormatter.DynamicObjectSegments.Seeker_ModifierPassEqualityComparer());
-            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Seeker.ModifierPass?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableSeeker_ModifierPassFormatter<ZeroFormatter.Formatters.DefaultResolver>());
-            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Seeker.ModifierPass?>.Register(new NullableEqualityComparer<global::Seeker.ModifierPass>());
-            
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::AstarPath.AstarDistribution>.Register(new ZeroFormatter.DynamicObjectSegments.AstarPath_AstarDistributionFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::AstarPath.AstarDistribution>.Register(new ZeroFormatter.DynamicObjectSegments.AstarPath_AstarDistributionEqualityComparer());
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::AstarPath.AstarDistribution?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableAstarPath_AstarDistributionFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::AstarPath.AstarDistribution?>.Register(new NullableEqualityComparer<global::AstarPath.AstarDistribution>());
-            
-            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BlockManager.BlockMode>.Register(new ZeroFormatter.DynamicObjectSegments.BlockManager_BlockModeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
-            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BlockManager.BlockMode>.Register(new ZeroFormatter.DynamicObjectSegments.BlockManager_BlockModeEqualityComparer());
-            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::BlockManager.BlockMode?>.Register(new ZeroFormatter.DynamicObjectSegments.NullableBlockManager_BlockModeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
-            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::BlockManager.BlockMode?>.Register(new NullableEqualityComparer<global::BlockManager.BlockMode>());
             
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::MappedAxis>.Register(new ZeroFormatter.DynamicObjectSegments.MappedAxisFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::MappedAxis>.Register(new ZeroFormatter.DynamicObjectSegments.MappedAxisEqualityComparer());
@@ -617,6 +607,11 @@ namespace ZeroFormatter
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::MessagePack.MessagePackType?>.Register(new ZeroFormatter.DynamicObjectSegments.MessagePack.NullableMessagePackTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::MessagePack.MessagePackType?>.Register(new NullableEqualityComparer<global::MessagePack.MessagePackType>());
             
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.Seeker.ModifierPass>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.Seeker_ModifierPassFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.Seeker.ModifierPass>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.Seeker_ModifierPassEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.Seeker.ModifierPass?>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.NullableSeeker_ModifierPassFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.Seeker.ModifierPass?>.Register(new NullableEqualityComparer<global::Pathfinding.Seeker.ModifierPass>());
+            
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.GraphUpdateThreading>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.GraphUpdateThreadingFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.GraphUpdateThreading>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.GraphUpdateThreadingEqualityComparer());
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.GraphUpdateThreading?>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.NullableGraphUpdateThreadingFormatter<ZeroFormatter.Formatters.DefaultResolver>());
@@ -651,6 +646,21 @@ namespace ZeroFormatter
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.PathCompleteState>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.PathCompleteStateEqualityComparer());
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.PathCompleteState?>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.NullablePathCompleteStateFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.PathCompleteState?>.Register(new NullableEqualityComparer<global::Pathfinding.PathCompleteState>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.CloseToDestinationMode>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.CloseToDestinationModeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.CloseToDestinationMode>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.CloseToDestinationModeEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.CloseToDestinationMode?>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.NullableCloseToDestinationModeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.CloseToDestinationMode?>.Register(new NullableEqualityComparer<global::Pathfinding.CloseToDestinationMode>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.Side>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.SideFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.Side>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.SideEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.Side?>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.NullableSideFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.Side?>.Register(new NullableEqualityComparer<global::Pathfinding.Side>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.InspectorGridMode>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.InspectorGridModeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.InspectorGridMode>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.InspectorGridModeEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.InspectorGridMode?>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.NullableInspectorGridModeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.InspectorGridMode?>.Register(new NullableEqualityComparer<global::Pathfinding.InspectorGridMode>());
             
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.GraphModifier.EventType>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.GraphModifier_EventTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.GraphModifier.EventType>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.GraphModifier_EventTypeEqualityComparer());
@@ -687,6 +697,11 @@ namespace ZeroFormatter
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.HeuristicOptimizationMode?>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.NullableHeuristicOptimizationModeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.HeuristicOptimizationMode?>.Register(new NullableEqualityComparer<global::Pathfinding.HeuristicOptimizationMode>());
             
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.RaycastModifier.Quality>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.RaycastModifier_QualityFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.RaycastModifier.Quality>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.RaycastModifier_QualityEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.RaycastModifier.Quality?>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.NullableRaycastModifier_QualityFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.RaycastModifier.Quality?>.Register(new NullableEqualityComparer<global::Pathfinding.RaycastModifier.Quality>());
+            
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.SimpleSmoothModifier.SmoothType>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.SimpleSmoothModifier_SmoothTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.SimpleSmoothModifier.SmoothType>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.SimpleSmoothModifier_SmoothTypeEqualityComparer());
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.SimpleSmoothModifier.SmoothType?>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.NullableSimpleSmoothModifier_SmoothTypeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
@@ -711,6 +726,11 @@ namespace ZeroFormatter
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.MultiTargetPath.HeuristicMode>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.MultiTargetPath_HeuristicModeEqualityComparer());
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.MultiTargetPath.HeuristicMode?>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.NullableMultiTargetPath_HeuristicModeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.MultiTargetPath.HeuristicMode?>.Register(new NullableEqualityComparer<global::Pathfinding.MultiTargetPath.HeuristicMode>());
+            
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.BlockManager.BlockMode>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.BlockManager_BlockModeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.BlockManager.BlockMode>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.BlockManager_BlockModeEqualityComparer());
+            ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.BlockManager.BlockMode?>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.NullableBlockManager_BlockModeFormatter<ZeroFormatter.Formatters.DefaultResolver>());
+            ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.BlockManager.BlockMode?>.Register(new NullableEqualityComparer<global::Pathfinding.BlockManager.BlockMode>());
             
             ZeroFormatter.Formatters.Formatter<ZeroFormatter.Formatters.DefaultResolver, global::Pathfinding.RVO.MovementPlane>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.RVO.MovementPlaneFormatter<ZeroFormatter.Formatters.DefaultResolver>());
             ZeroFormatter.Comparers.ZeroFormatterEqualityComparer<global::Pathfinding.RVO.MovementPlane>.Register(new ZeroFormatter.DynamicObjectSegments.Pathfinding.RVO.MovementPlaneEqualityComparer());
@@ -1506,77 +1526,6 @@ namespace ZeroFormatter.DynamicObjectSegments
 
 
 
-    public class Seeker_ModifierPassFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Seeker.ModifierPass>
-        where TTypeResolver : ITypeResolver, new()
-    {
-        public override int? GetLength()
-        {
-            return 4;
-        }
-
-        public override int Serialize(ref byte[] bytes, int offset, global::Seeker.ModifierPass value)
-        {
-            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
-        }
-
-        public override global::Seeker.ModifierPass Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
-        {
-            byteSize = 4;
-            return (global::Seeker.ModifierPass)BinaryUtil.ReadInt32(ref bytes, offset);
-        }
-    }
-
-
-    public class NullableSeeker_ModifierPassFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Seeker.ModifierPass?>
-        where TTypeResolver : ITypeResolver, new()
-    {
-        public override int? GetLength()
-        {
-            return 5;
-        }
-
-        public override int Serialize(ref byte[] bytes, int offset, global::Seeker.ModifierPass? value)
-        {
-            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
-            if (value.HasValue)
-            {
-                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
-            }
-            else
-            {
-                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
-            }
-
-            return 5;
-        }
-
-        public override global::Seeker.ModifierPass? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
-        {
-            byteSize = 5;
-            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
-            if (!hasValue) return null;
-
-            return (global::Seeker.ModifierPass)BinaryUtil.ReadInt32(ref bytes, offset + 1);
-        }
-    }
-
-
-
-    public class Seeker_ModifierPassEqualityComparer : IEqualityComparer<global::Seeker.ModifierPass>
-    {
-        public bool Equals(global::Seeker.ModifierPass x, global::Seeker.ModifierPass y)
-        {
-            return (Int32)x == (Int32)y;
-        }
-
-        public int GetHashCode(global::Seeker.ModifierPass x)
-        {
-            return (int)x;
-        }
-    }
-
-
-
     public class AstarPath_AstarDistributionFormatter<TTypeResolver> : Formatter<TTypeResolver, global::AstarPath.AstarDistribution>
         where TTypeResolver : ITypeResolver, new()
     {
@@ -1641,77 +1590,6 @@ namespace ZeroFormatter.DynamicObjectSegments
         }
 
         public int GetHashCode(global::AstarPath.AstarDistribution x)
-        {
-            return (int)x;
-        }
-    }
-
-
-
-    public class BlockManager_BlockModeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BlockManager.BlockMode>
-        where TTypeResolver : ITypeResolver, new()
-    {
-        public override int? GetLength()
-        {
-            return 4;
-        }
-
-        public override int Serialize(ref byte[] bytes, int offset, global::BlockManager.BlockMode value)
-        {
-            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
-        }
-
-        public override global::BlockManager.BlockMode Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
-        {
-            byteSize = 4;
-            return (global::BlockManager.BlockMode)BinaryUtil.ReadInt32(ref bytes, offset);
-        }
-    }
-
-
-    public class NullableBlockManager_BlockModeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::BlockManager.BlockMode?>
-        where TTypeResolver : ITypeResolver, new()
-    {
-        public override int? GetLength()
-        {
-            return 5;
-        }
-
-        public override int Serialize(ref byte[] bytes, int offset, global::BlockManager.BlockMode? value)
-        {
-            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
-            if (value.HasValue)
-            {
-                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
-            }
-            else
-            {
-                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
-            }
-
-            return 5;
-        }
-
-        public override global::BlockManager.BlockMode? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
-        {
-            byteSize = 5;
-            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
-            if (!hasValue) return null;
-
-            return (global::BlockManager.BlockMode)BinaryUtil.ReadInt32(ref bytes, offset + 1);
-        }
-    }
-
-
-
-    public class BlockManager_BlockModeEqualityComparer : IEqualityComparer<global::BlockManager.BlockMode>
-    {
-        public bool Equals(global::BlockManager.BlockMode x, global::BlockManager.BlockMode y)
-        {
-            return (Int32)x == (Int32)y;
-        }
-
-        public int GetHashCode(global::BlockManager.BlockMode x)
         {
             return (int)x;
         }
@@ -9921,6 +9799,77 @@ namespace ZeroFormatter.DynamicObjectSegments.Pathfinding
     using global::ZeroFormatter.Segments;
 
 
+    public class Seeker_ModifierPassFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.Seeker.ModifierPass>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::Pathfinding.Seeker.ModifierPass value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::Pathfinding.Seeker.ModifierPass Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::Pathfinding.Seeker.ModifierPass)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableSeeker_ModifierPassFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.Seeker.ModifierPass?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::Pathfinding.Seeker.ModifierPass? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::Pathfinding.Seeker.ModifierPass? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::Pathfinding.Seeker.ModifierPass)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class Seeker_ModifierPassEqualityComparer : IEqualityComparer<global::Pathfinding.Seeker.ModifierPass>
+    {
+        public bool Equals(global::Pathfinding.Seeker.ModifierPass x, global::Pathfinding.Seeker.ModifierPass y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::Pathfinding.Seeker.ModifierPass x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
     public class GraphUpdateThreadingFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.GraphUpdateThreading>
         where TTypeResolver : ITypeResolver, new()
     {
@@ -10411,6 +10360,219 @@ namespace ZeroFormatter.DynamicObjectSegments.Pathfinding
         }
 
         public int GetHashCode(global::Pathfinding.PathCompleteState x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class CloseToDestinationModeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.CloseToDestinationMode>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::Pathfinding.CloseToDestinationMode value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::Pathfinding.CloseToDestinationMode Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::Pathfinding.CloseToDestinationMode)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableCloseToDestinationModeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.CloseToDestinationMode?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::Pathfinding.CloseToDestinationMode? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::Pathfinding.CloseToDestinationMode? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::Pathfinding.CloseToDestinationMode)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class CloseToDestinationModeEqualityComparer : IEqualityComparer<global::Pathfinding.CloseToDestinationMode>
+    {
+        public bool Equals(global::Pathfinding.CloseToDestinationMode x, global::Pathfinding.CloseToDestinationMode y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::Pathfinding.CloseToDestinationMode x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class SideFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.Side>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 1;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::Pathfinding.Side value)
+        {
+            return BinaryUtil.WriteByte(ref bytes, offset, (Byte)value);
+        }
+
+        public override global::Pathfinding.Side Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 1;
+            return (global::Pathfinding.Side)BinaryUtil.ReadByte(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableSideFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.Side?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 2;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::Pathfinding.Side? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteByte(ref bytes, offset + 1, (Byte)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 2);
+            }
+
+            return 2;
+        }
+
+        public override global::Pathfinding.Side? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 2;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::Pathfinding.Side)BinaryUtil.ReadByte(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class SideEqualityComparer : IEqualityComparer<global::Pathfinding.Side>
+    {
+        public bool Equals(global::Pathfinding.Side x, global::Pathfinding.Side y)
+        {
+            return (Byte)x == (Byte)y;
+        }
+
+        public int GetHashCode(global::Pathfinding.Side x)
+        {
+            return (int)(Byte)x;
+        }
+    }
+
+
+
+    public class InspectorGridModeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.InspectorGridMode>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::Pathfinding.InspectorGridMode value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::Pathfinding.InspectorGridMode Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::Pathfinding.InspectorGridMode)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableInspectorGridModeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.InspectorGridMode?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::Pathfinding.InspectorGridMode? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::Pathfinding.InspectorGridMode? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::Pathfinding.InspectorGridMode)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class InspectorGridModeEqualityComparer : IEqualityComparer<global::Pathfinding.InspectorGridMode>
+    {
+        public bool Equals(global::Pathfinding.InspectorGridMode x, global::Pathfinding.InspectorGridMode y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::Pathfinding.InspectorGridMode x)
         {
             return (int)x;
         }
@@ -10915,6 +11077,77 @@ namespace ZeroFormatter.DynamicObjectSegments.Pathfinding
 
 
 
+    public class RaycastModifier_QualityFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.RaycastModifier.Quality>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::Pathfinding.RaycastModifier.Quality value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::Pathfinding.RaycastModifier.Quality Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::Pathfinding.RaycastModifier.Quality)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableRaycastModifier_QualityFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.RaycastModifier.Quality?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::Pathfinding.RaycastModifier.Quality? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::Pathfinding.RaycastModifier.Quality? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::Pathfinding.RaycastModifier.Quality)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class RaycastModifier_QualityEqualityComparer : IEqualityComparer<global::Pathfinding.RaycastModifier.Quality>
+    {
+        public bool Equals(global::Pathfinding.RaycastModifier.Quality x, global::Pathfinding.RaycastModifier.Quality y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::Pathfinding.RaycastModifier.Quality x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
     public class SimpleSmoothModifier_SmoothTypeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.SimpleSmoothModifier.SmoothType>
         where TTypeResolver : ITypeResolver, new()
     {
@@ -11263,6 +11496,77 @@ namespace ZeroFormatter.DynamicObjectSegments.Pathfinding
         }
 
         public int GetHashCode(global::Pathfinding.MultiTargetPath.HeuristicMode x)
+        {
+            return (int)x;
+        }
+    }
+
+
+
+    public class BlockManager_BlockModeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.BlockManager.BlockMode>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 4;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::Pathfinding.BlockManager.BlockMode value)
+        {
+            return BinaryUtil.WriteInt32(ref bytes, offset, (Int32)value);
+        }
+
+        public override global::Pathfinding.BlockManager.BlockMode Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 4;
+            return (global::Pathfinding.BlockManager.BlockMode)BinaryUtil.ReadInt32(ref bytes, offset);
+        }
+    }
+
+
+    public class NullableBlockManager_BlockModeFormatter<TTypeResolver> : Formatter<TTypeResolver, global::Pathfinding.BlockManager.BlockMode?>
+        where TTypeResolver : ITypeResolver, new()
+    {
+        public override int? GetLength()
+        {
+            return 5;
+        }
+
+        public override int Serialize(ref byte[] bytes, int offset, global::Pathfinding.BlockManager.BlockMode? value)
+        {
+            BinaryUtil.WriteBoolean(ref bytes, offset, value.HasValue);
+            if (value.HasValue)
+            {
+                BinaryUtil.WriteInt32(ref bytes, offset + 1, (Int32)value.Value);
+            }
+            else
+            {
+                BinaryUtil.EnsureCapacity(ref bytes, offset, offset + 5);
+            }
+
+            return 5;
+        }
+
+        public override global::Pathfinding.BlockManager.BlockMode? Deserialize(ref byte[] bytes, int offset, global::ZeroFormatter.DirtyTracker tracker, out int byteSize)
+        {
+            byteSize = 5;
+            var hasValue = BinaryUtil.ReadBoolean(ref bytes, offset);
+            if (!hasValue) return null;
+
+            return (global::Pathfinding.BlockManager.BlockMode)BinaryUtil.ReadInt32(ref bytes, offset + 1);
+        }
+    }
+
+
+
+    public class BlockManager_BlockModeEqualityComparer : IEqualityComparer<global::Pathfinding.BlockManager.BlockMode>
+    {
+        public bool Equals(global::Pathfinding.BlockManager.BlockMode x, global::Pathfinding.BlockManager.BlockMode y)
+        {
+            return (Int32)x == (Int32)y;
+        }
+
+        public int GetHashCode(global::Pathfinding.BlockManager.BlockMode x)
         {
             return (int)x;
         }

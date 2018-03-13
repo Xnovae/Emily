@@ -9,5 +9,6 @@ public class BehaviourTreeSystems : Feature
     {
         Add(new InitBehaviourTreeSystem(contexts));
         Add(new AwayFromCampusSystem(contexts));
+        Add(new AlarmAttackSystem(contexts));
     }
 }

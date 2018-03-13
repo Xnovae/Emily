@@ -80,7 +80,6 @@ public class PoolManager : Singleton<PoolManager>
 
 	public void ReleaseObject(GameObject clone)
 	{
-		clone.SetActive(false);
         clone.transform.SetParent(container, false);
 
 		if(instanceLookup.ContainsKey(clone))

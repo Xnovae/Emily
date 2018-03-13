@@ -26,6 +26,7 @@ public class AttackAction : Action
 
         GameEntity e = gameEntity.Value;
 
+        // TODO TriggerEvent gc
         e.stateMachine.fsm.TriggerEvent("ResetToIdle");
         e.stateMachine.fsm.TriggerEvent(Consts.GetStateString(_attackState));
     }

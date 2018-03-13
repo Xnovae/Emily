@@ -4,11 +4,10 @@ using Entitas;
 using Pathfinding;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Profiling;
 
 public class ProcessPathFindingMoveToPositionSystem : ReactiveSystem<GameEntity>
 {
-    private static NNConstraint walkableArea = NNConstraint.Default;
-
     private GameContext _gameContext;
 
     public ProcessPathFindingMoveToPositionSystem(Contexts contexts)
@@ -33,9 +32,11 @@ public class ProcessPathFindingMoveToPositionSystem : ReactiveSystem<GameEntity>
         foreach (var e in entities)
         {
             Vector3 targetPosition = new Vector3(e.pathFindingToPosition.x, e.pathFindingToPosition.y, 0.0f);
-            Vector3 nearestPosition = AstarPath.active.GetNearest(targetPosition, walkableArea).position;
 
-            FindPathToPosition(e, nearestPosition);
+            // No need GetNearest, performance cost
+            //Vector3 nearestPosition = AstarPath.active.GetNearest
+
+            FindPathToPosition(e, targetPosition);
 
             e.RemovePathFindingToPosition();
         }

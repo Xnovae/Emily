@@ -1,15 +1,17 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Entitas.Unity;
+using Pathfinding;
 using UnityEngine;
 
 public class CustomAIPath : AIPath
 {
     private Transform _transform;
+    private AIDestinationSetter _aiDestinationSetter;
 
     public bool IsMoving
     {
-        get { return target != null; }
+        get { return _aiDestinationSetter.targetASTAR != null; }
     }
 
     public Vector3 CurrentPosition
@@ -27,12 +29,13 @@ public class CustomAIPath : AIPath
         base.Awake();
 
         _transform = gameObject.transform;
+        _aiDestinationSetter = GetComponent<AIDestinationSetter>();
     }
 
     public void MoveToTarget(GameObject targetGameObject)
     {
         // good to go
-        target = targetGameObject.transform;
+        _aiDestinationSetter.targetASTAR = targetGameObject.transform;
 
         OnMovingStart();
     }
@@ -50,6 +53,7 @@ public class CustomAIPath : AIPath
 
     private void OnMovingEnd()
     {
-        target = null;
+        _aiDestinationSetter.targetASTAR = null;
+        destination = new Vector3(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity);
     }
 }

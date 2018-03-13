@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114524825515175772}
   - component: {fileID: 114601638407743544}
   - component: {fileID: 114255453085147710}
+  - component: {fileID: 114913305942169124}
   m_Layer: 0
   m_Name: pathfinding_seeker_template
   m_TagString: Untagged
@@ -87,10 +88,8 @@ MonoBehaviour:
       m_Bits: 4294967295
     useGraphRaycasting: 0
   traversableTags: -1
-  traversableTagsCompatibility:
-    tagsChange: -1
-    tagsSet: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask: -1
 --- !u!114 &114601638407743544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,20 +101,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531813c7bd3265c48b8d6d844828ca4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 1
+  version: 2
+  repathRate: 0.5
+  canSearch: 1
+  canMove: 1
+  maxSpeed: 2
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
   centerOffset: 1
-  rotationIn2D: 0
-  repathRate: 0.5
-  target: {fileID: 0}
-  canSearch: 1
-  canMove: 1
-  speed: 2
+  rotationIn2D: 1
+  targetCompatibility: {fileID: 0}
+  maxAcceleration: -2.5
   rotationSpeed: 0
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
   endReachedDistance: 0.2
-  alwaysDrawGizmos: 0
+  alwaysDrawGizmos: 1
+  slowWhenNotFacingTarget: 0
+  whenCloseToDestination: 0
+--- !u!114 &114913305942169124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304222060049374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db98289557dea1b46adf8e77d3141398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  targetASTAR: {fileID: 0}
