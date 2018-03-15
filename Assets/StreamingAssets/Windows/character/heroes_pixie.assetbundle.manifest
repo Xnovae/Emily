@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 796729470
+CRC: 839289195
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: edf014751ede0ca18fb5cb44cc2175b8
+    Hash: ac6ca146330f59b2674d531103520ffe
   TypeTreeHash:
     serializedVersion: 2
     Hash: 77c7b93fea82c3652931aec724263bca
@@ -25,4 +25,5 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/_SpriteCollection/heroes_pixie Data/heroes_pixie.prefab
-Dependencies: []
+Dependencies:
+- E:/Projects/3rd_party/Emily/Assets/StreamingAssets/Windows/dependency/shaders.assetbundle
