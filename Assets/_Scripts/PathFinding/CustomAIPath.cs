@@ -7,6 +7,7 @@ using UnityEngine;
 public class CustomAIPath : AIPath
 {
     private Transform _transform;
+
     private AIDestinationSetter _aiDestinationSetter;
 
     public bool IsMoving
@@ -29,11 +30,14 @@ public class CustomAIPath : AIPath
         base.Awake();
 
         _transform = gameObject.transform;
+
         _aiDestinationSetter = GetComponent<AIDestinationSetter>();
     }
 
     public void MoveToTarget(GameObject targetGameObject)
     {
+        enabled = true;
+
         // good to go
         _aiDestinationSetter.targetASTAR = targetGameObject.transform;
 
@@ -54,6 +58,7 @@ public class CustomAIPath : AIPath
     private void OnMovingEnd()
     {
         _aiDestinationSetter.targetASTAR = null;
-        destination = new Vector3(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity);
+        destination = Vector3.positiveInfinity;
+        enabled = false;
     }
 }
