@@ -370,7 +370,7 @@ namespace Pathfinding {
 			gizmoHash = newGizmoHash;
 			float alpha = alwaysDrawGizmos ? 1 : Mathf.SmoothStep(1, 0, (Time.realtimeSinceStartup - lastChangedTime - 5f)/0.5f) * (UnityEditor.Selection.gameObjects.Length == 1 ? 1 : 0);
 
-			if (alpha > 0) {
+			if (!reachedEndOfPath && alpha > 0) {
 				// Make sure the scene view is repainted while the gizmos are visible
 				if (!alwaysDrawGizmos) UnityEditor.SceneView.RepaintAll();
 				Draw.Gizmos.Line(position, steeringTarget, GizmoColor * new Color(1, 1, 1, alpha));

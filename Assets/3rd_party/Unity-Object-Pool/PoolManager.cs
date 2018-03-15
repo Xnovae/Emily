@@ -21,7 +21,6 @@ public class PoolManager : Singleton<PoolManager>
 		instanceLookup = new Dictionary<GameObject, ObjectPool<GameObject>>();
 
         container = new GameObject("GameObject Pool").transform;
-        container.localPosition = new Vector3(99999.0f, 99999.0f, 0.0f);
 	}
 
 	void Update()

@@ -36,7 +36,8 @@ public class CustomAIPath : AIPath
 
     public void MoveToTarget(GameObject targetGameObject)
     {
-        enabled = true;
+        canSearch = true;
+        canMove = true;
 
         // good to go
         _aiDestinationSetter.targetASTAR = targetGameObject.transform;
@@ -60,6 +61,7 @@ public class CustomAIPath : AIPath
         _aiDestinationSetter.targetASTAR = null;
         destination = Vector3.positiveInfinity;
 
-        enabled = false;
+        canSearch = false;
+        canMove = false;
     }
 }

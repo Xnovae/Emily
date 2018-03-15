@@ -20,13 +20,6 @@ public class IdleAction : Action
 
     public override TaskStatus OnUpdate()
     {
-        //GameEntity e = gameEntity.Value;
-        //if (e.state.state != CharacterState.Idle)
-        //{
-        //    e.stateMachine.fsm.TriggerEvent("ResetToIdle");
-        //    e.stateMachine.fsm.TriggerEvent(CharacterState.Idle.ToString());
-        //}
-
-        return TaskStatus.Success;
+        return TaskStatus.Running;
     }
 }
