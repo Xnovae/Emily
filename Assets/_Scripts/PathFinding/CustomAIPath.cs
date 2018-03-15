@@ -59,6 +59,7 @@ public class CustomAIPath : AIPath
     {
         _aiDestinationSetter.targetASTAR = null;
         destination = Vector3.positiveInfinity;
+
         enabled = false;
     }
 }

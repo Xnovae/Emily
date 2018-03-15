@@ -556,5 +556,11 @@ namespace Pathfinding {
 				}
 			}
 		}
-	}
+
+        // Clear Draw Gizmo
+	    public void OnTargetReached() {
+	        lastCompletedNodePath = null;
+	        lastCompletedVectorPath = null;
+        }
+    }
 }

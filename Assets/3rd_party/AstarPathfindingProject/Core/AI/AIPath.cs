@@ -184,6 +184,7 @@ namespace Pathfinding {
 		 * So when the agent is close to the destination this method will typically be called every #repathRate seconds.
 		 */
 		public virtual void OnTargetReached () {
+            seeker.OnTargetReached();
 		}
 
 		/** Called when a requested path has been calculated.
