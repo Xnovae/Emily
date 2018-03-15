@@ -3,16 +3,18 @@
 	Properties
 	{
 		_MainTex("Texture", 2D) = "white" {}
+		_AlphaMulti("Alpha Multi", Range(0,1)) = 0.5
 	}
 
 	SubShader
 	{
-		Tags
-		{
-			"PreviewType" = "Plane"
-		}
+		Tags{ "Queue" = "Transparent+500" "IgnoreProjector" = "True" "RenderType" = "Transparent" "PreviewType" = "Plane" }
+		LOD 100
+
 		Pass
 		{
+			ZWrite Off Lighting Off Cull Off Fog{ Mode Off } Blend OneMinusDstAlpha DstAlpha
+
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -44,6 +46,8 @@
 			float4 frag(v2f i) : SV_Target
 			{
 				float4 color = tex2D(_MainTex, i.uv);
+				color.a = 1;
+
 				return color;
 			}
 			ENDCG
@@ -51,13 +55,7 @@
 
 		Pass
 		{
-			ColorMask 0
-			Stencil
-			{
-				Ref 255
-				Comp Always
-				Pass Replace
-			}
+			ZWrite Off Lighting Off Cull Off Fog{ Mode Off } Blend SrcAlpha OneMinusSrcAlpha
 
 			CGPROGRAM
 			#pragma vertex vert
@@ -86,11 +84,14 @@
 			}
 
 			sampler2D _MainTex;
+			fixed _AlphaMulti;
 
 			float4 frag(v2f i) : SV_Target
 			{
 				float4 color = tex2D(_MainTex, i.uv);
-				clip(0.51 - color.a);
+				clip(0.5 - color.a);
+
+				color.a = _AlphaMulti;
 
 				return color;
 			}
