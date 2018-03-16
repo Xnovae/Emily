@@ -20,7 +20,7 @@ public class RenderOrderSystem : IInitializeSystem, IExecuteSystem
 
     public void Initialize()
     {
-        _positionGroup = _gameContext.GetGroup(GameMatcher.Position);
+        _positionGroup = _gameContext.GetGroup(GameMatcher.AllOf(GameMatcher.Identifier, GameMatcher.Position));
 
         _positionGroup.OnEntityAdded += (group, entity, index, component) =>
         {

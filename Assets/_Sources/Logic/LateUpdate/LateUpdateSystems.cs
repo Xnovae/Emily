@@ -8,6 +8,7 @@ public class LateUpdateSystems : Feature
         : base("LateUpdate Systems")
     {
         Add(new CameraFollowSystem(contexts));
+        Add(new SortingLayerSystem(contexts));
         Add(new RenderOrderSystem(contexts));
     }
 }

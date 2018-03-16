@@ -6,6 +6,7 @@ using UnityEngine;
 public interface IViewController
 {
     tk2dSprite displaySprite { get; set; }
+    Renderer displayRenderer { get; set; }
 
     Vector3 position { get; set; }
 
@@ -17,6 +18,7 @@ public interface IViewController
 public class ViewController : MonoBehaviour, IViewController
 {
     public tk2dSprite displaySprite { get; set; }
+    public Renderer displayRenderer { get; set; }
 
     public Vector3 position
     {
@@ -27,6 +29,7 @@ public class ViewController : MonoBehaviour, IViewController
     void Awake()
     {
         displaySprite = GetComponent<tk2dSprite>();
+        displayRenderer = GetComponent<Renderer>();
     }
 
     public void Destroy()

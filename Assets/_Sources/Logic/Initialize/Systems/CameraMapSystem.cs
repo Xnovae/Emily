@@ -131,6 +131,7 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
 
         GameObject prefab = _gameContext.runningData.ResourceData.spriteTemplate;
         e.AddView(null, assetName, prefab);
+        e.AddSortingLayer("ForegroundMap");
 
         e.AddPosition((float)x * MAP_ITEM_WIDTH / Consts.TexturePixelsPerUnit, (float)y * MAP_ITEM_HEIGHT / Consts.TexturePixelsPerUnit);
         e.AddResourceAssetBundle(path, this);
@@ -144,9 +145,6 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
 
                 // e.AddViewAsset(collectionData, assetName);
                 _mapItemDictionary[key].AddViewAsset(collectionData, assetName);
-
-                int count = ResourceManager.Instance.GetAssetBundleWrappersCount(path);
-                Assert.AreEqual(1, count, "load map path: " + path);
 
                 promise.Resolve();
             })
@@ -191,10 +189,6 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
             e.Release(this);
 
             e.isDestroy = true;
-
-            string path = string.Format(_gameContext.runningData.RuntimeData.mapPathFormat, key.x.ToString(), key.y.ToString());
-            int count = ResourceManager.Instance.GetAssetBundleWrappersCount(path);
-            Assert.AreEqual(1, count, "unload map: " + path);
         }
     }
 
@@ -298,6 +292,7 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
 
         GameObject prefab = _gameContext.runningData.ResourceData.spriteTemplate;
         e.AddView(null, assetName, prefab);
+        e.AddSortingLayer("ForegroundMap");
 
         e.AddPosition((float) x * MAP_ITEM_WIDTH / Consts.TexturePixelsPerUnit,
                         (float) y * MAP_ITEM_HEIGHT / Consts.TexturePixelsPerUnit);
@@ -312,9 +307,6 @@ public class CameraMapSystem : IInitializeSystem, IExecuteSystem
 
                 // e.AddViewAsset(collectionData, assetName);    // CAUTION: DON'T use e, cause view and Asset not same
                 _mapItemDictionary[key].AddViewAsset(collectionData, assetName);
-
-                int count = ResourceManager.Instance.GetAssetBundleWrappersCount(path);
-                Assert.AreEqual(1, count, "load map path: " + path + ", count: " + count);
             });
     }
 }

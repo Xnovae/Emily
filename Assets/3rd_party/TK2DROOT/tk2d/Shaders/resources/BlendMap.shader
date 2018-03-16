@@ -8,8 +8,7 @@
 
 	SubShader
 	{
-		Tags{ "Queue" = "Transparent+500" "IgnoreProjector" = "True" "RenderType" = "Transparent" "PreviewType" = "Plane" }
-		LOD 100
+		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent" "PreviewType" = "Plane" }
 
 		Pass
 		{

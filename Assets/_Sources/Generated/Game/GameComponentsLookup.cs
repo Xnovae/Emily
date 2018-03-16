@@ -29,19 +29,20 @@ public static class GameComponentsLookup {
     public const int ResourceAssetBundle = 18;
     public const int ResourceInitialize = 19;
     public const int RunningData = 20;
-    public const int SpriteAnimate = 21;
-    public const int State = 22;
-    public const int StateMachine = 23;
-    public const int Tag = 24;
-    public const int Tween = 25;
-    public const int TweenResult = 26;
-    public const int TweenResultPreserved = 27;
-    public const int Velocity = 28;
-    public const int ViewAsset = 29;
-    public const int View = 30;
-    public const int ViewValid = 31;
+    public const int SortingLayer = 21;
+    public const int SpriteAnimate = 22;
+    public const int State = 23;
+    public const int StateMachine = 24;
+    public const int Tag = 25;
+    public const int Tween = 26;
+    public const int TweenResult = 27;
+    public const int TweenResultPreserved = 28;
+    public const int Velocity = 29;
+    public const int ViewAsset = 30;
+    public const int View = 31;
+    public const int ViewValid = 32;
 
-    public const int TotalComponents = 32;
+    public const int TotalComponents = 33;
 
     public static readonly string[] componentNames = {
         "AIMoving",
@@ -65,6 +66,7 @@ public static class GameComponentsLookup {
         "ResourceAssetBundle",
         "ResourceInitialize",
         "RunningData",
+        "SortingLayer",
         "SpriteAnimate",
         "State",
         "StateMachine",
@@ -100,6 +102,7 @@ public static class GameComponentsLookup {
         typeof(ResourceAssetBundleComponent),
         typeof(ResourceInitializeComponent),
         typeof(RunningDataComponent),
+        typeof(SortingLayerComponent),
         typeof(SpriteAnimateComponent),
         typeof(StateComponent),
         typeof(StateMachineComponent),
