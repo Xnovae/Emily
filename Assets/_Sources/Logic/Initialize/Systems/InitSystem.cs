@@ -14,5 +14,8 @@ public class InitSystem : IInitializeSystem
     {
         // DoTween
         DOTween.Init(true, false, LogBehaviour.Default).SetCapacity(200, 10);    // recycleAllByDefault, useSafeMode
+
+        // Screen Sleep
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
 }
