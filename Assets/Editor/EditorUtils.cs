@@ -130,7 +130,7 @@ public static class EditorUtils
 
     public static void CreateAssetBundle(Object[] objs, string subFolder, string assetBundleName)
     {
-        string destFolder = string.Format("{0}/{1}", Application.streamingAssetsPath, Utils.GetPlatformName());
+        string destFolder = string.Format("{0}/{1}", Application.streamingAssetsPath, Utils.GetPlatformName(false));
         if (!Directory.Exists(destFolder))
         {
             Directory.CreateDirectory(destFolder);
@@ -163,7 +163,7 @@ public static class EditorUtils
 
     public static void CreateAssetBundles(Dictionary<string, string> dict)
     {
-        string destFolder = string.Format("{0}/{1}", Application.streamingAssetsPath, Utils.GetPlatformName());
+        string destFolder = string.Format("{0}/{1}", Application.streamingAssetsPath, Utils.GetPlatformName(false));
         if (!Directory.Exists(destFolder))
         {
             Directory.CreateDirectory(destFolder);

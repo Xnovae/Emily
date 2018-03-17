@@ -41,14 +41,14 @@ public class AssetBundlePacker : EditorWindow
 
         // finally rename AssetBundleManifest
         string format = "{0}/{1}/{2}";
-        string oldName = string.Format(format, Application.streamingAssetsPath, Utils.GetPlatformName(),
-            Utils.GetPlatformName());
+        string oldName = string.Format(format, Application.streamingAssetsPath, Utils.GetPlatformName(false),
+            Utils.GetPlatformName(false));
         string newName = "AssetBundleManifest";
         AssetDatabase.RenameAsset(EditorUtils.TrimAssetPath(oldName), newName);
 
         string manifestFormat = "{0}/{1}/{2}.manifest";
-        string oldManifestName = string.Format(manifestFormat, Application.streamingAssetsPath, Utils.GetPlatformName(),
-            Utils.GetPlatformName());
+        string oldManifestName = string.Format(manifestFormat, Application.streamingAssetsPath, Utils.GetPlatformName(false),
+            Utils.GetPlatformName(false));
         string newManifestName = "AssetBundleManifest.manifest";
         AssetDatabase.RenameAsset(EditorUtils.TrimAssetPath(oldManifestName), newManifestName);
     }

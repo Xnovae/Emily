@@ -19,7 +19,7 @@ public static class Utils
         var streamingAssetsPath = Application.streamingAssetsPath;
 #endif
 
-        return Path.Combine(streamingAssetsPath, GetPlatformName() + "/" + relativePath);
+        return Path.Combine(streamingAssetsPath, GetPlatformName(true) + "/" + relativePath);
     }
 
     public static AssetBundle LoadBundleFromStreamingAssets(string relativePath)
@@ -27,10 +27,18 @@ public static class Utils
         return AssetBundle.LoadFromFile(GetBundlePathForLoadFromFile(relativePath));
     }
 
-    public static string GetPlatformName()
+    public static string GetPlatformName(bool isPlaying)
     {
 #if UNITY_EDITOR
-        return GetPlatformForAssetBundles(BuildTarget.StandaloneWindows);
+        if (isPlaying)
+        {
+            // if run in editor, use Windows
+            return GetPlatformForAssetBundles(BuildTarget.StandaloneWindows);
+        }
+        else
+        {
+            return GetPlatformForAssetBundles(EditorUserBuildSettings.activeBuildTarget);
+        }
 #else
         return GetPlatformForAssetBundles(Application.platform);
 #endif
