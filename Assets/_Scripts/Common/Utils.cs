@@ -30,7 +30,7 @@ public static class Utils
     public static string GetPlatformName()
     {
 #if UNITY_EDITOR
-        return GetPlatformForAssetBundles(EditorUserBuildSettings.activeBuildTarget);
+        return GetPlatformForAssetBundles(BuildTarget.StandaloneWindows);
 #else
         return GetPlatformForAssetBundles(Application.platform);
 #endif
@@ -57,7 +57,7 @@ public static class Utils
             // Add more build targets for your own.
             // If you add more targets, don't forget to add the same platforms to GetPlatformForAssetBundles(RuntimePlatform) function.
             default:
-                return null;
+                throw new Exception("Invalid platform: " + target);
         }
     }
 #endif
@@ -81,7 +81,7 @@ public static class Utils
             // Add more build targets for your own.
             // If you add more targets, don't forget to add the same platforms to GetPlatformForAssetBundles(RuntimePlatform) function.
             default:
-                return null;
+                throw new Exception("Invalid platform: " + platform);
         }
     }
 
