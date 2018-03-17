@@ -10,6 +10,8 @@ public class SpriteAnimateSystem : IExecuteSystem
     private GameContext _context;
     private IGroup<GameEntity> _tweenValueElements;
 
+    private List<GameEntity> _entityCache = new List<GameEntity>();
+
     public SpriteAnimateSystem(Contexts contexts)
     {
         _context = contexts.game;
@@ -22,12 +24,12 @@ public class SpriteAnimateSystem : IExecuteSystem
 
     public void Execute()
     {
-        foreach (var e in _tweenValueElements.GetEntities())
+        foreach (var e in _tweenValueElements.GetEntities(_entityCache))
         {
             string spriteName = null;
 
             bool success = GetSpriteName(e.tweenResult.value, e.spriteAnimate.sprites, ref spriteName);
-            if (success)
+            if (success && spriteName != e.viewAsset.spriteName)
             {
                 var collection = e.viewAsset.collectionData;
                 e.ReplaceViewAsset(collection, spriteName);

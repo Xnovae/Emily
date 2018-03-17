@@ -78,7 +78,7 @@ public class ResourceSystem : IInitializeSystem
         ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_Tk2dSprite, this)
             .Then(spriteTemplate =>
             {
-                PoolManager.Instance.WarmPool(spriteTemplate, 50);
+                PoolManager.Instance.WarmPool(spriteTemplate, 200);
                 promise.Resolve(spriteTemplate);
             })
             .Catch(ex =>
@@ -96,7 +96,7 @@ public class ResourceSystem : IInitializeSystem
         ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_Character, this)
             .Then(spriteTemplate =>
             {
-                PoolManager.Instance.WarmPool(spriteTemplate, 50);
+                PoolManager.Instance.WarmPool(spriteTemplate, 200);
                 promise.Resolve(spriteTemplate);
             })
             .Catch(ex =>
@@ -114,7 +114,7 @@ public class ResourceSystem : IInitializeSystem
         ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_Monster, this)
             .Then(spriteTemplate =>
             {
-                PoolManager.Instance.WarmPool(spriteTemplate, 50);
+                PoolManager.Instance.WarmPool(spriteTemplate, 200);
                 promise.Resolve(spriteTemplate);
             })
             .Catch(ex =>
@@ -132,7 +132,7 @@ public class ResourceSystem : IInitializeSystem
         ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_PathFinding_Seeker, this)
             .Then(gameObjectTemplate =>
             {
-                PoolManager.Instance.WarmPool(gameObjectTemplate, 50);
+                PoolManager.Instance.WarmPool(gameObjectTemplate, 200);
                 promise.Resolve(gameObjectTemplate);
             })
             .Catch(ex =>
@@ -150,7 +150,7 @@ public class ResourceSystem : IInitializeSystem
         ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_PathFinding_Target, this)
             .Then(gameObjectTemplate =>
             {
-                PoolManager.Instance.WarmPool(gameObjectTemplate, 50);
+                PoolManager.Instance.WarmPool(gameObjectTemplate, 200);
                 promise.Resolve(gameObjectTemplate);
             })
             .Catch(ex =>

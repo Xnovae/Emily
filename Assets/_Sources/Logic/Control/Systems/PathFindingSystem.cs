@@ -7,6 +7,8 @@ public class PathFindingSystem : IExecuteSystem
 {
     private IGroup<GameEntity> _pathFindingGroup;
 
+    private List<GameEntity> _entityCaches = new List<GameEntity>();
+
     public PathFindingSystem(Contexts contexts)
     {
         _pathFindingGroup = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.PathFinding, GameMatcher.Position, GameMatcher.Direction, GameMatcher.StateMachine));
@@ -14,7 +16,7 @@ public class PathFindingSystem : IExecuteSystem
 
     public void Execute()
     {
-        foreach (var e in _pathFindingGroup.GetEntities())
+        foreach (var e in _pathFindingGroup.GetEntities(_entityCaches))
         {
             bool isMoving = e.pathFinding.aiPath.IsMoving;
             if (isMoving)

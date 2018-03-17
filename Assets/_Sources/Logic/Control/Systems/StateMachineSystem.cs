@@ -30,7 +30,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
         {
             IState fsm = InitFSM(e);
 
-            string initState = e.state.state.ToString();
+            string initState = Consts.GetStateString(e.state.state);
             fsm.ChangeState(initState);
 
             e.AddStateMachine(fsm);
@@ -40,41 +40,41 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
     private IState InitFSM(GameEntity e)
     {
         return new StateMachineBuilder()
-            .State<GameState>(CharacterState.Idle.ToString())
+            .State<GameState>(Consts.GetStateString(CharacterState.Idle))
             .Enter(state =>
             {
                 // Debug.Log("!!! Enter idle");
             })
             // Events
-            .Event(CharacterState.Run.ToString(), state =>
+            .Event(Consts.GetStateString(CharacterState.Run), state =>
             {
                 // Debug.Log("!!! Event run frame: " + Time.frameCount);
-                state.PushState(CharacterState.Run.ToString());
+                state.PushState(Consts.GetStateString(CharacterState.Run));
             })
-            .Event(CharacterState.LightAttack1.ToString(), state =>
+            .Event(Consts.GetStateString(CharacterState.LightAttack1), state =>
             {
                 // Debug.Log("!!! Event LightAttack1 frame: " + Time.frameCount);
-                state.PushState(CharacterState.LightAttack1.ToString());
+                state.PushState(Consts.GetStateString(CharacterState.LightAttack1));
             })
-            .Event(CharacterState.LightAttack2.ToString(), state =>
+            .Event(Consts.GetStateString(CharacterState.LightAttack2), state =>
             {
-                state.PushState(CharacterState.LightAttack2.ToString());
+                state.PushState(Consts.GetStateString(CharacterState.LightAttack2));
             })
-            .Event(CharacterState.HeavyAttack1.ToString(), state =>
+            .Event(Consts.GetStateString(CharacterState.HeavyAttack1), state =>
             {
-                state.PushState(CharacterState.HeavyAttack1.ToString());
+                state.PushState(Consts.GetStateString(CharacterState.HeavyAttack1));
             })
-            .Event(CharacterState.HeavyAttack2.ToString(), state =>
+            .Event(Consts.GetStateString(CharacterState.HeavyAttack2), state =>
             {
-                state.PushState(CharacterState.HeavyAttack2.ToString());
+                state.PushState(Consts.GetStateString(CharacterState.HeavyAttack2));
             })
-            .Event(CharacterState.LevelUp.ToString(), state =>
+            .Event(Consts.GetStateString(CharacterState.LevelUp), state =>
             {
-                state.PushState(CharacterState.LevelUp.ToString());
+                state.PushState(Consts.GetStateString(CharacterState.LevelUp));
             })
-            .Event(CharacterState.Die.ToString(), state =>
+            .Event(Consts.GetStateString(CharacterState.Die), state =>
             {
-                state.PushState(CharacterState.Die.ToString());
+                state.PushState(Consts.GetStateString(CharacterState.Die));
             })
 
             .Exit(state => 
@@ -84,7 +84,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             })
 
             // Run
-            .State<GameState>(CharacterState.Run.ToString())
+            .State<GameState>(Consts.GetStateString(CharacterState.Run))
             .Enter(state =>
             {
                 // Debug.Log("!!! Enter run frame: " + Time.frameCount);
@@ -125,7 +125,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             .End()
 
             // LightAttack1
-            .State<GameState>(CharacterState.LightAttack1.ToString())
+            .State<GameState>(Consts.GetStateString(CharacterState.LightAttack1))
             .Enter(state =>
             {
                 // Debug.Log("!!! Enter action frame: " + Time.frameCount);
@@ -146,7 +146,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             .End()
 
              // LightAttack2
-            .State<GameState>(CharacterState.LightAttack2.ToString())
+            .State<GameState>(Consts.GetStateString(CharacterState.LightAttack2))
             .Enter(state =>
             {
                 e.isAIMoving = false;
@@ -163,7 +163,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             .End()
 
             // HeavyAttack1
-            .State<GameState>(CharacterState.HeavyAttack1.ToString())
+            .State<GameState>(Consts.GetStateString(CharacterState.HeavyAttack1))
             .Enter(state =>
             {
                 e.isAIMoving = false;
@@ -180,7 +180,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             .End()
 
             // HeavyAttack2
-            .State<GameState>(CharacterState.HeavyAttack2.ToString())
+            .State<GameState>(Consts.GetStateString(CharacterState.HeavyAttack2))
             .Enter(state =>
             {
                 e.isAIMoving = false;
@@ -197,7 +197,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             .End()
 
             // LevelUp
-            .State<GameState>(CharacterState.LevelUp.ToString())
+            .State<GameState>(Consts.GetStateString(CharacterState.LevelUp))
             .Enter(state =>
             {
                 e.isAIMoving = false;
@@ -214,7 +214,7 @@ public class StateMachineSystem : ReactiveSystem<GameEntity>
             .End()
 
             // Die
-            .State<GameState>(CharacterState.Die.ToString())
+            .State<GameState>(Consts.GetStateString(CharacterState.Die))
             .Enter(state =>
             {
                 e.isAIMoving = false;
