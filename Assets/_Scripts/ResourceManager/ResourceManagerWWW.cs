@@ -162,6 +162,10 @@ public partial class ResourceManager
                 DestroyAllWWW(path);
             }
         }
+        else
+        {
+            throw new Exception(string.Format("DestroyWWW path: {0} owner: {1}", path, owner));
+        }
     }
 
     private void DestroyAllWWW(string path)

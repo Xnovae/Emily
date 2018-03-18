@@ -240,6 +240,10 @@ public partial class ResourceManager
                 DestroyAllAssetBundle(path);
             }
         }
+        else
+        {
+            throw new Exception(string.Format("DestroyAssetBundle path: {0} owner: {1}", path, owner));
+        }
     }
 
     private void DestroyAllAssetBundle(string path)

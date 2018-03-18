@@ -288,6 +288,10 @@ public partial class ResourceManager
                 DestroyAllResources(path);
             }
         }
+        else
+        {
+            throw new Exception(string.Format("DestroyResourceAsset path: {0} owner: {1}", path, owner));
+        }
     }
 
     private void DestroyAllResources(string path)
