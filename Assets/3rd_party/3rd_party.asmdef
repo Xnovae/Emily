@@ -1,0 +1,8 @@
+{
+    "name": "3rd_party",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}

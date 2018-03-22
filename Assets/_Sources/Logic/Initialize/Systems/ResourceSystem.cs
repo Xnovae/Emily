@@ -207,7 +207,6 @@ public class ResourceSystem : IInitializeSystem
     {
         using (UnityWebRequest webRequest = new UnityWebRequest(sourcePath))
         {
-
             byte[] buffer = ArrayPool<byte>.Shared.Rent(64 * 1024);
 
             webRequest.downloadHandler = new SaveFileDownloadHandler(buffer, destPath);
@@ -233,16 +232,16 @@ public class ResourceSystem : IInitializeSystem
             .Then(assetBundle =>
             {
                 var obj = Resources.Load<GameObject>("quad_template");
-                GameObject gameObject = Object.Instantiate(obj);
-
-                MainThreadDispatcher.StartUpdateMicroCoroutine(WarmShaders(promise, assetBundle, gameObject));
+                MainThreadDispatcher.StartUpdateMicroCoroutine(WarmShaders(promise, assetBundle, obj));
             });
 
         return promise;
     }
 
-    private IEnumerator WarmShaders(Promise promise, AssetBundle assetBundle, GameObject gameObject)
+    private IEnumerator WarmShaders(Promise promise, AssetBundle assetBundle, GameObject obj)
     {
+		GameObject gameObject = Object.Instantiate(obj);
+
         MeshRenderer meshRenderer = gameObject.GetComponent<MeshRenderer>();
 
         var request = assetBundle.LoadAllAssetsAsync<Shader>();

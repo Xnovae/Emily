@@ -1,0 +1,10 @@
+{
+    "name": "Emily",
+    "references": [
+        "3rd_party"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}

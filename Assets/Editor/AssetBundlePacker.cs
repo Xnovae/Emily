@@ -53,6 +53,8 @@ public class AssetBundlePacker : EditorWindow
         AssetDatabase.RenameAsset(EditorUtils.TrimAssetPath(oldManifestName), newManifestName);
     }
 
+    
+
     private Dictionary<string, string> GetMapDict()
     {
         Dictionary<string, string> mapDict = new Dictionary<string, string>();

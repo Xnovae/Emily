@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4048011465
+CRC: 2832011719
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ebae779f67a407629135b0d3596b0c19
+    Hash: 11f6cf5ff6f74bba26fcc40be05dcd8c
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6370d3f9de9eca57f523bce048404a46
@@ -12,6 +12,6 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 Assets:
-- Assets/3rd_party/TK2DROOT/tk2d/Shaders/resources/BlendSprite.shader
-- Assets/3rd_party/TK2DROOT/tk2d/Shaders/resources/BlendMap.shader
+- Assets/3rd_party/TK2DROOT/tk2d/Shaders/Resources/BlendSprite.shader
+- Assets/3rd_party/TK2DROOT/tk2d/Shaders/Resources/BlendMap.shader
 Dependencies: []

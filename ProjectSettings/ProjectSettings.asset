@@ -575,7 +575,7 @@ PlayerSettings:
     27: ENTITAS_DISABLE_DEEP_PROFILING
   platformArchitecture: {}
   scriptingBackend:
-    Android: 1
+    Android: 0
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 0
@@ -650,6 +650,7 @@ PlayerSettings:
   XboxOneSplashScreen: {fileID: 0}
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
+  XboxOneXTitleMemory: 8
   xboxOneScriptCompiler: 0
   vrEditorSettings:
     daydream:
