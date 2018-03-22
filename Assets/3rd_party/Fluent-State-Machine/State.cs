@@ -90,7 +90,7 @@ namespace RSG
         /// <summary>
         /// Stack of active child states.
         /// </summary>
-        private readonly Stack<IState> activeChildren = new Stack<IState>();
+        private readonly Stack<IState> activeChildren = new Stack<IState>(1);
 
         /// <summary>
         /// Dictionary of all children (active and inactive), and their names.
