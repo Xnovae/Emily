@@ -231,7 +231,7 @@ public class ResourceSystem : IInitializeSystem
         ResourceManager.Instance.GetAssetBundle(shadersAssetBundle, true, this)
             .Then(assetBundle =>
             {
-                var obj = Resources.Load<GameObject>("quad_template");
+                var obj = Resources.Load<GameObject>("quad_template");      // NO way to Unload GameObject, never mind
                 MainThreadDispatcher.StartUpdateMicroCoroutine(WarmShaders(promise, assetBundle, obj));
             });
 

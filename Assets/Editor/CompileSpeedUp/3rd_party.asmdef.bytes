@@ -2,7 +2,9 @@
     "name": "3rd_party",
     "references": [],
     "includePlatforms": [
-        "Editor"
+        "Editor",
+        "WindowsStandalone32",
+        "WindowsStandalone64"
     ],
     "excludePlatforms": []
 }

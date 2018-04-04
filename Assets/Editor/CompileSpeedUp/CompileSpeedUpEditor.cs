@@ -5,24 +5,24 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.Build;
 
-[InitializeOnLoad]
-public class Startup
-{
-    static Startup()
-    {
-        CompileSpeedUpEditor.SetupAssembly();
-    }
-}
+//[InitializeOnLoad]
+//public class Startup
+//{
+//    static Startup()
+//    {
+//        CompileSpeedUpEditor.SetupAssembly();
+//    }
+//}
 
-public class ActiveBuildTargetListener : IActiveBuildTargetChanged
-{
-    public int callbackOrder { get { return 0; } }
+//public class ActiveBuildTargetListener : IActiveBuildTargetChanged
+//{
+//    public int callbackOrder { get { return 0; } }
 
-    public void OnActiveBuildTargetChanged(BuildTarget previousTarget, BuildTarget newTarget)
-    {
-        CompileSpeedUpEditor.SetupAssembly();
-    }
-}
+//    public void OnActiveBuildTargetChanged(BuildTarget previousTarget, BuildTarget newTarget)
+//    {
+//        CompileSpeedUpEditor.SetupAssembly();
+//    }
+//}
 
 public static class CompileSpeedUpEditor
 {
