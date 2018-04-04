@@ -75,16 +75,26 @@ public class ResourceSystem : IInitializeSystem
     {
         var promise = new Promise<GameObject>();
 
-        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_Tk2dSprite, this)
-            .Then(spriteTemplate =>
-            {
-                PoolManager.Instance.WarmPool(spriteTemplate, 200);
-                promise.Resolve(spriteTemplate);
-            })
-            .Catch(ex =>
-            {
-                promise.Reject(new Exception("Fail to load Template_Tk2dSprite ex: " + ex));
-            });
+        GameObject spriteTemplate = Resources.Load<GameObject>(Consts.Template_Tk2dSprite);
+        if (spriteTemplate)
+        {
+            PoolManager.Instance.WarmPool(spriteTemplate, 200);
+            promise.Resolve(spriteTemplate);
+        }
+        else
+        {
+            promise.Reject(new Exception("Fail to load Template_Tk2dSprite"));
+        }
+        //ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_Tk2dSprite, this)
+        //    .Then(spriteTemplate =>
+        //    {
+        //        PoolManager.Instance.WarmPool(spriteTemplate, 200);
+        //        promise.Resolve(spriteTemplate);
+        //    })
+        //    .Catch(ex =>
+        //    {
+        //        promise.Reject(new Exception("Fail to load Template_Tk2dSprite ex: " + ex));
+        //    });
 
         return promise;
     }
@@ -93,16 +103,27 @@ public class ResourceSystem : IInitializeSystem
     {
         var promise = new Promise<GameObject>();
 
-        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_Character, this)
-            .Then(spriteTemplate =>
-            {
-                PoolManager.Instance.WarmPool(spriteTemplate, 200);
-                promise.Resolve(spriteTemplate);
-            })
-            .Catch(ex =>
-            {
-                promise.Reject(new Exception("Fail to load Template_Character ex: " + ex));
-            });
+        GameObject spriteTemplate = Resources.Load<GameObject>(Consts.Template_Character);
+        if (spriteTemplate)
+        {
+            PoolManager.Instance.WarmPool(spriteTemplate, 200);
+            promise.Resolve(spriteTemplate);
+        }
+        else
+        {
+            promise.Reject(new Exception("Fail to load Template_Character"));
+        }
+
+        //ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_Character, this)
+        //    .Then(spriteTemplate =>
+        //    {
+        //        PoolManager.Instance.WarmPool(spriteTemplate, 200);
+        //        promise.Resolve(spriteTemplate);
+        //    })
+        //    .Catch(ex =>
+        //    {
+        //        promise.Reject(new Exception("Fail to load Template_Character ex: " + ex));
+        //    });
 
         return promise;
     }
@@ -111,16 +132,26 @@ public class ResourceSystem : IInitializeSystem
     {
         var promise = new Promise<GameObject>();
 
-        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_Monster, this)
-            .Then(spriteTemplate =>
-            {
-                PoolManager.Instance.WarmPool(spriteTemplate, 200);
-                promise.Resolve(spriteTemplate);
-            })
-            .Catch(ex =>
-            {
-                promise.Reject(new Exception("Fail to load Template_Monster ex: " + ex));
-            });
+        GameObject spriteTemplate = Resources.Load<GameObject>(Consts.Template_Monster);
+        if (spriteTemplate)
+        {
+            PoolManager.Instance.WarmPool(spriteTemplate, 200);
+            promise.Resolve(spriteTemplate);
+        }
+        else
+        {
+            promise.Reject(new Exception("Fail to load Template_Monster"));
+        }
+        //ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_Monster, this)
+        //    .Then(spriteTemplate =>
+        //    {
+        //        PoolManager.Instance.WarmPool(spriteTemplate, 200);
+        //        promise.Resolve(spriteTemplate);
+        //    })
+        //    .Catch(ex =>
+        //    {
+        //        promise.Reject(new Exception("Fail to load Template_Monster ex: " + ex));
+        //    });
 
         return promise;
     }
@@ -129,16 +160,26 @@ public class ResourceSystem : IInitializeSystem
     {
         var promise = new Promise<GameObject>();
 
-        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_PathFinding_Seeker, this)
-            .Then(gameObjectTemplate =>
-            {
-                PoolManager.Instance.WarmPool(gameObjectTemplate, 200);
-                promise.Resolve(gameObjectTemplate);
-            })
-            .Catch(ex =>
-            {
-                promise.Reject(new Exception("Fail to load Template_PathFinding_Seeker ex: " + ex));
-            });
+        GameObject gameObjectTemplate = Resources.Load<GameObject>(Consts.Template_PathFinding_Seeker);
+        if (gameObjectTemplate)
+        {
+            PoolManager.Instance.WarmPool(gameObjectTemplate, 200);
+            promise.Resolve(gameObjectTemplate);
+        }
+        else
+        {
+            promise.Reject(new Exception("Fail to load Template_PathFinding_Seeker"));
+        }
+        //ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_PathFinding_Seeker, this)
+        //    .Then(gameObjectTemplate =>
+        //    {
+        //        PoolManager.Instance.WarmPool(gameObjectTemplate, 200);
+        //        promise.Resolve(gameObjectTemplate);
+        //    })
+        //    .Catch(ex =>
+        //    {
+        //        promise.Reject(new Exception("Fail to load Template_PathFinding_Seeker ex: " + ex));
+        //    });
 
         return promise;
     }
@@ -147,16 +188,26 @@ public class ResourceSystem : IInitializeSystem
     {
         var promise = new Promise<GameObject>();
 
-        ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_PathFinding_Target, this)
-            .Then(gameObjectTemplate =>
-            {
-                PoolManager.Instance.WarmPool(gameObjectTemplate, 200);
-                promise.Resolve(gameObjectTemplate);
-            })
-            .Catch(ex =>
-            {
-                promise.Reject(new Exception("Fail to load Template_PathFinding_Target ex: " + ex));
-            });
+        GameObject gameObjectTemplate = Resources.Load<GameObject>(Consts.Template_PathFinding_Target);
+        if (gameObjectTemplate)
+        {
+            PoolManager.Instance.WarmPool(gameObjectTemplate, 200);
+            promise.Resolve(gameObjectTemplate);
+        }
+        else
+        {
+            promise.Reject(new Exception("Fail to load Template_PathFinding_Target"));
+        }
+        //ResourceManager.Instance.GetResourceAsset<GameObject>(Consts.Template_PathFinding_Target, this)
+        //    .Then(gameObjectTemplate =>
+        //    {
+        //        PoolManager.Instance.WarmPool(gameObjectTemplate, 200);
+        //        promise.Resolve(gameObjectTemplate);
+        //    })
+        //    .Catch(ex =>
+        //    {
+        //        promise.Reject(new Exception("Fail to load Template_PathFinding_Target ex: " + ex));
+        //    });
 
         return promise;
     }
