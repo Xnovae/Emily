@@ -124,6 +124,10 @@ public partial class ResourceManager
 
     public IPromise<T> GetResourceAsset<T>(string path, object owner) where T : UnityEngine.Object
     {
+        Assert.IsFalse(typeof(T) == typeof(GameObject), "Unity Can NOT UnloadAsset GameObject, Please use Resources.Load<GameObject>()");
+        Assert.IsFalse(typeof(T) == typeof(Component), "Unity Can NOT UnloadAsset Component, Please use Resources.Load<Component>()");
+        Assert.IsFalse(typeof(T) == typeof(AssetBundle), "Unity Can NOT UnloadAsset AssetBundle, Please use Resources.Load<AssetBundle>()");
+
         ResourcesWrapper resourcesWrapper = null;
 
         int id = GetNextIDResources();
