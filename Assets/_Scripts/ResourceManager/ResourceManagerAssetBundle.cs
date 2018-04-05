@@ -434,7 +434,7 @@ public partial class ResourceManager
         string[] dependenciesURI = GetAllDependenciesURI(path, isManifestBundle); ;
         AssetBundleCreateRequest[] requests = GetAssetBundleRequests(path, isManifestBundle, isDependency, dependenciesURI);
 
-        while (!AllRequestsDone(requests, dependenciesURI, isDependency, path))
+        while (!AllRequestsDone(requests, dependenciesURI, path))
         {
             yield return null;
         }
@@ -488,6 +488,8 @@ public partial class ResourceManager
 
     private string GetDependencyURI(string[] dependenciesURI, int i, string path)
     {
+        Assert.IsTrue(0 <= i && i <= dependenciesURI.Length);
+
         string dependencyURI;
         if (i < dependenciesURI.Length)
         {
@@ -529,7 +531,7 @@ public partial class ResourceManager
         return dependenciesURI;
     }
 
-    private void SetupDependency(string depencyURI, AssetBundleCreateRequest[] requests, int index)
+    private void SetupDependencyRequests(string depencyURI, AssetBundleCreateRequest[] requests, int index)
     {
         DependencyAssetBundleWrapper wrapper;
         if (_dependenciesWrappers.TryGetValue(depencyURI, out wrapper))
@@ -559,7 +561,7 @@ public partial class ResourceManager
         AssetBundleCreateRequest[] requests;
         if (isManifestBundle)
         {
-            requests = new AssetBundleCreateRequest[1] {AssetBundle.LoadFromFileAsync(path)};
+            requests = new AssetBundleCreateRequest[1] { AssetBundle.LoadFromFileAsync(path) };
         }
         else
         {
@@ -569,13 +571,13 @@ public partial class ResourceManager
             for (int i = 0; i < length - 1; ++i)
             {
                 string depencyURI = dependenciesURI[i];
-                SetupDependency(depencyURI, requests, i);
+                SetupDependencyRequests(depencyURI, requests, i);
             }
 
             // self
             if (isDependency)
             {
-                SetupDependency(path, requests, length - 1);
+                SetupDependencyRequests(path, requests, length - 1);
             }
             else
             {
@@ -586,45 +588,18 @@ public partial class ResourceManager
         return requests;
     }
 
-    // isDependency: is last request dependency
-    private bool AllRequestsDone(AssetBundleCreateRequest[] requests, string[] dependenciesURI, bool isSelfDependency, string path)
+    private bool AllRequestsDone(AssetBundleCreateRequest[] requests, string[] dependenciesURI, string path)
     {
         int length = requests.Length;
-        if (isSelfDependency)
+        for (int i = 0; i < length; ++i)
         {
-            // if self assetbundle is dependency, check if load done
-            AssetBundleCreateRequest request = requests[length - 1];
-            if (request == null)
-            {
-                var wrapper = _dependenciesWrappers[path];
-                Assert.IsNotNull(wrapper);
-
-                if (wrapper.loadDone == false)
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                if (request.isDone == false)
-                {
-                    return false;
-                }
-            }
-        }
-        else
-        {
-            if (requests[length - 1].isDone == false)
-                return false;
-        }
-
-        // dependency
-        for (int i=0; i< length - 1; ++i)
-        {
+            // if request is null, check dependency; else check is done
             AssetBundleCreateRequest request = requests[i];
             if (request == null)
             {
-                var wrapper = _dependenciesWrappers[dependenciesURI[i]];
+                string dependencyURI = GetDependencyURI(dependenciesURI, i, path);
+
+                var wrapper = _dependenciesWrappers[dependencyURI];
                 Assert.IsNotNull(wrapper);
 
                 if (wrapper.loadDone == false)
@@ -641,6 +616,7 @@ public partial class ResourceManager
             }
         }
 
+        // load done, return true
         return true;
     }
 
