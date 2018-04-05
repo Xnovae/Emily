@@ -198,7 +198,8 @@ public partial class ResourceManager
 
         public void SetReferenceCount(int count)
         {
-            _referenceCount = Mathf.Max(0, count);
+            Assert.IsTrue(count >= 0);
+            _referenceCount = count;
         }
 
         public int GetReferenceCount()
@@ -433,7 +434,7 @@ public partial class ResourceManager
         string[] dependenciesURI = GetAllDependenciesURI(path, isManifestBundle); ;
         AssetBundleCreateRequest[] requests = GetAssetBundleRequests(path, isManifestBundle, isDependency, dependenciesURI);
 
-        while (!AllRequestsDone(requests, dependenciesURI))
+        while (!AllRequestsDone(requests, dependenciesURI, isDependency, path))
         {
             yield return null;
         }
@@ -528,6 +529,31 @@ public partial class ResourceManager
         return dependenciesURI;
     }
 
+    private void SetupDependency(string depencyURI, AssetBundleCreateRequest[] requests, int index)
+    {
+        DependencyAssetBundleWrapper wrapper;
+        if (_dependenciesWrappers.TryGetValue(depencyURI, out wrapper))
+        {
+            int count = wrapper.GetReferenceCount();
+            wrapper.SetReferenceCount(count + 1);
+
+            requests[index] = null;
+        }
+        else
+        {
+            // dependency take place, in case of loading dependency in same time
+            wrapper = new DependencyAssetBundleWrapper()
+            {
+                assetBundle = null,
+                loadDone = false,
+            };
+            wrapper.SetReferenceCount(1);
+            _dependenciesWrappers.Add(depencyURI, wrapper);
+
+            requests[index] = AssetBundle.LoadFromFileAsync(depencyURI);
+        }
+    }
+
     private AssetBundleCreateRequest[] GetAssetBundleRequests(string path, bool isManifestBundle, bool isDependency, string[] dependenciesURI)
     {
         AssetBundleCreateRequest[] requests;
@@ -543,41 +569,13 @@ public partial class ResourceManager
             for (int i = 0; i < length - 1; ++i)
             {
                 string depencyURI = dependenciesURI[i];
-                DependencyAssetBundleWrapper wrapper;
-                if (_dependenciesWrappers.TryGetValue(depencyURI, out wrapper))
-                {
-                    int count = wrapper.GetReferenceCount();
-                    wrapper.SetReferenceCount(count + 1);
-
-                    requests[i] = null;
-                }
-                else
-                {
-                    // dependency take place, in case of loading dependency in same time
-                    wrapper = new DependencyAssetBundleWrapper()
-                    {
-                        assetBundle = null,
-                        loadDone = false,
-                    };
-                    wrapper.SetReferenceCount(1);
-                    _dependenciesWrappers.Add(dependenciesURI[i], wrapper);
-
-                    requests[i] = AssetBundle.LoadFromFileAsync(depencyURI);
-                }
+                SetupDependency(depencyURI, requests, i);
             }
+
             // self
             if (isDependency)
             {
-                var wrapper = new DependencyAssetBundleWrapper()
-                {
-                    assetBundle = null,
-                    loadDone = false,
-                };
-                wrapper.SetReferenceCount(1);
-
-                _dependenciesWrappers.Add(path, wrapper);
-
-                requests[length - 1] = AssetBundle.LoadFromFileAsync(path);
+                SetupDependency(path, requests, length - 1);
             }
             else
             {
@@ -588,15 +586,43 @@ public partial class ResourceManager
         return requests;
     }
 
-    private bool AllRequestsDone(AssetBundleCreateRequest[] requests, string[] dependenciesURI)
+    // isDependency: is last request dependency
+    private bool AllRequestsDone(AssetBundleCreateRequest[] requests, string[] dependenciesURI, bool isSelfDependency, string path)
     {
         int length = requests.Length;
-        if (requests[length - 1].isDone == false)
-            return false;
-
-        for(int i=0; i<length - 1; ++i)
+        if (isSelfDependency)
         {
-            if (requests[i] == null)
+            // if self assetbundle is dependency, check if load done
+            AssetBundleCreateRequest request = requests[length - 1];
+            if (request == null)
+            {
+                var wrapper = _dependenciesWrappers[path];
+                Assert.IsNotNull(wrapper);
+
+                if (wrapper.loadDone == false)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if (request.isDone == false)
+                {
+                    return false;
+                }
+            }
+        }
+        else
+        {
+            if (requests[length - 1].isDone == false)
+                return false;
+        }
+
+        // dependency
+        for (int i=0; i< length - 1; ++i)
+        {
+            AssetBundleCreateRequest request = requests[i];
+            if (request == null)
             {
                 var wrapper = _dependenciesWrappers[dependenciesURI[i]];
                 Assert.IsNotNull(wrapper);
@@ -608,12 +634,11 @@ public partial class ResourceManager
             }
             else
             {
-                if (requests[i].isDone == false)
+                if (request.isDone == false)
                 {
                     return false;
                 }
             }
-
         }
 
         return true;
