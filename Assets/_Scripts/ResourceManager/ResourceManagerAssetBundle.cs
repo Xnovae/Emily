@@ -331,33 +331,42 @@ public partial class ResourceManager
         return promise;
     }
 
-    private void DestroyDependency(string path)
+    private void DestroyDependency(string assetbundlePath)
     {
-        string assetBundleName = Path.GetFileName(path);
+        // check self is dependency
+        DestroyDependencyInternal(assetbundlePath);
+
+        // dependencies
+        string assetBundleName = Path.GetFileName(assetbundlePath);
         string[] dependencies = _assetBundleManifest.GetAllDependencies(assetBundleName);
         for (int i = 0, count = dependencies.Length; i < count; ++i)
         {
             string uri = Utils.GetBundlePathForLoadFromFile(dependencies[i]);
 
-            DependencyAssetBundleWrapper wrapper;
-            if (_dependenciesWrappers.TryGetValue(uri, out wrapper))
+            DestroyDependencyInternal(uri);
+        }
+    }
+
+    private void DestroyDependencyInternal(string dependencyPath)
+    {
+        DependencyAssetBundleWrapper wrapper;
+        if (_dependenciesWrappers.TryGetValue(dependencyPath, out wrapper))
+        {
+            int refCount = wrapper.GetReferenceCount();
+            --refCount;
+            wrapper.SetReferenceCount(refCount);
+
+            // because destroy dependency can only be called in destroy AssetBundle when ab load done, so it's safe
+            Assert.IsTrue(wrapper.loadDone);
+
+            if (wrapper.IsAllDestroyed())
             {
-                int refCount = wrapper.GetReferenceCount();
-                --refCount;
+                wrapper.assetBundle.Unload(true);
+                _dependenciesWrappers.Remove(dependencyPath);
+            }
+            else
+            {
                 wrapper.SetReferenceCount(refCount);
-
-                // because destroy dependency can only be called in destroy AssetBundle when ab load done, so it's safe
-                Assert.IsTrue(wrapper.loadDone);
-
-                if (wrapper.IsAllDestroyed())
-                {
-                    wrapper.assetBundle.Unload(true);
-                    _dependenciesWrappers.Remove(uri);
-                }
-                else
-                {
-                    wrapper.SetReferenceCount(refCount);
-                }
             }
         }
     }
