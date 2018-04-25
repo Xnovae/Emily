@@ -245,9 +245,13 @@ namespace System.Data.ConstantDatabase
                         /* Read the key stored in this entry and compare it to
 						 * the key we were given. */
                         bool match = true;
-                        byte[] k = new byte[klen];
-                        fileStream.Read(k, 0, k.Length);
-                        for (int i = 0; i < k.Length; i++)
+                        // byte[] k = new byte[klen];
+
+                        // rent buffer
+                        byte[] k = System.Buffers.ArrayPool<byte>.Shared.Rent(klen);
+
+                        fileStream.Read(k, 0, klen);
+                        for (int i = 0; i < klen; i++)
                         {
                             if (k[i] != key[i])
                             {
@@ -255,6 +259,9 @@ namespace System.Data.ConstantDatabase
                                 break;
                             }
                         }
+
+                        // return buffer
+                        System.Buffers.ArrayPool<byte>.Shared.Return(k);
 
                         /* No match; check the next slot. */
                         if (!match)

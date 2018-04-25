@@ -15,7 +15,7 @@ struct line_v2f {
 // Redefine the matrix here in order to confuse the Unity shader upgrader.
 // Otherwise it will start modifying some things below even though this script is specifically
 // written to be compatible with multiple versions of Unity.
-#define MVP_Matrix UNITY_MATRIX_MVP
+// #define MVP_Matrix UNITY_MATRIX_MVP
 
 // d = normalized distance to line
 float lineAA(float d) {
@@ -32,8 +32,8 @@ line_v2f line_vert (appdata_color v, float pixelWidth, out float4 outpos : SV_PO
 	float4 Mv = UnityObjectToClipPos(v.vertex);
 	float4 Mn = UnityObjectToClipPos(float4(v.normal.x, v.normal.y, v.normal.z, 0));
 #else
-	float4 Mv = mul(MVP_Matrix, v.vertex);
-	float4 Mn = mul(MVP_Matrix, float4(v.normal.x, v.normal.y, v.normal.z, 0));
+	float4 Mv = UnityObjectToClipPos(v.vertex);
+	float4 Mn = UnityObjectToClipPos(float4(v.normal.x, v.normal.y, v.normal.z, 0));
 #endif
 	// delta is the limit value of doing the calculation
 	// x1 = M*v
