@@ -38,22 +38,15 @@ namespace System.Buffers
         /// </remarks>
         public static ArrayPool<T> Shared
         {
-            get
-            {
-                if (s_sharedInstance == null)
-                {
-                    EnsureSharedCreated();
-                }
-
-                return s_sharedInstance;
-            }
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get { return Volatile.Read(ref s_sharedInstance) ?? EnsureSharedCreated(); }
         }
 
         /// <summary>Ensures that <see cref="s_sharedInstance"/> has been initialized to a pool and returns it.</summary>
         [MethodImpl(MethodImplOptions.NoInlining)]
         private static ArrayPool<T> EnsureSharedCreated()
         {
-            s_sharedInstance = Create();
+            Interlocked.CompareExchange(ref s_sharedInstance, Create(), null);
             return s_sharedInstance;
         }
 

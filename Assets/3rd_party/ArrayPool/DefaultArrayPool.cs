@@ -23,11 +23,11 @@ namespace System.Buffers
         {
             if (maxArrayLength <= 0)
             {
-                throw new ArgumentOutOfRangeException("DefaultArrayPool maxArrayLength <= 0");
+                throw new ArgumentOutOfRangeException(nameof(maxArrayLength));
             }
             if (maxArraysPerBucket <= 0)
             {
-                throw new ArgumentOutOfRangeException("DefaultArrayPool maxArraysPerBucket <= 0");
+                throw new ArgumentOutOfRangeException(nameof(maxArraysPerBucket));
             }
 
             // Our bucketing algorithm has a min length of 2^4 and a max length of 2^30.
@@ -54,10 +54,7 @@ namespace System.Buffers
         }
 
         /// <summary>Gets an ID for the pool to use with events.</summary>
-        private int Id
-        {
-            get { return GetHashCode(); }
-        }
+        private int Id => GetHashCode();
 
         public override T[] Rent(int minimumLength)
         {
@@ -66,7 +63,7 @@ namespace System.Buffers
             // to be usable in general instead of using `new`, even for computed lengths.
             if (minimumLength < 0)
             {
-                throw new ArgumentOutOfRangeException("Rent minimumLength < 0");
+                throw new ArgumentOutOfRangeException(nameof(minimumLength));
             }
             else if (minimumLength == 0)
             {
@@ -75,6 +72,7 @@ namespace System.Buffers
                 return s_emptyArray ?? (s_emptyArray = new T[0]);
             }
 
+            var log = ArrayPoolEventSource.Log;
             T[] buffer = null;
 
             int index = Utilities.SelectBucketIndex(minimumLength);
@@ -90,6 +88,10 @@ namespace System.Buffers
                     buffer = _buckets[i].Rent();
                     if (buffer != null)
                     {
+                        if (log.IsEnabled())
+                        {
+                            log.BufferRented(buffer.GetHashCode(), buffer.Length, Id, _buckets[i].Id);
+                        }
                         return buffer;
                     }
                 }
@@ -106,6 +108,14 @@ namespace System.Buffers
                 buffer = new T[minimumLength];
             }
 
+            if (log.IsEnabled())
+            {
+                int bufferId = buffer.GetHashCode(), bucketId = -1; // no bucket for an on-demand allocated buffer
+                log.BufferRented(bufferId, buffer.Length, Id, bucketId);
+                log.BufferAllocated(bufferId, buffer.Length, Id, bucketId, index >= _buckets.Length ?
+                    ArrayPoolEventSource.BufferAllocatedReason.OverMaximumSize : ArrayPoolEventSource.BufferAllocatedReason.PoolExhausted);
+            }
+
             return buffer;
         }
 
@@ -113,7 +123,7 @@ namespace System.Buffers
         {
             if (array == null)
             {
-                throw new ArgumentNullException("Return array == null");
+                throw new ArgumentNullException(nameof(array));
             }
             else if (array.Length == 0)
             {
@@ -138,6 +148,13 @@ namespace System.Buffers
                 // instead of dropping a bucket, in which case we could try to return to a lower-sized bucket,
                 // just as how in Rent we allow renting from a higher-sized bucket.
                 _buckets[bucket].Return(array);
+            }
+
+            // Log that the buffer was returned
+            var log = ArrayPoolEventSource.Log;
+            if (log.IsEnabled())
+            {
+                log.BufferReturned(array.GetHashCode(), array.Length, Id);
             }
         }
     }

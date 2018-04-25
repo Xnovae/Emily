@@ -578,7 +578,7 @@ PlayerSettings:
     Android: 0
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
-  scriptingRuntimeVersion: 0
+  scriptingRuntimeVersion: 1
   apiCompatibilityLevelPerPlatform:
     Android: 2
   m_RenderingPath: 1

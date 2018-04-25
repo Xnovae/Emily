@@ -14,7 +14,9 @@ namespace System.Buffers
         {
             internal readonly int _bufferLength;
             private readonly T[][] _buffers;
+            private readonly int _poolId;
 
+            private SpinLock _lock; // do not make this readonly; it's a mutable struct
             private int _index;
 
             /// <summary>
@@ -22,15 +24,14 @@ namespace System.Buffers
             /// </summary>
             internal Bucket(int bufferLength, int numberOfBuffers, int poolId)
             {
+                _lock = new SpinLock(Debugger.IsAttached); // only enable thread tracking if debugger is attached; it adds non-trivial overheads to Enter/Exit
                 _buffers = new T[numberOfBuffers][];
                 _bufferLength = bufferLength;
+                _poolId = poolId;
             }
 
             /// <summary>Gets an ID for the bucket to use with events.</summary>
-            internal int Id
-            {
-                get { return GetHashCode(); }
-            }
+            internal int Id => GetHashCode();
 
             /// <summary>Takes an array from the bucket.  If the bucket is empty, returns null.</summary>
             internal T[] Rent()
@@ -42,9 +43,11 @@ namespace System.Buffers
                 // update the index.  We do as little work as possible while holding the spin
                 // lock to minimize contention with other threads.  The try/finally is
                 // necessary to properly handle thread aborts on platforms which have them.
-                bool allocateBuffer = false;
+                bool lockTaken = false, allocateBuffer = false;
                 try
                 {
+                    _lock.Enter(ref lockTaken);
+
                     if (_index < buffers.Length)
                     {
                         buffer = buffers[_index];
@@ -54,6 +57,7 @@ namespace System.Buffers
                 }
                 finally
                 {
+                    if (lockTaken) _lock.Exit(false);
                 }
 
                 // While we were holding the lock, we grabbed whatever was at the next available index, if
@@ -62,6 +66,13 @@ namespace System.Buffers
                 if (allocateBuffer)
                 {
                     buffer = new T[_bufferLength];
+
+                    var log = ArrayPoolEventSource.Log;
+                    if (log.IsEnabled())
+                    {
+                        log.BufferAllocated(buffer.GetHashCode(), _bufferLength, _poolId, Id,
+                            ArrayPoolEventSource.BufferAllocatedReason.Pooled);
+                    }
                 }
 
                 return buffer;
@@ -77,15 +88,18 @@ namespace System.Buffers
                 // Check to see if the buffer is the correct size for this bucket
                 if (array.Length != _bufferLength)
                 {
-                    // throw new ArgumentException(SR.ArgumentException_BufferNotFromPool, nameof(array));
+                    throw new ArgumentException("The buffer is not associated with this pool and may not be returned to it.", nameof(array));
                 }
 
                 // While holding the spin lock, if there's room available in the bucket,
                 // put the buffer into the next available slot.  Otherwise, we just drop it.
                 // The try/finally is necessary to properly handle thread aborts on platforms
                 // which have them.
+                bool lockTaken = false;
                 try
                 {
+                    _lock.Enter(ref lockTaken);
+
                     if (_index != 0)
                     {
                         _buffers[--_index] = array;
@@ -93,6 +107,7 @@ namespace System.Buffers
                 }
                 finally
                 {
+                    if (lockTaken) _lock.Exit(false);
                 }
             }
         }
